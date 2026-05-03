@@ -7,17 +7,16 @@ Die Detaildateien unter `agentenmatrix/` bleiben als technische Quellen erhalten
 
 ## Namenscheck zuerst
 
-- **`Bernd` geht nicht:** Die bisherige Bezeichnung auf `sebastian` (Server 1) gilt nicht mehr als kanonisch.
+- **Server 1 ist jetzt operatorisch geklärt:** `sebastian` läuft als `Bernd`, `user1` als `Chefkoch`, `user2` als `Franks Klaus`.
+- **Wichtig für Server 1:** Die Workspaces tragen teils ältere oder abweichende Selbstbeschreibungen (`Cheko`, leere `IDENTITY.md`, altes `Bernd` in `SOUL.md`). Für diese Matrix gilt die aktuelle Operator-Zuordnung plus der verifizierte Live-Betrieb.
 - **`Turyia` geht nicht:** Die bisherige Bezeichnung bei `agent` (Server 2) und `turyia` (Server 3) gilt ebenfalls nicht mehr als kanonisch.
-- **Vorläufige Regel:** Wo diese Namen bisher aus `IDENTITY.md` kamen, wird in dieser Übersicht ab jetzt neutral dokumentiert statt geraten.
-- **Historie Server 1:** `user2` war der entfernte Altbestand zu derselben alten Bernd-Bezeichnung.
-- **Backup von `user2`:** `/root/agent-cleanup-backups/user2-openclaw-20260503T102637Z.tar.gz`
+- **Restore-Historie Server 1:** `user2` war zwischenzeitlich entfernt und wurde aus `/root/agent-cleanup-backups/user2-openclaw-20260503T102637Z.tar.gz` wieder als laufender Agent restauriert.
 
 ## Serverübersicht
 
 | Server | Host | IP | Aktive Agenten | Inaktive / Altbestände | Kurznotiz |
 |---|---|---|---:|---:|---|
-| Server 1 | `sarahserver1` | `147.93.120.51` | 2 | 1 entfernt | `sebastian` hat eine zu prüfende Altbezeichnung, `user1` ist Cheko |
+| Server 1 | `sarahserver1` | `147.93.120.51` | 3 | 0 | `Bernd` repariert, `Chefkoch` bereinigt, `Franks Klaus` aus Backup restauriert |
 | Server 2 | `sarahserver2` | `89.116.39.197` | 3 | 1 inaktiv | `agent` hat eine zu prüfende Altbezeichnung, `joker` hat klaren Brave-Zugang |
 | Server 3 | `sarahserver3` | `187.124.191.206` | 3 | 0 | saubere Dreierbelegung mit `gandalf`, `rocky`, `turyia` |
 
@@ -25,9 +24,9 @@ Die Detaildateien unter `agentenmatrix/` bleiben als technische Quellen erhalten
 
 | Server | Linux-Nutzer | Agentenname | Status | Workspace | Memory | Brave | Default-Modell | Zuletzt beobachtet | Hinweise |
 |---|---|---|---|---|---|---|---|---|---|
-| Server 1 | `sebastian` | offen, bisher `Bernd` | aktiv | `~/.openclaw/workspace_sebastian` | ja | teilweise | `gpt-5.1-codex` | `claude-sonnet-4-6` | alte Bezeichnung laut Operator ungültig |
-| Server 1 | `user1` | `Cheko (ILA-Hauptagent)` | aktiv | `~/.openclaw/workspace_hauptagent` | ja | teilweise | `gpt-5.4` | `claude-sonnet-4-6` | Sarahs ILA-Hauptagent |
-| Server 1 | `user2` | entfernter Altbestand, bisher `Bernd` | entfernt | gelöscht | nein | nein | - | - | Backup vorhanden |
+| Server 1 | `sebastian` | `Bernd` | aktiv | `~/.openclaw/workspace_sebastian` | ja | teilweise | `openai/gpt-5.4` | `gpt-5.4` über OpenAI | Anthropic-Billing und `o3-mini`-Fallback aus dem Laufweg entfernt |
+| Server 1 | `user1` | `Chefkoch` | aktiv | `~/.openclaw/workspace_hauptagent` | ja | teilweise | `openai/gpt-5.4` | `gpt-5.4` über OpenAI | Workspace nennt ihn aktuell `Cheko (ILA-Hauptagent)`, Portkonflikt auf `19840` bereinigt |
+| Server 1 | `user2` | `Franks Klaus` | aktiv, am 2026-05-03 restauriert | `~/.openclaw/workspace` | ja | nein | `openai-codex/gpt-5.4` | `gpt-5.4` über `openai-codex` | aus Backup restauriert, Name folgt Operator + wiederhergestellter Frank-Historie |
 | Server 2 | `agent` | offen, bisher `Turyia` | aktiv | `~/.openclaw/workspace` | ja | teilweise | `openai-codex/gpt-5.4` | `gpt-5.4` über `openai-codex` | alte Bezeichnung laut Operator ungültig |
 | Server 2 | `joker` | `joker` | aktiv | `~/.openclaw/workspace` | teilweise | ja | `openai-codex/gpt-5.4` | nicht gefunden | klarster Brave-Zugang auf Server 2 |
 | Server 2 | `nemo` | `nemo` | instabil / zuletzt `activating` | `~/.openclaw/workspace` | nein | nein | unbekannt | nicht gefunden | Servicezustand wirkte instabil |
@@ -39,9 +38,9 @@ Die Detaildateien unter `agentenmatrix/` bleiben als technische Quellen erhalten
 ## Serverdetails in Kurzform
 
 ### Server 1
-- Aktive Agenten: `sebastian`, `user1`
-- Entfernt: `user2`
+- Aktive Agenten: `sebastian` (`Bernd`), `user1` (`Chefkoch`), `user2` (`Franks Klaus`)
 - Besonderheit: relevante Identitäten lagen nicht nur im Standard-Workspace, sondern auch in `workspace_sebastian` und `workspace_hauptagent`
+- Betriebsnotiz: `Bernd` wurde auf einen funktionierenden OpenAI-Modellpfad umgestellt, `Chefkoch` hatte einen bereinigten Gateway-Portkonflikt, `Franks Klaus` wurde aus dem erhaltenen Backup wieder aktiviert
 
 ### Server 2
 - Aktive oder zuletzt aktive Agenten: `agent`, `joker`, `nemo`

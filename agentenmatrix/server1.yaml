@@ -1,8 +1,8 @@
-generated_at_utc: "2026-05-03T10:31:00Z"
+generated_at_utc: "2026-05-03T15:46:00Z"
 server:
   alias: "sarahserver1"
   scope: "Server 1"
-  source: "read-only inspection via root SSH"
+  source: "root SSH inspection plus live repair on 2026-05-03"
   workspace_discovery:
     rule: "Inspect ~/.openclaw/workspace and ~/.openclaw/workspace_*"
     note: "Alternative workspace names are valid and must be considered for IDENTITY.md, SOUL.md and MEMORY.md discovery."
@@ -16,10 +16,9 @@ agents:
       active: true
       enabled: true
     agent:
-      name: null
-      name_source: "IDENTITY.md"
-      name_confidence: "invalidated_by_operator"
-      operator_note: "Bisheriger Name 'Bernd' geht laut Operator nicht."
+      name: "Bernd"
+      name_source: "operator + IDENTITY.md"
+      name_confidence: "high"
     identity_md:
       present: true
       path: "/home/sebastian/.openclaw/workspace_sebastian/IDENTITY.md"
@@ -47,18 +46,21 @@ agents:
       openclaw_configured: false
       assessment: "Brave-Profil vorhanden, aber keine Brave-Konfiguration in aktueller OpenClaw-Konfiguration gefunden."
     models:
-      default_model: "gpt-5.1-codex"
-      default_model_source: "openclaw status"
-      last_observed_model: "claude-sonnet-4-6"
-      last_observed_provider: "anthropic"
-      last_observed_api: "anthropic-messages"
+      default_model: "openai/gpt-5.4"
+      default_model_source: "live config after repair"
+      fallback_models:
+        - "openai/gpt-5.1-codex"
+      last_observed_model: "gpt-5.4"
+      last_observed_provider: "openai"
+      last_observed_api: "openai-responses"
       provider_hints:
         - "openai"
         - "openai-codex"
-      note: "Default-Modell und zuletzt beobachtetes Modell weichen voneinander ab."
+      note: "Anthropic-Billing und der fehlerhafte o3-mini-Fallback wurden aus dem aktiven Laufweg entfernt."
     notes:
       - "Die Identität lag nicht im Standardpfad ~/.openclaw/workspace, sondern in ~/.openclaw/workspace_sebastian."
-      - "Die bisherige Bezeichnung 'Bernd' wurde vom Operator verworfen."
+      - "Der Operator hat Bernd auf Server 1 explizit als kanonischen Namen bestätigt."
+      - "Vor der Reparatur scheiterte der Agent an Anthropic-Billing plus o3-mini-Verifikationsfehlern."
 
   - linux_user: "user1"
     workspace:
@@ -69,8 +71,8 @@ agents:
       active: true
       enabled: true
     agent:
-      name: "Cheko (ILA-Hauptagent)"
-      name_source: "IDENTITY.md"
+      name: "Chefkoch"
+      name_source: "operator; Workspace nennt ihn aktuell 'Cheko (ILA-Hauptagent)'"
       name_confidence: "high"
     identity_md:
       present: true
@@ -103,29 +105,70 @@ agents:
       legacy_reference_present: true
       legacy_reference_note: "Eine alte Datei openclaw.json.verbastelt enthält eine Brave-Referenz, das ist aber kein belastbarer Nachweis für aktuelle Funktion."
     models:
-      default_model: "gpt-5.4"
-      default_model_source: "openclaw status"
-      last_observed_model: "claude-sonnet-4-6"
-      last_observed_provider: "anthropic"
-      last_observed_api: "anthropic-messages"
+      default_model: "openai/gpt-5.4"
+      default_model_source: "live config"
+      last_observed_model: "gpt-5.4"
+      last_observed_provider: "openai"
+      last_observed_api: "openai-responses"
       provider_hints:
         - "anthropic"
         - "openai"
-      note: "Default-Modell und zuletzt beobachtetes Modell weichen voneinander ab."
+      note: "Portkonflikt auf 19840 wurde bereinigt, Dienst danach sauber neu gestartet."
     notes:
       - "Die relevanten Identitätsdateien liegen in ~/.openclaw/workspace_hauptagent, nicht im Standardpfad."
-      - "Dieser Eintrag bildet Sarahs ILA-Hauptagenten Cheko ab."
+      - "Operatorisch ist dies Chefkoch, obwohl IDENTITY.md derzeit Cheko nennt."
+      - "Ein alter openclaw-gateway-Prozess blockierte Port 19840 und wurde bereinigt."
 
-removed_users:
   - linux_user: "user2"
-    removed_at_utc: "2026-05-03T10:31:00Z"
-    classification: "duplicate_legacy_agent"
-    backup_path: "/root/agent-cleanup-backups/user2-openclaw-20260503T102637Z.tar.gz"
-    removed_items:
-      - "Linux-User user2"
-      - "/home/user2"
-      - "openclaw-gateway@user2 service remnants"
-      - "/etc/openclaw/users/user2.env"
+    workspace:
+      path: "/home/user2/.openclaw/workspace"
+      type: "default_workspace"
+    gateway:
+      unit: "openclaw-gateway@user2"
+      active: true
+      enabled: true
+    agent:
+      name: "Franks Klaus"
+      name_source: "operator + restored session history + repo /home/user2/Franks_Klaus"
+      name_confidence: "high"
+    identity_md:
+      present: true
+      path: "/home/user2/.openclaw/workspace/IDENTITY.md"
+      status: "present_placeholder"
+      excerpt: |
+        - **Name:**
+          _(pick something you like)_
+    soul_md:
+      present: true
+      path: "/home/user2/.openclaw/workspace/SOUL.md"
+      status: "present_legacy"
+      excerpt: |
+        # SOUL.md — Bernd
+
+        _Kein Chatbot. Ein Assistent für Sebastian._
+    memory:
+      installed: true
+      memory_md_present: true
+      memory_dir_present: true
+      memory_md_path: "/home/user2/.openclaw/workspace/MEMORY.md"
+    brave:
+      browser_profile_present: false
+      openclaw_configured: false
+      assessment: "Keine Brave-Konfiguration im wiederhergestellten user2-Setup gefunden."
+    models:
+      default_model: "openai-codex/gpt-5.4"
+      default_model_source: "restored config"
+      fallback_models:
+        - "anthropic/claude-sonnet-4-6"
+      last_observed_model: "gpt-5.4"
+      last_observed_provider: "openai-codex"
+      last_observed_api: "openai-codex-responses"
+      provider_hints:
+        - "openai"
+        - "openai-codex"
+        - "anthropic"
+      note: "Der Agent wurde am 2026-05-03 aus dem user2-Backup reaktiviert."
     notes:
-      - "user2 war ein doppelter Altbestand unter der bisherigen Bezeichnung 'Bernd' auf Server 1."
-      - "Der User wurde vollständig entfernt, das Backup bleibt erhalten."
+      - "user2 war zwischenzeitlich entfernt und wurde aus /root/agent-cleanup-backups/user2-openclaw-20260503T102637Z.tar.gz wiederhergestellt."
+      - "Die Namenszuordnung Franks Klaus folgt dem Operator und der wiederhergestellten Frank-/Franks-Klaus-Historie in Sessions und Repo-Dateien."
+      - "IDENTITY.md und SOUL.md sind noch Legacy-Spuren und sollten später bereinigt werden."
