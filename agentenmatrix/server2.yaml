@@ -19,9 +19,10 @@ agents:
       active_state: "active"
       enabled: true
     agent:
-      name: "Turyia"
+      name: null
       name_source: "IDENTITY.md"
-      name_confidence: "high"
+      name_confidence: "invalidated_by_operator"
+      operator_note: "Bisheriger Name 'Turyia' geht laut Operator nicht."
     identity_md:
       present: true
       path: "/home/agent/.openclaw/workspace/IDENTITY.md"
@@ -63,7 +64,7 @@ agents:
         - "openai-codex"
     notes:
       - "Linux-Nutzername und Agentenname weichen voneinander ab."
-      - "Der inhaltlich aktive Agent auf diesem User ist Turyia."
+      - "Die bisherige Bezeichnung 'Turyia' wurde vom Operator verworfen."
 
   - linux_user: "joker"
     workspace:

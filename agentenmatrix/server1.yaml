@@ -16,9 +16,10 @@ agents:
       active: true
       enabled: true
     agent:
-      name: "Bernd"
+      name: null
       name_source: "IDENTITY.md"
-      name_confidence: "high"
+      name_confidence: "invalidated_by_operator"
+      operator_note: "Bisheriger Name 'Bernd' geht laut Operator nicht."
     identity_md:
       present: true
       path: "/home/sebastian/.openclaw/workspace_sebastian/IDENTITY.md"
@@ -57,7 +58,7 @@ agents:
       note: "Default-Modell und zuletzt beobachtetes Modell weichen voneinander ab."
     notes:
       - "Die Identität lag nicht im Standardpfad ~/.openclaw/workspace, sondern in ~/.openclaw/workspace_sebastian."
-      - "Das ist der kanonische aktive Bernd auf Server 1."
+      - "Die bisherige Bezeichnung 'Bernd' wurde vom Operator verworfen."
 
   - linux_user: "user1"
     workspace:
@@ -126,5 +127,5 @@ removed_users:
       - "openclaw-gateway@user2 service remnants"
       - "/etc/openclaw/users/user2.env"
     notes:
-      - "user2 war ein doppelter Bernd-Altbestand auf Server 1."
+      - "user2 war ein doppelter Altbestand unter der bisherigen Bezeichnung 'Bernd' auf Server 1."
       - "Der User wurde vollständig entfernt, das Backup bleibt erhalten."

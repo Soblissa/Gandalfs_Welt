@@ -9,7 +9,7 @@ Hinweis: Diese Fassung berücksichtigt `~/.openclaw/workspace` und `~/.openclaw/
 
 | Linux-Nutzer | Workspace | Agentenname | Namensquelle | Gateway | Memory | Brave-Zugang | Default-Modell | Zuletzt beobachtet | IDENTITY.md | SOUL.md |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `agent` | `~/.openclaw/workspace` | `Turyia` | `IDENTITY.md` | aktiv | ja | teilweise, Brave-Profil vorhanden, aber keine OpenClaw-Brave-Konfiguration gefunden | `openai-codex/gpt-5.4` aus `openclaw.json` | `gpt-5.4` über `openai-codex` | vorhanden | vorhanden |
+| `agent` | `~/.openclaw/workspace` | offen, bisher `Turyia` | `IDENTITY.md`, aber vom Operator verworfen | aktiv | ja | teilweise, Brave-Profil vorhanden, aber keine OpenClaw-Brave-Konfiguration gefunden | `openai-codex/gpt-5.4` aus `openclaw.json` | `gpt-5.4` über `openai-codex` | vorhanden | vorhanden |
 | `joker` | `~/.openclaw/workspace` | `joker` | `IDENTITY.md` | aktiv | teilweise, `memory/` vorhanden, kein `MEMORY.md` gefunden | ja, Brave in OpenClaw konfiguriert | `openai-codex/gpt-5.4` aus `openclaw.json` | kein aktuelles Session-Modell gefunden | vorhanden | vorhanden |
 | `nemo` | `~/.openclaw/workspace` | `nemo` | `IDENTITY.md` | zuletzt `activating`, enabled | nein | nein | unbekannt | kein aktuelles Session-Modell gefunden | vorhanden | vorhanden |
 
@@ -25,8 +25,8 @@ Hinweis: Diese Fassung berücksichtigt `~/.openclaw/workspace` und `~/.openclaw/
 - Linux-Nutzer: `agent`
 - verwendeter Workspace: `/home/agent/.openclaw/workspace`
 - Gateway: `openclaw-gateway@agent`, aktiv und enabled
-- Agentenname: `Turyia`
-- Namensquelle: `IDENTITY.md`
+- Agentenname: vorläufig offen, `IDENTITY.md` enthält derzeit `Turyia`
+- Namensquelle: `IDENTITY.md`, aber die Bezeichnung wurde vom Operator verworfen
 - `IDENTITY.md`: vorhanden und ausgefüllt
 - `SOUL.md`: vorhanden und ausgefüllt
 - Memory: installiert, `MEMORY.md` und `memory/` vorhanden
@@ -35,7 +35,7 @@ Hinweis: Diese Fassung berücksichtigt `~/.openclaw/workspace` und `~/.openclaw/
   - Default aus `openclaw.json`: `openai-codex/gpt-5.4`
   - zuletzt beobachtetes Modell in Sessions: `gpt-5.4` über `openai-codex`
   - Auth-/Provider-Hinweis: `openai-codex`
-- Hinweis: Linux-Nutzername und Agentenname weichen voneinander ab, der aktive Inhalt ist klar `Turyia`
+- Hinweis: Linux-Nutzername und bisherige Bezeichnung wichen voneinander ab; der Name ist jetzt bewusst als offen markiert
 
 #### `agent` IDENTITY.md (Auszug)
 ```md

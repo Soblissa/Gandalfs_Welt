@@ -116,9 +116,10 @@ agents:
       active_state: "active"
       enabled: true
     agent:
-      name: "Turyia"
+      name: null
       name_source: "IDENTITY.md"
-      name_confidence: "high"
+      name_confidence: "invalidated_by_operator"
+      operator_note: "Bisheriger Name 'Turyia' geht laut Operator nicht."
     identity_md:
       present: true
       path: "/home/turyia/.openclaw/workspace/IDENTITY.md"

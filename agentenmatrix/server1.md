@@ -9,14 +9,14 @@ Hinweis: Diese Fassung berücksichtigt nicht nur `~/.openclaw/workspace`, sonder
 
 | Linux-Nutzer | Workspace | Agentenname | Namensquelle | Gateway | Memory | Brave-Zugang | Default-Modell | Zuletzt beobachtet | IDENTITY.md | SOUL.md |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `sebastian` | `~/.openclaw/workspace_sebastian` | `Bernd` | `IDENTITY.md` | aktiv | ja | teilweise, Brave-Profil vorhanden, aber keine OpenClaw-Brave-Konfiguration gefunden | `gpt-5.1-codex` | `claude-sonnet-4-6` über Anthropic | vorhanden | vorhanden |
+| `sebastian` | `~/.openclaw/workspace_sebastian` | offen, bisher `Bernd` | `IDENTITY.md`, aber vom Operator verworfen | aktiv | ja | teilweise, Brave-Profil vorhanden, aber keine OpenClaw-Brave-Konfiguration gefunden | `gpt-5.1-codex` | `claude-sonnet-4-6` über Anthropic | vorhanden | vorhanden |
 | `user1` | `~/.openclaw/workspace_hauptagent` | `Cheko (ILA-Hauptagent)` | `IDENTITY.md` | aktiv | ja | teilweise, Brave-Profil vorhanden, aber keine aktuelle OpenClaw-Brave-Konfiguration gefunden | `gpt-5.4` | `claude-sonnet-4-6` über Anthropic | vorhanden | vorhanden |
 
 ## Entfernte Altbestände
 
 | Linux-Nutzer | Status | Backup | Hinweise |
 |---|---|---|---|
-| `user2` | vollständig entfernt | `/root/agent-cleanup-backups/user2-openclaw-20260503T102637Z.tar.gz` | ehemaliger doppelter `Bernd`, Linux-User und Home gelöscht |
+| `user2` | vollständig entfernt | `/root/agent-cleanup-backups/user2-openclaw-20260503T102637Z.tar.gz` | ehemaliger doppelter Altbestand, bisher `Bernd`, Linux-User und Home gelöscht |
 
 ## Details
 
@@ -24,8 +24,8 @@ Hinweis: Diese Fassung berücksichtigt nicht nur `~/.openclaw/workspace`, sonder
 - Linux-Nutzer: `sebastian`
 - verwendeter Workspace: `/home/sebastian/.openclaw/workspace_sebastian`
 - Gateway: `openclaw-gateway@sebastian`, aktiv und enabled
-- Agentenname: `Bernd`
-- Namensquelle: `IDENTITY.md`
+- Agentenname: vorläufig offen, `IDENTITY.md` enthält derzeit `Bernd`
+- Namensquelle: `IDENTITY.md`, aber die Bezeichnung wurde vom Operator verworfen
 - `IDENTITY.md`: vorhanden und ausgefüllt
 - `SOUL.md`: vorhanden
 - Memory: installiert, `MEMORY.md` vorhanden
@@ -35,7 +35,7 @@ Hinweis: Diese Fassung berücksichtigt nicht nur `~/.openclaw/workspace`, sonder
   - zuletzt beobachtetes Modell in Sessions: `claude-sonnet-4-6` über Anthropic
   - Auth-/Provider-Hinweis: `openai`, `openai-codex`
 - Hinweis: Default-Modell und zuletzt beobachtetes Modell weichen voneinander ab
-- Einordnung: `sebastian` ist der kanonische aktive `Bernd` auf Server 1
+- Einordnung: `sebastian` bleibt der aktive User, die bisherige Bezeichnung `Bernd` gilt aber nicht mehr als kanonisch
 
 #### `sebastian` IDENTITY.md (Auszug)
 ```md
@@ -84,4 +84,4 @@ Hinweis: Diese Fassung berücksichtigt nicht nur `~/.openclaw/workspace`, sonder
   - `/etc/openclaw/users/user2.env`
 - Backup bleibt erhalten unter:
   - `/root/agent-cleanup-backups/user2-openclaw-20260503T102637Z.tar.gz`
-- Einordnung: `user2` war ein doppelter `Bernd`-Altbestand und wurde endgültig entfernt
+- Einordnung: `user2` war ein doppelter Altbestand unter der bisherigen Bezeichnung `Bernd` und wurde endgültig entfernt
