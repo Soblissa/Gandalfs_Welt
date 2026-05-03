@@ -1,4 +1,4 @@
-generated_at_utc: "2026-05-03T10:20:00Z"
+generated_at_utc: "2026-05-03T10:27:00Z"
 server:
   alias: "sarahserver1"
   scope: "Server 1"
@@ -57,6 +57,7 @@ agents:
       note: "Default-Modell und zuletzt beobachtetes Modell weichen voneinander ab."
     notes:
       - "Die Identität lag nicht im Standardpfad ~/.openclaw/workspace, sondern in ~/.openclaw/workspace_sebastian."
+      - "Das ist der kanonische aktive Bernd auf Server 1."
 
   - linux_user: "user1"
     workspace:
@@ -120,12 +121,13 @@ agents:
       type: "standard"
     gateway:
       unit: "openclaw-gateway@user2"
-      active: true
-      enabled: true
+      active: false
+      enabled: false
     agent:
       name: "Bernd"
       name_source: "SOUL.md"
       name_confidence: "high"
+      status: "duplicate_inactive"
     identity_md:
       present: true
       path: "/home/user2/.openclaw/workspace/IDENTITY.md"
@@ -155,7 +157,7 @@ agents:
       assessment: "Brave-Profil vorhanden, aber keine Brave-Konfiguration in aktueller OpenClaw-Konfiguration gefunden."
     models:
       default_model: "gpt-5.4"
-      default_model_source: "openclaw status"
+      default_model_source: "last_known_before_disable"
       last_observed_model: null
       last_observed_provider: null
       last_observed_api: null
@@ -163,7 +165,10 @@ agents:
         - "openai"
         - "openai-codex"
       note: "Kein aktueller Assistant-Modelltreffer in den zuletzt geprüften Sessions gefunden."
+    cleanup:
+      action: "disable_service_keep_backup"
+      backup_path: "/root/agent-cleanup-backups/user2-openclaw-20260503T102637Z.tar.gz"
     notes:
-      - "Bernd ist über SOUL.md klar dem Sebastian-Kontext zugeordnet."
+      - "Bernd ist über SOUL.md klar dem Sebastian-Kontext zugeordnet, war hier aber ein Duplikat/Altbestand."
       - "IDENTITY.md ist vorhanden, aber noch nicht individualisiert."
-      - "Auf Server 1 existiert zusätzlich ein weiterer Bernd-Hinweis unter Linux-User sebastian. Das sollte separat geklärt werden."
+      - "openclaw-gateway@user2 wurde deaktiviert, der Datenbestand bleibt als Backup erhalten."

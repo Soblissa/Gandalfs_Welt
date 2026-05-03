@@ -11,7 +11,7 @@ Hinweis: Diese Fassung berücksichtigt nicht nur `~/.openclaw/workspace`, sonder
 |---|---|---|---|---|---|---|---|---|---|---|
 | `sebastian` | `~/.openclaw/workspace_sebastian` | `Bernd` | `IDENTITY.md` | aktiv | ja | teilweise, Brave-Profil vorhanden, aber keine OpenClaw-Brave-Konfiguration gefunden | `gpt-5.1-codex` | `claude-sonnet-4-6` über Anthropic | vorhanden | vorhanden |
 | `user1` | `~/.openclaw/workspace_hauptagent` | `Cheko (ILA-Hauptagent)` | `IDENTITY.md` | aktiv | ja | teilweise, Brave-Profil vorhanden, aber keine aktuelle OpenClaw-Brave-Konfiguration gefunden | `gpt-5.4` | `claude-sonnet-4-6` über Anthropic | vorhanden | vorhanden |
-| `user2` | `~/.openclaw/workspace` | `Bernd` | `SOUL.md` | aktiv | ja | teilweise, Brave-Profil vorhanden, aber keine OpenClaw-Brave-Konfiguration gefunden | `gpt-5.4` | kein aktueller Assistant-Modelltreffer gefunden | vorhanden, aber noch Template | vorhanden |
+| `user2` | `~/.openclaw/workspace` | `Bernd (Duplikat, deaktiviert)` | `SOUL.md` | inaktiv | ja | teilweise, Brave-Profil vorhanden, aber keine OpenClaw-Brave-Konfiguration gefunden | `gpt-5.4` | kein aktueller Assistant-Modelltreffer gefunden | vorhanden, aber noch Template | vorhanden |
 
 ## Details
 
@@ -30,6 +30,7 @@ Hinweis: Diese Fassung berücksichtigt nicht nur `~/.openclaw/workspace`, sonder
   - zuletzt beobachtetes Modell in Sessions: `claude-sonnet-4-6` über Anthropic
   - Auth-/Provider-Hinweis: `openai`, `openai-codex`
 - Hinweis: Default-Modell und zuletzt beobachtetes Modell weichen voneinander ab
+- Einordnung: `sebastian` ist der kanonische aktive `Bernd` auf Server 1
 
 #### `sebastian` IDENTITY.md (Auszug)
 ```md
@@ -71,18 +72,20 @@ Hinweis: Diese Fassung berücksichtigt nicht nur `~/.openclaw/workspace`, sonder
 ### `user2`
 - Linux-Nutzer: `user2`
 - verwendeter Workspace: `/home/user2/.openclaw/workspace`
-- Gateway: `openclaw-gateway@user2`, aktiv und enabled
-- Agentenname: `Bernd`
+- Gateway: `openclaw-gateway@user2`, deaktiviert und inaktiv
+- Agentenname: `Bernd (Duplikat, Altbestand)`
 - Namensquelle: `SOUL.md`
 - `IDENTITY.md`: vorhanden, aber noch das unveränderte Standard-Template, ohne ausgefüllte Identität
 - `SOUL.md`: vorhanden
 - Memory: installiert, `MEMORY.md` und `memory/` vorhanden
 - Brave: Brave-Browser-Profil vorhanden, aber in aktueller OpenClaw-Konfiguration kein Brave-Zugang gefunden
 - Modelle:
-  - Default laut `openclaw status`: `gpt-5.4`
+  - letzter bekannter Default vor Deaktivierung: `gpt-5.4`
   - zuletzt beobachtetes Modell in Sessions: aktuell kein belastbarer Assistant-Modelltreffer gefunden
   - Auth-/Provider-Hinweis: `openai`, `openai-codex`
-- Auffälligkeit: Auf Server 1 gibt es damit aktuell zwei Bernd-Hinweise, einmal bei `sebastian` und einmal bei `user2`. Das sollte gezielt entwirrt und bereinigt werden.
+- Bereinigung: `openclaw-gateway@user2` wurde deaktiviert, um den doppelten `Bernd` zu entfernen.
+- Backup: `/root/agent-cleanup-backups/user2-openclaw-20260503T102637Z.tar.gz`
+- Einordnung: `user2` bleibt vorerst als Daten-Backup erhalten, ist aber nicht mehr der aktive Bernd.
 
 #### `user2` SOUL.md (Auszug)
 ```md
