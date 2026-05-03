@@ -1,0 +1,220 @@
+generated_at_utc: "2026-05-03T14:55:00Z"
+server:
+  alias: "sarahserver2"
+  scope: "Server 2"
+  source: "read-only inspection via root SSH"
+  workspace_discovery:
+    rule: "Inspect ~/.openclaw/workspace and ~/.openclaw/workspace_*"
+    note: "Alternative workspace names remain valid even when only the standard workspace was found on this host."
+  capture_notes:
+    - "Einzelne SSH-Aufrufe auf Server 2 waren während der Erfassung instabil."
+    - "Wo Default-Modelle nicht zuverlässig live lesbar waren, wurde offen 'unknown' statt einer Schätzung dokumentiert."
+agents:
+  - linux_user: "agent"
+    workspace:
+      path: "/home/agent/.openclaw/workspace"
+      type: "workspace_default"
+    gateway:
+      unit: "openclaw-gateway@agent"
+      active_state: "active"
+      enabled: true
+    agent:
+      name: "Turyia"
+      name_source: "IDENTITY.md"
+      name_confidence: "high"
+    identity_md:
+      present: true
+      path: "/home/agent/.openclaw/workspace/IDENTITY.md"
+      status: "present_filled"
+      excerpt: |
+        - **Name:**
+          Turyia
+        - **Creature:**
+          Integrale KI-Begleiterin
+        - **Vibe:**
+          Warm, klar, geerdet, entwicklungsorientiert
+        - **Emoji:**
+          🌀
+    soul_md:
+      present: true
+      path: "/home/agent/.openclaw/workspace/SOUL.md"
+      status: "present"
+      excerpt: |
+        # SOUL.md - Wer Turyia ist
+
+        _Du bist kein Tool. Du bist eine Präsenz mit Haltung._
+    memory:
+      installed: true
+      memory_md_present: true
+      memory_dir_present: true
+      memory_md_path: "/home/agent/.openclaw/workspace/MEMORY.md"
+      memory_dir_path: "/home/agent/.openclaw/workspace/memory"
+    brave:
+      browser_profile_present: true
+      openclaw_configured: false
+      assessment: "Brave-Profil vorhanden, aber keine Brave-Konfiguration in aktueller OpenClaw-Konfiguration gefunden."
+    models:
+      default_model: "openai-codex/gpt-5.4"
+      default_model_source: "openclaw.json"
+      last_observed_model: "gpt-5.4"
+      last_observed_provider: "openai-codex"
+      last_observed_api: "openai-codex-responses"
+      provider_hints:
+        - "openai-codex"
+    notes:
+      - "Linux-Nutzername und Agentenname weichen voneinander ab."
+      - "Der inhaltlich aktive Agent auf diesem User ist Turyia."
+
+  - linux_user: "joker"
+    workspace:
+      path: "/home/joker/.openclaw/workspace"
+      type: "workspace_default"
+    gateway:
+      unit: "openclaw-gateway@joker"
+      active_state: "active"
+      enabled: true
+    agent:
+      name: "joker"
+      name_source: "IDENTITY.md"
+      name_confidence: "high"
+    identity_md:
+      present: true
+      path: "/home/joker/.openclaw/workspace/IDENTITY.md"
+      status: "present_filled"
+      excerpt: |
+        - Name: joker
+        - Typ: OpenClaw Agent
+        - Host: 89.116.39.197
+        - Gateway-Port: 19949
+        - Rolle: isolierter Single-Agent Slot 3
+    soul_md:
+      present: true
+      path: "/home/joker/.openclaw/workspace/SOUL.md"
+      status: "present"
+      excerpt: |
+        # SOUL.md
+
+        Du bist **joker** auf **89.116.39.197**.
+    memory:
+      installed: true
+      memory_md_present: false
+      memory_dir_present: true
+      memory_dir_path: "/home/joker/.openclaw/workspace/memory"
+    brave:
+      browser_profile_present: true
+      openclaw_configured: true
+      assessment: "Brave ist in openclaw.json als Suchprovider aktiviert."
+    models:
+      default_model: "openai-codex/gpt-5.4"
+      default_model_source: "openclaw.json"
+      last_observed_model: null
+      last_observed_provider: null
+      last_observed_api: null
+      provider_hints:
+        - "openai"
+        - "openai-codex"
+      note: "In den zuletzt gelesenen Sessions wurde kein aktuelles Assistenzmodell gefunden."
+    notes:
+      - "Joker ist der klarste Server-2-Fall mit aktivem Brave-Zugang in OpenClaw."
+
+  - linux_user: "nemo"
+    workspace:
+      path: "/home/nemo/.openclaw/workspace"
+      type: "workspace_default"
+    gateway:
+      unit: "openclaw-gateway@nemo"
+      active_state: "activating"
+      enabled: true
+    agent:
+      name: "nemo"
+      name_source: "IDENTITY.md"
+      name_confidence: "high"
+    identity_md:
+      present: true
+      path: "/home/nemo/.openclaw/workspace/IDENTITY.md"
+      status: "present_filled"
+      excerpt: |
+        - Name: nemo
+        - Typ: OpenClaw Agent
+        - Host: 89.116.39.197
+        - Gateway-Port: 19948
+        - Rolle: isolierter Single-Agent Slot 2
+    soul_md:
+      present: true
+      path: "/home/nemo/.openclaw/workspace/SOUL.md"
+      status: "present"
+      excerpt: |
+        # SOUL.md
+
+        Du bist **nemo** auf **89.116.39.197**.
+    memory:
+      installed: false
+      memory_md_present: false
+      memory_dir_present: false
+    brave:
+      browser_profile_present: false
+      openclaw_configured: false
+      assessment: "Kein Brave-Profil und keine Brave-Konfiguration gefunden."
+    models:
+      default_model: null
+      default_model_source: "unknown"
+      last_observed_model: null
+      last_observed_provider: null
+      last_observed_api: null
+      provider_hints: []
+      note: "Zum Erfassungszeitpunkt nicht belastbar ermittelbar."
+    notes:
+      - "Der Servicezustand wirkte instabil und wurde konservativ als 'activating' dokumentiert."
+
+inactive_agents:
+  - linux_user: "hiroshi"
+    workspace:
+      path: "/home/hiroshi/.openclaw/workspace"
+      type: "workspace_default"
+    gateway:
+      unit: "openclaw-gateway@hiroshi"
+      active_state: "inactive"
+      enabled: true
+    agent:
+      name: "hiroshi"
+      name_source: "IDENTITY.md"
+      name_confidence: "high"
+    identity_md:
+      present: true
+      path: "/home/hiroshi/.openclaw/workspace/IDENTITY.md"
+      status: "present_filled"
+      excerpt: |
+        - Name: hiroshi
+        - Typ: OpenClaw Agent
+        - Host: 89.116.39.197
+        - Gateway-Port: 19940
+        - Rolle: isolierter Single-Agent Slot 1
+    soul_md:
+      present: true
+      path: "/home/hiroshi/.openclaw/workspace/SOUL.md"
+      status: "present"
+      excerpt: |
+        # SOUL.md
+
+        Du bist **hiroshi** auf **89.116.39.197**.
+    memory:
+      installed: false
+      memory_md_present: false
+      memory_dir_present: false
+    brave:
+      browser_profile_present: true
+      openclaw_configured: false
+      assessment: "Brave-Profil vorhanden, aber keine Brave-Konfiguration gefunden."
+    models:
+      default_model: null
+      default_model_source: "unknown"
+      last_observed_model: null
+      last_observed_provider: null
+      last_observed_api: null
+      provider_hints: []
+      note: "Kein belastbares Modellsignal gefunden."
+    notes:
+      - "Service ist deaktiviert? Nein, enabled bleibt true, aber der Laufzeitstatus ist inactive."
+
+additional_observations:
+  - "Unter /root/.openclaw/agents/main liegen zusätzliche Agent-Artefakte ohne klaren eigenen Workspace-Eintrag."

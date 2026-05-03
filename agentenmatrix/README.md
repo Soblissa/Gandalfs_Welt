@@ -4,14 +4,14 @@ Zentrale, erweiterbare Übersicht über Agenten, technische Nutzer und Basisfäh
 
 ## Struktur
 - `server1.md`: menschenlesbare Übersicht für Server 1
-- `server1.yaml`: strukturierte Datenquelle für spätere Erweiterung und Automatisierung
+- `server1.yaml`: strukturierte Datenquelle für Server 1
+- `server2.md`: menschenlesbare Übersicht für Server 2
+- `server2.yaml`: strukturierte Datenquelle für Server 2
+- `server3.md`: menschenlesbare Übersicht für Server 3
+- `server3.yaml`: strukturierte Datenquelle für Server 3
 
 ## Erweiterung
-Pro Server weitere Dateien nach demselben Muster anlegen:
-- `server2.md`
-- `server2.yaml`
-- `server3.md`
-- `server3.yaml`
+Weitere Server nach demselben Muster anlegen.
 
 ## Erfassungsregel für Workspace-Dateien
 Nicht nur `~/.openclaw/workspace` prüfen.

@@ -1,0 +1,159 @@
+generated_at_utc: "2026-05-03T14:56:00Z"
+server:
+  alias: "sarahserver3"
+  scope: "Server 3"
+  source: "read-only inspection via root SSH"
+  workspace_discovery:
+    rule: "Inspect ~/.openclaw/workspace and ~/.openclaw/workspace_*"
+    note: "Auf diesem Host wurden nur Standard-Workspaces gefunden."
+agents:
+  - linux_user: "gandalf"
+    workspace:
+      path: "/home/gandalf/.openclaw/workspace"
+      type: "workspace_default"
+    gateway:
+      unit: "openclaw-gateway@gandalf"
+      active_state: "active"
+      enabled: true
+    agent:
+      name: "gandalf"
+      name_source: "IDENTITY.md"
+      name_confidence: "high"
+    identity_md:
+      present: true
+      path: "/home/gandalf/.openclaw/workspace/IDENTITY.md"
+      status: "present_filled"
+      excerpt: |
+        - Name: gandalf
+        - Typ: OpenClaw Agent
+        - Host: 187.124.191.206
+        - Gateway-Port: 19941
+        - Rolle: isolierter Multi-Agent Slot 3
+    soul_md:
+      present: true
+      path: "/home/gandalf/.openclaw/workspace/SOUL.md"
+      status: "present"
+      excerpt: |
+        # SOUL.md
+
+        Du bist **gandalf** auf **187.124.191.206**.
+    memory:
+      installed: true
+      memory_md_present: true
+      memory_dir_present: true
+      memory_md_path: "/home/gandalf/.openclaw/workspace/MEMORY.md"
+      memory_dir_path: "/home/gandalf/.openclaw/workspace/memory"
+    brave:
+      browser_profile_present: false
+      openclaw_configured: true
+      assessment: "OpenClaw-Konfiguration enthält Brave-Spuren, lokales Brave-Profil wurde nicht gefunden."
+    models:
+      default_model: "openai/gpt-5.4"
+      default_model_source: "openclaw.json"
+      last_observed_model: "gpt-5.4"
+      last_observed_provider: "openai"
+      last_observed_api: "openai-responses"
+      provider_hints:
+        - "openai"
+        - "openai-codex"
+
+  - linux_user: "rocky"
+    workspace:
+      path: "/home/rocky/.openclaw/workspace"
+      type: "workspace_default"
+    gateway:
+      unit: "openclaw-gateway@rocky"
+      active_state: "active"
+      enabled: true
+    agent:
+      name: "rocky"
+      name_source: "IDENTITY.md"
+      name_confidence: "high"
+    identity_md:
+      present: true
+      path: "/home/rocky/.openclaw/workspace/IDENTITY.md"
+      status: "present_filled"
+      excerpt: |
+        - Name: rocky
+        - Typ: OpenClaw Agent
+        - Host: 187.124.191.206
+        - Gateway-Port: 18990
+        - Rolle: isolierter Multi-Agent Slot 1
+    soul_md:
+      present: true
+      path: "/home/rocky/.openclaw/workspace/SOUL.md"
+      status: "present"
+      excerpt: |
+        # SOUL.md
+
+        Du bist **rocky** auf **187.124.191.206**.
+    memory:
+      installed: true
+      memory_md_present: false
+      memory_dir_present: true
+      memory_dir_path: "/home/rocky/.openclaw/workspace/memory"
+    brave:
+      browser_profile_present: false
+      openclaw_configured: true
+      assessment: "Brave ist in openclaw.json aktiviert, ein lokales Brave-Profil wurde nicht gefunden."
+    models:
+      default_model: "openai/gpt-5.5"
+      default_model_source: "openclaw.json"
+      last_observed_model: "gpt-5.4"
+      last_observed_provider: "openai"
+      last_observed_api: "openai-responses"
+      provider_hints:
+        - "openai"
+        - "openai-codex"
+      note: "Default-Modell und zuletzt beobachtetes Modell weichen voneinander ab."
+
+  - linux_user: "turyia"
+    workspace:
+      path: "/home/turyia/.openclaw/workspace"
+      type: "workspace_default"
+    gateway:
+      unit: "openclaw-gateway@turyia"
+      active_state: "active"
+      enabled: true
+    agent:
+      name: "Turyia"
+      name_source: "IDENTITY.md"
+      name_confidence: "high"
+    identity_md:
+      present: true
+      path: "/home/turyia/.openclaw/workspace/IDENTITY.md"
+      status: "present_filled"
+      excerpt: |
+        - **Name:**
+          Turyia
+        - **Creature:**
+          Integrale KI-Begleiterin
+        - **Vibe:**
+          Warm, klar, geerdet, entwicklungsorientiert
+        - **Emoji:**
+          🌀
+    soul_md:
+      present: true
+      path: "/home/turyia/.openclaw/workspace/SOUL.md"
+      status: "present"
+      excerpt: |
+        # SOUL.md - Wer Turyia ist
+
+        _Du bist kein Tool. Du bist eine Präsenz mit Haltung._
+    memory:
+      installed: false
+      memory_md_present: false
+      memory_dir_present: false
+    brave:
+      browser_profile_present: false
+      openclaw_configured: true
+      assessment: "OpenClaw-Konfiguration enthält Brave-Spuren, ein belastbarer aktiver Brave-Zugang ist aber nicht klar."
+    models:
+      default_model: "openai-codex/gpt-5.5"
+      default_model_source: "openclaw.json"
+      last_observed_model: null
+      last_observed_provider: null
+      last_observed_api: null
+      provider_hints:
+        - "openai-codex"
+      note: "In den gelesenen Sessions wurde kein aktuelles Assistenzmodell gefunden."
