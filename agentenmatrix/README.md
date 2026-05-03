@@ -1,6 +1,6 @@
-# Agentenmatrix
+# Agentenmatrix, Detailquellen
 
-Zentrale, erweiterbare Übersicht über Agenten, technische Nutzer und Basisfähigkeiten.
+Diese Dateien sind die Detailquellen für die zentrale Gesamtübersicht in `../Agentenmatrix.md`.
 
 ## Struktur
 - `server1.md`: menschenlesbare Übersicht für Server 1
