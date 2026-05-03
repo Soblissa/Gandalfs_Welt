@@ -5,13 +5,18 @@ Host-Alias: `sarahserver1`
 
 Hinweis: Diese Fassung berücksichtigt nicht nur `~/.openclaw/workspace`, sondern auch alternative Workspace-Pfade wie `~/.openclaw/workspace_hauptagent` und `~/.openclaw/workspace_sebastian`.
 
-## Kurzmatrix
+## Aktive Agenten
 
 | Linux-Nutzer | Workspace | Agentenname | Namensquelle | Gateway | Memory | Brave-Zugang | Default-Modell | Zuletzt beobachtet | IDENTITY.md | SOUL.md |
 |---|---|---|---|---|---|---|---|---|---|---|
 | `sebastian` | `~/.openclaw/workspace_sebastian` | `Bernd` | `IDENTITY.md` | aktiv | ja | teilweise, Brave-Profil vorhanden, aber keine OpenClaw-Brave-Konfiguration gefunden | `gpt-5.1-codex` | `claude-sonnet-4-6` über Anthropic | vorhanden | vorhanden |
 | `user1` | `~/.openclaw/workspace_hauptagent` | `Cheko (ILA-Hauptagent)` | `IDENTITY.md` | aktiv | ja | teilweise, Brave-Profil vorhanden, aber keine aktuelle OpenClaw-Brave-Konfiguration gefunden | `gpt-5.4` | `claude-sonnet-4-6` über Anthropic | vorhanden | vorhanden |
-| `user2` | `~/.openclaw/workspace` | `Bernd (Duplikat, deaktiviert)` | `SOUL.md` | inaktiv | ja | teilweise, Brave-Profil vorhanden, aber keine OpenClaw-Brave-Konfiguration gefunden | `gpt-5.4` | kein aktueller Assistant-Modelltreffer gefunden | vorhanden, aber noch Template | vorhanden |
+
+## Inaktive oder archivierte Altbestände
+
+| Linux-Nutzer | Workspace | Einordnung | Gateway | Memory | Hinweise |
+|---|---|---|---|---|---|
+| `user2` | `~/.openclaw/workspace` | ehemaliger doppelter `Bernd`, jetzt deaktiviert | inaktiv | ja | Datenbestand als Backup erhalten, nicht mehr als aktiver Agent werten |
 
 ## Details
 
@@ -73,10 +78,9 @@ Hinweis: Diese Fassung berücksichtigt nicht nur `~/.openclaw/workspace`, sonder
 - Linux-Nutzer: `user2`
 - verwendeter Workspace: `/home/user2/.openclaw/workspace`
 - Gateway: `openclaw-gateway@user2`, deaktiviert und inaktiv
-- Agentenname: `Bernd (Duplikat, Altbestand)`
-- Namensquelle: `SOUL.md`
+- Einordnung: ehemaliger doppelter `Bernd`, jetzt nur noch Altbestand
 - `IDENTITY.md`: vorhanden, aber noch das unveränderte Standard-Template, ohne ausgefüllte Identität
-- `SOUL.md`: vorhanden
+- `SOUL.md`: vorhanden und nennt `Bernd`, das ist der verbliebene Inkonsistenzrest im Datenbestand
 - Memory: installiert, `MEMORY.md` und `memory/` vorhanden
 - Brave: Brave-Browser-Profil vorhanden, aber in aktueller OpenClaw-Konfiguration kein Brave-Zugang gefunden
 - Modelle:
