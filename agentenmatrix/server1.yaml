@@ -1,0 +1,103 @@
+generated_at_utc: "2026-05-03T09:52:00Z"
+server:
+  alias: "sarahserver1"
+  scope: "Server 1"
+  source: "read-only inspection via root SSH"
+agents:
+  - linux_user: "sebastian"
+    gateway:
+      unit: "openclaw-gateway@sebastian"
+      active: true
+      enabled: true
+    agent:
+      name: null
+      name_source: null
+      name_confidence: "none"
+    identity_md:
+      present: false
+      path: "/home/sebastian/.openclaw/workspace/IDENTITY.md"
+      status: "missing"
+    soul_md:
+      present: false
+      path: "/home/sebastian/.openclaw/workspace/SOUL.md"
+      status: "missing"
+      excerpt: null
+    memory:
+      installed: false
+      memory_md_present: false
+      memory_dir_present: false
+    brave:
+      browser_profile_present: true
+      openclaw_configured: false
+      assessment: "Brave-Profil vorhanden, aber keine Brave-Konfiguration in aktueller OpenClaw-Konfiguration gefunden."
+    notes:
+      - "Agentenname nicht über IDENTITY.md oder SOUL.md dokumentiert."
+
+  - linux_user: "user1"
+    gateway:
+      unit: "openclaw-gateway@user1"
+      active: true
+      enabled: true
+    agent:
+      name: null
+      name_source: null
+      name_confidence: "none"
+    identity_md:
+      present: false
+      path: "/home/user1/.openclaw/workspace/IDENTITY.md"
+      status: "missing"
+    soul_md:
+      present: false
+      path: "/home/user1/.openclaw/workspace/SOUL.md"
+      status: "missing"
+      excerpt: null
+    memory:
+      installed: false
+      memory_md_present: false
+      memory_dir_present: false
+    brave:
+      browser_profile_present: true
+      openclaw_configured: false
+      assessment: "Brave-Profil vorhanden, aber keine aktuelle Brave-Konfiguration in OpenClaw gefunden."
+      legacy_reference_present: true
+      legacy_reference_note: "Eine alte Datei openclaw.json.verbastelt enthält eine Brave-Referenz, das ist aber kein belastbarer Nachweis für aktuelle Funktion."
+    notes:
+      - "Agentenname nicht über IDENTITY.md oder SOUL.md dokumentiert."
+
+  - linux_user: "user2"
+    gateway:
+      unit: "openclaw-gateway@user2"
+      active: true
+      enabled: true
+    agent:
+      name: "Bernd"
+      name_source: "SOUL.md"
+      name_confidence: "high"
+    identity_md:
+      present: true
+      path: "/home/user2/.openclaw/workspace/IDENTITY.md"
+      status: "present_but_unfilled_template"
+      note: "Das Standard-Template ist vorhanden, aber nicht ausgefüllt."
+    soul_md:
+      present: true
+      path: "/home/user2/.openclaw/workspace/SOUL.md"
+      status: "present"
+      excerpt: |
+        # SOUL.md — Bernd
+
+        _Kein Chatbot. Ein Assistent für Sebastian._
+
+        ## Wer ich bin
+        Ich bin Bernd — Sebastians KI-Agent im ILA-Projekt.
+        Ich helfe Sebastian bei fachlichen Aufgaben, Dokumentation und Kommunikation mit Cheko (Sarahs ILA-Koordinator).
+    memory:
+      installed: true
+      memory_md_present: true
+      memory_dir_present: true
+    brave:
+      browser_profile_present: true
+      openclaw_configured: false
+      assessment: "Brave-Profil vorhanden, aber keine Brave-Konfiguration in aktueller OpenClaw-Konfiguration gefunden."
+    notes:
+      - "Bernd ist über SOUL.md klar dem Sebastian-Kontext zugeordnet."
+      - "IDENTITY.md ist vorhanden, aber noch nicht individualisiert."
