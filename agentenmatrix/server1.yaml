@@ -1,4 +1,4 @@
-generated_at_utc: "2026-05-03T10:27:00Z"
+generated_at_utc: "2026-05-03T10:31:00Z"
 server:
   alias: "sarahserver1"
   scope: "Server 1"
@@ -115,60 +115,16 @@ agents:
       - "Die relevanten Identitätsdateien liegen in ~/.openclaw/workspace_hauptagent, nicht im Standardpfad."
       - "Dieser Eintrag bildet Sarahs ILA-Hauptagenten Cheko ab."
 
+removed_users:
   - linux_user: "user2"
-    workspace:
-      path: "/home/user2/.openclaw/workspace"
-      type: "standard"
-    gateway:
-      unit: "openclaw-gateway@user2"
-      active: false
-      enabled: false
-    agent:
-      name: "Bernd"
-      name_source: "SOUL.md"
-      name_confidence: "high"
-      status: "duplicate_inactive"
-    identity_md:
-      present: true
-      path: "/home/user2/.openclaw/workspace/IDENTITY.md"
-      status: "present_but_unfilled_template"
-      note: "Das Standard-Template ist vorhanden, aber nicht ausgefüllt."
-    soul_md:
-      present: true
-      path: "/home/user2/.openclaw/workspace/SOUL.md"
-      status: "present"
-      excerpt: |
-        # SOUL.md — Bernd
-
-        _Kein Chatbot. Ein Assistent für Sebastian._
-
-        ## Wer ich bin
-        Ich bin Bernd — Sebastians KI-Agent im ILA-Projekt.
-        Ich helfe Sebastian bei fachlichen Aufgaben, Dokumentation und Kommunikation mit Cheko (Sarahs ILA-Koordinator).
-    memory:
-      installed: true
-      memory_md_present: true
-      memory_dir_present: true
-      memory_md_path: "/home/user2/.openclaw/workspace/MEMORY.md"
-      memory_dir_path: "/home/user2/.openclaw/workspace/memory"
-    brave:
-      browser_profile_present: true
-      openclaw_configured: false
-      assessment: "Brave-Profil vorhanden, aber keine Brave-Konfiguration in aktueller OpenClaw-Konfiguration gefunden."
-    models:
-      default_model: "gpt-5.4"
-      default_model_source: "last_known_before_disable"
-      last_observed_model: null
-      last_observed_provider: null
-      last_observed_api: null
-      provider_hints:
-        - "openai"
-        - "openai-codex"
-      note: "Kein aktueller Assistant-Modelltreffer in den zuletzt geprüften Sessions gefunden."
-    cleanup:
-      action: "disable_service_keep_backup"
-      backup_path: "/root/agent-cleanup-backups/user2-openclaw-20260503T102637Z.tar.gz"
+    removed_at_utc: "2026-05-03T10:31:00Z"
+    classification: "duplicate_legacy_agent"
+    backup_path: "/root/agent-cleanup-backups/user2-openclaw-20260503T102637Z.tar.gz"
+    removed_items:
+      - "Linux-User user2"
+      - "/home/user2"
+      - "openclaw-gateway@user2 service remnants"
+      - "/etc/openclaw/users/user2.env"
     notes:
-      - "Bernd ist über SOUL.md klar dem Sebastian-Kontext zugeordnet, war hier aber ein Duplikat/Altbestand."
-      - "IDENTITY.md ist vorhanden, aber noch nicht individualisiert."
-      - "openclaw-gateway@user2 wurde deaktiviert, der Datenbestand bleibt als Backup erhalten."
+      - "user2 war ein doppelter Bernd-Altbestand auf Server 1."
+      - "Der User wurde vollständig entfernt, das Backup bleibt erhalten."
