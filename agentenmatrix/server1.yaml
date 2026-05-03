@@ -1,60 +1,89 @@
-generated_at_utc: "2026-05-03T09:52:00Z"
+generated_at_utc: "2026-05-03T10:16:00Z"
 server:
   alias: "sarahserver1"
   scope: "Server 1"
   source: "read-only inspection via root SSH"
+  workspace_discovery:
+    rule: "Inspect ~/.openclaw/workspace and ~/.openclaw/workspace_*"
+    note: "Alternative workspace names are valid and must be considered for IDENTITY.md, SOUL.md and MEMORY.md discovery."
 agents:
   - linux_user: "sebastian"
+    workspace:
+      path: "/home/sebastian/.openclaw/workspace_sebastian"
+      type: "workspace_variant"
     gateway:
       unit: "openclaw-gateway@sebastian"
       active: true
       enabled: true
     agent:
-      name: null
-      name_source: null
-      name_confidence: "none"
+      name: "Bernd"
+      name_source: "IDENTITY.md"
+      name_confidence: "high"
     identity_md:
-      present: false
-      path: "/home/sebastian/.openclaw/workspace/IDENTITY.md"
-      status: "missing"
+      present: true
+      path: "/home/sebastian/.openclaw/workspace_sebastian/IDENTITY.md"
+      status: "present_filled"
+      excerpt: |
+        - **Name:** Bernd
+        - **Creature:** AI-Assistent (irgendwas zwischen digitalem Geist und praktischem Helfer)
+        - **Vibe:** direkt, kompetent, kein unnötiges Brimborium
+        - **Emoji:** 🤖
     soul_md:
-      present: false
-      path: "/home/sebastian/.openclaw/workspace/SOUL.md"
-      status: "missing"
-      excerpt: null
+      present: true
+      path: "/home/sebastian/.openclaw/workspace_sebastian/SOUL.md"
+      status: "present"
+      excerpt: |
+        # SOUL.md - Who You Are
+
+        _You're not a chatbot. You're becoming someone._
     memory:
-      installed: false
-      memory_md_present: false
+      installed: true
+      memory_md_present: true
       memory_dir_present: false
+      memory_md_path: "/home/sebastian/.openclaw/workspace_sebastian/MEMORY.md"
     brave:
       browser_profile_present: true
       openclaw_configured: false
       assessment: "Brave-Profil vorhanden, aber keine Brave-Konfiguration in aktueller OpenClaw-Konfiguration gefunden."
     notes:
-      - "Agentenname nicht über IDENTITY.md oder SOUL.md dokumentiert."
+      - "Die Identität lag nicht im Standardpfad ~/.openclaw/workspace, sondern in ~/.openclaw/workspace_sebastian."
 
   - linux_user: "user1"
+    workspace:
+      path: "/home/user1/.openclaw/workspace_hauptagent"
+      type: "workspace_variant"
     gateway:
       unit: "openclaw-gateway@user1"
       active: true
       enabled: true
     agent:
-      name: null
-      name_source: null
-      name_confidence: "none"
+      name: "Cheko (ILA-Hauptagent)"
+      name_source: "IDENTITY.md"
+      name_confidence: "high"
     identity_md:
-      present: false
-      path: "/home/user1/.openclaw/workspace/IDENTITY.md"
-      status: "missing"
+      present: true
+      path: "/home/user1/.openclaw/workspace_hauptagent/IDENTITY.md"
+      status: "present_filled"
+      excerpt: |
+        - **Name:**
+          Cheko (ILA-Hauptagent)
+        - **Creature:**
+          AI-Koordinator — kein Chatbot, sondern eine Steuerungsinstanz
+        - **Emoji:**
+          🦎
     soul_md:
-      present: false
-      path: "/home/user1/.openclaw/workspace/SOUL.md"
-      status: "missing"
-      excerpt: null
+      present: true
+      path: "/home/user1/.openclaw/workspace_hauptagent/SOUL.md"
+      status: "present"
+      excerpt: |
+        # SOUL.md - Wer ich bin
+
+        _Kein Chatbot. Jemand._
     memory:
-      installed: false
-      memory_md_present: false
+      installed: true
+      memory_md_present: true
       memory_dir_present: false
+      memory_md_path: "/home/user1/.openclaw/workspace_hauptagent/MEMORY.md"
     brave:
       browser_profile_present: true
       openclaw_configured: false
@@ -62,9 +91,13 @@ agents:
       legacy_reference_present: true
       legacy_reference_note: "Eine alte Datei openclaw.json.verbastelt enthält eine Brave-Referenz, das ist aber kein belastbarer Nachweis für aktuelle Funktion."
     notes:
-      - "Agentenname nicht über IDENTITY.md oder SOUL.md dokumentiert."
+      - "Die relevanten Identitätsdateien liegen in ~/.openclaw/workspace_hauptagent, nicht im Standardpfad."
+      - "Dieser Eintrag bildet Sarahs ILA-Hauptagenten Cheko ab."
 
   - linux_user: "user2"
+    workspace:
+      path: "/home/user2/.openclaw/workspace"
+      type: "standard"
     gateway:
       unit: "openclaw-gateway@user2"
       active: true
@@ -94,6 +127,8 @@ agents:
       installed: true
       memory_md_present: true
       memory_dir_present: true
+      memory_md_path: "/home/user2/.openclaw/workspace/MEMORY.md"
+      memory_dir_path: "/home/user2/.openclaw/workspace/memory"
     brave:
       browser_profile_present: true
       openclaw_configured: false
@@ -101,3 +136,4 @@ agents:
     notes:
       - "Bernd ist über SOUL.md klar dem Sebastian-Kontext zugeordnet."
       - "IDENTITY.md ist vorhanden, aber noch nicht individualisiert."
+      - "Auf Server 1 existiert zusätzlich ein weiterer Bernd-Hinweis unter Linux-User sebastian. Das sollte separat geklärt werden."
