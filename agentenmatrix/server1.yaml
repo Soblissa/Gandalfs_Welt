@@ -1,4 +1,4 @@
-generated_at_utc: "2026-05-03T10:16:00Z"
+generated_at_utc: "2026-05-03T10:20:00Z"
 server:
   alias: "sarahserver1"
   scope: "Server 1"
@@ -45,6 +45,16 @@ agents:
       browser_profile_present: true
       openclaw_configured: false
       assessment: "Brave-Profil vorhanden, aber keine Brave-Konfiguration in aktueller OpenClaw-Konfiguration gefunden."
+    models:
+      default_model: "gpt-5.1-codex"
+      default_model_source: "openclaw status"
+      last_observed_model: "claude-sonnet-4-6"
+      last_observed_provider: "anthropic"
+      last_observed_api: "anthropic-messages"
+      provider_hints:
+        - "openai"
+        - "openai-codex"
+      note: "Default-Modell und zuletzt beobachtetes Modell weichen voneinander ab."
     notes:
       - "Die Identität lag nicht im Standardpfad ~/.openclaw/workspace, sondern in ~/.openclaw/workspace_sebastian."
 
@@ -90,6 +100,16 @@ agents:
       assessment: "Brave-Profil vorhanden, aber keine aktuelle Brave-Konfiguration in OpenClaw gefunden."
       legacy_reference_present: true
       legacy_reference_note: "Eine alte Datei openclaw.json.verbastelt enthält eine Brave-Referenz, das ist aber kein belastbarer Nachweis für aktuelle Funktion."
+    models:
+      default_model: "gpt-5.4"
+      default_model_source: "openclaw status"
+      last_observed_model: "claude-sonnet-4-6"
+      last_observed_provider: "anthropic"
+      last_observed_api: "anthropic-messages"
+      provider_hints:
+        - "anthropic"
+        - "openai"
+      note: "Default-Modell und zuletzt beobachtetes Modell weichen voneinander ab."
     notes:
       - "Die relevanten Identitätsdateien liegen in ~/.openclaw/workspace_hauptagent, nicht im Standardpfad."
       - "Dieser Eintrag bildet Sarahs ILA-Hauptagenten Cheko ab."
@@ -133,6 +153,16 @@ agents:
       browser_profile_present: true
       openclaw_configured: false
       assessment: "Brave-Profil vorhanden, aber keine Brave-Konfiguration in aktueller OpenClaw-Konfiguration gefunden."
+    models:
+      default_model: "gpt-5.4"
+      default_model_source: "openclaw status"
+      last_observed_model: null
+      last_observed_provider: null
+      last_observed_api: null
+      provider_hints:
+        - "openai"
+        - "openai-codex"
+      note: "Kein aktueller Assistant-Modelltreffer in den zuletzt geprüften Sessions gefunden."
     notes:
       - "Bernd ist über SOUL.md klar dem Sebastian-Kontext zugeordnet."
       - "IDENTITY.md ist vorhanden, aber noch nicht individualisiert."

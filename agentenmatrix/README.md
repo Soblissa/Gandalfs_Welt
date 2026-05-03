@@ -40,5 +40,9 @@ Beispiele:
 - Gateway-Status
 - Memory installiert
 - Brave-Zugang
+- Modellinformationen
+  - Default-Modell laut `openclaw status`, wenn verfügbar
+  - zuletzt beobachtetes Modell aus aktuellen Sessions, wenn verfügbar
+  - Provider-/Auth-Hinweise aus Agent-Konfiguration, wenn hilfreich
 - Pfade zu `IDENTITY.md` und `SOUL.md`
 - kurze Notizen / Auffälligkeiten
