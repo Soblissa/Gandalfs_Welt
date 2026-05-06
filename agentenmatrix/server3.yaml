@@ -116,10 +116,9 @@ agents:
       active_state: "active"
       enabled: true
     agent:
-      name: null
-      name_source: "IDENTITY.md"
-      name_confidence: "invalidated_by_operator"
-      operator_note: "Bisheriger Name 'Turyia' geht laut Operator nicht."
+      name: "Turiya"
+      name_source: "operator + IDENTITY.md"
+      name_confidence: "high"
     identity_md:
       present: true
       path: "/home/turyia/.openclaw/workspace/IDENTITY.md"
@@ -158,3 +157,6 @@ agents:
       provider_hints:
         - "openai-codex"
       note: "In den gelesenen Sessions wurde kein aktuelles Assistenzmodell gefunden."
+    notes:
+      - "Laut Operator darf es nur eine kanonische Turiya geben; diese Zuordnung liegt auf Server 3."
+      - "Der frühere Turyia-Bezug auf Server 2 gilt ausdrücklich nicht mehr."

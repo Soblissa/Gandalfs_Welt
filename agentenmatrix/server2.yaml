@@ -22,7 +22,7 @@ agents:
       name: null
       name_source: "IDENTITY.md"
       name_confidence: "invalidated_by_operator"
-      operator_note: "Bisheriger Name 'Turyia' geht laut Operator nicht."
+      operator_note: "Die frühere Turyia-Zuordnung für Server 2 ist verworfen; es darf nur eine kanonische Turiya geben, und die liegt nicht hier."
     identity_md:
       present: true
       path: "/home/agent/.openclaw/workspace/IDENTITY.md"
@@ -64,7 +64,8 @@ agents:
         - "openai-codex"
     notes:
       - "Linux-Nutzername und Agentenname weichen voneinander ab."
-      - "Die bisherige Bezeichnung 'Turyia' wurde vom Operator verworfen."
+      - "Die bisherige Bezeichnung 'Turyia' wurde für Server 2 vom Operator verworfen."
+      - "Es darf nur eine kanonische Turiya geben; dieser Eintrag ist ausdrücklich nicht Turiya."
 
   - linux_user: "joker"
     workspace:

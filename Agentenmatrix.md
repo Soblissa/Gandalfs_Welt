@@ -9,7 +9,7 @@ Die Detaildateien unter `agentenmatrix/` bleiben als technische Quellen erhalten
 
 - **Server 1 ist jetzt operatorisch geklärt:** `sebastian` läuft als `Bernd`, `user1` als `Chefkoch`, `user2` als `Franks Klaus`.
 - **Wichtig für Server 1:** Die Workspaces tragen teils ältere oder abweichende Selbstbeschreibungen (`Cheko`, leere `IDENTITY.md`, altes `Bernd` in `SOUL.md`). Für diese Matrix gilt die aktuelle Operator-Zuordnung plus der verifizierte Live-Betrieb.
-- **`Turyia` geht nicht:** Die bisherige Bezeichnung bei `agent` (Server 2) und `turyia` (Server 3) gilt ebenfalls nicht mehr als kanonisch.
+- **Turiya-Regel:** Es darf nur eine kanonische `Turiya` geben. Diese Zuordnung liegt auf `turyia` (Server 3). Der frühere Server-2-Eintrag `agent` ist damit ausdrücklich **nicht** `Turiya`.
 - **Restore-Historie Server 1:** `user2` war zwischenzeitlich entfernt und wurde aus `/root/agent-cleanup-backups/user2-openclaw-20260503T102637Z.tar.gz` wieder als laufender Agent restauriert.
 
 ## Serverübersicht
@@ -27,13 +27,13 @@ Die Detaildateien unter `agentenmatrix/` bleiben als technische Quellen erhalten
 | Server 1 | `sebastian` | `Bernd` | aktiv | `~/.openclaw/workspace_sebastian` | ja | teilweise | `openai/gpt-5.4` | `gpt-5.4` über OpenAI | Anthropic-Billing und `o3-mini`-Fallback aus dem Laufweg entfernt |
 | Server 1 | `user1` | `Chefkoch` | aktiv | `~/.openclaw/workspace_hauptagent` | ja | teilweise | `openai/gpt-5.4` | `gpt-5.4` über OpenAI | Workspace nennt ihn aktuell `Cheko (ILA-Hauptagent)`, Portkonflikt auf `19840` bereinigt |
 | Server 1 | `user2` | `Franks Klaus` | aktiv, am 2026-05-03 restauriert | `~/.openclaw/workspace` | ja | nein | `openai-codex/gpt-5.4` | `gpt-5.4` über `openai-codex` | aus Backup restauriert, Name folgt Operator + wiederhergestellter Frank-Historie |
-| Server 2 | `agent` | offen, bisher `Turyia` | aktiv | `~/.openclaw/workspace` | ja | teilweise | `openai-codex/gpt-5.4` | `gpt-5.4` über `openai-codex` | alte Bezeichnung laut Operator ungültig |
+| Server 2 | `agent` | offen, nicht `Turiya` | aktiv | `~/.openclaw/workspace` | ja | teilweise | `openai-codex/gpt-5.4` | `gpt-5.4` über `openai-codex` | früherer Turiya-Bezug ist verworfen |
 | Server 2 | `joker` | `joker` | aktiv | `~/.openclaw/workspace` | teilweise | ja | `openai-codex/gpt-5.4` | nicht gefunden | klarster Brave-Zugang auf Server 2 |
 | Server 2 | `nemo` | `nemo` | instabil / zuletzt `activating` | `~/.openclaw/workspace` | nein | nein | unbekannt | nicht gefunden | Servicezustand wirkte instabil |
 | Server 2 | `hiroshi` | `hiroshi` | inaktiv, aber enabled | `~/.openclaw/workspace` | nein | teilweise | unbekannt | nicht gefunden | Altbestand mit vorhandenem Workspace |
 | Server 3 | `gandalf` | `gandalf` | aktiv | `~/.openclaw/workspace` | ja | ja | `openai/gpt-5.4` | `gpt-5.4` über OpenAI | lokales Brave-Profil fehlt, OpenClaw-Spuren vorhanden |
 | Server 3 | `rocky` | `rocky` | aktiv | `~/.openclaw/workspace` | teilweise | ja | `openai/gpt-5.5` | `gpt-5.4` über OpenAI | Default und beobachtetes Modell weichen ab |
-| Server 3 | `turyia` | offen, bisher `Turyia` | aktiv | `~/.openclaw/workspace` | nein | teilweise | `openai-codex/gpt-5.5` | nicht gefunden | alte Bezeichnung laut Operator ungültig |
+| Server 3 | `turyia` | `Turiya` | aktiv | `~/.openclaw/workspace` | nein | teilweise | `openai-codex/gpt-5.5` | nicht gefunden | einzige kanonische Turiya |
 
 ## Serverdetails in Kurzform
 

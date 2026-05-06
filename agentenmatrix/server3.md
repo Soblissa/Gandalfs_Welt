@@ -11,7 +11,7 @@ Hinweis: Diese Fassung berücksichtigt `~/.openclaw/workspace` und `~/.openclaw/
 |---|---|---|---|---|---|---|---|---|---|---|
 | `gandalf` | `~/.openclaw/workspace` | `gandalf` | `IDENTITY.md` | aktiv | ja | ja, OpenClaw-Brave konfiguriert, aber kein lokales Brave-Profil gefunden | `openai/gpt-5.4` | `gpt-5.4` über OpenAI | vorhanden | vorhanden |
 | `rocky` | `~/.openclaw/workspace` | `rocky` | `IDENTITY.md` | aktiv | ja, nur `memory/` | ja, Brave in OpenClaw konfiguriert, kein lokales Brave-Profil gefunden | `openai/gpt-5.5` | `gpt-5.4` über OpenAI | vorhanden | vorhanden |
-| `turyia` | `~/.openclaw/workspace` | offen, bisher `Turyia` | `IDENTITY.md`, aber vom Operator verworfen | aktiv | nein | teilweise, OpenClaw-Brave-Spuren vorhanden, aber kein lokales Brave-Profil gefunden | `openai-codex/gpt-5.5` | kein aktuelles Session-Modell gefunden | vorhanden | vorhanden |
+| `turyia` | `~/.openclaw/workspace` | `Turiya` | Operator plus `IDENTITY.md` | aktiv | nein | teilweise, OpenClaw-Brave-Spuren vorhanden, aber kein lokales Brave-Profil gefunden | `openai-codex/gpt-5.5` | kein aktuelles Session-Modell gefunden | vorhanden | vorhanden |
 
 ## Details
 
@@ -68,8 +68,8 @@ Hinweis: Diese Fassung berücksichtigt `~/.openclaw/workspace` und `~/.openclaw/
 - Linux-Nutzer: `turyia`
 - verwendeter Workspace: `/home/turyia/.openclaw/workspace`
 - Gateway: `openclaw-gateway@turyia`, aktiv und enabled
-- Agentenname: vorläufig offen, `IDENTITY.md` enthält derzeit `Turyia`
-- Namensquelle: `IDENTITY.md`, aber die Bezeichnung wurde vom Operator verworfen
+- Agentenname: `Turiya`
+- Namensquelle: Operator plus `IDENTITY.md`
 - `IDENTITY.md`: vorhanden und ausgefüllt
 - `SOUL.md`: vorhanden und stark ausformuliert
 - Memory: kein `MEMORY.md`, kein `memory/` gefunden
@@ -79,6 +79,7 @@ Hinweis: Diese Fassung berücksichtigt `~/.openclaw/workspace` und `~/.openclaw/
   - zuletzt beobachtetes Modell in Sessions: nicht gefunden
   - Auth-/Provider-Hinweis: `openai-codex`
 - Hinweis: Die Identität ist deutlich ausgeprägt, aber Sessions lieferten zuletzt kein verwertbares Modellsignal
+- Zusatz: Laut Operator darf es nur eine `Turiya` geben, und dieser Eintrag ist die kanonische Turiya
 
 #### `turyia` IDENTITY.md (Auszug)
 ```md
