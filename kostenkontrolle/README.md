@@ -9,7 +9,8 @@ Transparente Kontrolle darüber,
 - welcher Agent welchen Provider nutzt,
 - wo Claude überhaupt erlaubt ist,
 - wo Claude nur Sollbild ist,
-- und wo eine Konfigurationsabweichung Kostenrisiko erzeugt.
+- wo eine Konfigurationsabweichung Kostenrisiko erzeugt,
+- und was ein Agent im Abrechnungszeitraum **tatsächlich** gekostet hat.
 
 ## Steuerregel
 
@@ -23,6 +24,27 @@ Transparente Kontrolle darüber,
 - Standardpfad nur `openai/*` oder `openai-codex/*`
 
 Diese Regel entspricht der bereits festgehaltenen Operator-Vorgabe, dass `Bernd` und `Chefkoch` die Claude-Agenten sein sollen. Seit 2026-05-09 sind beide wieder auf Claude als Primary gesetzt.
+
+## Exakte Abrechnungsgrundlage pro Agent
+
+Für **exakte** Agentenabrechnung reicht die Modell-Konfiguration nicht.
+Die belastbare Quelle sind die OpenClaw-Sessionlogs, konkret pro Antwort das Feld:
+
+- `message.usage.cost.total`
+
+Dafür gibt es jetzt zusätzlich:
+
+- `kostenkontrolle/collect_costs.sh`
+
+Beispiele:
+
+```bash
+./kostenkontrolle/collect_costs.sh
+./kostenkontrolle/collect_costs.sh --date 2026-05-09
+./kostenkontrolle/collect_costs.sh --from 2026-05-01 --to 2026-05-31
+```
+
+Der Report summiert die in den Session-JSONL-Dateien protokollierten Kosten je Linux-User bzw. Agent und ist damit die bessere Grundlage für interne Verrechnung als ein reiner Modell-Snapshot.
 
 ## Live-Snapshot über alle aktuell laufenden Gateways
 
@@ -80,13 +102,15 @@ Für Claude sauber getrennt überwachen:
 - welche Agenten Claude technisch überhaupt erreichen können
 - welche Agenten Claude real nutzen sollen
 - ob ein Agent Claude nur als Fallback enthält oder wirklich primär nutzt
+- welche **real protokollierten USD-Kosten** pro Agent im Zeitraum angefallen sind
 
 ## Nächste sinnvolle Maßnahmen
 
 1. `user2` / `Franks Klaus`: `anthropic/claude-sonnet-4-6` aus den Fallbacks entfernen
-2. Snapshot regelmäßig neu ziehen und gegen die Policy prüfen
-3. Optional: Kostenreport zusätzlich in die Agentenmatrix verlinken
-4. Optional: Soll-/Ist-Spalte zusätzlich in der Hauptmatrix sichtbar machen
+2. `collect_costs.sh` regelmäßig für Tages- oder Monatsabrechnung laufen lassen
+3. Snapshot regelmäßig neu ziehen und gegen die Policy prüfen
+4. Optional: Kostenreport zusätzlich in die Agentenmatrix verlinken
+5. Optional: Soll-/Ist-Spalte zusätzlich in der Hauptmatrix sichtbar machen
 
 ## Relevanter Bezug aus der Memory
 
