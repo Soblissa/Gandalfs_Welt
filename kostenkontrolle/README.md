@@ -10,9 +10,16 @@ Transparente Kontrolle darüber,
 - wo Claude überhaupt erlaubt ist,
 - wo Claude nur Sollbild ist,
 - wo eine Konfigurationsabweichung Kostenrisiko erzeugt,
-- und was ein Agent im Abrechnungszeitraum **tatsächlich** gekostet hat.
+- was ein Agent im Abrechnungszeitraum **tatsächlich** gekostet hat,
+- und ob wirklich **jeder Agent eine eigene API / eigene Credentials** für getrennte Dashboard-Abrechnung hat.
 
 ## Steuerregel
+
+### Jeder Agent bekommt eigene API-Credentials
+- keine gemeinsamen Provider-Keys über mehrere Agenten
+- getrennte Abrechnung soll über die jeweilige API im Provider-Dashboard möglich sein
+- vorhandene Shared- oder Host-weite Keys sind als Migrationsziel zu behandeln und nach Agenten zu trennen
+
 
 ### Claude ist nur für diese Agenten erlaubt
 - `sebastian` = `Bernd`
@@ -35,6 +42,7 @@ Die belastbare Quelle sind die OpenClaw-Sessionlogs, konkret pro Antwort das Fel
 Dafür gibt es jetzt zusätzlich:
 
 - `kostenkontrolle/collect_costs.sh`
+- `kostenkontrolle/audit_api_separation.sh`
 
 Beispiele:
 
@@ -42,9 +50,12 @@ Beispiele:
 ./kostenkontrolle/collect_costs.sh
 ./kostenkontrolle/collect_costs.sh --date 2026-05-09
 ./kostenkontrolle/collect_costs.sh --from 2026-05-01 --to 2026-05-31
+./kostenkontrolle/audit_api_separation.sh
 ```
 
-Der Report summiert die in den Session-JSONL-Dateien protokollierten Kosten je Linux-User bzw. Agent und ist damit die bessere Grundlage für interne Verrechnung als ein reiner Modell-Snapshot.
+Der Kostenreport summiert die in den Session-JSONL-Dateien protokollierten Kosten je Linux-User bzw. Agent und ist damit die bessere Grundlage für interne Verrechnung als ein reiner Modell-Snapshot.
+
+Der API-Separations-Audit prüft zusätzlich, ob pro Agent eigene env-basierte Provider-Credentials sichtbar sind, ohne Secrets offenzulegen.
 
 ## Live-Snapshot über alle aktuell laufenden Gateways
 
@@ -68,8 +79,11 @@ Erfasst per Root-SSH auf `sarahserver1`, `sarahserver2`, `sarahserver3` am 2026-
 2. **`Franks Klaus` hat noch einen Anthropic-Fallback in der Konfiguration.**
    Das ist gegen die gewünschte Trennung und sollte entfernt werden.
 
-3. **Die entscheidende Restabweichung liegt aktuell nicht mehr bei `Bernd` oder `Chefkoch`, sondern bei `Franks Klaus`.**
-   Dort ist Claude noch als Fallback eingetragen, obwohl er nicht an Claude hängen soll.
+3. **Separate API pro Agent ist aktuell noch nicht überall sauber umgesetzt.**
+   Sichtbar eigene env-Credentials gibt es derzeit bei `sebastian`, `user1` und `agent`.
+
+4. **Bei `user2`, `gandalf`, `rocky` und `turyia` ist aktuell kein agentenspezifischer env-Key sichtbar.**
+   Dort muss für saubere Dashboard-Abrechnung entweder ein eigener Key hinterlegt oder der aktuelle Credential-Pfad erst sauber offengelegt werden.
 
 ## Empfohlene Kontrolllogik
 
@@ -107,10 +121,11 @@ Für Claude sauber getrennt überwachen:
 ## Nächste sinnvolle Maßnahmen
 
 1. `user2` / `Franks Klaus`: `anthropic/claude-sonnet-4-6` aus den Fallbacks entfernen
-2. `collect_costs.sh` regelmäßig für Tages- oder Monatsabrechnung laufen lassen
-3. Snapshot regelmäßig neu ziehen und gegen die Policy prüfen
-4. Optional: Kostenreport zusätzlich in die Agentenmatrix verlinken
-5. Optional: Soll-/Ist-Spalte zusätzlich in der Hauptmatrix sichtbar machen
+2. `audit_api_separation.sh` laufen lassen, bis für jeden Agent ein eigener Credential-Pfad sauber nachgewiesen ist
+3. `collect_costs.sh` regelmäßig für Tages- oder Monatsabrechnung laufen lassen
+4. Snapshot regelmäßig neu ziehen und gegen die Policy prüfen
+5. Optional: Kostenreport zusätzlich in die Agentenmatrix verlinken
+6. Optional: Soll-/Ist-Spalte zusätzlich in der Hauptmatrix sichtbar machen
 
 ## Relevanter Bezug aus der Memory
 
