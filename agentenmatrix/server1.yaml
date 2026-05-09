@@ -78,8 +78,8 @@ agents:
       name: "Chefkoch"
       name_source: "operator; Workspace nennt ihn aktuell 'Cheko (ILA-Hauptagent)'"
       name_confidence: "high"
-      owner: "Sarah / Soblissa"
-      focus: "ILA-Koordination, Qualitäts-Gates, Steuerung"
+      owner: "Sarah"
+      focus: "Hessisches Kultusministerium"
       soul_summary: "strukturiert, präzise, ruhig, direkt"
     identity_md:
       present: true
@@ -126,6 +126,7 @@ agents:
     notes:
       - "Die relevanten Identitätsdateien liegen in ~/.openclaw/workspace_hauptagent, nicht im Standardpfad."
       - "Operatorisch ist dies Chefkoch, obwohl IDENTITY.md derzeit Cheko nennt."
+      - "Operator-Fokus für Chefkoch ist aktuell Hessisches Kultusministerium."
       - "Ein alter openclaw-gateway-Prozess blockierte Port 19840 und wurde bereinigt."
       - "ANTHROPIC_API_KEY wurde am 2026-05-09 gesetzt; openclaw status zeigt danach default claude-sonnet-4-6."
 

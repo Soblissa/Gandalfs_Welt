@@ -10,7 +10,7 @@ Hinweis: Diese Fassung berücksichtigt nicht nur `~/.openclaw/workspace`, sonder
 | Linux-Nutzer | Workspace | Agentenname | Besitzer | Einsatzfokus | Seele | Namensquelle | Gateway | Memory | Brave-Zugang | Default-Modell | Zuletzt beobachtet | IDENTITY.md | SOUL.md |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | `sebastian` | `~/.openclaw/workspace_sebastian` | `Bernd` | `Sebastian` | fachliche Unterstützung für Sebastian, aktuell ILA-nah | direkt, kompetent, pragmatisch | Operator plus `IDENTITY.md` | aktiv | ja | teilweise, Brave-Profil vorhanden, aber keine OpenClaw-Brave-Konfiguration gefunden | `openai/gpt-5.4` | `gpt-5.4` über OpenAI | vorhanden | vorhanden |
-| `user1` | `~/.openclaw/workspace_hauptagent` | `Chefkoch` | `Sarah / Soblissa` | ILA-Koordination, Qualitäts-Gates, Steuerung | strukturiert, präzise, ruhig, direkt | Operator, Workspace nennt ihn aktuell `Cheko (ILA-Hauptagent)` | aktiv | ja | teilweise, Brave-Profil vorhanden, aber keine aktuelle OpenClaw-Brave-Konfiguration gefunden | `anthropic/claude-sonnet-4-6` | Default laut `openclaw status`: `claude-sonnet-4-6` | vorhanden | vorhanden |
+| `user1` | `~/.openclaw/workspace_hauptagent` | `Chefkoch` | `Sarah` | Hessisches Kultusministerium | strukturiert, präzise, ruhig, direkt | Operator, Workspace nennt ihn aktuell `Cheko (ILA-Hauptagent)` | aktiv | ja | teilweise, Brave-Profil vorhanden, aber keine aktuelle OpenClaw-Brave-Konfiguration gefunden | `anthropic/claude-sonnet-4-6` | Default laut `openclaw status`: `claude-sonnet-4-6` | vorhanden | vorhanden |
 | `user2` | `~/.openclaw/workspace` | `Franks Klaus` | `dto / Soblissa` (Kundenfall `Frank Kammerer`) | Franks Klaus, Alpin Invest, KI-Optimierung, Prozesse | fokussiert, direkt, geschäftstauglich | Operator plus wiederhergestellte Session-/Repo-Historie | aktiv, restauriert | ja | nein, keine Brave-Konfiguration gefunden | `openai-codex/gpt-5.4` | `gpt-5.4` über `openai-codex` | vorhanden | vorhanden |
 
 ## Details
@@ -49,10 +49,11 @@ Hinweis: Diese Fassung berücksichtigt nicht nur `~/.openclaw/workspace`, sonder
 - verwendeter Workspace: `/home/user1/.openclaw/workspace_hauptagent`
 - Gateway: `openclaw-gateway@user1`, aktiv und enabled
 - Agentenname: `Chefkoch`
-- Besitzer: `Sarah / Soblissa`
-- Einsatzfokus: ILA-Koordination, Qualitäts-Gates, Steuerung
+- Besitzer: `Sarah`
+- Einsatzfokus: Hessisches Kultusministerium
 - Seele: strukturiert, präzise, ruhig, direkt
 - Namensquelle: Operator, `IDENTITY.md` nennt aktuell `Cheko (ILA-Hauptagent)`
+- Operator-Hinweis: Fokus für Chefkoch ist aktuell Hessisches Kultusministerium, nicht allgemein ILA-Koordination
 - `IDENTITY.md`: vorhanden und ausgefüllt
 - `SOUL.md`: vorhanden
 - Memory: installiert, `MEMORY.md` vorhanden
