@@ -174,20 +174,18 @@ agents:
       openclaw_configured: false
       assessment: "Keine Brave-Konfiguration im wiederhergestellten user2-Setup gefunden."
     models:
-      default_model: "openai-codex/gpt-5.4"
-      default_model_source: "restored config"
-      fallback_models:
-        - "anthropic/claude-sonnet-4-6"
-      last_observed_model: "gpt-5.4"
-      last_observed_provider: "openai-codex"
-      last_observed_api: "openai-codex-responses"
+      default_model: "anthropic/claude-sonnet-4-6"
+      default_model_source: "live config + openclaw status 2026-05-09"
+      fallback_models: []
+      last_observed_model: "claude-sonnet-4-6"
+      last_observed_provider: "anthropic"
+      last_observed_api: "status-default"
       provider_hints:
-        - "openai"
-        - "openai-codex"
         - "anthropic"
-      note: "Der Agent wurde am 2026-05-03 aus dem user2-Backup reaktiviert; live läuft er aktuell über openai-codex, nicht über Claude."
+      note: "Franks Klaus wurde am 2026-05-09 auf Claude als Primary ohne Fallback umgestellt und nutzt einen eigenen Anthropic-Key."
     notes:
       - "user2 war zwischenzeitlich entfernt und wurde aus /root/agent-cleanup-backups/user2-openclaw-20260503T102637Z.tar.gz wiederhergestellt."
       - "Die Namenszuordnung Franks Klaus folgt dem Operator und der wiederhergestellten Frank-/Franks-Klaus-Historie in Sessions und Repo-Dateien."
       - "IDENTITY.md, SOUL.md, USER.md, MEMORY.md und AGENTS.md wurden am 2026-05-09 auf reinen Frank-/Alpin-Invest-Kontext bereinigt."
       - "GitHub-SSH und Repo-Zugriff auf /home/user2/Franks_Klaus wurden am 2026-05-09 eingerichtet und verifiziert."
+      - "ANTHROPIC_API_KEY wurde am 2026-05-09 für user2 gesetzt; openclaw status zeigt danach default claude-sonnet-4-6."

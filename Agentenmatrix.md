@@ -11,14 +11,14 @@ Die Detaildateien unter `agentenmatrix/` bleiben als technische Quellen erhalten
 - **Wichtig für Server 1:** Die Workspaces tragen teils ältere oder abweichende Selbstbeschreibungen (`Cheko`, leere `IDENTITY.md`, altes `Bernd` in `SOUL.md`). Für diese Matrix gilt die aktuelle Operator-Zuordnung plus der verifizierte Live-Betrieb.
 - **Turiya-Regel:** Es darf nur eine kanonische `Turiya` geben. Diese Zuordnung liegt auf `turyia` (Server 3). Der frühere Server-2-Eintrag `agent` ist damit ausdrücklich **nicht** `Turiya`.
 - **Restore-Historie Server 1:** `user2` war zwischenzeitlich entfernt und wurde aus `/root/agent-cleanup-backups/user2-openclaw-20260503T102637Z.tar.gz` wieder als laufender Agent restauriert.
-- **Live-Update 2026-05-09:** `Chefkoch` läuft jetzt wieder mit Claude als Primary, `Franks Klaus` wurde im Workspace auf reinen Frank-/Alpin-Invest-Kontext bereinigt.
+- **Live-Update 2026-05-09:** `Chefkoch` und `Franks Klaus` laufen jetzt mit Claude als Primary, `Franks Klaus` wurde im Workspace auf reinen Frank-/Alpin-Invest-Kontext bereinigt.
 - **Spaltenlogik:** `Besitzer` meint den primären menschlichen Owner laut `USER.md` oder klarer Operator-Zuordnung. `Seele` ist eine knappe Verdichtung aus `SOUL.md` und, falls nötig, `IDENTITY.md`.
 
 ## Serverübersicht
 
 | Server | Host | IP | Aktive Agenten | Inaktive / Altbestände | Kurznotiz |
 |---|---|---|---:|---:|---|
-| Server 1 | `sarahserver1` | `147.93.120.51` | 3 | 0 | `Bernd` und `Chefkoch` auf Claude, `Franks Klaus` fachlich bereinigt |
+| Server 1 | `sarahserver1` | `147.93.120.51` | 3 | 0 | `Bernd`, `Chefkoch` und `Franks Klaus` auf Claude, `Franks Klaus` fachlich bereinigt |
 | Server 2 | `sarahserver2` | `89.116.39.197` | 3 | 1 inaktiv | `agent` ist ausdrücklich nicht `Turiya`, `joker` hat den klarsten Brave-Zugang |
 | Server 3 | `sarahserver3` | `187.124.191.206` | 3 | 0 | saubere Dreierbelegung mit `gandalf`, `rocky`, `Turiya` |
 
@@ -28,7 +28,7 @@ Die Detaildateien unter `agentenmatrix/` bleiben als technische Quellen erhalten
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
 | Server 1 | `sebastian` | `Bernd` | aktiv | `Sebastian` | fachliche Unterstützung für Sebastian, aktuell ILA-nah | direkt, kompetent, pragmatisch | `~/.openclaw/workspace_sebastian` | ja | teilweise | `anthropic/claude-sonnet-4-6` | Default laut `openclaw status`: `claude-sonnet-4-6` | Claude-Anbindung am 2026-05-09 erneuert |
 | Server 1 | `user1` | `Chefkoch` | aktiv | `Sarah` | Hessisches Kultusministerium | strukturiert, präzise, ruhig, direkt | `~/.openclaw/workspace_hauptagent` | ja | teilweise | `anthropic/claude-sonnet-4-6` | Default laut `openclaw status`: `claude-sonnet-4-6` | Workspace nennt ihn aktuell `Cheko`, Operator-Fokus jetzt Hessisches Kultusministerium, Claude-Anbindung am 2026-05-09 erneuert |
-| Server 1 | `user2` | `Franks Klaus` | aktiv, am 2026-05-03 restauriert | `dto / Soblissa` (Kundenfall `Frank Kammerer`) | Franks Klaus, Alpin Invest, KI-Optimierung, Prozesse | fokussiert, direkt, geschäftstauglich | `~/.openclaw/workspace` | ja | nein | `openai-codex/gpt-5.4` | `gpt-5.4` über `openai-codex` | Persona am 2026-05-09 bereinigt, Repo-Zugriff aktiv |
+| Server 1 | `user2` | `Franks Klaus` | aktiv, am 2026-05-03 restauriert | `dto / Soblissa` (Kundenfall `Frank Kammerer`) | Franks Klaus, Alpin Invest, KI-Optimierung, Prozesse | fokussiert, direkt, geschäftstauglich | `~/.openclaw/workspace` | ja | nein | `anthropic/claude-sonnet-4-6` | Default laut `openclaw status`: `claude-sonnet-4-6` | Persona am 2026-05-09 bereinigt, Repo-Zugriff aktiv, eigener Claude-Key seit 2026-05-09 |
 | Server 2 | `agent` | offen, nicht `Turiya` | aktiv | `Sarah` | Struktur, Orientierung, entwicklungsorientierte Begleitung | warm, klar, geerdet, integrativ | `~/.openclaw/workspace` | ja | teilweise | `openai-codex/gpt-5.4` | `gpt-5.4` über `openai-codex` | früherer Turiya-Bezug ist verworfen |
 | Server 2 | `joker` | `joker` | aktiv | offen / nicht belastbar | offen / nicht belastbar | nicht belastbar aus Live-Daten | `~/.openclaw/workspace` | teilweise | ja | `openai-codex/gpt-5.4` | nicht gefunden | klarster Brave-Zugang auf Server 2 |
 | Server 2 | `nemo` | `nemo` | instabil / zuletzt `activating` | offen / nicht belastbar | offen / nicht belastbar | nicht belastbar aus Live-Daten | `~/.openclaw/workspace` | nein | nein | unbekannt | nicht gefunden | Servicezustand wirkte instabil |
@@ -42,7 +42,7 @@ Die Detaildateien unter `agentenmatrix/` bleiben als technische Quellen erhalten
 ### Server 1
 - Aktive Agenten: `sebastian` (`Bernd`), `user1` (`Chefkoch`), `user2` (`Franks Klaus`)
 - Besonderheit: relevante Identitäten lagen nicht nur im Standard-Workspace, sondern auch in `workspace_sebastian` und `workspace_hauptagent`
-- Betriebsnotiz: `Bernd` und `Chefkoch` laufen seit 2026-05-09 wieder mit Claude als Primary, `Franks Klaus` wurde fachlich bereinigt und aus dem erhaltenen Backup aktiviert
+- Betriebsnotiz: `Bernd`, `Chefkoch` und `Franks Klaus` laufen seit 2026-05-09 mit Claude als Primary, `Franks Klaus` wurde fachlich bereinigt und aus dem erhaltenen Backup aktiviert
 
 ### Server 2
 - Aktive oder zuletzt aktive Agenten: `agent`, `joker`, `nemo`
