@@ -1,4 +1,4 @@
-generated_at_utc: "2026-05-03T15:46:00Z"
+generated_at_utc: "2026-05-09T07:45:00Z"
 server:
   alias: "sarahserver1"
   scope: "Server 1"
@@ -19,6 +19,9 @@ agents:
       name: "Bernd"
       name_source: "operator + IDENTITY.md"
       name_confidence: "high"
+      owner: "Sebastian"
+      focus: "fachliche Unterstützung für Sebastian, aktuell ILA-nah"
+      soul_summary: "direkt, kompetent, pragmatisch"
     identity_md:
       present: true
       path: "/home/sebastian/.openclaw/workspace_sebastian/IDENTITY.md"
@@ -56,7 +59,8 @@ agents:
       provider_hints:
         - "openai"
         - "openai-codex"
-      note: "Anthropic-Billing und der fehlerhafte o3-mini-Fallback wurden aus dem aktiven Laufweg entfernt."
+        - "anthropic"
+      note: "Anthropic-Billing und der fehlerhafte o3-mini-Fallback wurden aus dem aktiven Laufweg entfernt; Sollbild bleibt Claude."
     notes:
       - "Die Identität lag nicht im Standardpfad ~/.openclaw/workspace, sondern in ~/.openclaw/workspace_sebastian."
       - "Der Operator hat Bernd auf Server 1 explizit als kanonischen Namen bestätigt."
@@ -74,6 +78,9 @@ agents:
       name: "Chefkoch"
       name_source: "operator; Workspace nennt ihn aktuell 'Cheko (ILA-Hauptagent)'"
       name_confidence: "high"
+      owner: "Sarah / Soblissa"
+      focus: "ILA-Koordination, Qualitäts-Gates, Steuerung"
+      soul_summary: "strukturiert, präzise, ruhig, direkt"
     identity_md:
       present: true
       path: "/home/user1/.openclaw/workspace_hauptagent/IDENTITY.md"
@@ -105,19 +112,22 @@ agents:
       legacy_reference_present: true
       legacy_reference_note: "Eine alte Datei openclaw.json.verbastelt enthält eine Brave-Referenz, das ist aber kein belastbarer Nachweis für aktuelle Funktion."
     models:
-      default_model: "openai/gpt-5.4"
-      default_model_source: "live config"
-      last_observed_model: "gpt-5.4"
-      last_observed_provider: "openai"
-      last_observed_api: "openai-responses"
+      default_model: "anthropic/claude-sonnet-4-6"
+      default_model_source: "live config + openclaw status 2026-05-09"
+      fallback_models:
+        - "openai/gpt-5.4"
+      last_observed_model: "claude-sonnet-4-6"
+      last_observed_provider: "anthropic"
+      last_observed_api: "status-default"
       provider_hints:
         - "anthropic"
         - "openai"
-      note: "Portkonflikt auf 19840 wurde bereinigt, Dienst danach sauber neu gestartet."
+      note: "Portkonflikt auf 19840 wurde bereinigt; am 2026-05-09 wurde Chefkoch wieder auf Claude als Primary umgestellt."
     notes:
       - "Die relevanten Identitätsdateien liegen in ~/.openclaw/workspace_hauptagent, nicht im Standardpfad."
       - "Operatorisch ist dies Chefkoch, obwohl IDENTITY.md derzeit Cheko nennt."
       - "Ein alter openclaw-gateway-Prozess blockierte Port 19840 und wurde bereinigt."
+      - "ANTHROPIC_API_KEY wurde am 2026-05-09 gesetzt; openclaw status zeigt danach default claude-sonnet-4-6."
 
   - linux_user: "user2"
     workspace:
@@ -131,21 +141,26 @@ agents:
       name: "Franks Klaus"
       name_source: "operator + restored session history + repo /home/user2/Franks_Klaus"
       name_confidence: "high"
+      owner: "dto / Soblissa"
+      focus: "Franks Klaus, Alpin Invest, KI-Optimierung, Prozesse"
+      soul_summary: "fokussiert, direkt, geschäftstauglich"
     identity_md:
       present: true
       path: "/home/user2/.openclaw/workspace/IDENTITY.md"
-      status: "present_placeholder"
+      status: "present_filled"
       excerpt: |
-        - **Name:**
-          _(pick something you like)_
+        - **Name:** Franks Klaus
+        - **Creature:** KI-Arbeitsassistent
+        - **Vibe:** direkt, ruhig, lösungsorientiert, geschäftstauglich
+        - **Emoji:** 🏗️
     soul_md:
       present: true
       path: "/home/user2/.openclaw/workspace/SOUL.md"
-      status: "present_legacy"
+      status: "present"
       excerpt: |
-        # SOUL.md — Bernd
+        # SOUL.md — Franks Klaus
 
-        _Kein Chatbot. Ein Assistent für Sebastian._
+        Kein Chatbot. Ein fokussierter Arbeitsassistent für **Franks Klaus**.
     memory:
       installed: true
       memory_md_present: true
@@ -167,8 +182,9 @@ agents:
         - "openai"
         - "openai-codex"
         - "anthropic"
-      note: "Der Agent wurde am 2026-05-03 aus dem user2-Backup reaktiviert."
+      note: "Der Agent wurde am 2026-05-03 aus dem user2-Backup reaktiviert; live läuft er aktuell über openai-codex, nicht über Claude."
     notes:
       - "user2 war zwischenzeitlich entfernt und wurde aus /root/agent-cleanup-backups/user2-openclaw-20260503T102637Z.tar.gz wiederhergestellt."
       - "Die Namenszuordnung Franks Klaus folgt dem Operator und der wiederhergestellten Frank-/Franks-Klaus-Historie in Sessions und Repo-Dateien."
-      - "IDENTITY.md und SOUL.md sind noch Legacy-Spuren und sollten später bereinigt werden."
+      - "IDENTITY.md, SOUL.md, USER.md, MEMORY.md und AGENTS.md wurden am 2026-05-09 auf reinen Frank-/Alpin-Invest-Kontext bereinigt."
+      - "GitHub-SSH und Repo-Zugriff auf /home/user2/Franks_Klaus wurden am 2026-05-09 eingerichtet und verifiziert."

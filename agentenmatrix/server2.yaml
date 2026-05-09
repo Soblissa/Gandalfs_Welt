@@ -1,4 +1,4 @@
-generated_at_utc: "2026-05-03T14:55:00Z"
+generated_at_utc: "2026-05-09T07:46:00Z"
 server:
   alias: "sarahserver2"
   scope: "Server 2"
@@ -23,6 +23,9 @@ agents:
       name_source: "IDENTITY.md"
       name_confidence: "invalidated_by_operator"
       operator_note: "Die frühere Turyia-Zuordnung für Server 2 ist verworfen; es darf nur eine kanonische Turiya geben, und die liegt nicht hier."
+      owner: "Sarah"
+      focus: "Struktur, Orientierung, entwicklungsorientierte Begleitung"
+      soul_summary: "warm, klar, geerdet, integrativ"
     identity_md:
       present: true
       path: "/home/agent/.openclaw/workspace/IDENTITY.md"
@@ -79,6 +82,9 @@ agents:
       name: "joker"
       name_source: "IDENTITY.md"
       name_confidence: "high"
+      owner: null
+      focus: null
+      soul_summary: null
     identity_md:
       present: true
       path: "/home/joker/.openclaw/workspace/IDENTITY.md"
@@ -118,6 +124,7 @@ agents:
       note: "In den zuletzt gelesenen Sessions wurde kein aktuelles Assistenzmodell gefunden."
     notes:
       - "Joker ist der klarste Server-2-Fall mit aktivem Brave-Zugang in OpenClaw."
+      - "Besitzer-, Fokus- und Seelenangaben waren am 2026-05-09 nicht belastbar live nachlesbar."
 
   - linux_user: "nemo"
     workspace:
@@ -131,6 +138,9 @@ agents:
       name: "nemo"
       name_source: "IDENTITY.md"
       name_confidence: "high"
+      owner: null
+      focus: null
+      soul_summary: null
     identity_md:
       present: true
       path: "/home/nemo/.openclaw/workspace/IDENTITY.md"
@@ -167,6 +177,7 @@ agents:
       note: "Zum Erfassungszeitpunkt nicht belastbar ermittelbar."
     notes:
       - "Der Servicezustand wirkte instabil und wurde konservativ als 'activating' dokumentiert."
+      - "Besitzer-, Fokus- und Seelenangaben waren am 2026-05-09 nicht belastbar live nachlesbar."
 
 inactive_agents:
   - linux_user: "hiroshi"
@@ -181,6 +192,9 @@ inactive_agents:
       name: "hiroshi"
       name_source: "IDENTITY.md"
       name_confidence: "high"
+      owner: null
+      focus: null
+      soul_summary: null
     identity_md:
       present: true
       path: "/home/hiroshi/.openclaw/workspace/IDENTITY.md"
@@ -217,6 +231,7 @@ inactive_agents:
       note: "Kein belastbares Modellsignal gefunden."
     notes:
       - "Service ist deaktiviert? Nein, enabled bleibt true, aber der Laufzeitstatus ist inactive."
+      - "Besitzer-, Fokus- und Seelenangaben waren am 2026-05-09 nicht belastbar live nachlesbar."
 
 additional_observations:
   - "Unter /root/.openclaw/agents/main liegen zusätzliche Agent-Artefakte ohne klaren eigenen Workspace-Eintrag."

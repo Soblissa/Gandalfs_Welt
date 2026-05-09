@@ -1,23 +1,23 @@
 # Agentenmatrix, Server 2
 
-Stand: 2026-05-03 UTC  
+Stand: 2026-05-09 UTC  
 Host-Alias: `sarahserver2`
 
-Hinweis: Diese Fassung berücksichtigt `~/.openclaw/workspace` und `~/.openclaw/workspace_*`. Auf Server 2 waren zum Erfassungszeitpunkt einzelne SSH-Aufrufe instabil. Wo Live-Daten nicht belastbar waren, ist das offen markiert statt geraten.
+Hinweis: Diese Fassung berücksichtigt `~/.openclaw/workspace` und `~/.openclaw/workspace_*`. Auf Server 2 waren zum Erfassungszeitpunkt einzelne SSH-Aufrufe instabil. Wo Live-Daten nicht belastbar waren, ist das offen markiert statt geraten. Das betrifft auf Server 2 besonders `Besitzer`, `Einsatzfokus` und `Seele` bei mehreren Alt- oder Randfällen.
 
 ## Aktive oder zuletzt aktive Agenten
 
-| Linux-Nutzer | Workspace | Agentenname | Namensquelle | Gateway | Memory | Brave-Zugang | Default-Modell | Zuletzt beobachtet | IDENTITY.md | SOUL.md |
-|---|---|---|---|---|---|---|---|---|---|---|
-| `agent` | `~/.openclaw/workspace` | offen, nicht `Turiya` | `IDENTITY.md`, aber die frühere Turiya-Zuordnung ist verworfen | aktiv | ja | teilweise, Brave-Profil vorhanden, aber keine OpenClaw-Brave-Konfiguration gefunden | `openai-codex/gpt-5.4` aus `openclaw.json` | `gpt-5.4` über `openai-codex` | vorhanden | vorhanden |
-| `joker` | `~/.openclaw/workspace` | `joker` | `IDENTITY.md` | aktiv | teilweise, `memory/` vorhanden, kein `MEMORY.md` gefunden | ja, Brave in OpenClaw konfiguriert | `openai-codex/gpt-5.4` aus `openclaw.json` | kein aktuelles Session-Modell gefunden | vorhanden | vorhanden |
-| `nemo` | `~/.openclaw/workspace` | `nemo` | `IDENTITY.md` | zuletzt `activating`, enabled | nein | nein | unbekannt | kein aktuelles Session-Modell gefunden | vorhanden | vorhanden |
+| Linux-Nutzer | Workspace | Agentenname | Besitzer | Einsatzfokus | Seele | Namensquelle | Gateway | Memory | Brave-Zugang | Default-Modell | Zuletzt beobachtet | IDENTITY.md | SOUL.md |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| `agent` | `~/.openclaw/workspace` | offen, nicht `Turiya` | `Sarah` | Struktur, Orientierung, entwicklungsorientierte Begleitung | warm, klar, geerdet, integrativ | `IDENTITY.md`, aber die frühere Turiya-Zuordnung ist verworfen | aktiv | ja | teilweise, Brave-Profil vorhanden, aber keine OpenClaw-Brave-Konfiguration gefunden | `openai-codex/gpt-5.4` aus `openclaw.json` | `gpt-5.4` über `openai-codex` | vorhanden | vorhanden |
+| `joker` | `~/.openclaw/workspace` | `joker` | offen / nicht belastbar | offen / nicht belastbar | nicht belastbar aus Live-Daten | `IDENTITY.md` | aktiv | teilweise, `memory/` vorhanden, kein `MEMORY.md` gefunden | ja, Brave in OpenClaw konfiguriert | `openai-codex/gpt-5.4` aus `openclaw.json` | kein aktuelles Session-Modell gefunden | vorhanden | vorhanden |
+| `nemo` | `~/.openclaw/workspace` | `nemo` | offen / nicht belastbar | offen / nicht belastbar | nicht belastbar aus Live-Daten | `IDENTITY.md` | zuletzt `activating`, enabled | nein | nein | unbekannt | kein aktuelles Session-Modell gefunden | vorhanden | vorhanden |
 
 ## Inaktive Altbestände
 
-| Linux-Nutzer | Status | Hinweise |
-|---|---|---|
-| `hiroshi` | inaktiv, aber enabled | Workspace und Identitätsdateien vorhanden, derzeit kein belastbares Modell sichtbar |
+| Linux-Nutzer | Status | Besitzer | Einsatzfokus | Seele | Hinweise |
+|---|---|---|---|---|---|
+| `hiroshi` | inaktiv, aber enabled | offen / nicht belastbar | offen / nicht belastbar | nicht belastbar aus Live-Daten | Workspace und Identitätsdateien vorhanden, derzeit kein belastbares Modell sichtbar |
 
 ## Details
 
@@ -26,6 +26,9 @@ Hinweis: Diese Fassung berücksichtigt `~/.openclaw/workspace` und `~/.openclaw/
 - verwendeter Workspace: `/home/agent/.openclaw/workspace`
 - Gateway: `openclaw-gateway@agent`, aktiv und enabled
 - Agentenname: offen, ausdrücklich **nicht** `Turiya`
+- Besitzer: `Sarah`
+- Einsatzfokus: Struktur, Orientierung, entwicklungsorientierte Begleitung
+- Seele: warm, klar, geerdet, integrativ
 - Namensquelle: `IDENTITY.md` enthält zwar `Turyia`, die frühere Zuordnung ist aber verworfen
 - `IDENTITY.md`: vorhanden und ausgefüllt
 - `SOUL.md`: vorhanden und ausgefüllt
@@ -55,6 +58,9 @@ Hinweis: Diese Fassung berücksichtigt `~/.openclaw/workspace` und `~/.openclaw/
 - verwendeter Workspace: `/home/joker/.openclaw/workspace`
 - Gateway: `openclaw-gateway@joker`, aktiv und enabled
 - Agentenname: `joker`
+- Besitzer: aktuell nicht belastbar live ermittelbar
+- Einsatzfokus: aktuell nicht belastbar live ermittelbar
+- Seele: aktuell nicht belastbar live ermittelbar
 - Namensquelle: `IDENTITY.md`
 - `IDENTITY.md`: vorhanden und ausgefüllt
 - `SOUL.md`: vorhanden
@@ -80,6 +86,9 @@ Hinweis: Diese Fassung berücksichtigt `~/.openclaw/workspace` und `~/.openclaw/
 - verwendeter Workspace: `/home/nemo/.openclaw/workspace`
 - Gateway: `openclaw-gateway@nemo`, enabled; bei Direktprüfung zuletzt `activating`
 - Agentenname: `nemo`
+- Besitzer: aktuell nicht belastbar live ermittelbar
+- Einsatzfokus: aktuell nicht belastbar live ermittelbar
+- Seele: aktuell nicht belastbar live ermittelbar
 - Namensquelle: `IDENTITY.md`
 - `IDENTITY.md`: vorhanden und ausgefüllt
 - `SOUL.md`: vorhanden
@@ -105,6 +114,9 @@ Hinweis: Diese Fassung berücksichtigt `~/.openclaw/workspace` und `~/.openclaw/
 - verwendeter Workspace: `/home/hiroshi/.openclaw/workspace`
 - Gateway: `openclaw-gateway@hiroshi`, inactive und enabled
 - Agentenname: `hiroshi`
+- Besitzer: aktuell nicht belastbar live ermittelbar
+- Einsatzfokus: aktuell nicht belastbar live ermittelbar
+- Seele: aktuell nicht belastbar live ermittelbar
 - Namensquelle: `IDENTITY.md`
 - `IDENTITY.md`: vorhanden und ausgefüllt
 - `SOUL.md`: vorhanden

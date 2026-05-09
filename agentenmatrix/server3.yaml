@@ -1,4 +1,4 @@
-generated_at_utc: "2026-05-03T14:56:00Z"
+generated_at_utc: "2026-05-09T07:47:00Z"
 server:
   alias: "sarahserver3"
   scope: "Server 3"
@@ -19,6 +19,9 @@ agents:
       name: "gandalf"
       name_source: "IDENTITY.md"
       name_confidence: "high"
+      owner: "dto"
+      focus: "technische Assistenz, Server- und Repoarbeit"
+      soul_summary: "technisch präzise, direkt, ruhig"
     identity_md:
       present: true
       path: "/home/gandalf/.openclaw/workspace/IDENTITY.md"
@@ -69,6 +72,9 @@ agents:
       name: "rocky"
       name_source: "IDENTITY.md"
       name_confidence: "high"
+      owner: "dto"
+      focus: "allgemeine technische Assistenz im Slot 1"
+      soul_summary: "technisch präzise, direkt, ruhig"
     identity_md:
       present: true
       path: "/home/rocky/.openclaw/workspace/IDENTITY.md"
@@ -119,6 +125,9 @@ agents:
       name: "Turiya"
       name_source: "operator + IDENTITY.md"
       name_confidence: "high"
+      owner: "dto"
+      focus: "integrative Begleitung, Klarheit, Entwicklungsorientierung"
+      soul_summary: "warm, direkt, klar, integrativ"
     identity_md:
       present: true
       path: "/home/turyia/.openclaw/workspace/IDENTITY.md"
