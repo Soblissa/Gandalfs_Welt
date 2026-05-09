@@ -49,22 +49,24 @@ agents:
       openclaw_configured: false
       assessment: "Brave-Profil vorhanden, aber keine Brave-Konfiguration in aktueller OpenClaw-Konfiguration gefunden."
     models:
-      default_model: "openai/gpt-5.4"
-      default_model_source: "live config after repair"
+      default_model: "anthropic/claude-sonnet-4-6"
+      default_model_source: "live config + openclaw status 2026-05-09"
       fallback_models:
+        - "openai/gpt-5.4"
         - "openai/gpt-5.1-codex"
-      last_observed_model: "gpt-5.4"
-      last_observed_provider: "openai"
-      last_observed_api: "openai-responses"
+      last_observed_model: "claude-sonnet-4-6"
+      last_observed_provider: "anthropic"
+      last_observed_api: "status-default"
       provider_hints:
+        - "anthropic"
         - "openai"
         - "openai-codex"
-        - "anthropic"
-      note: "Anthropic-Billing und der fehlerhafte o3-mini-Fallback wurden aus dem aktiven Laufweg entfernt; Sollbild bleibt Claude."
+      note: "Bernd wurde am 2026-05-09 wieder auf Claude als Primary umgestellt; OpenAI bleibt Fallback-Kette."
     notes:
       - "Die Identität lag nicht im Standardpfad ~/.openclaw/workspace, sondern in ~/.openclaw/workspace_sebastian."
       - "Der Operator hat Bernd auf Server 1 explizit als kanonischen Namen bestätigt."
       - "Vor der Reparatur scheiterte der Agent an Anthropic-Billing plus o3-mini-Verifikationsfehlern."
+      - "ANTHROPIC_API_KEY wurde am 2026-05-09 aktualisiert; openclaw status zeigt danach default claude-sonnet-4-6."
 
   - linux_user: "user1"
     workspace:
