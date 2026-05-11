@@ -3,13 +3,13 @@
 Stand: 2026-05-11 UTC  
 Host-Alias: `sarahserver2`
 
-Hinweis: Diese Fassung bildet den **heutigen Live-Zustand** ab. Seit Operator-Entscheidung vom 2026-05-11 liegt die kanonische **Turiya vollständig auf Server 2**. Der Linux-Nutzer bleibt technisch `agent`, die fachliche Identität ist aber Turiya. Frühere Einträge zu `joker`, `nemo` und `hiroshi` ließen sich live nicht mehr als aktuelle Linux-Nutzer oder aktive OpenClaw-Installationen bestätigen.
+Hinweis: Diese Fassung bildet den **heutigen Live-Zustand** ab. Seit Operator-Entscheidung vom 2026-05-11 liegt die kanonische **Turiya vollständig auf Server 2**. Der Linux-Nutzer bleibt technisch `agent`, die fachliche Identität ist aber Turiya. Ein Versuch, dort `openai-codex/gpt-5.5` zu fahren, scheiterte an der installierten OpenClaw-Version, daher läuft Turiya aktuell stabil mit `openai-codex/gpt-5.4`. Frühere Einträge zu `joker`, `nemo` und `hiroshi` ließen sich live nicht mehr als aktuelle Linux-Nutzer oder aktive OpenClaw-Installationen bestätigen.
 
 ## Aktive Agenten
 
 | Linux-Nutzer | Workspace | Agentenname | Besitzer | Einsatzfokus | Seele | Namensquelle | Gateway | Memory | Brave-Zugang | Default-Modell | Zuletzt beobachtet | IDENTITY.md | SOUL.md |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| `agent` | `~/.openclaw/workspace` | `Turiya` | `Sarah` | integrative Begleitung, Klarheit, Entwicklungsorientierung | warm, klar, geerdet, entwicklungsorientiert | `IDENTITY.md`, `SOUL.md`, `USER.md` plus Operator-Entscheidung | aktiv | ja | teilweise, Perplexity als Web-Search aktiv | `openai-codex/gpt-5.5` aus `openclaw.json` | `gpt-5.5` über `openai-codex` | vorhanden | vorhanden |
+| `agent` | `~/.openclaw/workspace` | `Turiya` | `Sarah` | integrative Begleitung, Klarheit, Entwicklungsorientierung | warm, klar, geerdet, entwicklungsorientiert | `IDENTITY.md`, `SOUL.md`, `USER.md` plus Operator-Entscheidung | aktiv | ja | teilweise, Perplexity als Web-Search aktiv | `openai-codex/gpt-5.4` aus `openclaw.json` | `gpt-5.4` über `openai-codex` | vorhanden | vorhanden |
 
 ## Details
 
@@ -26,8 +26,8 @@ Hinweis: Diese Fassung bildet den **heutigen Live-Zustand** ab. Seit Operator-En
 - `SOUL.md`: vorhanden und ausgefüllt
 - Memory: `MEMORY.md` und `memory/` vorhanden
 - Modelle:
-  - Default aus `openclaw.json`: `openai-codex/gpt-5.5`
-  - zuletzt beobachtetes Modell in Sessions: `gpt-5.5` über `openai-codex`
+  - Default aus `openclaw.json`: `openai-codex/gpt-5.4`
+  - zuletzt beobachtetes Modell in Sessions: `gpt-5.4` über `openai-codex`
   - Auth-/Provider-Hinweis: `openai-codex`
 - Websuche:
   - `tools.web.search.provider = perplexity`
@@ -38,6 +38,7 @@ Hinweis: Diese Fassung bildet den **heutigen Live-Zustand** ab. Seit Operator-En
 - Live-Fix 2026-05-11: ein alter zusätzlicher **User-Systemd-Gateway** (`/home/agent/.config/systemd/user/openclaw-gateway.service`) wurde deaktiviert, weil er parallel zum eigentlichen `openclaw-gateway@agent` pollte und so die wiederkehrenden `getUpdates`-`409 Conflict`-Fehler verursachte
 - Ergebnis nach Fix: nur noch ein Gateway-Prozess aktiv, der 409-Konflikt verschwand in der Nachprüfung
 - Operator-Entscheidung 2026-05-11: Turiya soll vollständig auf Server 2 liegen; diese Instanz ist seitdem die kanonische Turiya
+- Laufzeitfix 2026-05-11: `openai-codex/gpt-5.5` war auf der dort installierten OpenClaw-Version nicht bekannt (`Unknown model`), daher Rückstellung auf `openai-codex/gpt-5.4`
 
 #### `agent` IDENTITY.md (Auszug)
 ```md

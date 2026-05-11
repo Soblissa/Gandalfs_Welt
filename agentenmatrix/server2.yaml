@@ -9,7 +9,7 @@ server:
   capture_notes:
     - "Historische Einträge zu joker, nemo und hiroshi konnten live nicht mehr als aktuelle Linux-Nutzer bestätigt werden."
     - "Der wiederkehrende Telegram-409-Konflikt bei agent wurde auf einen zusätzlichen User-Systemd-Gateway zurückgeführt und am 2026-05-11 behoben."
-    - "Am selben Tag wurde Turiya vollständig auf diesen Host gelegt, inklusive Perplexity-Websuche und Modellangleichung auf openai-codex/gpt-5.5."
+    - "Am selben Tag wurde Turiya vollständig auf diesen Host gelegt, inklusive Perplexity-Websuche. Der zunächst gesetzte Modellpfad openai-codex/gpt-5.5 war lokal nicht bekannt und wurde deshalb auf openai-codex/gpt-5.4 korrigiert."
 agents:
   - linux_user: "agent"
     workspace:
@@ -68,9 +68,9 @@ agents:
       openai_codex_enabled: false
       note: "Perplexity ist als Recherche-Layer aktiv."
     models:
-      default_model: "openai-codex/gpt-5.5"
+      default_model: "openai-codex/gpt-5.4"
       default_model_source: "openclaw.json"
-      last_observed_model: "gpt-5.5"
+      last_observed_model: "gpt-5.4"
       last_observed_provider: "openai-codex"
       last_observed_api: "openai-codex-responses"
       provider_hints:
