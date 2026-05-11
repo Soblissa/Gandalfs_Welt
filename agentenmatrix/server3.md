@@ -1,6 +1,6 @@
 # Agentenmatrix, Server 3
 
-Stand: 2026-05-09 UTC  
+Stand: 2026-05-11 UTC  
 Host-Alias: `sarahserver3`
 
 Hinweis: Diese Fassung berücksichtigt `~/.openclaw/workspace` und `~/.openclaw/workspace_*`.
@@ -11,7 +11,7 @@ Hinweis: Diese Fassung berücksichtigt `~/.openclaw/workspace` und `~/.openclaw/
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | `gandalf` | `~/.openclaw/workspace` | `gandalf` | `dto` | technische Assistenz, Server- und Repoarbeit | technisch präzise, direkt, ruhig | `IDENTITY.md` | aktiv | ja | ja, OpenClaw-Brave konfiguriert, aber kein lokales Brave-Profil gefunden | `openai/gpt-5.4` | `gpt-5.4` über OpenAI | vorhanden | vorhanden |
 | `rocky` | `~/.openclaw/workspace` | `rocky` | `dto` | allgemeine technische Assistenz im Slot 1 | technisch präzise, direkt, ruhig | `IDENTITY.md` | aktiv | ja, nur `memory/` | ja, Brave in OpenClaw konfiguriert, kein lokales Brave-Profil gefunden | `openai/gpt-5.5` | `gpt-5.4` über OpenAI | vorhanden | vorhanden |
-| `turyia` | `~/.openclaw/workspace` | `Turiya` | `dto` | integrative Begleitung, Klarheit, Entwicklungsorientierung | warm, direkt, klar, integrativ | Operator plus `IDENTITY.md` | aktiv | nein | teilweise, OpenClaw-Brave-Spuren vorhanden, aber kein lokales Brave-Profil gefunden | `openai-codex/gpt-5.5` | kein aktuelles Session-Modell gefunden | vorhanden | vorhanden |
+| `turyia` | `~/.openclaw/workspace` | `Turiya` | `dto` | integrative Begleitung, Klarheit, Entwicklungsorientierung | warm, direkt, klar, integrativ | Operator plus `IDENTITY.md` | aktiv | nein | teilweise, frühere Brave-Spuren vorhanden, aktuell ist Websuche über Perplexity aktiv | `openai-codex/gpt-5.5` | `gpt-5.5` über `openai-codex` | vorhanden | vorhanden |
 
 ## Details
 
@@ -82,12 +82,21 @@ Hinweis: Diese Fassung berücksichtigt `~/.openclaw/workspace` und `~/.openclaw/
 - `IDENTITY.md`: vorhanden und ausgefüllt
 - `SOUL.md`: vorhanden und stark ausformuliert
 - Memory: kein `MEMORY.md`, kein `memory/` gefunden
-- Brave: kein lokales Brave-Profil gefunden, aber OpenClaw-Konfiguration enthält Brave-Spuren; belastbarer aktiver Brave-Zugang ist nicht klar
+- Brave: kein lokales Brave-Profil gefunden; frühere Brave-Spuren sind sekundär, die aktive Websuche läuft jetzt über Perplexity
 - Modelle:
   - Default aus `openclaw.json`: `openai-codex/gpt-5.5`
-  - zuletzt beobachtetes Modell in Sessions: nicht gefunden
+  - zuletzt beobachtetes Modell in Sessions: `gpt-5.5` über `openai-codex`
   - Auth-/Provider-Hinweis: `openai-codex`
-- Hinweis: Die Identität ist deutlich ausgeprägt, aber Sessions lieferten zuletzt kein verwertbares Modellsignal
+- Websuche:
+  - `tools.web.search.provider = perplexity`
+  - `plugins.entries.perplexity.enabled = true`
+  - `plugins.entries.perplexity.config.webSearch.model = perplexity/sonar-pro`
+  - `tools.web.search.openaiCodex.enabled = false`
+- Stabilisierung 2026-05-11:
+  - `plugins.entries.acpx.enabled = false`
+  - `plugins.entries.bonjour.enabled = false`
+  - danach blieb `openclaw-gateway@turyia` stabil aktiv und der frühere Restart-Loop mit `acpx`/`CIAO PROBING CANCELLED` lief in der Nachprüfung nicht weiter
+- Hinweis: Die Identität ist deutlich ausgeprägt; Perplexity dient bewusst nur als Recherche-Layer, nicht als Identitätskern
 - Zusatz: Laut Operator darf es nur eine `Turiya` geben, und dieser Eintrag ist die kanonische Turiya
 
 #### `turyia` IDENTITY.md (Auszug)

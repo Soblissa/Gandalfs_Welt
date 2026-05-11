@@ -1,4 +1,4 @@
-generated_at_utc: "2026-05-09T07:47:00Z"
+generated_at_utc: "2026-05-11T07:56:00Z"
 server:
   alias: "sarahserver3"
   scope: "Server 3"
@@ -155,17 +155,28 @@ agents:
       memory_dir_present: false
     brave:
       browser_profile_present: false
-      openclaw_configured: true
-      assessment: "OpenClaw-Konfiguration enthält Brave-Spuren, ein belastbarer aktiver Brave-Zugang ist aber nicht klar."
+      openclaw_configured: false
+      assessment: "Kein lokales Brave-Profil gefunden; die aktive Websuche läuft inzwischen über Perplexity."
+    web_search:
+      provider: "perplexity"
+      model: "perplexity/sonar-pro"
+      openai_codex_enabled: false
+      note: "Perplexity dient bewusst nur als Recherche-Layer, nicht als Identitätskern."
     models:
       default_model: "openai-codex/gpt-5.5"
       default_model_source: "openclaw.json"
-      last_observed_model: null
-      last_observed_provider: null
+      last_observed_model: "gpt-5.5"
+      last_observed_provider: "openai-codex"
       last_observed_api: null
       provider_hints:
         - "openai-codex"
-      note: "In den gelesenen Sessions wurde kein aktuelles Assistenzmodell gefunden."
+        - "perplexity"
+      note: "End-to-End-Test am 2026-05-11 nutzte erfolgreich web_search mit Perplexity im Hintergrund."
+    stability:
+      acpx_enabled: false
+      bonjour_enabled: false
+      note: "Die beiden Einträge wurden am 2026-05-11 explizit deaktiviert, um den Restart-Loop zu beenden."
     notes:
       - "Laut Operator darf es nur eine kanonische Turiya geben; diese Zuordnung liegt auf Server 3."
       - "Der frühere Turyia-Bezug auf Server 2 gilt ausdrücklich nicht mehr."
+      - "openclaw-gateway@turyia blieb nach der Stabilisierung in der Nachprüfung aktiv."
