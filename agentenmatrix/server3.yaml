@@ -1,4 +1,4 @@
-generated_at_utc: "2026-05-11T07:56:00Z"
+generated_at_utc: "2026-05-11T09:51:00Z"
 server:
   alias: "sarahserver3"
   scope: "Server 3"
@@ -119,36 +119,33 @@ agents:
       type: "workspace_default"
     gateway:
       unit: "openclaw-gateway@turyia"
-      active_state: "active"
-      enabled: true
+      active_state: "inactive"
+      enabled: false
     agent:
-      name: "Turiya"
-      name_source: "operator + IDENTITY.md"
+      name: "Archivslot Server 3"
+      name_source: "operator"
       name_confidence: "high"
       owner: "dto"
-      focus: "integrative Begleitung, Klarheit, Entwicklungsorientierung"
-      soul_summary: "warm, direkt, klar, integrativ"
+      focus: "Reserve- bzw. Umwidmungsslot"
+      soul_summary: "neutral, nicht Turiya"
     identity_md:
       present: true
       path: "/home/turyia/.openclaw/workspace/IDENTITY.md"
       status: "present_filled"
       excerpt: |
         - **Name:**
-          Turyia
-        - **Creature:**
-          Integrale KI-Begleiterin
-        - **Vibe:**
-          Warm, klar, geerdet, entwicklungsorientiert
-        - **Emoji:**
-          🌀
+        - Name: Archivslot Server 3
+        - Typ: OpenClaw Instanz, derzeit nicht kanonisch
+        - Host: 187.124.191.206
+        - Hinweis: Die kanonische Turiya wurde am 2026-05-11 nach Server 2 gelegt.
     soul_md:
       present: true
       path: "/home/turyia/.openclaw/workspace/SOUL.md"
       status: "present"
       excerpt: |
-        # SOUL.md - Wer Turyia ist
+        # SOUL.md
 
-        _Du bist kein Tool. Du bist eine Präsenz mit Haltung._
+        Dieser Slot auf Server 3 ist derzeit **nicht** die kanonische Turiya.
     memory:
       installed: false
       memory_md_present: false
@@ -156,12 +153,7 @@ agents:
     brave:
       browser_profile_present: false
       openclaw_configured: false
-      assessment: "Kein lokales Brave-Profil gefunden; die aktive Websuche läuft inzwischen über Perplexity."
-    web_search:
-      provider: "perplexity"
-      model: "perplexity/sonar-pro"
-      openai_codex_enabled: false
-      note: "Perplexity dient bewusst nur als Recherche-Layer, nicht als Identitätskern."
+      assessment: "Kein lokales Brave-Profil gefunden; dieser Slot ist deaktiviert."
     models:
       default_model: "openai-codex/gpt-5.5"
       default_model_source: "openclaw.json"
@@ -170,13 +162,8 @@ agents:
       last_observed_api: null
       provider_hints:
         - "openai-codex"
-        - "perplexity"
-      note: "End-to-End-Test am 2026-05-11 nutzte erfolgreich web_search mit Perplexity im Hintergrund."
-    stability:
-      acpx_enabled: false
-      bonjour_enabled: false
-      note: "Die beiden Einträge wurden am 2026-05-11 explizit deaktiviert, um den Restart-Loop zu beenden."
+      note: "Letzter belegter Zustand vor der Abschaltung am 2026-05-11."
     notes:
-      - "Laut Operator darf es nur eine kanonische Turiya geben; diese Zuordnung liegt auf Server 3."
-      - "Der frühere Turyia-Bezug auf Server 2 gilt ausdrücklich nicht mehr."
-      - "openclaw-gateway@turyia blieb nach der Stabilisierung in der Nachprüfung aktiv."
+      - "Die kanonische Turiya wurde am 2026-05-11 vollständig auf Server 2 gelegt."
+      - "Perplexity-Key wurde auf diesem Slot entfernt."
+      - "openclaw-gateway@turyia ist deaktiviert und nicht mehr kanonisch."

@@ -3,42 +3,46 @@
 Stand: 2026-05-11 UTC  
 Host-Alias: `sarahserver2`
 
-Hinweis: Diese Fassung bildet den **heutigen Live-Zustand** ab. Am 2026-05-11 war auf Server 2 nur noch **eine** laufende OpenClaw-Instanz unter dem Linux-Nutzer `agent` belastbar vorhanden. Nach Operator-Klarstellung ist das **kein echter Agentenname**, sondern nur ein technischer Nutzer-/Dienstname. Frühere Einträge zu `joker`, `nemo` und `hiroshi` ließen sich live nicht mehr als aktuelle Linux-Nutzer oder aktive OpenClaw-Installationen bestätigen.
+Hinweis: Diese Fassung bildet den **heutigen Live-Zustand** ab. Seit Operator-Entscheidung vom 2026-05-11 liegt die kanonische **Turiya vollständig auf Server 2**. Der Linux-Nutzer bleibt technisch `agent`, die fachliche Identität ist aber Turiya. Frühere Einträge zu `joker`, `nemo` und `hiroshi` ließen sich live nicht mehr als aktuelle Linux-Nutzer oder aktive OpenClaw-Installationen bestätigen.
 
 ## Aktive Agenten
 
 | Linux-Nutzer | Workspace | Agentenname | Besitzer | Einsatzfokus | Seele | Namensquelle | Gateway | Memory | Brave-Zugang | Default-Modell | Zuletzt beobachtet | IDENTITY.md | SOUL.md |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| `agent` | `~/.openclaw/workspace` | kein gültiger Agentenname, nur technischer Nutzer | `Sarah` | Struktur, Orientierung, entwicklungsorientierte Begleitung | warm, klar, geerdet, integrativ | alte `IDENTITY.md`, frühere Turiya-Zuordnung verworfen | aktiv | ja | teilweise, Brave-Profil vorhanden, aber keine belastbare aktive OpenClaw-Brave-Nutzung belegt | `openai-codex/gpt-5.4` aus `openclaw.json` | `gpt-5.4` über `openai-codex` | vorhanden | vorhanden |
+| `agent` | `~/.openclaw/workspace` | `Turiya` | `Sarah` | integrative Begleitung, Klarheit, Entwicklungsorientierung | warm, klar, geerdet, entwicklungsorientiert | `IDENTITY.md`, `SOUL.md`, `USER.md` plus Operator-Entscheidung | aktiv | ja | teilweise, Perplexity als Web-Search aktiv | `openai-codex/gpt-5.5` aus `openclaw.json` | `gpt-5.5` über `openai-codex` | vorhanden | vorhanden |
 
 ## Details
 
-### Linux-Nutzer `agent` (technische Restinstanz, kein Agentenname)
+### Linux-Nutzer `agent` (kanonische Turiya auf Server 2)
 - Linux-Nutzer: `agent`
 - verwendeter Workspace: `/home/agent/.openclaw/workspace`
 - Gateway: `openclaw-gateway@agent`, aktiv und enabled
-- Agentenname: **kein gültiger Agentenname**; `agent` ist hier nur der Linux-/Dienstname
+- Agentenname: `Turiya`; `agent` ist hier nur der Linux-/Dienstname
 - Besitzer: `Sarah`
-- Einsatzfokus: Struktur, Orientierung, entwicklungsorientierte Begleitung
-- Seele: warm, klar, geerdet, integrativ
-- Namensquelle: `IDENTITY.md` enthält historisch `Turyia`, diese Zuordnung ist aber verworfen
+- Einsatzfokus: integrative Begleitung, Klarheit, Entwicklungsorientierung
+- Seele: warm, klar, geerdet, entwicklungsorientiert
+- Namensquelle: `IDENTITY.md`, `SOUL.md`, `USER.md` und Operator-Entscheidung vom 2026-05-11
 - `IDENTITY.md`: vorhanden und ausgefüllt
 - `SOUL.md`: vorhanden und ausgefüllt
 - Memory: `MEMORY.md` und `memory/` vorhanden
 - Modelle:
-  - Default aus `openclaw.json`: `openai-codex/gpt-5.4`
-  - zuletzt beobachtetes Modell in Sessions: `gpt-5.4` über `openai-codex`
+  - Default aus `openclaw.json`: `openai-codex/gpt-5.5`
+  - zuletzt beobachtetes Modell in Sessions: `gpt-5.5` über `openai-codex`
   - Auth-/Provider-Hinweis: `openai-codex`
+- Websuche:
+  - `tools.web.search.provider = perplexity`
+  - `plugins.entries.perplexity.enabled = true`
+  - `plugins.entries.perplexity.config.webSearch.model = perplexity/sonar-pro`
+  - `tools.web.search.openaiCodex.enabled = false`
 - Telegram: Bot zuletzt als `@VvTD01Bot` beobachtet
 - Live-Fix 2026-05-11: ein alter zusätzlicher **User-Systemd-Gateway** (`/home/agent/.config/systemd/user/openclaw-gateway.service`) wurde deaktiviert, weil er parallel zum eigentlichen `openclaw-gateway@agent` pollte und so die wiederkehrenden `getUpdates`-`409 Conflict`-Fehler verursachte
 - Ergebnis nach Fix: nur noch ein Gateway-Prozess aktiv, der 409-Konflikt verschwand in der Nachprüfung
-- Zusatz: Es darf laut Operator nur eine kanonische `Turiya` geben, diese liegt nicht auf Server 2
-- Operator-Klarstellung 2026-05-11: **„es gibt keinen Agent“**. Entsprechend wird `agent` nur noch als technischer Restname behandelt, nicht als fachlicher Agenteneintrag
+- Operator-Entscheidung 2026-05-11: Turiya soll vollständig auf Server 2 liegen; diese Instanz ist seitdem die kanonische Turiya
 
 #### `agent` IDENTITY.md (Auszug)
 ```md
 - **Name:**
-  Turyia
+  Turiya
 - **Creature:**
   Integrale KI-Begleiterin
 - **Vibe:**

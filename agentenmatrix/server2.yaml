@@ -1,14 +1,15 @@
-generated_at_utc: "2026-05-11T07:55:00Z"
+generated_at_utc: "2026-05-11T09:50:00Z"
 server:
   alias: "sarahserver2"
   scope: "Server 2"
   source: "live inspection via root SSH"
   workspace_discovery:
     rule: "Inspect ~/.openclaw/workspace and ~/.openclaw/workspace_*"
-    note: "Am 2026-05-11 war nur noch ein belastbarer OpenClaw-Bestand unter /home/agent vorhanden. Der Name agent ist dabei nur technisch, nicht fachlich."
+    note: "Am 2026-05-11 liegt die kanonische Turiya unter /home/agent. Der Linux-Nutzername agent bleibt rein technisch."
   capture_notes:
     - "Historische Einträge zu joker, nemo und hiroshi konnten live nicht mehr als aktuelle Linux-Nutzer bestätigt werden."
     - "Der wiederkehrende Telegram-409-Konflikt bei agent wurde auf einen zusätzlichen User-Systemd-Gateway zurückgeführt und am 2026-05-11 behoben."
+    - "Am selben Tag wurde Turiya vollständig auf diesen Host gelegt, inklusive Perplexity-Websuche und Modellangleichung auf openai-codex/gpt-5.5."
 agents:
   - linux_user: "agent"
     workspace:
@@ -23,20 +24,20 @@ agents:
         - "Am 2026-05-11 wurde ein zusätzlicher User-Systemd-Dienst /home/agent/.config/systemd/user/openclaw-gateway.service deaktiviert."
         - "Danach blieb nur noch ein Gateway-Prozess aktiv und der Telegram-getUpdates-409-Konflikt verschwand in der Nachprüfung."
     agent:
-      name: null
-      name_source: "IDENTITY.md"
-      name_confidence: "invalidated_by_operator"
-      operator_note: "Die frühere Turyia-Zuordnung für Server 2 ist verworfen; es darf nur eine kanonische Turiya geben, und die liegt nicht hier. Der Linux-Nutzername agent ist kein echter Agentenname."
+      name: "Turiya"
+      name_source: "IDENTITY.md + SOUL.md + USER.md + operator"
+      name_confidence: "high"
+      operator_note: "Die kanonische Turiya liegt seit 2026-05-11 auf Server 2. Der Linux-Nutzername agent ist nur technisch."
       owner: "Sarah"
-      focus: "Struktur, Orientierung, entwicklungsorientierte Begleitung"
-      soul_summary: "warm, klar, geerdet, integrativ"
+      focus: "integrative Begleitung, Klarheit, Entwicklungsorientierung"
+      soul_summary: "warm, klar, geerdet, entwicklungsorientiert"
     identity_md:
       present: true
       path: "/home/agent/.openclaw/workspace/IDENTITY.md"
       status: "present_filled"
       excerpt: |
         - **Name:**
-          Turyia
+          Turiya
         - **Creature:**
           Integrale KI-Begleiterin
         - **Vibe:**
@@ -48,7 +49,7 @@ agents:
       path: "/home/agent/.openclaw/workspace/SOUL.md"
       status: "present"
       excerpt: |
-        # SOUL.md - Wer Turyia ist
+        # SOUL.md - Wer Turiya ist
 
         _Du bist kein Tool. Du bist eine Präsenz mit Haltung._
     memory:
@@ -60,20 +61,25 @@ agents:
     brave:
       browser_profile_present: true
       openclaw_configured: false
-      assessment: "Brave-Profil vorhanden, aber keine belastbare aktive OpenClaw-Brave-Nutzung belegt."
+      assessment: "Kein belastbarer aktiver Brave-Pfad belegt; Websuche läuft über Perplexity."
+    web_search:
+      provider: "perplexity"
+      model: "perplexity/sonar-pro"
+      openai_codex_enabled: false
+      note: "Perplexity ist als Recherche-Layer aktiv."
     models:
-      default_model: "openai-codex/gpt-5.4"
+      default_model: "openai-codex/gpt-5.5"
       default_model_source: "openclaw.json"
-      last_observed_model: "gpt-5.4"
+      last_observed_model: "gpt-5.5"
       last_observed_provider: "openai-codex"
       last_observed_api: "openai-codex-responses"
       provider_hints:
         - "openai-codex"
+        - "perplexity"
     notes:
-      - "Linux-Nutzername und historischer Agentenname weichen voneinander ab."
-      - "Der bisherige Name Turyia gilt auf Server 2 ausdrücklich nicht mehr."
-      - "Es darf nur eine kanonische Turiya geben; dieser Eintrag ist ausdrücklich nicht Turiya."
-      - "Operator-Klarstellung 2026-05-11: Es gibt keinen Agenten namens agent, nur einen technischen Nutzer-/Dienstnamen."
+      - "Linux-Nutzername und Agentenname weichen bewusst voneinander ab."
+      - "Die kanonische Turiya liegt seit 2026-05-11 auf Server 2."
+      - "Ein zusätzlicher User-Systemd-Gateway wurde am selben Tag entfernt; danach blieb nur noch ein Poller aktiv."
 
 historical_absent_entries:
   - linux_user: "joker"
