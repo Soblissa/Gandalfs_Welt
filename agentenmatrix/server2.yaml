@@ -5,7 +5,7 @@ server:
   source: "live inspection via root SSH"
   workspace_discovery:
     rule: "Inspect ~/.openclaw/workspace and ~/.openclaw/workspace_*"
-    note: "Am 2026-05-11 war nur noch ein belastbarer OpenClaw-Bestand unter /home/agent vorhanden."
+    note: "Am 2026-05-11 war nur noch ein belastbarer OpenClaw-Bestand unter /home/agent vorhanden. Der Name agent ist dabei nur technisch, nicht fachlich."
   capture_notes:
     - "Historische Einträge zu joker, nemo und hiroshi konnten live nicht mehr als aktuelle Linux-Nutzer bestätigt werden."
     - "Der wiederkehrende Telegram-409-Konflikt bei agent wurde auf einen zusätzlichen User-Systemd-Gateway zurückgeführt und am 2026-05-11 behoben."
@@ -26,7 +26,7 @@ agents:
       name: null
       name_source: "IDENTITY.md"
       name_confidence: "invalidated_by_operator"
-      operator_note: "Die frühere Turyia-Zuordnung für Server 2 ist verworfen; es darf nur eine kanonische Turiya geben, und die liegt nicht hier."
+      operator_note: "Die frühere Turyia-Zuordnung für Server 2 ist verworfen; es darf nur eine kanonische Turiya geben, und die liegt nicht hier. Der Linux-Nutzername agent ist kein echter Agentenname."
       owner: "Sarah"
       focus: "Struktur, Orientierung, entwicklungsorientierte Begleitung"
       soul_summary: "warm, klar, geerdet, integrativ"
@@ -73,6 +73,7 @@ agents:
       - "Linux-Nutzername und historischer Agentenname weichen voneinander ab."
       - "Der bisherige Name Turyia gilt auf Server 2 ausdrücklich nicht mehr."
       - "Es darf nur eine kanonische Turiya geben; dieser Eintrag ist ausdrücklich nicht Turiya."
+      - "Operator-Klarstellung 2026-05-11: Es gibt keinen Agenten namens agent, nur einen technischen Nutzer-/Dienstnamen."
 
 historical_absent_entries:
   - linux_user: "joker"
