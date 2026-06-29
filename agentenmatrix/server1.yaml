@@ -1,20 +1,81 @@
-generated_at_utc: "2026-05-09T07:45:00Z"
+generated_at_utc: "2026-06-29T12:55:00Z"
 server:
   alias: "sarahserver1"
   scope: "Server 1"
-  source: "root SSH inspection plus live repair on 2026-05-03"
+  source: "botrepo:agentctl (playbooks/domains/homelab/active/templates/agentdeployment/147.93.120.51.yml.j2) + operator confirmation via Slarti/Torsten on 2026-06-29"
   workspace_discovery:
     rule: "Inspect ~/.openclaw/workspace and ~/.openclaw/workspace_*"
     note: "Alternative workspace names are valid and must be considered for IDENTITY.md, SOUL.md and MEMORY.md discovery."
+  rollout_notes:
+    - "2026-06-29: agentctl rollout: legacy linux_user 'sebastian' (agent 'Bernd') revoked; new linux_user 'chantall' (agent 'Chantal') provisioned."
 agents:
+  - linux_user: "chantall"
+    workspace:
+      path: "/home/chantall/.openclaw/workspace"
+      type: "workspace_default"
+      verified: false
+      verification_note: "Pfad aus botrepo-Template abgeleitet; nicht live von gandalf aus verifizierbar (kein Root-SSH)."
+    gateway:
+      unit: "openclaw-gateway@chantall"
+      port: 19953
+      kvm_display: 18
+      kvm_port: 5918
+      active_state: "assumed_active"
+      enabled: true
+    agent:
+      name: "Chantal"
+      name_source: "botrepo:playbooks/domains/homelab/active/templates/agentprofiles/147.93.120.51/chantall/IDENTITY.md.j2"
+      name_confidence: "high"
+      name_spelling_note: "Agentenname mit einem 'l' (Chantal); Linux-User mit Doppel-l (chantall)."
+      owner: "Sarah"
+      focus: "Sarahs Dienstmaedchen-Agent: Reiseplanung vorbereiten, Sekretaer-Aufgaben koordinieren, priorisieren und dokumentieren"
+      soul_summary: "freundlich, beflissen, selbstironisch (Blondinenwitz-Humor), entlastungsorientiert"
+    identity_md:
+      template_path: "botrepo:playbooks/domains/homelab/active/templates/agentprofiles/147.93.120.51/chantall/IDENTITY.md.j2"
+      status: "templated"
+    soul_md:
+      template_path: "botrepo:playbooks/domains/homelab/active/templates/agentprofiles/147.93.120.51/chantall/SOUL.md.j2"
+      status: "templated"
+    memory:
+      installed: "assumed_yes"
+      note: "Default-Bootstrap via OpenClaw npm-Install legt MEMORY.md/memory/ an; nicht live verifiziert."
+    brave:
+      openclaw_configured: "unknown"
+    models:
+      default_model: "unknown"
+      default_model_source: "nicht im botrepo-Template gesetzt"
+      note: "Modell-/Provider-Konfiguration nach erstem Live-Check eintragen."
+    deployment_source:
+      branch: "agentctl"
+      host_spec: "playbooks/domains/homelab/active/templates/agentdeployment/147.93.120.51.yml.j2"
+      install_method: "npm"
+      authorized_keys_source: "torsten"
+      additional_repo_keys:
+        - botrepo
+        - botbrain
+        - ironscope
+        - risng
+        - zaap
+        - spec
+        - icas
+        - Chantal_forall
+        - Gesetz_des_Einen
+    notes:
+      - "Erstmaliger Rollout 2026-06-29 ueber botrepo:agentctl."
+      - "Ersetzt operativ den abgebauten Linux-User 'sebastian' / Agent 'Bernd'."
+      - "Live-Verifikation von gandalf aus nicht moeglich, da kein Root-SSH auf Sarahserver1 verfuegbar."
+
   - linux_user: "sebastian"
+    status: "revoked"
+    revoked_on: "2026-06-29"
+    revoked_via: "botrepo:agentctl (agent_revoke_legacy_candidates: [sebastian])"
     workspace:
       path: "/home/sebastian/.openclaw/workspace_sebastian"
       type: "workspace_variant"
     gateway:
       unit: "openclaw-gateway@sebastian"
-      active: true
-      enabled: true
+      active: false
+      enabled: false
     agent:
       name: "Bernd"
       name_source: "operator + IDENTITY.md"

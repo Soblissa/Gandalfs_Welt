@@ -1,14 +1,15 @@
 # Agentenmatrix
 
-Stand: 2026-05-11 UTC
+Stand: 2026-06-29 UTC
 
 Zentrale Gesamtübersicht über Server, Linux-Nutzer und Agenten.
 Die Detaildateien unter `agentenmatrix/` bleiben als technische Quellen erhalten.
 
 ## Namenscheck zuerst
 
-- **Server 1 ist jetzt operatorisch geklärt:** `sebastian` läuft als `Bernd`, `user1` als `Chefkoch`, `user2` als `Franks Klaus`.
-- **Wichtig für Server 1:** Die Workspaces tragen teils ältere oder abweichende Selbstbeschreibungen (`Cheko`, leere `IDENTITY.md`, altes `Bernd` in `SOUL.md`). Für diese Matrix gilt die aktuelle Operator-Zuordnung plus der verifizierte Live-Betrieb.
+- **Server 1, Update 2026-06-29:** Der Linux-Nutzer `sebastian` (Agent `Bernd`) wurde abgebaut und durch den neuen Linux-Nutzer `chantall` ersetzt. Agentenname laut `IDENTITY.md` ist `Chantal` (eine `l`), der Linux-Nutzer trägt bewusst doppelt-l (`chantall`). Bernd existiert auf Server 1 nicht mehr.
+- **Server 1, Bestand:** `user1` läuft weiterhin als `Chefkoch`, `user2` als `Franks Klaus`.
+- **Wichtig für Server 1:** Die Workspaces tragen teils ältere oder abweichende Selbstbeschreibungen (`Cheko`, leere `IDENTITY.md`). Für diese Matrix gilt die aktuelle Operator-Zuordnung plus der verifizierte Live-Betrieb.
 - **Turiya-Regel:** Es gibt genau eine kanonische `Turiya`. Seit Operator-Entscheidung vom 2026-05-11 liegt diese auf **Server 2** unter dem Linux-Nutzer `agent`.
 - **Restore-Historie Server 1:** `user2` war zwischenzeitlich entfernt und wurde aus `/root/agent-cleanup-backups/user2-openclaw-20260503T102637Z.tar.gz` wieder als laufender Agent restauriert.
 - **Live-Update 2026-05-09:** `Chefkoch` und `Franks Klaus` laufen jetzt mit Claude als Primary, `Franks Klaus` wurde im Workspace auf reinen Frank-/Alpin-Invest-Kontext bereinigt.
@@ -19,7 +20,7 @@ Die Detaildateien unter `agentenmatrix/` bleiben als technische Quellen erhalten
 
 | Server | Host | IP | Aktive Agenten | Inaktive / Altbestände | Kurznotiz |
 |---|---|---|---:|---:|---|
-| Server 1 | `sarahserver1` | `147.93.120.51` | 3 | 0 | `Bernd`, `Chefkoch` und `Franks Klaus` auf Claude, `Franks Klaus` fachlich bereinigt |
+| Server 1 | `sarahserver1` | `147.93.120.51` | 3 | 1 Altslot | `Chantal` (neu, Dienstmädchen-Agent), `Chefkoch` und `Franks Klaus` auf Claude; legacy-User `sebastian`/`Bernd` abgebaut |
 | Server 2 | `sarahserver2` | `89.116.39.197` | 1 | 0 live | kanonische `Turiya` läuft hier unter dem Linux-Nutzer `agent`, inklusive Perplexity als Recherche-Layer |
 | Server 3 | `sarahserver3` | `187.124.191.206` | 2 | 1 Archivslot | `gandalf` und `rocky` aktiv; der frühere `turyia`-Slot ist deaktiviert und nicht mehr kanonisch |
 
@@ -27,7 +28,8 @@ Die Detaildateien unter `agentenmatrix/` bleiben als technische Quellen erhalten
 
 | Server | Linux-Nutzer | Agentenname | Status | Besitzer | Einsatzfokus | Seele | Workspace | Memory | Brave | Default-Modell | Zuletzt beobachtet | Hinweise |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| Server 1 | `sebastian` | `Bernd` | aktiv | `Sebastian` | fachliche Unterstützung für Sebastian, aktuell ILA-nah | direkt, kompetent, pragmatisch | `~/.openclaw/workspace_sebastian` | ja | teilweise | `anthropic/claude-sonnet-4-6` | Default laut `openclaw status`: `claude-sonnet-4-6` | Claude-Anbindung am 2026-05-09 erneuert |
+| Server 1 | `chantall` | `Chantal` | aktiv (Rollout 2026-06-29) | `Sarah` | Sarahs Dienstmädchen-Agent: Reiseplanung, Sekretariat, Terminkoordination | freundlich, beflissen, selbstironisch (Blondinenwitz-Humor), entlastungsorientiert | `~/.openclaw/workspace` | ja | offen | offen (Profil-Default; Provider laut Botrepo nicht festgelegt) | offen | Linux-User mit Doppel-l (`chantall`), Agentenname mit einem l (`Chantal`); Profilquellen unter `botrepo:playbooks/domains/homelab/active/templates/agentprofiles/147.93.120.51/chantall/`; Gateway-Port `19953`; KVM-Display 18 / Port 5918; löst den abgebauten Linux-User `sebastian` (Agent `Bernd`) ab |
+| Server 1 | `sebastian` | `Bernd` | abgebaut 2026-06-29 | `Sebastian` (historisch) | fachliche Unterstützung für Sebastian, ILA-nah | direkt, kompetent, pragmatisch | `~/.openclaw/workspace_sebastian` (historisch) | – | – | – | – | Per `agentctl revoke` über `botrepo:agentctl` entfernt (`agent_revoke_legacy_candidates: [sebastian]` im Deployment-Spec); ersetzt durch `chantall`/`Chantal` |
 | Server 1 | `user1` | `Chefkoch` | aktiv | `Sarah` | Hessisches Kultusministerium | strukturiert, präzise, ruhig, direkt | `~/.openclaw/workspace_hauptagent` | ja | teilweise | `anthropic/claude-sonnet-4-6` | Default laut `openclaw status`: `claude-sonnet-4-6` | Workspace nennt ihn aktuell `Cheko`, Operator-Fokus jetzt Hessisches Kultusministerium, Claude-Anbindung am 2026-05-09 erneuert |
 | Server 1 | `user2` | `Franks Klaus` | aktiv, am 2026-05-03 restauriert | `dto / Soblissa` (Kundenfall `Frank Kammerer`) | Franks Klaus, Alpin Invest, KI-Optimierung, Prozesse | fokussiert, direkt, geschäftstauglich | `~/.openclaw/workspace` | ja | nein | `anthropic/claude-sonnet-4-6` | Default laut `openclaw status`: `claude-sonnet-4-6` | Persona am 2026-05-09 bereinigt, Repo-Zugriff aktiv, eigener Claude-Key seit 2026-05-09 |
 | Server 2 | `agent` | `Turiya` | aktiv | `Sarah` | integrative Begleitung, Klarheit, Entwicklungsorientierung | warm, klar, geerdet, entwicklungsorientiert | `~/.openclaw/workspace` | ja | teilweise | `openai-codex/gpt-5.4` | `gpt-5.4` über `openai-codex` | Linux-Nutzer heißt technisch `agent`, kanonische Turiya liegt seit 2026-05-11 hier, Perplexity-Websuche aktiv |
@@ -38,9 +40,10 @@ Die Detaildateien unter `agentenmatrix/` bleiben als technische Quellen erhalten
 ## Serverdetails in Kurzform
 
 ### Server 1
-- Aktive Agenten: `sebastian` (`Bernd`), `user1` (`Chefkoch`), `user2` (`Franks Klaus`)
-- Besonderheit: relevante Identitäten lagen nicht nur im Standard-Workspace, sondern auch in `workspace_sebastian` und `workspace_hauptagent`
-- Betriebsnotiz: `Bernd`, `Chefkoch` und `Franks Klaus` laufen seit 2026-05-09 mit Claude als Primary, `Franks Klaus` wurde fachlich bereinigt und aus dem erhaltenen Backup aktiviert
+- Aktive Agenten: `chantall` (`Chantal`), `user1` (`Chefkoch`), `user2` (`Franks Klaus`)
+- Abgebaut 2026-06-29: `sebastian` (`Bernd`)
+- Besonderheit: relevante Identitäten lagen nicht nur im Standard-Workspace, sondern auch in `workspace_hauptagent` (Chefkoch) und früher `workspace_sebastian` (Bernd)
+- Betriebsnotiz: `Chefkoch` und `Franks Klaus` laufen seit 2026-05-09 mit Claude als Primary, `Franks Klaus` wurde fachlich bereinigt; `Chantal` wurde am 2026-06-29 über `botrepo:agentctl` ausgerollt, Profilquellen siehe `playbooks/domains/homelab/active/templates/agentprofiles/147.93.120.51/chantall/`
 
 ### Server 2
 - Aktive Agentin: `Turiya` unter dem Linux-Nutzer `agent`
