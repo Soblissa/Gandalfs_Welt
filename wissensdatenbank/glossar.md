@@ -16,6 +16,7 @@ deines Browsers (Strg-F / Cmd-F) oder ueber die GitHub-Suchleiste.
 - [Botrepo](#botrepo)
 - [Gateway](#gateway)
 - [Gateway-Port](#gateway-port)
+- [Härten](#härten)
 - [Open Weight](#open-weight)
 - [Server / VPS](#server--vps)
 - [Vault-Struktur](#vault-struktur)
@@ -217,6 +218,88 @@ Ohne stabile, kollisionsfreie Portvergabe koennten mehrere Agenten auf
 demselben Server nicht nebeneinander leben. Der Port ist die einzige
 technische Adresse, unter der Telegram (und Torsten) einen bestimmten
 Agenten von aussen erreichen.
+
+---
+
+## Haerten
+
+### In einem Satz
+
+Einen Server oder Agenten zu haerten heisst, seine Angriffsflaeche
+gezielt zu verkleinern - technisch das Abschalten unnoetiger Dienste,
+das Entfernen schwacher Login-Wege und das Aktivieren von Wachdiensten
+wie `fail2ban`, im Alltagsbild das systematische Absichern einer
+Wohnung, bevor sie bezogen wird.
+
+### Der technische Kern
+
+Haerten geht immer in dieselbe Richtung: **so wenig Angriffsflaeche wie
+moeglich**. Man dreht nicht Faehigkeiten hoch, sondern Verwundbarkeiten
+runter.
+
+Bei Automagia bedeutet das konkret die folgenden Massnahmen. Sie sind
+im Botrepo-Branch `failbantest` als Ansible-Playbook `agent_machine_setup.yml`
+festgeschrieben und werden pro Host mit Toggles ein- oder ausgeschaltet.
+
+**Server-Haertung:**
+
+1. **SSH-Passwortlogin abschalten.** Der SSH-Dienst akzeptiert nur
+   noch Zugaenge mit einem passenden Schluessel, keine Passwoerter
+   mehr. Die entsprechende Konfigurationszeile lautet
+   `PasswordAuthentication no` in `/etc/ssh/sshd_config`.
+2. **Root-Login nur mit Schluessel, nicht mit Passwort.**
+   `PermitRootLogin prohibit-password`. Damit ist Root nur noch fuer
+   jemanden erreichbar, der einen entsprechenden Schluessel besitzt.
+3. **Zweckgebundener Admin-Account** (bei uns `automage`) mit
+   passwortlosem `sudo` und dem ControlHost-Pubkey. Alltagswartung
+   laeuft ueber diesen Account, nicht ueber Root.
+4. **`fail2ban` installieren und aktivieren.** Der Dienst liest das
+   System-Journal, zaehlt fehlgeschlagene SSH-Logins pro IP und sperrt
+   die IP nach der Schwelle (Standard: 5 Fehlversuche in 10 Minuten -
+   30 Minuten Sperre) automatisch in der Firewall.
+5. **Nicht gebrauchte Dienste abschalten** (z. B. veraltete
+   Mail-Daemons, exponierte Debug-Ports).
+6. **Regelmaessige Sicherheitsupdates.** Bei uns automatisiert per
+   `gandalf-maintenance.timer` (Sonntag 05:00 UTC).
+
+**Agenten-spezifische Haertung:**
+
+7. **Telegram-Allowlist** in der `openclaw.json` jedes Agenten:
+   Direktnachrichten nur von erlaubten Telegram-IDs (`dmPolicy:
+   allowlist`, `allowFrom: [...]`). Rocky spricht z. B. nur mit
+   Torsten (`6794537024`).
+7. **Bot-Token und API-Schluessel nur im Vault**, nicht in Klartext
+   im Repo. Details siehe Glossareintrag `Vault-Struktur`.
+8. **VNC-Zugriff bevorzugt ueber SSH-Tunnel**, nicht offen ins
+   Internet (statt `-localhost=0` besser `-localhost=1` und Tunnel).
+
+### Beispiel: Failsafe-Kette gegen Aussperrung
+
+Bevor unser Playbook den Passwortlogin auf einem Host abschaltet,
+pruefen mehrere Kontrollstufen:
+
+1. Existiert der Nutzer `automage`?
+2. Ist er in der Gruppe `sudo`?
+3. Existiert `~automage/.ssh/authorized_keys` und ist die Datei nicht
+   leer?
+4. Ist der ControlHost-Pubkey darin enthalten?
+
+Erst wenn alle vier Bedingungen erfuellt sind, wird gehaertet. Sonst
+bricht der Playbook-Lauf ab. So kann niemand sich selbst versehentlich
+aussperren.
+
+### Woran man erkennt, dass etwas noch nicht gehaertet ist
+
+- `sshd -T` zeigt `passwordauthentication yes` und
+  `permitrootlogin yes`.
+- `systemctl is-active fail2ban` liefert `inactive`.
+- Der Server hat 24 Stunden lang >100 SSH-Fehlversuche im Log (bei uns
+  auf S3 vor der Haertung 140/Tag).
+- Es gibt keinen `automage`-Nutzer oder er hat keinen ControlHost-Key.
+
+Alle vier Sarah-Server (S1-S3) sind Stand 24.07.2026 **noch nicht
+gehaertet**. Der Rollout ist als `failbantest`-Branch vorbereitet und
+wartet auf einen abgestimmten Testlauf mit Torsten.
 
 ---
 
