@@ -4,12 +4,16 @@ Sarahs Uebersicht ueber die grossen KI-Modelle. Aktuell und knapp.
 
 ## Was hier drinsteht
 
-- `uebersicht.md` — grosse Vergleichstabelle: Anbieter, Modell, Preise,
-  Kontextfenster, **lokal betreibbar (ja/nein/teilweise)**, Staerken,
-  Schwaechen.
-- Chinesische Anbieter (Moonshot, Alibaba/Qwen, DeepSeek) sind
-  ausdruecklich einbezogen — mit Hinweis zu Datenschutz und politischer
-  Filterung.
+- `uebersicht.md` — grosse Vergleichstabelle in Markdown fuer die
+  Anzeige auf GitHub. Anbieter, Modell, Preise, Kontextfenster,
+  **lokal betreibbar (ja/nein/teilweise)**, Staerken, Schwaechen.
+- `uebersicht.xlsx` — dieselbe Tabelle als **Excel-Datei** zum
+  Herunterladen. Enthaelt drei Blaetter: Modelle (Hauptliste mit
+  Filterfunktion und Zebrafarben pro Anbieter), Legende, Faustregel
+  Kosten.
+- Beide Dateien werden im gleichen Rhythmus aktualisiert.
+- Chinesische Anbieter (Moonshot, Alibaba/Qwen, DeepSeek, Zhipu, Baidu,
+  01.AI) sind gleichrangig einbezogen (Entscheidung Sarahs 24.07.2026).
 - Weitere Detaildateien folgen bei Bedarf.
 
 ## Wichtige Hinweise vorneweg
