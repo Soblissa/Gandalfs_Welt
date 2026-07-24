@@ -149,7 +149,6 @@ stammen von seriösen Preis-Aggregatoren (Quellen unten).
 | Coding und Programmieren | **Claude Sonnet 4.6**, **Codestral / Devstral 2**, **Qwen3 Coder**, **DeepSeek Coder V3** |
 | Multimodal (Bilder, PDFs verstehen) | **Gemini 2.5 Pro**, **GPT-5.5**, **Pixtral 12B**, **Qwen3 VL** |
 | **auf eigener Hardware** (Datenschutz, Kontrolle) | **Llama 3.3 70B**, **Qwen3 72B**, **Mistral Small 3**, **DeepSeek V3.2**, **Gemma 3** je nach Rechnergroesse |
-| Sensible Kundendaten oder Behoerdenkontext | **Anthropic** oder **OpenAI**, oder **offenes Modell selbst hosten** — nicht ueber chinesische API |
 | Suche und Wissensdatenbanken (Retrieval) | **Cohere Command R+** oder **Command R** |
 
 ## Faustregel Kosten pro Chat
@@ -169,25 +168,22 @@ Ein Chatlauf mit 500 Woertern Input und 500 Woertern Output kostet grob:
 
 ---
 
-## Hinweise zu chinesischen Modellen
+## Chinesische Modelle: gleichrangig behandelt
 
-Auf Sarahs ausdruecklichen Wunsch stehen chinesische Modelle in dieser
-Tabelle drin (Moonshot AI, Alibaba/Qwen, DeepSeek, Zhipu, Baidu, 01.AI).
-Sie sind meist:
+Modelle aus China (Moonshot AI, Alibaba/Qwen, DeepSeek, Zhipu, Baidu,
+01.AI) sind in dieser Uebersicht ohne Einschraenkung gelistet und werden
+genauso bewertet wie Modelle aus USA oder Europa.
+
+Sarahs Haltung (24.07.2026, festgehalten): Automagia ist **unpolitisch**
+und macht **keine Herkunftsvorbehalte**. Die Empfehlungen richten sich
+nach fachlicher Eignung und Preis-Leistung, nicht nach Anbieter-Sitz.
+
+Charakteristisch sind chinesische Modelle:
 
 - **guenstiger** als westliche Vergleichsmodelle
 - oft **offen** (Open-Weight, lokal betreibbar)
 - **technisch konkurrenzfaehig**, teils fuehrend in einzelnen Disziplinen
   (Reasoning, Coding, lange Kontexte)
-
-Zu bedenken:
-
-- **Datenschutz und Politik**: Anbieter mit chinesischem Sitz oder
-  Servern unterliegen anderen Rechtsraeumen. Bei sensiblen Daten (Kunden,
-  Behoerden, Personenbezogenes) besser bei Anthropic oder OpenAI bleiben,
-  oder das offene Modell **selbst hosten**.
-- **Themenfilter**: Manche chinesischen Modelle vermeiden politisch
-  heikle Fragen. Fuer Fachaufgaben meist irrelevant.
 
 ---
 
