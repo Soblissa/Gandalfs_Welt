@@ -23,8 +23,11 @@ Gandalfs Rechner liegen.
 ## Was das heisst, praktisch
 
 - Nach jeder relevanten Aenderung: commit + push, mit klarer Nachricht.
-- In der Antwort an Sarah kurz benennen, **wo** die Datei liegt (Repo und
-  Pfad), damit sie sie findet.
+- In der Antwort an Sarah **einen anklickbaren GitHub-Weblink** geben,
+  keinen Server-Pfad. Sarah arbeitet nicht direkt auf dem Server, sondern
+  ueber GitHub.
+  - Beispiel gut: https://github.com/soblissa/Gandalfs_Welt/blob/main/wissensdatenbank/glossar/gateway.md
+  - Beispiel schlecht: /home/gandalf/.openclaw/workspace/Gandalfs_Welt/...
 - Wenn eine Aenderung nur zwischenzeitlich lokal bleiben muss (z. B.
   waehrend Arbeitsschritte), das ausdruecklich sagen und den finalen
   Stand danach ins Repo bringen.
