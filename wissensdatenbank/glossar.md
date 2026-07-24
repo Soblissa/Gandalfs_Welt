@@ -1,12 +1,12 @@
 # Glossar
 
-Sammelband der Alltagserklaerungen fuer Sarah. Ein Begriff pro Abschnitt,
-alphabetisch sortiert. Jeder Eintrag beginnt mit einer Ein-Satz-Definition,
-gefolgt von einer Analogie und, wo hilfreich, einer knappen Auslegung.
+Sammelband der Erklaerungen fuer Sarah. Ein Begriff pro Abschnitt,
+alphabetisch sortiert. Jeder Eintrag verbindet eine Analogie mit dem
+technischen Kern - also nicht nur "wie ein Tuersteher", sondern auch
+was der Tuersteher technisch wirklich ist.
 
-Neue Begriffe werden alphabetisch einsortiert. Suche mit der Suchfunktion
-deines GitHub-Browsers (`f` fuer das Repository-weite Suchfeld) oder mit
-der Browser-Textsuche (Strg-F).
+Neue Begriffe werden alphabetisch einsortiert. Suche mit der Textsuche
+deines Browsers (Strg-F / Cmd-F) oder ueber die GitHub-Suchleiste.
 
 ---
 
@@ -27,46 +27,49 @@ der Browser-Textsuche (Strg-F).
 
 ### In einem Satz
 
-Ein Agent ist eine **feste Angestellte** in Sarahs und Torstens digitaler
-Firma - eine, die immer im gleichen Buero sitzt, immer denselben Namen
-traegt und mit der Zeit ihre eigene Aktenlage, ihre eigenen Aufgaben
-und ihr eigenes Wesen entwickelt.
+Ein Agent ist ein dauerhaft laufendes KI-System mit eigenem
+Arbeitsverzeichnis, eigener Konfiguration und eigenem Kommunikationskanal
+- vergleichbar mit einer festen Angestellten, die immer im gleichen
+Buero sitzt, denselben Namen traegt und mit der Zeit ihr eigenes
+Aktenwissen und ihren eigenen Stil aufbaut.
 
-### Analogie
+### Der technische Kern
 
-Ein Agent ist **nicht** dasselbe wie "einmal ChatGPT fragen".
+Ein Agent bei Automagia besteht aus vier klar getrennten Bausteinen:
 
-- ChatGPT auf der Webseite ist wie ein Gespraech mit einem Zeitarbeiter:
-  Fenster zu, Erinnerung weg.
-- Ein Agent ist wie eine **Angestellte mit Buero, Ordnern, Schreibtisch
-  und Kollegen**. Sie erinnert sich, sie hat einen festen Charakter,
-  sie hat Zugriff auf ihre eigenen Werkzeuge, sie hat einen Chef.
+1. **Workspace** - ein Verzeichnis auf einem Server (z. B.
+   `/home/chantall/.openclaw/workspace`). Dort liegen seine
+   Konfigurationsdateien, Notizen und Aufgabenprotokolle. Das ist sein
+   "Buero".
+2. **Gateway** - ein Programm, das auf einem festen Netzwerk-Port
+   horcht, Nachrichten (typisch Telegram) entgegennimmt und an den
+   Agenten weiterreicht. Sein "Tuersteher".
+3. **KI-Modell** - das eigentliche Sprachmodell, mit dem er antwortet
+   (z. B. Claude Sonnet 4.6, GPT-5.5, Fable 5). Sein "Gehirn". Das
+   Modell wird bei jeder Anfrage frisch ueber eine API angesprochen.
+4. **Persona-Dateien** - `SOUL.md`, `IDENTITY.md`, `AGENTS.md`, `USER.md`,
+   `MEMORY.md`. Sie legen fest, wer der Agent ist, wie er spricht,
+   fuer wen er arbeitet und was er sich merken soll.
 
-### Woraus ein Agent besteht
-
-Jeder unserer Agenten hat vier "Sachen":
-
-1. Ein **Buero** (Verzeichnis auf dem Server, sein "Workspace").
-2. Einen **Tuersteher mit Funkgeraet** (Gateway, der Nachrichten
-   annimmt, weiterreicht und Antworten wieder hinaustraegt).
-3. Ein **Gehirn** (das KI-Modell, mit dem er denkt - z. B. Claude
-   Sonnet 4.6 oder GPT-5.5).
-4. Eine **Seele** (eine Datei namens SOUL.md, in der steht, wer er ist,
-   wie er spricht, worauf er achtet).
+Der Agent ist also nicht ein einzelnes Programm, sondern ein
+Zusammenspiel aus Prozess, Konfiguration und Modell-API. Erst diese
+vier Sachen zusammen machen aus einem Aufruf gegen ein KI-Modell einen
+"Agenten", der ansprechbar ist und ueber die Zeit hinweg dieselbe
+Identitaet behaelt.
 
 ### Unsere Agenten in Kurzform
 
-- **Chantal** (S1) - Sarahs Sekretaerin und Reisemanagerin.
+- **Chantal** (S1) - Sarahs Sekretariat, Reise- und Terminmanagerin.
 - **Chefkoch** (S1) - Sarahs Ansprechpartnerin fuer das Hessische
   Kultusministerium.
-- **Franks Klaus** (S1) - Fuer den Kunden Frank Kammerer, Alpin Invest.
-- **Turiya** (frueher S2, aktueller Standort zu klaeren) - integrative
-  Begleiterin fuer Sarah.
-- **Gandalf** (S3) - der Systemverwalter, der diese Zeilen schreibt.
+- **Franks Klaus** (S1) - fuer den Kunden Frank Kammerer, Alpin Invest.
+- **Turiya** - integrative Begleiterin fuer Sarah; aktueller Standort
+  in Klaerung.
+- **Gandalf** (S3) - Systemverwalter, der diese Zeilen schreibt.
 - **Rocky, Sloar** (S3) - technische Assistenz-Slots.
 - **Dolly, Eve, Joker, Lilli** (S4) - Torstens Bots.
-- **Egon** (S2) - Torstens Bot, derzeit hat sein Tuersteher
-  Dauerprobleme beim Dienstantritt (Stand 24.07.2026).
+- **Egon** (S2) - Torstens Bot, Gateway-Prozess laeuft aktuell in einer
+  Neustart-Schleife (Stand 24.07.2026).
 
 ---
 
@@ -74,39 +77,49 @@ Jeder unserer Agenten hat vier "Sachen":
 
 ### In einem Satz
 
-Das Botrepo ist die **zentrale Werkstatt-Ablage** von Automagia: eine
-gemeinsame Kiste, in der alle Bauanleitungen fuer Agenten, Server und
-Werkzeuge liegen.
+Das Botrepo ist ein zentrales Git-Repository auf GitHub
+(`gruhflust/botrepo`), in dem alle Bauanleitungen, Vorlagen und
+Werkzeuge fuer die Einrichtung von Agenten und Servern verwaltet
+werden - vergleichbar mit der Werkstattwand einer Handwerkerfirma, an
+der alle Bauplaene und Rezepte hängen.
 
-### Analogie
+### Der technische Kern
 
-Stell dir eine grosse **Handwerker-Werkstatt** vor, an deren Wand alle
-Bauplaene, Rezepte und Werkzeuglisten aufgehaengt sind:
+Ein "Repository" ist ein versionierter Ordner: jede Aenderung wird mit
+Datum, Autor und Grund festgehalten, sodass jederzeit nachvollziehbar
+ist, was wann warum geaendert wurde.
 
-- Wenn ein neuer Agent gebaut werden soll (z. B. Chantal), holt sich
-  Torsten die passenden Plaene aus dieser Werkstatt.
-- Wenn ein Server eingerichtet oder gehaertet werden soll, liegen die
-  Rezepte ebenfalls hier.
-- Aenderungen an den Plaenen kann jeder sehen und nachvollziehen, weil
-  jede Anpassung mit Datum und Grund vermerkt wird.
+Im Botrepo liegen:
 
-Technisch heisst diese Werkstatt bei uns `gruhflust/botrepo` und liegt
-auf GitHub. Alle wichtigen Werkzeugketten (`agentctl`, `agentkvm`,
-`agent_machine_setup`) haben dort ihre Vorlagen.
+- **Ansible-Playbooks** - kleine Programme, die auf einen frischen
+  Server geschickt werden und dort automatisch Nutzer anlegen, Dienste
+  einrichten, Konfigurationsdateien schreiben.
+- **Vorlagen (Templates)** pro Agent und Host, z. B. Chantals
+  `SOUL.md.j2`, aus der beim Rollout die echte Datei erzeugt wird.
+- **`agentctl`** - ein Python-Programm, das alle Ablaeufe unter
+  einheitlichen Kommandos zusammenfasst (`agentctl deploy`, `agentctl
+  vault backup`, `agentctl kvm apply` ...).
+- **Inventar-Dateien** - Listen aller Hosts (S1-S4), welcher Agent wo
+  laeuft, welche Ports belegt sind.
 
-### Warum das wichtig ist
-
-Ohne diese zentrale Werkstatt muesste Torsten jedes Mal von Hand
-ueberlegen, wie ein Agent aufgebaut wird. So kann er stattdessen
-"nimm die Bauanleitung fuer Chantal" sagen und alles laeuft nach
-demselben Muster.
+Wer einen Agenten bauen oder haerten will, aendert die passende Vorlage
+im Botrepo und fuehrt anschliessend das passende `agentctl`-Kommando
+aus. So laeuft jede Neueinrichtung nach demselben Muster ab.
 
 ### Wer arbeitet daran
 
-- Torsten: baut und pflegt die Bauanleitungen technisch.
-- Gandalf: pflegt inhaltliche Ergaenzungen, insbesondere in der
-  Wartungs- und Sicherheitsschiene (Branch `failbantest`).
-- Sarah: bekommt die Ergebnisse als fertige Agenten oder Berichte.
+- **Torsten** - baut und pflegt die technischen Bauanleitungen.
+- **Gandalf** - ergaenzt inhaltlich, insbesondere in der Wartungs- und
+  Sicherheitsschiene (Branch `failbantest`).
+- **Sarah** - bekommt die Ergebnisse als fertige Agenten oder Berichte,
+  arbeitet nicht direkt im Repo.
+
+### Warum das wichtig ist
+
+Ohne diese zentrale, versionierte Ablage muesste jede Neueinrichtung
+handgeschrieben werden. Mit dem Botrepo laeuft jede Server- oder
+Agenten-Aktion **reproduzierbar** ab - und laesst sich, falls sie
+schiefgeht, rueckgaengig machen.
 
 ---
 
@@ -114,44 +127,46 @@ demselben Muster.
 
 ### In einem Satz
 
-Der Gateway ist der **Tuersteher mit Funkgeraet** eines Agenten: er
-laesst Nachrichten hinein, gibt sie per Funk an den Agenten weiter und
-traegt seine Antworten wieder hinaus.
+Ein Gateway ist ein kleiner Netzwerkdienst, der staendig auf einer
+festen Adresse (dem Port) horcht, Telegram-Nachrichten entgegennimmt,
+sie an den Agenten weitergibt und dessen Antworten zurueck an Telegram
+sendet - technisch ein eigenstaendiger Prozess auf dem Server, im
+Alltagsbild ein "digitaler Tuersteher".
 
-### Analogie
+### Der technische Kern
 
-Stell dir ein grosses Buerohaus vor, in dem viele Angestellte arbeiten
-(die Agenten: Chantal, Chefkoch, Turiya, Gandalf ...). Vor jeder
-Buerotuer steht **ihr eigener Tuersteher mit Funkgeraet**:
+Bei uns laeuft pro Agent **eine eigene systemd-Unit** namens
+`openclaw-gateway@<username>.service`. Was diese Unit tut:
 
-- Er kennt seine Tuer und ihre Adresse (bei uns: eine Portnummer).
-- Er prueft, wer klopft (bei uns: ob die Nachricht ueber Telegram und
-  von einer berechtigten Person kommt).
-- Er funkt die Nachricht an den Agenten drinnen im Buero.
-- Er nimmt die Antwort entgegen und traegt sie wieder nach draussen.
-- Steht **kein Tuersteher** an der Tuer, hoert niemand das Klopfen -
-  auch wenn der Agent drinnen wach ist.
+1. **Startet einen Openclaw-Prozess** unter dem jeweiligen Linux-User
+   (Chantall, Chefkoch, Gandalf ...).
+2. **Oeffnet einen Netzwerk-Port** (die "Adresse", siehe eigener
+   Eintrag *Gateway-Port*).
+3. **Meldet sich bei Telegram an** mit dem passenden Bot-Token und
+   pollt permanent auf neue Nachrichten (`getUpdates`).
+4. **Reicht empfangene Nachrichten weiter** an das konfigurierte
+   KI-Modell (Anthropic, OpenAI, ...).
+5. **Sendet die Antwort zurueck** ueber die Telegram-API.
 
-### Was "Gateway aktiv" heisst
+Weil jeder Agent seine eigene Gateway-Unit hat, sind sie voneinander
+unabhaengig: Wenn Rockys Gateway haengt, laufen Gandalf, Sloar und
+Turyia weiter.
 
-Der Tuersteher ist auf seinem Posten. Nachrichten kommen an, der Agent
-antwortet.
+### Was "aktiv" / "inaktiv" heisst
 
-### Was "Gateway inaktiv" heisst
-
-Der Tuersteher ist nicht da. Der Agent ist nicht ansprechbar, egal
-was mit ihm sonst gerade los ist. Das kann drei Gruende haben:
-
-1. Der Agent existiert nicht mehr auf diesem Server (kein Buero, kein
-   Tuersteher).
-2. Der Tuersteher versucht immer wieder den Dienst anzutreten und
-   scheitert dabei (Dauerneustart, wie bei Rocky am 23.07.2026).
-3. Der Agent wurde bewusst pausiert (Tuersteher hat Feierabend bekommen).
+- **`active running`** - Prozess laeuft, Netzwerk-Port ist offen,
+  Telegram-Polling arbeitet. Der Agent ist ansprechbar.
+- **`activating auto-restart`** - der Prozess bricht wiederholt weg
+  und wird von systemd automatisch neu gestartet. Der Agent ist nicht
+  erreichbar. Ursache liegt in der Regel im Modell-Zugang, im
+  Token oder im Netzwerk.
+- **`inactive`** - der Dienst ist bewusst pausiert oder existiert
+  nicht (mehr).
 
 ### Wer richtet Gateways ein
 
-Bei Automagia: Torsten (technisch) mit Vorbereitung durch Gandalf
-(Vorlagen im `botrepo`).
+Torsten (technisch) auf Basis der Vorlagen aus dem Botrepo. Der Rollout
+laeuft ueber `agentctl deploy`.
 
 ---
 
@@ -159,22 +174,25 @@ Bei Automagia: Torsten (technisch) mit Vorbereitung durch Gandalf
 
 ### In einem Satz
 
-Ein Gateway-Port ist die **Hausnummer** des Tuerstehers eines Agenten -
-die genaue Adresse, unter der Nachrichten an diesen Agenten
-zugestellt werden.
+Ein Gateway-Port ist eine feste Nummer zwischen 1 und 65535, unter der
+das Gateway eines Agenten im Netzwerk erreichbar ist - technisch die
+Adresse eines TCP-Sockets, im Alltagsbild die Schalter-Nummer des
+Tuerstehers.
 
-### Analogie
+### Der technische Kern
 
-Wenn der Server ein grosses Buerohaus ist, hat jeder Tuersteher
-(Gateway) im Erdgeschoss eine eigene Schalter-Nummer. Wer Chantal
-sprechen will, geht zu Schalter 19953. Wer Chefkoch braucht, geht zu
-Schalter 19840. Wer Gandalf braucht, zu 19941.
+Ein Netzwerk-Port ist die zweite Adresskomponente neben der IP.
 
-Mehrere Agenten auf demselben Server koennen nur nebeneinander leben,
-weil jeder eine eigene Schalter-Nummer hat. Zwei Tuersteher am selben
-Schalter wuerden sich in die Quere kommen.
+- **IP** = welcher Rechner (z. B. `147.93.120.51`).
+- **Port** = welcher Dienst auf diesem Rechner (z. B. `19953` fuer
+  Chantals Gateway).
 
-### Kleine Beispiele
+Zwei Programme koennen nicht denselben Port auf demselben Rechner
+belegen, sonst gibt es eine Kollision. Deshalb hat jeder Agent seine
+eigene, konfliktfreie Nummer, die zentral im Botrepo in der Datei
+`gateway-ports.yml` gepflegt wird.
+
+### Unsere Vergabe (Stand 24.07.2026)
 
 - **Chantal** (S1): Port 19953
 - **Chefkoch** (S1): Port 19840
@@ -185,14 +203,20 @@ Schalter wuerden sich in die Quere kommen.
 - **Turyia-Slot** (S3): Port 19951
 - **Egon** (S2): Port 19952
 
-Die gesamte Nummernvergabe ist im Botrepo festgehalten, damit sich keine
-zwei Agenten dieselbe Nummer greifen.
+### Warum die Zahlen so aussehen
+
+Bei uns liegen die meisten Gateway-Ports in der Region 18900-19999.
+Diese Region ist "hoch genug", um nicht mit Standarddiensten wie SSH
+(22), HTTP (80) oder HTTPS (443) zu kollidieren, und "regelbar genug",
+dass sich Agenten einer Automagia-Firma innerhalb einer eigenen
+Nummernserie bewegen.
 
 ### Warum das wichtig ist
 
-Ohne feste Schalter-Nummer wuesste der Server nicht, welche Nachricht
-an welchen Agenten gehoert. Der Port ist die technische Adresse, unter
-der Telegram ihn findet.
+Ohne stabile, kollisionsfreie Portvergabe koennten mehrere Agenten auf
+demselben Server nicht nebeneinander leben. Der Port ist die einzige
+technische Adresse, unter der Telegram (und Torsten) einen bestimmten
+Agenten von aussen erreichen.
 
 ---
 
@@ -200,52 +224,55 @@ der Telegram ihn findet.
 
 ### In einem Satz
 
-Open Weight heisst: die **Bauplaene und Denkmuster** des Modells sind
-oeffentlich - jeder darf sie herunterladen und selbst benutzen, statt
-nur ueber die API des Anbieters darauf zuzugreifen.
+Open Weight bedeutet, dass die trainierten Parameter eines KI-Modells
+(die eigentlichen Zahlenwerte, aus denen sich sein Verhalten ergibt)
+oeffentlich zum Download bereitstehen - im Alltagsbild vergleichbar mit
+einem Rezeptbuch, das der Sternekoch offen herausgibt, statt es nur im
+eigenen Restaurant zu benutzen.
 
-### Analogie
+### Der technische Kern
 
-Stell dir ein beruehmtes Rezeptbuch vor:
+Ein KI-Modell besteht aus **Milliarden bis Billionen von
+Zahlenwerten** (den "Gewichten" oder "Weights"). Diese Zahlen wurden
+in einem sehr aufwendigen Trainingslauf ermittelt. Ohne sie funktioniert
+das Modell nicht.
 
-- **Closed** (geschlossen) waere: Es gibt ein Restaurant, das das
-  Gericht kocht. Du kannst dort essen und bezahlst pro Teller.
-- **Open Weight** waere: Das Restaurant gibt dir das komplette Rezept
-  inklusive Zutatenliste. Du kannst zuhause selber kochen, so oft du
-  willst, kostenlos - musst aber Herd, Toepfe und Zutaten selbst haben.
+- **Closed-Weight** - der Anbieter behaelt diese Zahlen fuer sich.
+  Zugriff nur ueber eine API. Beispiele: Claude, GPT-5, Gemini, Grok.
+- **Open-Weight** - der Anbieter veroeffentlicht die Zahlen zum
+  Download (typisch auf `huggingface.co`). Jeder mit passender Hardware
+  kann das Modell selbst laufen lassen. Beispiele: Llama, Mistral,
+  Qwen, DeepSeek, Kimi, Gemma, gpt-oss.
 
-Bei KI-Modellen sind die "Bauplaene" gigantische Zahlentabellen
-(mehrere hundert Gigabyte). Der Anbieter macht sie oeffentlich; jeder
-kann sie herunterladen und auf einem eigenen Rechner betreiben - ohne
-dem Anbieter Geld zu zahlen und ohne dass die Daten den eigenen Rechner
-verlassen.
+Wichtig: Open Weight heisst nicht automatisch "Open Source". Der
+Trainingscode, die Trainingsdaten und die Trainingsprozeduren werden
+in der Regel nicht mitgeliefert. Man bekommt das fertige Modell, aber
+nicht "das Kochbuch, wie es entstanden ist".
 
-### Warum das wichtig ist
+### Was man dafuer braucht
 
-- **Kein Anbieter-Lockin.** Wenn der Anbieter morgen die Preise
-  verdreifacht oder das Modell abschaltet, bleibt die eigene Kopie da.
-- **Datenhoheit.** Nichts fliegt ueber die API zu einem Server
-  irgendwo - alles bleibt bei dir.
-- **Kosten.** Nach der einmaligen Hardware-Anschaffung sind die
-  Rechenkosten nur Strom.
+- **Hardware**: kleine Modelle (bis 15 Milliarden Parameter) laufen auf
+  einem starken Laptop mit dedizierter Grafikkarte. Mittelgrosse (30-70
+  Milliarden) verlangen eine Workstation. Grosse (100 Milliarden+)
+  brauchen Rechenzentren-Hardware.
+- **Software-Stack**: Programme wie `ollama`, `vllm` oder `llama.cpp`
+  laden die Modelldatei und stellen sie ueber eine lokale API bereit.
 
-### Grenzen
+### Vor- und Nachteile
 
-- Grosse Modelle brauchen **grosse Rechner** (Grafikkarten mit sehr viel
-  Speicher, teils ganze Rechenzentren). Nicht jedes Open-Weight-Modell
-  laeuft auf einem Laptop.
-- **Wartung und Aktualisierung** sind dann deine Sache - kein Anbieter
-  spielt Updates ein.
+**Vorteile:**
+- Kein Anbieter-Lock-in (der Anbieter kann den Zugang nicht mehr
+  entziehen).
+- Keine laufenden API-Kosten (nur Strom und Hardware).
+- Datenhoheit (keine Anfrage verlaesst den eigenen Rechner).
 
-### Wer bietet Open Weight bei den grossen Anbietern
+**Nachteile:**
+- Anschaffungs- und Betriebskosten der Hardware.
+- Wartung, Updates und Absicherung liegen bei dir.
+- Grosse offene Modelle sind zwar konkurrenzfaehig, aber selten
+  wirklich besser als die geschlossenen Frontier-Modelle.
 
-- Meta (Llama-Familie), Mistral (die meisten), Alibaba (Qwen),
-  DeepSeek, Moonshot (Kimi), Google (Gemma-Familie), OpenAI (nur
-  gpt-oss).
-- **Nicht** Open Weight: Anthropic (Claude), OpenAI (GPT-5-Familie),
-  Google (Gemini), xAI (Grok), Cohere (Command R+).
-
-Alle Details je Modell stehen in der Modell-Vergleichstabelle in der
+Details je Modell stehen in `modell-vergleich/uebersicht.md` in der
 Spalte **Lokal**.
 
 ---
@@ -254,34 +281,44 @@ Spalte **Lokal**.
 
 ### In einem Satz
 
-Ein Server ist ein **Haus im Internet**, in dem Programme wohnen und
-arbeiten - anders als dein Laptop laeuft er rund um die Uhr, damit man
-jederzeit vorbeischauen kann.
+Ein VPS (Virtual Private Server) ist ein Anteil an einem grossen
+Rechner in einem Rechenzentrum, den man mietet und wie einen eigenen
+Rechner betreiben kann - im Alltagsbild eine Wohnung in einem grossen
+Wohnblock, immer geheizt, immer online, mit fester Adresse.
 
-### Analogie
+### Der technische Kern
 
-Stell dir vor, du mietest eine **Wohnung in einem grossen Wohnblock**.
-Diese Wohnung ist immer geheizt, hat immer Strom, immer Internet und
-niemand macht das Licht aus. Genau das ist ein VPS: eine gemietete
-Wohnung auf einem sehr grossen Rechner irgendwo im Rechenzentrum.
+Auf einer physischen Hardware (mehrere CPUs, viel RAM, grosse
+Festplatten) laeuft ein Virtualisierungssystem. Dieses teilt die
+Hardware in viele **virtuelle Maschinen** auf. Jede virtuelle Maschine
+verhaelt sich fuer den Mieter wie ein eigener Rechner mit:
 
-- Adresse der Wohnung: die **IP-Nummer** (z. B. 147.93.120.51).
-- Groesse der Wohnung: **RAM** (Arbeitsspeicher) und **Disk** (Festplatte).
-- Wer da wohnt: **Agenten**, Dienste, kleine Werkzeuge.
+- **eigenem Betriebssystem** (bei uns: Debian 13 auf S3, Ubuntu auf S1/S2)
+- **eigener IP-Adresse** (z. B. `147.93.120.51`)
+- **eigenen Nutzern, Diensten, Konfigurationsdateien**
+- **einem festen Anteil an CPU, RAM und Festplatte**
 
-### Unsere vier "Wohnungen"
+Der Mieter (wir) merkt in der Regel nichts davon, dass er die Hardware
+mit anderen teilt. Er kann Software installieren, Dienste starten,
+Neustarts durchfuehren - alles wie auf einem eigenen Rechner.
 
-- **S1** (147.93.120.51) - Sarahs. Hier wohnen Chantal, Chefkoch, Franks Klaus.
-- **S2** (89.116.39.197) - Sarahs. Zurzeit fast leer, aber wird umgeraeumt.
-- **S3** (187.124.191.206) - Sarahs. Hier wohnen Gandalf, Rocky, Sloar,
-  Turiya.
-- **S4** (159.195.75.193) - Torstens. Dort wohnen Dolly, Eve, Joker, Lilli.
+### Kenngroessen unserer vier VPS
 
-### Warum "VPS"
+| Kuerzel | IP              | Betreiber | RAM  | Disk | Rolle |
+|---------|-----------------|-----------|------|------|-------|
+| **S1**  | 147.93.120.51   | Sarah     | 15 GiB | 193 GB | Chantal, Chefkoch, Franks Klaus |
+| **S2**  | 89.116.39.197   | Sarah     | 7,8 GiB | 96 GB | derzeit umgeraeumt, Egon |
+| **S3**  | 187.124.191.206 | Sarah     | 15 GiB | 197 GB | Gandalf, Rocky, Sloar, Turyia |
+| **S4**  | 159.195.75.193  | Torsten   | 7,8 GiB | 251 GB | Dolly, Eve, Joker, Lilli |
 
-VPS heisst "Virtual Private Server" - virtuelle private Wohnung. Der grosse
-Wohnblock wird technisch in viele einzelne Wohnungen aufgeteilt, und
-jede fuehlt sich fuer den Mieter wie ein eigenes Haus an.
+### Warum VPS statt eigener Rechner
+
+- **Verfuegbarkeit**: laeuft 24/7 in klimatisierten Rechenzentren mit
+  Notstrom und redundanter Netzanbindung.
+- **Skalierbarkeit**: RAM oder CPU laesst sich beim Anbieter meist per
+  Klick vergroessern.
+- **Kosten**: eine kleine VPS (7,8 GiB RAM) kostet 5-15 EUR/Monat -
+  eigene Hardware und Strom waere teurer.
 
 ---
 
@@ -289,50 +326,52 @@ jede fuehlt sich fuer den Mieter wie ein eigenes Haus an.
 
 ### In einem Satz
 
-Der Vault ist der **Tresorraum** von Automagia: der Ort, an dem alle
-Passwoerter, Schluessel und Zugangsdaten sicher verwahrt werden - klar
-nach Empfaenger und Zweck sortiert.
+Der Vault ist ein zentraler, verschluesselter Speicher fuer
+Zugangsdaten (API-Schluessel, Bot-Token, Passwoerter) - technisch eine
+Datenbank, in der jeder Eintrag einen eindeutigen Pfad besitzt, im
+Alltagsbild ein Bank-Tresorraum mit klar beschrifteten Schliessfaechern.
 
-### Analogie
+### Der technische Kern
 
-Denk an einen grossen Banktresorraum mit vielen Schliessfaechern. Jedes
-Fach hat eine feste Beschriftung:
+Bei uns kommt als Vault-Werkzeug **`gopass`** zum Einsatz - ein
+kommandozeilenbasierter Passwortmanager, dessen Eintraege in Git
+versioniert und mit GPG verschluesselt liegen.
 
-- "Chantals Telegram-Bot-Token"
-- "Chefkochs API-Schluessel fuer Claude"
-- "Egons Voice-Zugangsdaten"
-- "Servers 1 Root-Schluessel"
+Jeder Eintrag hat einen **Pfad**, der sich hierarchisch aufbaut:
 
-Die **Struktur** des Vaults ist die Anordnung dieser Faecher:
+```
+groups/<gruppe>/tokens/hosts/<ip>/users/<agent>/<zweck>
+```
 
-- **Oberste Ebene**: nach Gruppe (Homelab, Kunden, Persoenlich)
-- **Zweite Ebene**: nach Host (welcher Server)
-- **Dritte Ebene**: nach User oder Agent (Chantal, Chefkoch, ...)
-- **Vierte Ebene**: nach Zweck (`telegram_bot_token`,
-  `elevenlabs_api_key`, `github_deploy_key`)
+Konkretes Beispiel fuer Egons ElevenLabs-Zugang:
 
-Ein konkreter Pfad sieht z. B. so aus:
+```
+groups/HomeLab/tokens/hosts/89.116.39.197/users/egon/elevenlabs_api_key
+```
 
-`groups/HomeLab/tokens/hosts/89.116.39.197/users/egon/elevenlabs_api_key`
+Diese Pfad-Konvention wird von `agentctl` beim Deployment automatisch
+verwendet: Wenn Torsten `agentctl deploy --host 89.116.39.197`
+aufruft, holt das Playbook fuer Egon genau die Eintraege ab, die unter
+seinem Pfad liegen.
 
-Das ist die Bank-Schliessfach-Adresse fuer Egons ElevenLabs-Stimme.
+### Warum diese Struktur
 
-### Warum das wichtig ist
-
-- **Ordnung**: Wer auf einen bestimmten Schluessel zugreifen muss, weiss
-  sofort, wo er liegt.
-- **Rollentrennung**: Jeder Agent bekommt nur die Schluessel, die er
-  wirklich braucht.
-- **Wechsel**: Wenn ein Token rotiert wird (z. B. ein Bot bekommt einen
-  neuen), wird nur ein Schliessfach getauscht - nicht 50.
-- **Nachvollziehbarkeit**: Aenderungen am Vault werden protokolliert
-  (`agentctl vault backup`), damit man weiss, wer wann was gedreht hat.
+- **Rollentrennung**: jedes Playbook greift nur auf den Pfad zu, den
+  es wirklich braucht - Chantal sieht keine Schluessel von Egon.
+- **Rotation**: wenn ein Token ausgetauscht werden muss, wird nur ein
+  Blatt in der Baumstruktur veraendert, nicht die halbe Konfiguration.
+- **Nachvollziehbarkeit**: `agentctl vault backup` speichert
+  regelmaessig einen verschluesselten Snapshot in
+  `botrepo/vault-backups/`. So laesst sich der Zustand jederzeit
+  rekonstruieren.
+- **Kein Klartext im Repo**: die Klartext-Werte tauchen nie im
+  Repository auf - nur die verschluesselten Bloecke.
 
 ### Wer verwaltet den Vault
 
-Der Vault gehoert zur Werkstatt (Botrepo). Torsten pflegt die
-Struktur, Gandalf ergaenzt bei Neueinrichtungen (z. B. beim
-automage-Rollout auf allen VPS).
+Torsten betreibt und rotiert die Eintraege. Gandalf ergaenzt bei
+Neueinrichtungen (z. B. beim `automage`-Rollout auf S1-S3), fasst
+aber niemals fremde Zugangsdaten an.
 
 ---
 
@@ -340,52 +379,67 @@ automage-Rollout auf allen VPS).
 
 ### In einem Satz
 
-VNC-Units sind die **Bildschirm-Bausteine**, die jedem Agenten seinen
-eigenen Arbeitsplatz mit Fenstern, Maus und Tastatur bereitstellen -
-damit man ihm ueber die Schulter schauen und aus der Ferne mitarbeiten
-kann.
+VNC-Units sind systemd-Dienste, die auf einem Server einen virtuellen
+Bildschirm-Server (`Xtigervnc`) starten, damit sich der grafische
+Arbeitsplatz eines Agenten aus der Ferne betrachten und bedienen laesst
+- im Alltagsbild ein Fernrohr, das auf den Monitor des Agenten
+gerichtet ist.
 
-### Analogie
+### Der technische Kern
 
-Stell dir vor, jeder Agent hat nicht nur ein Buero (Workspace) und
-einen Tuersteher (Gateway), sondern auch einen **eigenen Bildschirm**
-auf seinem Schreibtisch. Ueber diesen Bildschirm koennen wir aus der
-Ferne zuschauen - so, als wuerden wir uns neben den Agenten setzen und
-auf sein Monitorbild schauen.
+Ein VPS hat keinen echten Monitor. Um trotzdem grafische Programme
+(Browser, Textprogramme, Buchhaltungssoftware) laufen zu lassen, wird
+ein **virtueller Bildschirm** erzeugt:
 
-Die **VNC-Unit** ist der Baustein, der diesen virtuellen Bildschirm
-aufsetzt:
+- **TigerVNC** erzeugt in Software einen X11-Displayserver, dessen
+  Ausgabe nicht auf einen physischen Monitor geht, sondern in einen
+  Puffer.
+- **VNC (Virtual Network Computing)** ist das Protokoll, ueber das ein
+  entfernter Betrachter (der VNC-Client auf Torstens oder Sarahs
+  Rechner) diesen Puffer live sehen und Maus-/Tastatureingaben senden
+  kann.
+- **systemd-Unit** sorgt dafuer, dass dieser TigerVNC-Server
+  automatisch startet, nach einem Neustart wieder da ist und einen
+  festen Port belegt.
 
-- Sie startet einen kleinen "virtuellen Bildschirm" auf dem Server.
-- Sie oeffnet einen Zugang, ueber den man von aussen darauf zugreifen
-  kann (Passwort noetig).
-- Sie sorgt dafuer, dass der Bildschirm bestehen bleibt, auch wenn
-  gerade niemand zuschaut.
+### Aufbau je Slot
 
-### Ein konkretes Beispiel
+Fuer jeden Agenten mit grafischem Arbeitsplatz gibt es:
 
-Auf Server 3 gibt es vier VNC-Units, eine pro Agent:
+- eine **Display-Nummer** (z. B. `:10`, `:11`, `:12`, `:13`, `:18`)
+- einen **RFB-Port** (die Netzwerk-Adresse, ueblich `5900 +
+  Display-Nummer`)
+- eine **systemd-Unit** `agentkvm-vnc-<user>.service`
 
-- `agentkvm-vnc-gandalf.service` (Bildschirm-Nummer 10)
-- `agentkvm-vnc-rocky.service` (Bildschirm-Nummer 11)
-- `agentkvm-vnc-sloar.service` (Bildschirm-Nummer 12)
-- `agentkvm-vnc-turyia.service` (Bildschirm-Nummer 13)
+Die Vorlage dafuer liegt im Botrepo unter `agentkvm.yml`.
 
-Jede dieser Units bekommt eine feste Adresse (Port), unter der man den
-Bildschirm abrufen kann. Chantal auf Server 1 hat z. B.
-Bildschirm-Nummer 18, Adresse 5918.
+### Aktuelle Belegung Server 3
+
+| Agent | Display | Port | Unit |
+|-------|---------|------|------|
+| gandalf | :10 | 5910 | `agentkvm-vnc-gandalf.service` |
+| rocky   | :11 | 5911 | `agentkvm-vnc-rocky.service`   |
+| sloar   | :12 | 5912 | `agentkvm-vnc-sloar.service`   |
+| turyia  | :13 | 5913 | `agentkvm-vnc-turyia.service`  |
+
+Chantal auf S1 hat Display `:18` und Port `5918`.
+
+### Zugriff
+
+Ueblich per SSH-Tunnel:
+
+```
+ssh -L 5911:127.0.0.1:5911 root@187.124.191.206
+```
+
+Dann im VNC-Client `localhost:5911` mit dem Passwort aus
+`~<agent>/.config/tigervnc/passwd`.
 
 ### Warum das wichtig ist
 
-- Ein Agent kann so **echte Anwendungen** benutzen, die ein
-  Bildschirm-Fenster brauchen (Browser, Textprogramme,
-  Buchhaltungstools).
-- Sarah oder Torsten koennen dem Agenten **aus der Ferne ueber die
-  Schulter schauen** - fuer Fehlersuche oder Anlernen.
-- Der Agent hat **einen eigenen, unabhaengigen Arbeitsplatz** und stoert
-  keinen anderen.
-
-### Wer verwaltet die VNC-Units
-
-Torsten legt sie an, Gandalf ueberwacht ihren Zustand im Wochenbericht.
-Die Bauanleitung liegt im Botrepo unter dem Namen `agentkvm`.
+- Agenten koennen so **echte Anwendungen** benutzen, die einen
+  grafischen Kontext brauchen.
+- Sarah oder Torsten koennen ihnen **live ueber die Schulter schauen**
+  und bei Bedarf eingreifen.
+- Jeder Agent hat seinen eigenen Bildschirm - keine Kollision mit den
+  anderen.
