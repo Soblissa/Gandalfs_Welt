@@ -12,14 +12,14 @@ wiederholen muss.
 
 ## Struktur
 
-- `glossar/` — kurze Alltagserklaerungen einzelner Begriffe, ein Begriff pro Datei.
-- `konzepte/` — laengere Erklaerungen zu Zusammenhaengen (z. B. "Was ist ein Agent?").
-- `landkarte/` — Uebersichten ueber unsere Landschaft (Server, Bots, wer wohnt wo).
-- `entscheidungen/` — festgehaltene Vereinbarungen zwischen Sarah, Torsten und Gandalf.
-
-Jede Datei ist eine einzelne Markdown-Notiz. Namen bitte klein, mit
-Bindestrichen, deutsch, ohne Umlaute im Dateinamen (`gateway.md` statt
-`Gateway.md`).
+- `glossar.md` — **eine einzige alphabetische Sammeldatei** mit
+  Alltagserklaerungen zu Fachbegriffen. Suche einfach mit Strg-F.
+- `konzepte/` — laengere Erklaerungen zu Zusammenhaengen (z. B. "Was
+  ist ein Agent?").
+- `landkarte/` — Uebersichten ueber unsere Landschaft (Server, Bots,
+  wer wohnt wo).
+- `entscheidungen/` — festgehaltene Vereinbarungen zwischen Sarah,
+  Torsten und Gandalf.
 
 ## Pflegeprinzip
 
