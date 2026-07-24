@@ -1,99 +1,217 @@
 # Modell-Uebersicht
 
 **Stand:** 2026-07-24. Preise in **US-Dollar je 1 Million Token**
-(Input / Output).
+(Input / Output). Angaben, wo nicht der Anbieter selbst zitiert wird,
+stammen von seriösen Preis-Aggregatoren (Quellen unten).
 
-## Was "lokal nutzbar" heisst
+## Was "Lokal" bedeutet
 
-Die Spalte **Lokal** zeigt, ob du das Modell theoretisch **selbst auf
-einem eigenen Rechner betreiben** koenntest, statt es beim Anbieter zu
-kaufen.
+- **Ja** = Open-Weight. Modelldateien sind frei herunterladbar; du kannst
+  das Modell prinzipiell selbst betreiben. Nicht jede Groesse laeuft auf
+  jedem Rechner. Faustregel:
+  - unter 15B Parameter: guter Laptop mit starker Grafikkarte
+  - 30-70B: Workstation, mehrere Grafikkarten
+  - ueber 100B: Rechenzentrum
+- **Nein** = closed, nur ueber die API des Anbieters.
+- **Teilweise** = kleine Varianten offen, die grosse nicht.
 
-- **Ja** = Open-Weight, du kannst die Modelldateien herunterladen und
-  auf einem starken Rechner (viel Arbeitsspeicher, gute Grafikkarte)
-  betreiben. In der Praxis brauchen die grossen Varianten
-  Rechenzentren-Hardware; nur die kleineren Grossen laufen auf einem
-  normalen Laptop.
-- **Nein** = geschlossen. Du kannst nur ueber die API des Anbieters
-  darauf zugreifen.
-- **Teilweise** = kleine Varianten offen, die grosse nicht (typisch bei
-  Google und Alibaba).
+---
 
-## Grosse Vergleichstabelle
+## Anthropic (USA)
 
-| Anbieter | Modell | Preis Input | Preis Output | Kontextfenster | Lokal | Staerken | Schwaechen |
-|---|---|---:|---:|---|---|---|---|
-| **Anthropic** | Claude Sonnet 4.6 | 3 | 15 | 200k | Nein | Ausgewogen, sehr sauber im Deutschen, guter Coder. Unser Standard. | Kein Realtime-Video, Preis mittel |
-| **Anthropic** | Claude Opus 4.7 | 15 | 75 | 200k | Nein | Beste Anthropic-Denke, sehr gut bei komplexer Argumentation | Deutlich teurer, spuerbar langsamer |
-| **Anthropic** | Claude Haiku 4.5 | 1 | 5 | 200k | Nein | Sehr schnell, sehr guenstig, gut fuer viele Alltagsaufgaben | Weniger Tiefe bei komplexen Argumenten |
-| **Anthropic** | Claude Fable 5 | 2 (bis 31.08.) / 3 | 10 (bis 31.08.) / 15 | 200k | Nein | Neu, gute Balance, Einfuehrungspreis bis Ende August | Frisch, Toolchain teils weniger ausgereift |
-| **OpenAI** | GPT-5.5 | 5 | 15 | 400k | Nein | Sehr starkes Reasoning, GPT-Live-Voice, breite Werkzeug-Anbindung | Ueber 272k Tokens verdoppelt sich Input-Preis, teurer als Sonnet |
-| **OpenAI** | GPT-5.5 Pro | 30 | 180 | 400k | Nein | Spitzenqualitaet, wenn wirklich noetig | Sehr teuer, langsamer |
-| **OpenAI** | GPT-5.6 (Sol) | ~5 | ~15 | 400k | Nein | Nachfolger von 5.5, aehnlicher Preis, mehr Reasoning | Rollout laeuft noch |
-| **OpenAI** | GPT-5 nano | 0.05 | ~0.40 | 128k | Nein | Extrem guenstig, gut fuer Massen-Textverarbeitung | Kaum Reasoning, keine grossen Aufgaben |
-| **Google** | Gemini 2.5 Pro | 1.25 | 10 | 1M | Nein | Sehr grosses Kontextfenster, gut mit Bildern/PDFs, guenstig fuer Grossaufgaben | Deutsch weniger konsistent |
-| **Google** | Gemini 2.5 Flash | 0.30 | 2.50 | 1M | Nein | Sehr guenstig und schnell, riesiges Kontextfenster | Weniger Tiefe, gelegentlich holpriges Deutsch |
-| **Google** | Gemini 3 Pro | 2 | 12 | 1M | Nein | Neuer, mehr Reasoning, weiter 1M-Kontextfenster | Rollout noch nicht ueberall, wenig Langzeit-Praxis |
-| **Google** | Gemma 3 (klein) | frei bei Selbstbetrieb | – | 128k | Ja | Kleine offene Familie, laeuft auf gutem Laptop, gute Deutschkenntnisse | Weit unter Gemini 3 Pro, nur fuer eng umrissene Aufgaben |
-| **Moonshot AI** (CN) | Kimi K3 | 3 | 15 | 1M | Ja (angekuendigt) | Open-Weight, 2.8 Bio Parameter, riesiges Kontextfenster, stark bei Agentic und Coding | Sehr gross, Betrieb braucht ernste Hardware; Anbieter chinesisch |
-| **Moonshot AI** (CN) | Kimi K2.5 | 1 | 4 | 128k | Ja | Multimodal (Text, Code, Bild), guenstig, offen | Kleiner als K3, weniger Reasoning |
-| **Alibaba** (CN) | Qwen3-Max | 0.78 | 3.90 | 262k | Ja | Open-Weight-Flaggschiff, 100+ Sprachen, permissive Lizenz, sehr guenstig | Chinesisch (Datenschutz), Toolchain im Aufbau |
-| **Alibaba** (CN) | Qwen3.7-Max (Preview) | ~1.20 | ~2.50 | 262k | Nein | Frontier-Klasse, guenstiger als westliche Frontier-Modelle | Closed-Weight seit April 2026 |
-| **Alibaba** (CN) | Qwen 35B (Open) | 0.15 (via Groq) | ~0.60 | 128k | Ja | Sehr guenstig, laeuft auf einer starken Grafikkarte | Klein, nicht Frontier-Level |
-| **DeepSeek** (CN) | DeepSeek V3.2 | 0.27 | 1.10 | 128k | Ja | **Extrem guenstig**, offen, oft in der Top-Region der Benchmarks | Chinesisch, gelegentlich politische Filterung |
-| **DeepSeek** (CN) | DeepSeek R2 (Reasoning) | ~0.55 | ~2.20 | 128k | Ja | Starkes Reasoning zu Bruchteil des westlichen Preises | Wie oben, plus laengere Antwortzeiten |
-| **Meta** (US) | Llama 3.3 70B | 0.35 (via Groq) | ~0.80 | 128k | Ja | Klassiker der offenen Welt, breit unterstuetzt, gut fuer Selbstbetrieb | Wird zunehmend von neueren offenen Modellen ueberholt |
+| Modell | Preis Input | Preis Output | Kontext | Lokal | Kurzcharakter |
+|---|---:|---:|---|---|---|
+| Claude Opus 4.7 | 15 | 75 | 200k | Nein | Top-Reasoning, teuer, langsam |
+| Claude Sonnet 4.6 | 3 | 15 | 200k | Nein | Unser Standardpferd, ausgewogen, sehr gutes Deutsch |
+| Claude Haiku 4.5 | 1 | 5 | 200k | Nein | Schnell, guenstig, Alltagsklein |
+| Claude Fable 5 | 2 (bis 31.08.) / 3 | 10 / 15 | 200k | Nein | Neue Familie, Einfuehrungspreis, gute Balance |
 
-Quellen: Anthropic docs (`platform.claude.com/docs/en/about-claude/pricing`),
-`aipricing.guru`, `costgoat.com`; OpenAI docs
-(`developers.openai.com/api/docs/pricing`), `benchlm.ai`, `modelpricing.ai`;
-Google (`ai.google.dev/gemini-api/docs/pricing`), `aicostcheck.com`;
-Moonshot (`platform.kimi.ai/docs/pricing/chat-k3`), OpenRouter, `whatllm.org`;
-Alibaba (`tokenmix.ai`, `cloudprice.net`, `aitooltier.com`);
-DeepSeek (`abstractapi.com`, `margindash.com`, `ecomcalctools.com`).
+## OpenAI (USA)
+
+| Modell | Preis Input | Preis Output | Kontext | Lokal | Kurzcharakter |
+|---|---:|---:|---|---|---|
+| GPT-5.5 Pro | 30 | 180 | 400k | Nein | Spitzenklasse, sehr teuer |
+| GPT-5.5 | 5 | 15 | 400k | Nein | Frontier, GPT-Live-Basis, starkes Reasoning |
+| GPT-5.6 (Sol) | ~5 | ~15 | 400k | Nein | Nachfolger, im Rollout |
+| GPT-5.4 | ~2 | ~8 | 400k | Nein | Vorgaenger, wird abgeloest |
+| GPT-5 mini | ~0.30 | ~1.20 | 128k | Nein | Guenstig, gute Balance |
+| GPT-5 nano | 0.05 | ~0.40 | 128k | Nein | Massenware, kaum Reasoning |
+| o3 / o4 (Reasoning) | 15 / 20 | 60 / 80 | 200k | Nein | Explizite Reasoning-Modelle, teuer |
+| gpt-oss 120B | selbstbetrieb | – | 128k | Ja | OpenAIs erstes Open-Weight seit Jahren |
+| gpt-oss 20B | selbstbetrieb | – | 128k | Ja | Laeuft auf einer starken Grafikkarte |
+
+## Google (USA)
+
+| Modell | Preis Input | Preis Output | Kontext | Lokal | Kurzcharakter |
+|---|---:|---:|---|---|---|
+| Gemini 3 Pro | 2 | 12 | 1M | Nein | Neuer, mehr Reasoning |
+| Gemini 2.5 Pro | 1.25 | 10 | 1M | Nein | Sehr grosses Kontextfenster, gut mit Medien |
+| Gemini 2.5 Flash | 0.30 | 2.50 | 1M | Nein | Guenstiger Schnellarbeiter |
+| Gemini 2.5 Flash-Lite | 0.10 | 0.40 | 1M | Nein | Massentauglich, sehr billig |
+| Gemma 3 27B | selbstbetrieb | – | 128k | Ja | Offene Google-Familie, gut auf Workstation |
+| Gemma 3 12B / 4B / 1B | selbstbetrieb | – | 128k | Ja | Immer kleinere Varianten, bis Laptop |
+
+## xAI (USA)
+
+| Modell | Preis Input | Preis Output | Kontext | Lokal | Kurzcharakter |
+|---|---:|---:|---|---|---|
+| Grok 4.5 | ~3 | ~15 | 256k-2M | Nein | Frontier, sehr grosses Kontextfenster, X-Anbindung |
+| Grok 4.3 | 1.25 | ~5 | 256k | Nein | Mittelklasse, ordentlich |
+| Grok 4.1 Fast | 0.20 | ~1 | 256k | Nein | Guenstig, schnell, kein Tiefdenker |
+| Grok 4 | 3 | 15 | 256k | Nein | Vorgaenger, weiterhin verfuegbar |
+
+## Meta (USA)
+
+| Modell | Preis Input | Preis Output | Kontext | Lokal | Kurzcharakter |
+|---|---:|---:|---|---|---|
+| Llama 4 Behemoth | – (nur Meta-Angebot) | – | 1M | Nein bisher | Frontier-Anspruch |
+| Llama 4 Maverick 400B | ~0.50 (via Groq) | ~1.50 | 1M | Ja | MoE, starke Konkurrenz zu GPT-4o-Klasse |
+| Llama 4 Scout 109B | ~0.35 (via Groq) | ~1.20 | **10M** | Ja | Groesstes Kontextfenster ueberhaupt |
+| Llama 3.3 70B | 0.35 (via Groq) | ~0.80 | 128k | Ja | Klassiker der offenen Welt, breit unterstuetzt |
+| Llama 3.2 8B | selbstbetrieb | – | 128k | Ja | Handlich, Laptop-tauglich |
+
+## Mistral (Frankreich)
+
+| Modell | Preis Input | Preis Output | Kontext | Lokal | Kurzcharakter |
+|---|---:|---:|---|---|---|
+| Mistral Large 2 | 2 | 6 | 128k | Nein | Europas Frontier-Kandidat, guenstiger als US-Frontier |
+| Mistral Small 3 | 0.10 | 0.30 | 128k | Ja | Sehr guenstig, offen, deutschsprachlich brauchbar |
+| Codestral | 0.20 | 0.60 | 32k | Ja | Speziell fuer Code |
+| Devstral 2 | 0.30 | 0.90 | 128k | Ja | Neuere Coding-Variante |
+| Ministral 3B | 0.04 | 0.10 | 128k | Ja | Winzig, laeuft auf Laptop |
+| Ministral 8B | 0.10 | 0.30 | 128k | Ja | Etwas groesser, Laptop-tauglich |
+| Pixtral 12B | 0.15 | 0.45 | 128k | Ja | Multimodal (Bilder) |
+| Mistral Nemo 12B | 0.15 | 0.15 | 128k | Ja | Von Nvidia mitgebaut, offen, sehr guenstig |
+
+## Cohere (Kanada)
+
+| Modell | Preis Input | Preis Output | Kontext | Lokal | Kurzcharakter |
+|---|---:|---:|---|---|---|
+| Command R+ | 2.50 | 10 | 128k | Teilweise (aeltere Version offen) | Enterprise, sehr gut mit Suchdaten |
+| Command R | 0.15 | 0.60 | 128k | Teilweise | Guenstig, retrieval-stark |
+| Embed v4 | 0.10 | – | – | Nein | Nur Embeddings, kein Chat |
+| Rerank 3.5 | pro 1000 Suchen: ~1 USD | – | – | Nein | Zusatzbaustein fuer Suche |
+
+## Moonshot AI (China)
+
+| Modell | Preis Input | Preis Output | Kontext | Lokal | Kurzcharakter |
+|---|---:|---:|---|---|---|
+| Kimi K3 | 3 | 15 | 1M | Ja (angekuendigt) | 2.8 Bio Parameter, Frontier-Anspruch, Agentic |
+| Kimi K2.5 | 1 | 4 | 128k | Ja | Multimodal, guenstig |
+| Kimi K2 | 0.60 | 2.50 | 128k | Ja | Aeltere Generation, gut fuer Code |
+
+## Alibaba (China) — Qwen-Familie
+
+| Modell | Preis Input | Preis Output | Kontext | Lokal | Kurzcharakter |
+|---|---:|---:|---|---|---|
+| Qwen3.7-Max (Preview) | ~1.20 | ~2.50 | 262k | Nein | Frontier-Anspruch, aber geschlossen |
+| Qwen3-Max | 0.78 | 3.90 | 262k | Ja | Open-Weight-Flaggschiff, 100+ Sprachen |
+| Qwen3 72B | 0.15 (via Groq) | ~0.60 | 128k | Ja | Klassenprimus im Open-Weight-Bereich |
+| Qwen3 35B | 0.10 | ~0.40 | 128k | Ja | Sehr guenstig, laeuft auf Workstation |
+| Qwen3 14B | selbstbetrieb | – | 128k | Ja | Laptop-tauglich |
+| Qwen3 VL | 0.20 | 0.80 | 128k | Ja | Multimodal (Bilder) |
+| Qwen3 Coder | 0.15 | 0.60 | 128k | Ja | Fuer Programmieraufgaben |
+
+## DeepSeek (China)
+
+| Modell | Preis Input | Preis Output | Kontext | Lokal | Kurzcharakter |
+|---|---:|---:|---|---|---|
+| DeepSeek V3.2 | 0.27 | 1.10 | 128k | Ja | Extrem guenstig, im Preis-Leistungs-Zenit |
+| DeepSeek R2 (Reasoning) | ~0.55 | ~2.20 | 128k | Ja | Reasoning zu westlichem Bruchteil |
+| DeepSeek V3 | 0.14 | 0.28 | 128k | Ja | Aeltere Version, immer noch stark |
+| DeepSeek OCR 2 | 0.10 | 0.30 | 32k | Ja | Text aus Bildern extrahieren |
+| DeepSeek Coder V3 | 0.14 | 0.28 | 128k | Ja | Fuer Programmieraufgaben |
+
+## Weitere fundierte Familien (Kurzblick)
+
+| Anbieter | Modell | Preis (grob) | Lokal | Kurzcharakter |
+|---|---|---|---|---|
+| Zhipu (China) | GLM-4.6 | 0.50 / 2 | Ja | Chinesische Open-Weight-Familie, ordentliche Qualitaet |
+| Baidu (China) | Ernie 4.5 | 0.30 / 1 | Nein | Baidus Flaggschiff |
+| 01.AI (China) | Yi-34B | selbstbetrieb | Ja | Open-Weight, gut fuer Deutsch/Englisch |
+| Reka (USA) | Reka Flash 3 | 0.40 / 1 | Nein | Multimodal, kleines Team |
+| AI21 (Israel) | Jamba 1.6 | 0.50 / 0.70 | Ja | Hybrid-Architektur, sehr grosses Kontextfenster |
+| Nvidia | Nemotron 4 340B | selbstbetrieb | Ja | Grosser Trainingsdatenset-Baustein, oft als Grundlage genutzt |
+| Snowflake | Arctic-2 | selbstbetrieb | Ja | Datenbanknahe Aufgaben |
+| Databricks | DBRX-2 | 0.75 / 2.25 | Ja | Enterprise-orientiert, MoE-Architektur |
+
+---
 
 ## Kurzempfehlungen fuer typische Situationen
 
 | Wenn du... | Empfehlung |
 |---|---|
 | einen zuverlaessigen Standardagenten willst | **Claude Sonnet 4.6** |
-| ein besonders schwieriges Problem loesen willst | **Claude Opus 4.7** oder **GPT-5.5** |
-| Massenverarbeitung von Text willst und Preis knapp halten | **Claude Haiku 4.5**, **Gemini 2.5 Flash**, oder **DeepSeek V3.2** |
-| sehr grosse Dokumente (PDFs, Buecher) verarbeiten willst | **Gemini 2.5 Pro** oder **Kimi K3** (grosses Kontextfenster) |
-| ein Sprach-Erlebnis mit natuerlicher Unterhaltung willst | **GPT-Live** (basiert auf GPT-5.5) |
-| ein offenes Modell verwenden willst | **Kimi K3** (gross), **Qwen3-Max** oder **DeepSeek V3.2** (sehr guenstig), **Llama 3.3 70B** (Klassiker) |
-| ein Modell **auf eigener Hardware** betreiben willst | **Qwen 35B**, **Llama 3.3 70B**, **DeepSeek V3.2**, **Gemma 3** je nach Rechnergroesse |
-| Bilder oder Videos verstehen lassen willst | **Gemini 2.5 Pro** oder **GPT-5.5** mit Vision |
+| ein besonders schwieriges Problem loesen willst | **Claude Opus 4.7**, **GPT-5.5**, oder **Grok 4.5** |
+| Massentext-Verarbeitung, Preis knapp | **Gemini 2.5 Flash-Lite**, **DeepSeek V3.2**, **Ministral 3B** |
+| sehr grosse Dokumente (Buecher, PDFs) | **Gemini 2.5 Pro**, **Llama 4 Scout** (10M!), **Kimi K3** (1M) |
+| Sprach-Erlebnis (Voice) | **GPT-Live** (basiert auf GPT-5.5) |
+| Coding und Programmieren | **Claude Sonnet 4.6**, **Codestral / Devstral 2**, **Qwen3 Coder**, **DeepSeek Coder V3** |
+| Multimodal (Bilder, PDFs verstehen) | **Gemini 2.5 Pro**, **GPT-5.5**, **Pixtral 12B**, **Qwen3 VL** |
+| **auf eigener Hardware** (Datenschutz, Kontrolle) | **Llama 3.3 70B**, **Qwen3 72B**, **Mistral Small 3**, **DeepSeek V3.2**, **Gemma 3** je nach Rechnergroesse |
+| Sensible Kundendaten oder Behoerdenkontext | **Anthropic** oder **OpenAI**, oder **offenes Modell selbst hosten** — nicht ueber chinesische API |
+| Suche und Wissensdatenbanken (Retrieval) | **Cohere Command R+** oder **Command R** |
 
-## Faustregel fuer Kosten
+## Faustregel Kosten pro Chat
 
-Ein Chatlauf mit sinnvoller Antwort (etwa 500 Wort Input, 500 Wort Output)
-kostet in etwa:
+Ein Chatlauf mit 500 Woertern Input und 500 Woertern Output kostet grob:
 
-- **DeepSeek V3.2**: unter 0.1 Cent
-- **Qwen 35B / Llama 3.3 70B**: unter 0.2 Cent
-- **Gemini 2.5 Flash**: unter 0.3 Cent
-- **Claude Haiku 4.5**: unter 0.5 Cent
-- **Qwen3-Max**: ca. 0.5 Cent
-- **Claude Sonnet 4.6 / Kimi K3**: ca. 1.5 Cent
-- **GPT-5.5**: ca. 2 Cent
-- **Claude Opus 4.7**: ca. 6-7 Cent
-- **GPT-5.5 Pro**: ca. 20 Cent
+- **Ministral 3B**: unter 0.05 Cent
+- **DeepSeek V3.2 / Gemini 2.5 Flash-Lite**: ~0.1 Cent
+- **Qwen 35B / Llama 3.3 70B / GPT-5 nano**: ~0.15-0.20 Cent
+- **Command R**: ~0.4 Cent
+- **Qwen3-Max**: ~0.5 Cent
+- **Mistral Large 2**: ~0.7 Cent
+- **Claude Sonnet 4.6 / Kimi K3 / Grok 4.5**: ~1.5 Cent
+- **GPT-5.5**: ~2 Cent
+- **Claude Opus 4.7**: ~6-7 Cent
+- **GPT-5.5 Pro**: ~20 Cent
 
-## Erklaerung "Chinesische Modelle"
+---
+
+## Hinweise zu chinesischen Modellen
 
 Auf Sarahs ausdruecklichen Wunsch stehen chinesische Modelle in dieser
-Tabelle drin (Moonshot AI, Alibaba/Qwen, DeepSeek). Sie sind meist:
+Tabelle drin (Moonshot AI, Alibaba/Qwen, DeepSeek, Zhipu, Baidu, 01.AI).
+Sie sind meist:
 
 - **guenstiger** als westliche Vergleichsmodelle
-- oft **offen** (Open-Weight, also lokal betreibbar)
-- **technisch konkurrenzfaehig**, teils fuehrend bei bestimmten Aufgaben
+- oft **offen** (Open-Weight, lokal betreibbar)
+- **technisch konkurrenzfaehig**, teils fuehrend in einzelnen Disziplinen
+  (Reasoning, Coding, lange Kontexte)
 
 Zu bedenken:
 
-- **Datenschutz und Politik**: Anbieter mit chinesischem Sitz oder Servern
-  unterliegen anderen Rechtsraeumen. Bei sensiblen Daten (Kundendaten,
-  Behoerdenkontext, Personenbezogenes) besser bei Anthropic oder OpenAI
-  bleiben, oder das offene Modell **selbst hosten**.
+- **Datenschutz und Politik**: Anbieter mit chinesischem Sitz oder
+  Servern unterliegen anderen Rechtsraeumen. Bei sensiblen Daten (Kunden,
+  Behoerden, Personenbezogenes) besser bei Anthropic oder OpenAI bleiben,
+  oder das offene Modell **selbst hosten**.
 - **Themenfilter**: Manche chinesischen Modelle vermeiden politisch
-  heikle Fragen. Fuer Fachthemen meist irrelevant.
+  heikle Fragen. Fuer Fachaufgaben meist irrelevant.
+
+---
+
+## Quellen
+
+- Anthropic: `platform.claude.com/docs/en/about-claude/pricing`,
+  `aipricing.guru`, `costgoat.com`, `aicostcheck.com`
+- OpenAI: `developers.openai.com/api/docs/pricing`, `benchlm.ai`,
+  `modelpricing.ai`
+- Google: `ai.google.dev/gemini-api/docs/pricing`, `aicostcheck.com`,
+  `getapipulse.com`
+- xAI: `aipricing.guru/xai-pricing`, `pricepertoken.com`, `costbench.com`
+- Meta / Llama: `codersera.com`, `explainx.ai`, `aimadetools.com`,
+  `royfactory.net`
+- Mistral: `mistral.ai/pricing`, `aimadetools.com`, `aipricing.guru`,
+  `stackcompare.net`
+- Cohere: `cohere.com/pricing`, `aicostcheck.com`, `metacto.com`,
+  `pecollective.com`
+- Moonshot: `platform.kimi.ai/docs/pricing/chat-k3`, OpenRouter,
+  `whatllm.org`
+- Alibaba/Qwen: `tokenmix.ai`, `cloudprice.net`, `aitooltier.com`,
+  `techjacksolutions.com`
+- DeepSeek: `abstractapi.com`, `margindash.com`, `ecomcalctools.com`,
+  `lmmarketcap.com`
+
+Aktualisierungsrhythmus: **jeden Mittwoch 08:05 UTC**, gekoppelt an das
+KI-News-Briefing.
