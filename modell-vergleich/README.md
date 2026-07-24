@@ -4,8 +4,12 @@ Sarahs Uebersicht ueber die grossen KI-Modelle. Aktuell und knapp.
 
 ## Was hier drinsteht
 
-- `uebersicht.md` — grosse Vergleichstabelle: Anbieter, Modell, Staerken,
-  Schwaechen, Kosten je Millionen Token.
+- `uebersicht.md` — grosse Vergleichstabelle: Anbieter, Modell, Preise,
+  Kontextfenster, **lokal betreibbar (ja/nein/teilweise)**, Staerken,
+  Schwaechen.
+- Chinesische Anbieter (Moonshot, Alibaba/Qwen, DeepSeek) sind
+  ausdruecklich einbezogen — mit Hinweis zu Datenschutz und politischer
+  Filterung.
 - Weitere Detaildateien folgen bei Bedarf.
 
 ## Wichtige Hinweise vorneweg
@@ -20,7 +24,13 @@ Sarahs Uebersicht ueber die grossen KI-Modelle. Aktuell und knapp.
 
 ## Wie ich diese Datei aktualisiere
 
-- Neue Modelle werden in `uebersicht.md` einsortiert (alphabetisch nach
-  Anbieter).
+- **Wochenrhythmus, mittwochs 08:00 UTC**, gekoppelt an das KI-News-
+  Briefing: Gandalf prueft frische Preisdaten und Modellneuheiten und
+  spielt Aenderungen ein, wenn sich etwas Substanzielles bewegt hat.
+  Der Wochenrhythmus laeuft auch dann, wenn kein Themenwechsel
+  ansteht, damit die Zeile "Stand" immer aktuell ist.
+- Neue Modelle werden in `uebersicht.md` einsortiert (nach Anbieter,
+  innerhalb alphabetisch).
 - Preisaenderungen bekommen einen "Stand" -Vermerk pro Zeile.
-- Alle Aenderungen kommen als sichtbarer Commit in dieses Repo.
+- Alle Aenderungen kommen als sichtbarer Commit in dieses Repo, damit
+  Sarah die Historie nachvollziehen kann.
