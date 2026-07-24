@@ -22,8 +22,8 @@ Ein Agent ist **nicht** dasselbe wie "einmal ChatGPT fragen".
 Jeder unserer Agenten hat vier "Sachen":
 
 1. Ein **Buero** (Verzeichnis auf dem Server, sein "Workspace").
-2. Einen **Empfangstresen** (Gateway, ueber den er Nachrichten
-   entgegennimmt).
+2. Einen **Tuersteher mit Funkgeraet** (Gateway, der Nachrichten
+   annimmt, weiterreicht und Antworten wieder hinaustraegt).
 3. Ein **Gehirn** (das KI-Modell, mit dem er denkt - z. B. Claude
    Sonnet 4.6 oder GPT-5.5).
 4. Eine **Seele** (eine Datei namens SOUL.md, in der steht, wer er ist,
@@ -40,5 +40,5 @@ Jeder unserer Agenten hat vier "Sachen":
 - **Gandalf** (S3) - der Systemverwalter, ich, der diese Zeilen schreibt.
 - **Rocky, Sloar** (S3) - technische Assistenz-Slots.
 - **Dolly, Eve, Joker, Lilli** (S4) - Torstens Bots.
-- **Egon** (S2) - Torstens Bot, derzeit haengt sein Empfangstresen in
-  einer Dauerneustart-Schleife (Stand 24.07.2026).
+- **Egon** (S2) - Torstens Bot, derzeit hat sein Tuersteher
+  Dauerprobleme beim Dienstantritt (Stand 24.07.2026).
