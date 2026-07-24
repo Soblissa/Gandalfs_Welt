@@ -17,6 +17,7 @@ deines Browsers (Strg-F / Cmd-F) oder ueber die GitHub-Suchleiste.
 - [Gateway](#gateway)
 - [Gateway-Port](#gateway-port)
 - [Härten](#härten)
+- [Offene Modelle vs. lokale Modelle](#offene-modelle-vs-lokale-modelle)
 - [Open Weight](#open-weight)
 - [Server / VPS](#server--vps)
 - [Vault-Struktur](#vault-struktur)
@@ -303,6 +304,116 @@ wartet auf einen abgestimmten Testlauf mit Torsten.
 
 ---
 
+## Offene Modelle vs. lokale Modelle
+
+### In einem Satz
+
+"Offen" und "lokal" werden oft in einen Topf geworfen, meinen aber
+unterschiedliche Dinge: **offen** beschreibt die Lizenz und
+Verfuegbarkeit des Modells (darf man es herunterladen?), **lokal**
+beschreibt den Ort, an dem es tatsaechlich laeuft (auf deinem Rechner
+oder auf einem fremden Server?).
+
+### Der technische Kern
+
+Es sind zwei verschiedene Achsen:
+
+**Achse 1 - Lizenz und Verfuegbarkeit:**
+
+- **Closed-Weight** - die Modelldateien sind nicht oeffentlich, Zugriff
+  nur ueber die API des Anbieters. Beispiele: Claude, GPT-5, Gemini,
+  Grok.
+- **Open-Weight** - die Modelldateien sind oeffentlich, jeder darf sie
+  herunterladen und einsetzen. Beispiele: Llama, Mistral, Qwen,
+  DeepSeek, Kimi, Gemma, gpt-oss.
+
+Details dazu im Glossareintrag [Open Weight](#open-weight).
+
+**Achse 2 - Ausfuehrungsort:**
+
+- **Cloud-Betrieb (API)** - das Modell laeuft auf den Servern des
+  Anbieters. Deine Anfrage geht ueber das Internet dorthin, wird dort
+  verarbeitet, das Ergebnis kommt zurueck.
+- **Lokaler Betrieb** - das Modell laeuft auf deinem eigenen Rechner
+  (Laptop, Workstation, eigener Server). Deine Anfrage verlaesst nie
+  den eigenen Rechner.
+
+Die Kombination beider Achsen ergibt vier Faelle:
+
+| Lizenz \ Ort   | Cloud-Betrieb                                | Lokaler Betrieb                          |
+|----------------|----------------------------------------------|------------------------------------------|
+| Closed-Weight  | Anthropic/OpenAI Standardfall                | technisch unmoeglich                     |
+| Open-Weight    | Groq/Together/OpenRouter serviert Llama & Co | ollama/vLLM/llama.cpp auf eigenem Rechner |
+
+Daher gilt: **Offen heisst nicht automatisch lokal.** Ein offenes
+Modell (z. B. Llama) kann trotzdem in der Cloud eines Drittanbieters
+laufen. Und **lokal ist nur mit offenen Modellen moeglich** - die
+geschlossenen kannst du nicht herunterladen.
+
+### Praktisch: was bleibt privat, was nicht?
+
+Bei einem **lokalen Modell** bleibt deine Kommunikation mit dem
+Modell auf deinem Rechner. Konkret:
+
+- **Bleibt lokal**: der Wortlaut deiner Frage, alle Zwischen-"Gedanken"
+  des Modells, der Wortlaut seiner Antwort.
+- **Verlaesst deinen Rechner nur, wenn der Agent aktiv nach draussen
+  geht**: Websuche, Website-Aufrufe, API-Aufrufe zu anderen Diensten,
+  Herunterladen von Bildern oder PDFs.
+
+Beispiel: Du sagst deinem lokalen Agenten *"suche mir Immobilien in
+Norditalien"*.
+
+- Der Agent versteht die Frage in deinem Rechner - niemand sonst
+  erfaehrt, dass du gefragt hast.
+- Er ruft `idealista.it` und `immobiliare.it` auf - diese Seiten
+  sehen wie bei jedem Nutzer eine anonyme Anfrage aus deiner IP.
+- Er liefert die Ergebnisse zurueck an dich - wieder niemand sonst
+  erfaehrt, welche Objekte er dir zeigt.
+
+Zum Vergleich bei einem **Cloud-Modell** wuerde dieselbe Frage:
+
+- an Anthropic oder OpenAI uebertragen (dort wird sie verarbeitet und
+  protokolliert),
+- dann fuer die Websuche eventuell noch an weitere Dienste,
+- und die Antwort ebenfalls ueber die Anbieter zurueckreichen.
+
+Anthropic oder OpenAI wissen dann: aus deinem Anschluss kommt heute
+die Frage nach norditalienischen Immobilien.
+
+### Wer sieht was?
+
+| Wer weiss ...                              | Cloud-Modell         | Lokales Modell |
+|---|---|---|
+| deine Frage im Wortlaut                    | Anbieter (Anthropic, OpenAI, ...) | niemand ausser deinem Rechner |
+| die Zwischen-"Ueberlegungen" des Modells   | Anbieter             | niemand |
+| die Antwort im Wortlaut                    | Anbieter             | niemand |
+| dass jemand aus deiner IP auf idealista.it schaut | idealista.it | idealista.it (gleich!) |
+| welches konkrete Objekt du dir laenger anschaust | Anbieter + idealista.it | idealista.it |
+
+### Wichtige Einordnung
+
+- Ein **lokales Modell schuetzt vor der Neugier des Modell-Anbieters**,
+  nicht vor der Neugier der Ziele, die der Agent im Auftrag ansteuert.
+- Wenn du auch gegenueber Websites anonym bleiben willst, brauchst du
+  zusaetzlich anonymisierten Netzzugang (VPN oder Tor).
+- Ein **offenes Modell in fremder Cloud** (z. B. Llama via Groq) ist
+  in puncto Privatsphaere naeher am Cloud-Modell als am lokalen -
+  denn deine Anfrage geht wieder auf einen fremden Server, nur eben
+  einen anderen.
+
+### Faustregeln
+
+- Nur **volle Datenhoheit** willst? -> offenes Modell + eigene
+  Hardware (lokal).
+- **Bequemlichkeit und Spitzenleistung**, Datenweitergabe akzeptiert? ->
+  Cloud-Modell (Claude, GPT).
+- **Guenstig und offen**, aber ohne eigene Hardware? -> offenes Modell
+  ueber einen Cloud-Anbieter wie Groq, Together, OpenRouter -
+  Vorsicht: nicht mehr datenhoheitlich.
+
+---
+
 ## Open Weight
 
 ### In einem Satz
@@ -357,6 +468,10 @@ nicht "das Kochbuch, wie es entstanden ist".
 
 Details je Modell stehen in `modell-vergleich/uebersicht.md` in der
 Spalte **Lokal**.
+
+Wichtig zur Abgrenzung: **offen** und **lokal** sind zwei
+verschiedene Achsen - siehe den Glossareintrag
+[Offene Modelle vs. lokale Modelle](#offene-modelle-vs-lokale-modelle).
 
 ---
 
