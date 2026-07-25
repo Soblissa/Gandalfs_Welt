@@ -1,48 +1,72 @@
-# Sarahs Agenten - Gesamtliste
+# Alle Agenten auf Sarahs Servern
 
-**Stand:** 2026-07-25, live geprueft.
+**Stand:** 2026-07-25, live geprueft auf allen drei Servern.
 
-Kompakte Uebersicht ueber alle Agenten, die Sarah gehoeren oder in ihrem
-Verantwortungsbereich laufen. Sortiert nach Server, innerhalb alphabetisch.
+Kompakte Uebersicht ueber **alle** Agenten, die auf Sarahs Servern
+(S1-S3) laufen - unabhaengig davon, wer sie besitzt.
 
-Owner-Zuordnung: Sarah besitzt Server 1-3. Server 4 (Torstens VPS)
+Sortiert nach Server, innerhalb alphabetisch.
+
+Owner-Zuordnung: Sarah besitzt die Server 1-3 als Infrastruktur. Die
+darauf laufenden Agenten haben teils Sarah, teils Torsten (dto) oder
+Sebastian als Owner. Server 4 (Torstens eigener VPS `159.195.75.193`)
 steht nicht in dieser Uebersicht.
 
 ---
 
-## Aktive Agenten
+## S1 (147.93.120.51) - drei Agenten aktiv
 
-| Agent | Server | Linux-User | Rolle | Modell | Gateway-Port | VNC | Owner-Zugang | Zustand |
+| Agent | Linux-User | Owner | Rolle | Modell | Gateway-Port | VNC | Telegram | Zustand |
 |---|---|---|---|---|---:|---|---|---|
-| **Chantal** | S1 (147.93.120.51) | `chantall` | Sarahs Sekretariat, Reise- und Terminmanagerin | openai/gpt-5.5 | 19953 | Display 18 / Port 5918 | Telegram, dmPolicy `allowlist` | aktiv |
-| **Chefkoch** (Cheko / ILA-Hauptagent) | S1 (147.93.120.51) | `user1` | Hessisches Kultusministerium, ILA-Steuerung | anthropic/claude-sonnet-4-6 | 19840 | nicht eingerichtet | Telegram, dmPolicy `allowlist` (Sarah, Silke) | aktiv |
-| **Franks Klaus** | S1 (147.93.120.51) | `user2` | Kunde Frank Kammerer / Alpin Invest | anthropic/claude-sonnet-4-6 | 19870 | nicht eingerichtet | Telegram, dmPolicy `pairing` | aktiv |
-| **Gandalf** | S3 (187.124.191.206) | `gandalf` | Systemverwalter Automagia (dieser Agent) | anthropic/claude-opus-4-7 | 19941 | Display 10 / Port 5910 | Telegram (Sarah, Slarti) | aktiv |
-| **Rocky** | S3 (187.124.191.206) | `rocky` | technische Assistenz (Slot 1) | openai/gpt-5.5 | 18990 | Display 11 / Port 5911 | Telegram, dmPolicy `allowlist` (Torsten) | aktiv, hatte am 22.-24.07. eine Telegram-Neustart-Schleife (Details siehe Notizen) |
-| **Sloar** | S3 (187.124.191.206) | `sloar` | technische Assistenz (Slot 2) | openai/gpt-5.5 | 19950 | Display 12 / Port 5912 | Telegram, dmPolicy `allowlist` | aktiv |
-| **Turyia** (Slot) | S3 (187.124.191.206) | `turyia` | Slot-Reserve; kanonische Turiya-Instanz aktuell zu klaeren | openai/gpt-5.5 | 19951 | Display 13 / Port 5913 | Telegram, dmPolicy `allowlist` | aktiv als Slot; Rolle offen |
+| **Chantal** | `chantall` | Sarah | Sekretariat, Reise- und Terminmanagerin | openai/gpt-5.5 | 19953 | Display 18 / Port 5918 | dmPolicy `allowlist` | aktiv |
+| **Chefkoch** (Cheko / ILA-Hauptagent) | `user1` | Sarah | Hessisches Kultusministerium, ILA-Steuerung | anthropic/claude-sonnet-4-6 | 19840 | nicht eingerichtet | dmPolicy `allowlist` (Sarah, Silke) | aktiv |
+| **Franks Klaus** | `user2` | dto / Soblissa (Kunde Frank Kammerer) | Alpin Invest, KI-Optimierung | anthropic/claude-sonnet-4-6 | 19870 | nicht eingerichtet | dmPolicy `pairing` | aktiv |
 
-## Offene Punkte
+## S2 (89.116.39.197) - ein Slot, aktuell tot
 
-- **Chefkochs Anzeigename** in `IDENTITY.md` steht als `Cheko (ILA-Hauptagent)`. Operator-Zuordnung ist `Chefkoch`. Beides tolerieren, aber im Wochenbericht sichtbar halten.
-- **Franks Klaus**: `dmPolicy: pairing` statt `allowlist` - Zugang laueft ueber ein Kopplungsverfahren. Wenn das absichtlich ist, so belassen. Sonst auf `allowlist` umstellen.
-- **Chantal** hat weder USER.md-Namen fuer die Owner-Zeile noch eine dokumentierte Allowlist-ID-Liste. Empfehlung: Sarahs ID hinzufuegen (`6171498156`).
-- **Turyia**: kanonische Turiya-Instanz war zeitweise auf S2 unter Linux-User `agent`, ist dort nicht mehr vorhanden. Der Slot auf S3 (`turyia`) existiert weiter, hat aber keine klare Rolle mehr.
+| Agent | Linux-User | Owner | Rolle | Modell | Gateway-Port | VNC | Telegram | Zustand |
+|---|---|---|---|---|---:|---|---|---|
+| **Egon** | `egon` | Torsten (dto) | agentctl Pilot-Agent | keine Konfiguration | 19952 (im Botrepo) | nicht eingerichtet | keine Konfiguration | **tot: Gateway seit Wochen in `activating auto-restart`, 830.000 Neustart-Versuche gezaehlt** |
 
-## Nicht mehr aktiv / historisch
+## S3 (187.124.191.206) - vier Agenten aktiv
 
-- **Bernd** - war auf S1 unter Linux-User `sebastian` fuer Sebastian. **Am 2026-06-29 durch Chantal ersetzt.** Der Linux-User `sebastian` wurde entfernt.
-- Auf S2 lebt derzeit nur ein Bot: **Egon** (`egon`), aber der gehoert **Torsten**, nicht Sarah. Er steht bewusst nicht in dieser Liste.
+| Agent | Linux-User | Owner | Rolle | Modell | Gateway-Port | VNC | Telegram | Zustand |
+|---|---|---|---|---|---:|---|---|---|
+| **Gandalf** | `gandalf` | dto (Sarah + Torsten als Auftraggeber) | Systemverwalter Automagia (dieser Agent) | anthropic/claude-opus-4-7 | 19941 | Display 10 / Port 5910 | Sarah + Slarti | aktiv |
+| **Rocky** | `rocky` | dto | technische Assistenz (Slot 1) | openai/gpt-5.5 | 18990 | Display 11 / Port 5911 | dmPolicy `allowlist` (Torsten) | aktiv; hatte 22.-24.07. eine Telegram-Neustart-Schleife |
+| **Sloar** | `sloar` | dto | technische Assistenz (Slot 2) | openai/gpt-5.5 | 19950 | Display 12 / Port 5912 | dmPolicy `allowlist` | aktiv |
+| **Turyia** (Slot) | `turyia` | dto | Slot-Reserve; kanonische Turiya-Instanz aktuell zu klaeren | openai/gpt-5.5 | 19951 | Display 13 / Port 5913 | dmPolicy `allowlist` | aktiv als Slot; Rolle offen |
+
+## Gesamtzahl
+
+- **8 Agenten-Slots** auf den drei Servern.
+- **7 aktiv**, **1 tot** (Egon).
+- **6 gehoeren Sarahs direktem Kontext** (Chantal, Chefkoch, Franks Klaus als ihrer Kunden-Agent, plus Gandalf/Rocky/Sloar/Turyia auf S3 die Systemadministration und technische Assistenz).
+- **1 gehoert Torsten** und liegt auf Sarahs Hardware (Egon).
+
+## Offene Punkte fuer den heutigen Rundgang
+
+1. **Chantal (S1)** laueft auf GPT-5.5, nicht auf Claude. War das Absicht oder Ueberbleibsel?
+2. **Franks Klaus (S1)** hat `dmPolicy: pairing` statt `allowlist`. Ist das noch aktuell gewollt?
+3. **Chefkoch (S1)** heisst in `IDENTITY.md` "Cheko (ILA-Hauptagent)", operatorisch aber "Chefkoch". Angleichen?
+4. **Egon (S2)**: Torstens Rueckmeldung von heute Vormittag liegt noch nicht vor. Aktuell zappelt der Gateway seit Wochen sinnlos. Sollen wir ihn stillstellen, bis Torsten sich meldet?
+5. **Turyia-Slot (S3)**: laueft leer. Soll die kanonische Turiya hierher zurueck, an einen anderen Ort, oder wird der Slot umgewidmet?
+
+## Historisch (nicht mehr aktiv)
+
+- **Bernd** - war auf S1 unter `sebastian` fuer Sebastian. Am 2026-06-29 durch Chantal ersetzt. Der Linux-User `sebastian` wurde entfernt.
+- Vor Mai 2026 lief `turyia` auf S2 unter Linux-User `agent` als kanonische Turiya. Dieser Slot ist von S2 verschwunden.
 
 ## Wo mehr Details liegen
 
-- Vollstaendige Bestandsuebersicht ueber alle vier Server: `../Agentenmatrix.md`
-- Server-spezifische YAML-Dateien: `server1.yaml`, `server2.yaml`, `server3.yaml`
+- Vollstaendige Server-Detaildateien: `server1.yaml`, `server2.yaml`, `server3.yaml`
 - Anzeigenamen und Charakter: jeweils in `IDENTITY.md` und `SOUL.md` im Workspace des Agenten
 - Modell- und Telegram-Konfiguration: `openclaw.json` im jeweiligen `~/.openclaw/`
+- Botrepo-Bauanleitungen: `gruhflust/botrepo` unter
+  `playbooks/domains/homelab/active/templates/agentprofiles/<ip>/<user>/`
 
 ## Aktualisierung
 
 Diese Liste wird bei jeder Agenten-Aenderung (Neu, Umzug, Umbenennung,
 Modellwechsel, Ausserdienststellung) direkt hier nachgezogen. Sarah bekommt
-den Aenderungshinweis im Wochenbericht.
+den Aenderungshinweis im naechsten Wochenbericht.
