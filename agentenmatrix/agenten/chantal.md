@@ -1,6 +1,6 @@
 # Chantal
 
-**Stand:** 2026-07-25. Sarahs Sekretariats-Agentin.
+**Stand:** 2026-07-27. Sarahs Sekretariats-Agentin.
 
 ## Kopfdaten
 
@@ -32,7 +32,7 @@
 | Werkzeug | Zustand |
 |---|---|
 | Memory-Funktion | **JA** - `MEMORY.md` (23 Zeilen, letzte Aenderung 28.06.) plus 8 Tages-Notizen in `memory/`, letzte 18.07. |
-| Perplexity-Suche | **nein** - nicht angeschlossen |
+| Perplexity-Suche | **ja** - Plugin aktiv, Key unter `~/.openclaw/secrets/perplexity.key` |
 | Repo-Zugang | nur `Chantal_forall` (Rest am 25.07. entfernt) |
 | Telegram-Zugang | Sarah, Slarti |
 | VNC-Zugang | direkter Port, kein Tunnel |
@@ -102,6 +102,7 @@ Du bist **Chantal** auf **147.93.120.51**.
 
 ## Aenderungshistorie
 
+- **2026-07-27**: Perplexity-Status korrigiert - Plugin ist entgegen frueherer Notiz seit 2026-07-05 (Keyfile) bzw. spaetestens 2026-07-25 (aktueller Key) aktiv angeschlossen. Fruehere Angabe "nicht angeschlossen" war falsch.
 - **2026-07-25**: Persoenlichkeit ueberarbeitet (Blondinenhumor auf
   ca. jedes Drittel begrenzt); Rolle in IDENTITY konkretisiert;
   Repo-Deploy-Keys auf `Chantal_forall` reduziert (Rest gesichert
