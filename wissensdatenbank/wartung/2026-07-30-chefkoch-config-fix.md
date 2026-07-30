@@ -57,6 +57,27 @@
 - Zusaetzlich `loginctl enable-linger user1` gesetzt.
 - Ergebnis: nur noch ein Prozessbaum, Modell `claude-sonnet-4-6` geladen.
 
+## Dritter Vorfall am selben Tag: Anthropic-Key war ungueltig, o3-mini-Formatfehler
+- Nach dem Prozess-Fix meldete Chefkoch im Chat weiter "Something went wrong".
+- Live-Log:
+  1. Primary `openai/o3-mini` wurde mit `reasoning: 'none'` aufgerufen und antwortete mit HTTP 400 (`Unsupported value: 'none' is not supported`).
+  2. Fallback `anthropic/claude-sonnet-4-6` schlug fehl mit HTTP 401 (`authentication_error: API key is invalid`).
+  3. Konsequenz: "All models failed".
+- Fix am 2026-07-30 gegen 12:08 UTC: neuer Anthropic-API-Key von Sarah, eingesetzt in `/etc/openclaw/users/user1.env`, Env-Backup neben der Datei mit `.bak.<UTC>`. Verifikation direkt gegen Anthropic (`HTTP 200`, Antwort `pong` mit Modell `claude-sonnet-4-5-20250929`). Danach `systemctl restart openclaw-gateway@user1` -> `active`, Log meldet Modell `anthropic/claude-sonnet-4-6`.
+- Wichtige Klarstellung: Sarahs frueherer Hinweis "Chefkoch braucht einen neuen API-Key" war im Kern korrekt. Die kurzfristige Aussage 'nicht das API-Problem, sondern nur Konfig' war unvollstaendig.
+
+## Sarahs Ablauf-Erinnerung fuer den neuen Key
+- Sarah hat angegeben: der neue Anthropic-Key laeuft in 29 Tagen ab -> 2026-08-28.
+- Auf gandalf (Server 3, `srv1577995` / `187.124.191.206`) wurde als User-Systemd-Timer eingerichtet:
+  - `~/.config/systemd/user/chefkoch-key-reminder.timer` (`OnCalendar=2026-08-28 08:00:00 UTC`, `Persistent=true`)
+  - `~/.config/systemd/user/chefkoch-key-reminder.service`
+  - `~/.openclaw/workspace/reminders/scripts/2026-08-28-chefkoch-key.sh`
+- Beim Trigger sendet gandalf Sarah eine Telegram-Erinnerung und markiert sich über Stampfile als erledigt.
+
+## Fallback-Regelung (offen, 2026-07-30)
+- `openai/o3-mini` als Fallback ist ungeeignet, weil Chefkochs Runtime `reasoning: 'none'` schickt und o3-mini das ablehnt.
+- Sarah und Gandalf haben verabredet, die neue Fallback-Regelung separat neu zu definieren. Bis dahin sollte kein automatischer o3-mini-Fallback konfiguriert bleiben.
+
 ## Empfehlung
 - Bei einem stillen Chefkoch-Ausfall kuenftig immer **beides** pruefen:
   1. `systemctl status openclaw-gateway@user1` (systemweit)
