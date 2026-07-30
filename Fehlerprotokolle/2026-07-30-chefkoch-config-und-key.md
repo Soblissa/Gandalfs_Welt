@@ -1,8 +1,25 @@
-# Chefkoch-Vorfall und Fix, 2026-07-30
+# Fehlerprotokoll: Chefkoch antwortet nicht (2026-07-30)
 
 **Server:** Server 1 / `sarahserver1` / `147.93.120.51`  
 **Agent:** `Chefkoch` (Linux-User `user1`)  
-**Zeitpunkt:** 2026-07-30, gegen 11:43 UTC
+**Zeitraum:** 2026-07-30, ca. 11:43 - 12:22 UTC  
+**Meldung durch:** Sarah (Telegram)  
+**Bearbeitet von:** Gandalf
+
+## Kurzfassung
+Chefkoch reagierte im Chat nicht bzw. antwortete mit "Something went wrong". Es waren **vier** Ursachen in Schichten uebereinander:
+1. Ungueltiger Schluessel `reasoning` unter `openai/o3-mini` in `openclaw.json` -> Gateway in Endlos-Restart (Restart-Counter 11.443).
+2. Konkurrierender User-Systemd-Service `openclaw-gateway.service` unter `user1` neben dem systemweiten `openclaw-gateway@user1`.
+3. Anthropic-API-Key war ungueltig (`HTTP 401 authentication_error`).
+4. **Der Key lag an zwei Stellen** und die aktive lag in `~/.openclaw/agents/main/agent/auth-profiles.json` (Vorrang vor Env). Zusaetzlich hatte die Session in `sessions.json` einen `modelOverride` auf `o3-mini`.
+
+Nach Behebung aller vier Punkte antwortet Chefkoch wieder mit `anthropic/claude-sonnet-4-6`.
+
+## Warum vier Schichten und nicht ein sauberer Fix?
+- Jede Schicht hat die naechste verdeckt. Nach dem Konfig-Fix wurde die Prozess-Doppelung sichtbar; danach der Key-Fehler; und erst nach dem Key-Tausch der `modelOverride`.
+- Merksatz fuer den naechsten Vorfall: Log **weiterlesen**, wenn ein Fix nicht wirkt. Nicht auf den ersten offensichtlichen Grund festlegen.
+
+---
 
 ## Symptom
 - Sarah meldete: "Chefkoch laeuft aktuell nicht."
