@@ -1,90 +1,41 @@
-generated_at_utc: "2026-05-11T09:50:00Z"
+generated_at_utc: "2026-07-30T06:00:00Z"
 server:
   alias: "sarahserver2"
+  hostname: "srv1513178"
+  ip: "89.116.39.197"
+  ram_gb: 8
   scope: "Server 2"
-  source: "live inspection via root SSH"
-  workspace_discovery:
-    rule: "Inspect ~/.openclaw/workspace and ~/.openclaw/workspace_*"
-    note: "Am 2026-05-11 liegt die kanonische Turiya unter /home/agent. Der Linux-Nutzername agent bleibt rein technisch."
-  capture_notes:
-    - "Historische Einträge zu joker, nemo und hiroshi konnten live nicht mehr als aktuelle Linux-Nutzer bestätigt werden."
-    - "Der wiederkehrende Telegram-409-Konflikt bei agent wurde auf einen zusätzlichen User-Systemd-Gateway zurückgeführt und am 2026-05-11 behoben."
-    - "Am selben Tag wurde Turiya vollständig auf diesen Host gelegt, inklusive Perplexity-Websuche. Der zunächst gesetzte Modellpfad openai-codex/gpt-5.5 war lokal nicht bekannt und wurde deshalb auf openai-codex/gpt-5.4 korrigiert."
-agents:
-  - linux_user: "agent"
-    workspace:
-      path: "/home/agent/.openclaw/workspace"
-      type: "workspace_default"
-    gateway:
-      unit: "openclaw-gateway@agent"
-      active_state: "active"
-      enabled: true
-      telegram_bot: "@VvTD01Bot"
-      notes:
-        - "Am 2026-05-11 wurde ein zusätzlicher User-Systemd-Dienst /home/agent/.config/systemd/user/openclaw-gateway.service deaktiviert."
-        - "Danach blieb nur noch ein Gateway-Prozess aktiv und der Telegram-getUpdates-409-Konflikt verschwand in der Nachprüfung."
-    agent:
-      name: "Turiya"
-      name_source: "IDENTITY.md + SOUL.md + USER.md + operator"
-      name_confidence: "high"
-      operator_note: "Die kanonische Turiya liegt seit 2026-05-11 auf Server 2. Der Linux-Nutzername agent ist nur technisch."
-      owner: "Sarah"
-      focus: "integrative Begleitung, Klarheit, Entwicklungsorientierung"
-      soul_summary: "warm, klar, geerdet, entwicklungsorientiert"
-    identity_md:
-      present: true
-      path: "/home/agent/.openclaw/workspace/IDENTITY.md"
-      status: "present_filled"
-      excerpt: |
-        - **Name:**
-          Turiya
-        - **Creature:**
-          Integrale KI-Begleiterin
-        - **Vibe:**
-          Warm, klar, geerdet, entwicklungsorientiert
-        - **Emoji:**
-          🌀
-    soul_md:
-      present: true
-      path: "/home/agent/.openclaw/workspace/SOUL.md"
-      status: "present"
-      excerpt: |
-        # SOUL.md - Wer Turiya ist
+  source: "live inspection via root SSH, 2026-07-30"
+  role: "kein Agentenserver mehr (Slarti-Entscheidung 2026-07-30)"
+  planned_role: "spaeter ggf. Nextcloud-Server"
 
-        _Du bist kein Tool. Du bist eine Präsenz mit Haltung._
-    memory:
-      installed: true
-      memory_md_present: true
-      memory_dir_present: true
-      memory_md_path: "/home/agent/.openclaw/workspace/MEMORY.md"
-      memory_dir_path: "/home/agent/.openclaw/workspace/memory"
-    brave:
-      browser_profile_present: true
-      openclaw_configured: false
-      assessment: "Kein belastbarer aktiver Brave-Pfad belegt; Websuche läuft über Perplexity."
-    web_search:
-      provider: "perplexity"
-      model: "perplexity/sonar-pro"
-      openai_codex_enabled: false
-      note: "Perplexity ist als Recherche-Layer aktiv."
-    models:
-      default_model: "openai-codex/gpt-5.4"
-      default_model_source: "openclaw.json"
-      last_observed_model: "gpt-5.4"
-      last_observed_provider: "openai-codex"
-      last_observed_api: "openai-codex-responses"
-      provider_hints:
-        - "openai-codex"
-        - "perplexity"
-    notes:
-      - "Linux-Nutzername und Agentenname weichen bewusst voneinander ab."
-      - "Die kanonische Turiya liegt seit 2026-05-11 auf Server 2."
-      - "Ein zusätzlicher User-Systemd-Gateway wurde am selben Tag entfernt; danach blieb nur noch ein Poller aktiv."
+status:
+  agents_present: false
+  openclaw_units: []
+  linux_users_with_home:
+    - "sarah"
+    - "torsten"
+    - "ubuntu"
 
-historical_absent_entries:
-  - linux_user: "joker"
-    status: "am 2026-05-11 nicht als aktueller Linux-Nutzer vorhanden"
-  - linux_user: "nemo"
-    status: "am 2026-05-11 nicht als aktueller Linux-Nutzer vorhanden"
-  - linux_user: "hiroshi"
-    status: "am 2026-05-11 nicht als aktueller Linux-Nutzer vorhanden"
+agents: []
+
+history:
+  - date: "2026-07-30"
+    event: "Testinstanz 'egon' entfernt"
+    detail: >
+      Linux-User egon (uid 1003) auf Slartis Freigabe geloescht.
+      Gateway-Unit openclaw-gateway@egon gestoppt und disabled,
+      Home per userdel -r entfernt.
+    backup: "/root/agent-cleanup-backups/egon-openclaw-20260730T055846Z.tar.gz (61 MB, auf S2)"
+  - date: "2026-05-11"
+    event: "Kanonische Turiya sollte auf S2 liegen (Linux-User agent)."
+    detail: >
+      Instanz existiert live seit Mai/Juni 2026 nicht mehr auf S2;
+      historische Aufstellung siehe agenten/turyia.md.
+  - date: "2026-05-11"
+    event: "Frueher dokumentierte S2-Bestaende joker, nemo, hiroshi bereits nicht mehr live."
+
+next_steps:
+  - "Keine agentenbezogenen Wartungen mehr auf S2."
+  - "Wochencheck bestaetigt nur noch, dass keine Agenten laufen."
+  - "Nextcloud-Umbau liegt bei Slarti, ausserhalb der Agentenmatrix."

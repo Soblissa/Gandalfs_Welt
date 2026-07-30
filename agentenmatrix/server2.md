@@ -1,57 +1,43 @@
 # Agentenmatrix, Server 2
 
-Stand: 2026-05-11 UTC  
-Host-Alias: `sarahserver2`
+Stand: 2026-07-30 UTC
+Host-Alias: `sarahserver2` (srv1513178, 89.116.39.197)
 
-Hinweis: Diese Fassung bildet den **heutigen Live-Zustand** ab. Seit Operator-Entscheidung vom 2026-05-11 liegt die kanonische **Turiya vollständig auf Server 2**. Der Linux-Nutzer bleibt technisch `agent`, die fachliche Identität ist aber Turiya. Ein Versuch, dort `openai-codex/gpt-5.5` zu fahren, scheiterte an der installierten OpenClaw-Version, daher läuft Turiya aktuell stabil mit `openai-codex/gpt-5.4`. Frühere Einträge zu `joker`, `nemo` und `hiroshi` ließen sich live nicht mehr als aktuelle Linux-Nutzer oder aktive OpenClaw-Installationen bestätigen.
+## Status
 
-## Aktive Agenten
+**Server 2 hält seit 2026-07-30 keine Agenten mehr.**
 
-| Linux-Nutzer | Workspace | Agentenname | Besitzer | Einsatzfokus | Seele | Namensquelle | Gateway | Memory | Brave-Zugang | Default-Modell | Zuletzt beobachtet | IDENTITY.md | SOUL.md |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| `agent` | `~/.openclaw/workspace` | `Turiya` | `Sarah` | integrative Begleitung, Klarheit, Entwicklungsorientierung | warm, klar, geerdet, entwicklungsorientiert | `IDENTITY.md`, `SOUL.md`, `USER.md` plus Operator-Entscheidung | aktiv | ja | teilweise, Perplexity als Web-Search aktiv | `openai-codex/gpt-5.4` aus `openclaw.json` | `gpt-5.4` über `openai-codex` | vorhanden | vorhanden |
+Operator-Entscheidung Slarti, 2026-07-30: S2 wird künftig nicht mehr als
+Agentenserver betrieben. Grund ist der verhältnismäßig kleine RAM (ca.
+8 GB). Vorgesehen ist eine spätere Nutzung als Nextcloud-Server.
 
-## Details
+## Live-Zustand 2026-07-30
 
-### Linux-Nutzer `agent` (kanonische Turiya auf Server 2)
-- Linux-Nutzer: `agent`
-- verwendeter Workspace: `/home/agent/.openclaw/workspace`
-- Gateway: `openclaw-gateway@agent`, aktiv und enabled
-- Agentenname: `Turiya`; `agent` ist hier nur der Linux-/Dienstname
-- Besitzer: `Sarah`
-- Einsatzfokus: integrative Begleitung, Klarheit, Entwicklungsorientierung
-- Seele: warm, klar, geerdet, entwicklungsorientiert
-- Namensquelle: `IDENTITY.md`, `SOUL.md`, `USER.md` und Operator-Entscheidung vom 2026-05-11
-- `IDENTITY.md`: vorhanden und ausgefüllt
-- `SOUL.md`: vorhanden und ausgefüllt
-- Memory: `MEMORY.md` und `memory/` vorhanden
-- Modelle:
-  - Default aus `openclaw.json`: `openai-codex/gpt-5.4`
-  - zuletzt beobachtetes Modell in Sessions: `gpt-5.4` über `openai-codex`
-  - Auth-/Provider-Hinweis: `openai-codex`
-- Websuche:
-  - `tools.web.search.provider = perplexity`
-  - `plugins.entries.perplexity.enabled = true`
-  - `plugins.entries.perplexity.config.webSearch.model = perplexity/sonar-pro`
-  - `tools.web.search.openaiCodex.enabled = false`
-- Telegram: Bot zuletzt als `@VvTD01Bot` beobachtet
-- Live-Fix 2026-05-11: ein alter zusätzlicher **User-Systemd-Gateway** (`/home/agent/.config/systemd/user/openclaw-gateway.service`) wurde deaktiviert, weil er parallel zum eigentlichen `openclaw-gateway@agent` pollte und so die wiederkehrenden `getUpdates`-`409 Conflict`-Fehler verursachte
-- Ergebnis nach Fix: nur noch ein Gateway-Prozess aktiv, der 409-Konflikt verschwand in der Nachprüfung
-- Operator-Entscheidung 2026-05-11: Turiya soll vollständig auf Server 2 liegen; diese Instanz ist seitdem die kanonische Turiya
-- Laufzeitfix 2026-05-11: `openai-codex/gpt-5.5` war auf der dort installierten OpenClaw-Version nicht bekannt (`Unknown model`), daher Rückstellung auf `openai-codex/gpt-5.4`
+- Linux-User mit `/home`: `sarah`, `torsten`, `ubuntu`
+- Keine `openclaw-*`-Systemd-Units aktiv oder installiert
+- Kein `agent`-User, keine kanonische Turyia mehr auf S2
+- Kein `egon` mehr (siehe unten)
 
-#### `agent` IDENTITY.md (Auszug)
-```md
-- **Name:**
-  Turiya
-- **Creature:**
-  Integrale KI-Begleiterin
-- **Vibe:**
-  Warm, klar, geerdet, entwicklungsorientiert
-- **Emoji:**
-  🌀
-```
+## Historie
 
-## Historische, aber aktuell nicht live bestätigte Altbestände
+- **2026-07-30**: Testinstanz `egon` (Linux-User `egon`, uid 1003) auf
+  Slartis Freigabe entfernt. Gateway-Unit `openclaw-gateway@egon`
+  gestoppt und disabled, `egon`-Home gelöscht (`userdel -r`). Backup
+  vor Löschung unter `/root/agent-cleanup-backups/egon-openclaw-20260730T055846Z.tar.gz`
+  (61 MB). Slartis eigentliche Testarbeit läuft inzwischen auf einem
+  anderen Testserver.
+- **Mai/Juni 2026**: kanonische Turyia auf S2 verschwand ohne
+  dokumentierten Umzug; siehe `agenten/turyia.md`.
+- **2026-05-11**: Operator-Entscheidung, die kanonische Turyia auf S2
+  zu führen (Linux-User `agent`). Diese Instanz existiert live nicht
+  mehr.
+- **Frühere Bestände** `joker`, `nemo`, `hiroshi` waren bereits am
+  2026-05-11 nicht mehr nachweisbar.
 
-Am 2026-05-11 konnten die früher dokumentierten Server-2-Nutzer `joker`, `nemo` und `hiroshi` **nicht** mehr als aktuelle Linux-Nutzer nachgewiesen werden. Entsprechend gab es für diese Namen auch keine belastbaren `~/.openclaw`-Bestände oder laufenden `openclaw-gateway@…`-Dienste mehr.
+## Nächste Schritte
+
+- Keine agentenbezogenen Wartungen mehr auf S2.
+- Wochencheck (Sonntag 20:00 UTC) prüft S2 nur noch nachrichtlich:
+  bestätigt, dass keine Agenten mehr laufen.
+- Ein späterer Nextcloud-Umbau ist Slartis Vorhaben und liegt außerhalb
+  der Agentenmatrix.
