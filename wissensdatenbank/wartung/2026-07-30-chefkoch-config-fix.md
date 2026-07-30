@@ -66,6 +66,25 @@
 - Fix am 2026-07-30 gegen 12:08 UTC: neuer Anthropic-API-Key von Sarah, eingesetzt in `/etc/openclaw/users/user1.env`, Env-Backup neben der Datei mit `.bak.<UTC>`. Verifikation direkt gegen Anthropic (`HTTP 200`, Antwort `pong` mit Modell `claude-sonnet-4-5-20250929`). Danach `systemctl restart openclaw-gateway@user1` -> `active`, Log meldet Modell `anthropic/claude-sonnet-4-6`.
 - Wichtige Klarstellung: Sarahs frueherer Hinweis "Chefkoch braucht einen neuen API-Key" war im Kern korrekt. Die kurzfristige Aussage 'nicht das API-Problem, sondern nur Konfig' war unvollstaendig.
 
+## Vierter Vorfall am selben Tag: Key im Auth-Profil und Session-Model-Override
+- Auch nach dem Setzen des neuen Anthropic-Keys in `/etc/openclaw/users/user1.env` bekam Sarah weiter "Something went wrong".
+- Zwei zusaetzliche Ursachen:
+  1. **Auth-Profil ueberschreibt Env.**
+     - Datei: `/home/user1/.openclaw/agents/main/agent/auth-profiles.json`
+     - Enthielt den alten Anthropic-Key. OpenClaw bevorzugt das Auth-Profil vor `ANTHROPIC_API_KEY` aus der Env.
+     - Fix: neuen Key auch hier eingetragen, `.bak.<UTC>` daneben.
+  2. **Session-Model-Override.**
+     - Datei: `/home/user1/.openclaw/agents/main/sessions/sessions.json`
+     - Session `agent:main:main` hatte `modelOverride: "o3-mini"` und rief deshalb `openai/o3-mini` statt Claude auf, was zum Formatfehler `reasoning: 'none'` fuehrte.
+     - Fix: `modelOverride` aus allen Sessions entfernt, `.bak.<UTC>` daneben.
+- Nach `systemctl restart openclaw-gateway@user1`: `agent model: anthropic/claude-sonnet-4-6`, `@ila_chefkoch_bot` verbunden, keine Fehler mehr im Log.
+
+## Merksatz: die vier Kontrollpunkte bei OpenClaw-API-Fehlern
+1. `/etc/openclaw/users/<user>.env` -- Env-Variablen fuer den systemd-Service.
+2. `~/.openclaw/openclaw.json` -- nur Auth-Profildeklaration.
+3. `~/.openclaw/agents/main/agent/auth-profiles.json` -- **echter Key liegt hier**, hat Vorrang vor Env.
+4. `~/.openclaw/agents/main/sessions/sessions.json` -- pro-Session-`modelOverride` kann die Primary aus der Config aussticheln.
+
 ## Sarahs Ablauf-Erinnerung fuer den neuen Key
 - Sarah hat angegeben: der neue Anthropic-Key laeuft in 29 Tagen ab -> 2026-08-28.
 - Auf gandalf (Server 3, `srv1577995` / `187.124.191.206`) wurde als User-Systemd-Timer eingerichtet:
