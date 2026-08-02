@@ -1,43 +1,37 @@
 # Agentenmatrix, Server 1
 
-Stand: 2026-05-09 UTC  
+Stand: 2026-08-02 UTC  
 Host-Alias: `sarahserver1`
 
-Hinweis: Diese Fassung berücksichtigt nicht nur `~/.openclaw/workspace`, sondern auch alternative Workspace-Pfade wie `~/.openclaw/workspace_hauptagent` und `~/.openclaw/workspace_sebastian`.
+Hinweis: Diese Fassung berücksichtigt nicht nur `~/.openclaw/workspace`, sondern auch alternative Workspace-Pfade wie `~/.openclaw/workspace_hauptagent`. `~/.openclaw/workspace_sebastian` ist historisch und existiert live nicht mehr, seit `sebastian`/`Bernd` am 2026-06-29 abgebaut wurde.
 
 ## Aktive Agenten
 
 | Linux-Nutzer | Workspace | Agentenname | Besitzer | Einsatzfokus | Seele | Namensquelle | Gateway | Memory | Brave-Zugang | Default-Modell | Zuletzt beobachtet | IDENTITY.md | SOUL.md |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| `sebastian` | `~/.openclaw/workspace_sebastian` | `Bernd` | `Sebastian` | fachliche Unterstützung für Sebastian, aktuell ILA-nah | direkt, kompetent, pragmatisch | Operator plus `IDENTITY.md` | aktiv | ja | teilweise, Brave-Profil vorhanden, aber keine OpenClaw-Brave-Konfiguration gefunden | `anthropic/claude-sonnet-4-6` | Default laut `openclaw status`: `claude-sonnet-4-6` | vorhanden | vorhanden |
+| `chantall` | `~/.openclaw/workspace` | `Chantal` | `Sarah` | Dienstmädchen-Agent: Reiseplanung, Sekretariat, Terminkoordination | freundlich, beflissen, selbstironisch, entlastungsorientiert | botrepo-Template `agentprofiles/147.93.120.51/chantall/` | aktiv (Rollout 2026-06-29) | ja | offen | offen (Profil-Default) | offen | vorhanden | vorhanden |
 | `user1` | `~/.openclaw/workspace_hauptagent` | `Chefkoch` | `Sarah` | Hessisches Kultusministerium | strukturiert, präzise, ruhig, direkt | Operator, Workspace nennt ihn aktuell `Cheko (ILA-Hauptagent)` | aktiv | ja | teilweise, Brave-Profil vorhanden, aber keine aktuelle OpenClaw-Brave-Konfiguration gefunden | `anthropic/claude-sonnet-4-6` | Default laut `openclaw status`: `claude-sonnet-4-6` | vorhanden | vorhanden |
 | `user2` | `~/.openclaw/workspace` | `Franks Klaus` | `dto / Soblissa` (Kundenfall `Frank Kammerer`) | Franks Klaus, Alpin Invest, KI-Optimierung, Prozesse | fokussiert, direkt, geschäftstauglich | Operator plus wiederhergestellte Session-/Repo-Historie | aktiv, restauriert | ja | nein, keine Brave-Konfiguration gefunden | `anthropic/claude-sonnet-4-6` | Default laut `openclaw status`: `claude-sonnet-4-6` | vorhanden | vorhanden |
 
-## Details
+## Historisierte Agenten (nicht mehr aktiv)
 
-### `sebastian`
-- Linux-Nutzer: `sebastian`
-- verwendeter Workspace: `/home/sebastian/.openclaw/workspace_sebastian`
-- Gateway: `openclaw-gateway@sebastian`, aktiv und enabled
+| Linux-Nutzer | Agentenname | Besitzer (historisch) | Status | Abgebaut am | Anmerkung |
+|---|---|---|---|---|---|
+| `sebastian` | `Bernd` | `Sebastian` | abgebaut | 2026-06-29 | Per `agentctl revoke` (botrepo `agent_revoke_legacy_candidates: [sebastian]`) entfernt. Ersetzt durch `chantall`/`Chantal`. Live 2026-08-02 verifiziert: kein Linux-User, kein Home, Gateway-Unit `openclaw-gateway@sebastian` inaktiv und disabled. |
+
+### Details `sebastian` / `Bernd` (historisch)
+- Linux-Nutzer: `sebastian` (nicht mehr vorhanden)
+- Ehemaliger Workspace: `/home/sebastian/.openclaw/workspace_sebastian`
+- Ehemaliger Gateway: `openclaw-gateway@sebastian`
 - Agentenname: `Bernd`
-- Besitzer: `Sebastian`
-- Einsatzfokus: fachliche Unterstützung für Sebastian, aktuell ILA-nah
+- Ehemaliger Besitzer: `Sebastian`
+- Ehemaliger Einsatzfokus: fachliche Unterstützung für Sebastian, ILA-nah
 - Seele: direkt, kompetent, pragmatisch
-- Namensquelle: Operator plus `IDENTITY.md`
-- `IDENTITY.md`: vorhanden und ausgefüllt
-- `SOUL.md`: vorhanden
-- Memory: installiert, `MEMORY.md` vorhanden
-- Brave: Brave-Browser-Profil vorhanden, aber in aktueller OpenClaw-Konfiguration kein Brave-Zugang gefunden
-- Modelle:
-  - aktuelles Default-Modell: `anthropic/claude-sonnet-4-6`
-  - Fallbacks: `openai/gpt-5.4`, `openai/gpt-5.1-codex`
-  - verifiziert per `openclaw status` am 2026-05-09: Default `claude-sonnet-4-6`
-  - Auth-/Provider-Hinweis: `anthropic`, `openai`, `openai-codex`
-- Historie: vor der Umstellung scheiterte Claude zeitweise an leerem Anthropic-Billing und fiel auf OpenAI zurück
-- Claude-Anbindung: am 2026-05-09 wurde `ANTHROPIC_API_KEY` für `sebastian` aktualisiert und `Bernd` wieder auf Claude als Primary umgestellt
-- Einordnung: `sebastian` ist der laufende `Bernd` auf Server 1
+- Ehemaliges Default-Modell: `anthropic/claude-sonnet-4-6`, Fallback `openai/gpt-5.4`
+- Abbau: 2026-06-29 im Rahmen des Chantal-Rollouts, dokumentiert in `Agentenmatrix.md` und `agentenmatrix/agenten/chantal.md`.
+- Live-Verifikation 2026-08-02: `id sebastian` → `no such user`; `/home/sebastian` fehlt; Gateway-Unit `openclaw-gateway@sebastian` `inactive (dead)` und `disabled`; kein Backup im aktuellen `/root/agent-cleanup-backups/`-Bestand sichtbar.
 
-#### `sebastian` IDENTITY.md (Auszug)
+#### `sebastian` IDENTITY.md (historisch, Auszug)
 ```md
 - **Name:** Bernd
 - **Creature:** AI-Assistent (irgendwas zwischen digitalem Geist und praktischem Helfer)
