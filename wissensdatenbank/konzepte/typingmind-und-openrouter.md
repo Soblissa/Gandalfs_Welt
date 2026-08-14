@@ -11,18 +11,19 @@ Oberflaeche, viele Modelle.
 
 ## Analogie
 
-Stell dir eine gut ausgestattete Kueche vor.
+Stell dir eine gut ausgestattete Kueche mit angeschlossener Speisekammer vor.
 
 - **TypingMind** ist die Kueche selbst: Arbeitsflaeche, Herd, Werkzeug,
   Regale, Ordnung. Hier stehst du und arbeitest.
-- **OpenRouter** ist der Grosshaendler, der die Zutaten liefert.
-  Anstatt bei zwanzig einzelnen Bauernhoefen zu bestellen (OpenAI,
-  Anthropic, Moonshot, Google, DeepSeek, Meta, xAI...), hast du **einen
-  Lieferanten** mit einem einzigen Konto und einer einzigen Rechnung.
+- **OpenRouter** ist die **Speisekammer** direkt nebenan, mit rund 400
+  Zutaten (den Modellen) im Regal. Einmal aufgeschlossen (Schluessel
+  eingetragen), greifst du aus der Kueche heraus einfach ins Regal, je
+  nachdem, was du gerade kochen willst.
 
-Ohne OpenRouter muesstest du bei jedem KI-Anbieter einzeln ein Konto
-haben, dort Guthaben einzahlen und einen API-Schluessel pflegen. Mit
-OpenRouter reicht ein Konto und ein Schluessel fuer alle.
+Ohne OpenRouter muesstest du fuer jede Zutat einzeln einkaufen gehen:
+bei jedem KI-Anbieter ein eigenes Konto, eigenes Guthaben, eigener
+Schluessel. Mit OpenRouter ist die Speisekammer schon voll -- ein Konto,
+ein Schluessel, alle Zutaten griffbereit.
 
 ## Technischer Kern
 
