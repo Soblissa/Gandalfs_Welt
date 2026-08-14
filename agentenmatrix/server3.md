@@ -1,6 +1,6 @@
 # Agentenmatrix, Server 3
 
-Stand: 2026-05-11 UTC  
+Stand: 2026-08-14 UTC  
 Host-Alias: `sarahserver3`
 
 Hinweis: Diese Fassung berücksichtigt `~/.openclaw/workspace` und `~/.openclaw/workspace_*`.
@@ -12,6 +12,7 @@ Hinweis: Diese Fassung berücksichtigt `~/.openclaw/workspace` und `~/.openclaw/
 | `gandalf` | `~/.openclaw/workspace` | `gandalf` | `dto` | technische Assistenz, Server- und Repoarbeit | technisch präzise, direkt, ruhig | `IDENTITY.md` | aktiv | ja | ja, OpenClaw-Brave konfiguriert, aber kein lokales Brave-Profil gefunden | `openai/gpt-5.4` | `gpt-5.4` über OpenAI | vorhanden | vorhanden |
 | `rocky` | `~/.openclaw/workspace` | `rocky` | `dto` | allgemeine technische Assistenz im Slot 1 | technisch präzise, direkt, ruhig | `IDENTITY.md` | aktiv | ja, nur `memory/` | ja, Brave in OpenClaw konfiguriert, kein lokales Brave-Profil gefunden | `openai/gpt-5.5` | `gpt-5.4` über OpenAI | vorhanden | vorhanden |
 | `turyia` | `~/.openclaw/workspace` | Archivslot Server 3 | `dto` | Reserve- bzw. Umwidmungsslot | neutral, nicht Turiya | Operator-Entscheidung vom 2026-05-11 | deaktiviert | nein | nein | `openai-codex/gpt-5.5` | zuletzt `gpt-5.5` über `openai-codex` | vorhanden | vorhanden |
+| `konfuzius` | `~/.openclaw/workspace` | `Konfuzius` | `Sarah` | Kennenlern-Agent, chinesische Denkschule, kuenftige Panel-Stimme fuer Automagia | aufgeschlossener Gespraechspartner mit chinesischer Denkschule, klar, mit trockenem Humor | `IDENTITY.md` | aktiv (Port 19952, Telegram `@konfuzius_gandalf_bot`) | ja | nein | `openrouter/moonshotai/kimi-k3` | Kimi K3 via OpenRouter | vorhanden | vorhanden |
 
 ## Details
 
