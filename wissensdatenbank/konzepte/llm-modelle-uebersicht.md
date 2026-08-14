@@ -41,11 +41,22 @@ von Haiku ueber Sonnet zu Opus, Fable liegt darueber.
 
 ## OpenAI (GPT-Familie)
 
-- **GPT-5** -- aktuelles Flaggschiff, gut fuer allgemeine Arbeit,
-  Programmieren, Analyse.
-- **GPT-5.5 Pro** -- teuerste Variante, tiefes Reasoning.
-- **o3** -- spezialisiertes Reasoning-Modell, denkt sichtbar in Ketten,
-  gut fuer Mathe/Logik/Wissenschaft.
+OpenAI hat mit **GPT-5.6** (allgemein verfuegbar seit 09.07.2026) das
+Namensschema geaendert: die Zahl markiert die Generation, der
+Himmelskoerper-Zusatz die Groessenklasse. Sol > Terra > Luna.
+
+- **GPT-5.6 Sol** -- Flaggschiff. Schweres Reasoning, Coding, Wissenschaft.
+  Aktueller State of the Art laut OpenAIs eigenen Benchmarks.
+  5 USD / 30 USD. Zusaetzliche Reasoning-Stufen `max` und `ultra`
+  (mehrere Sub-Agenten parallel).
+- **GPT-5.6 Terra** -- Mittelklasse, guter Alltagsbegleiter mit sehr
+  ordentlichem Preis-/Leistungsverhaeltnis. 2,50 USD / 15 USD.
+- **GPT-5.6 Luna** -- klein und schnell. 1 USD / 6 USD, seit 30.07.2026
+  nochmal um 80 Prozent guenstiger. Fuer kurze/einfache Aufgaben.
+- **o3** -- aelteres, aber spezialisiertes Reasoning-Modell, denkt sichtbar
+  in Ketten. Noch nuetzlich fuer Mathe/Logik.
+- **GPT-5.5 Pro** -- Vorgaengergeneration, hoher Preis, kaum noch noetig
+  seit Sol verfuegbar ist.
 
 ## Moonshot AI (Kimi-Familie)
 
@@ -76,13 +87,15 @@ von Haiku ueber Sonnet zu Opus, Fable liegt darueber.
 
 ## Praktische Konsequenz fuer TypingMind
 
-- Standard-Alltag: **Claude Sonnet 4.6** oder **Kimi K3**.
-- Schwere Denksportaufgaben: **Claude Opus 5** oder **GPT-5** oder **o3**.
-- Marathon-Auftraege mit autonomer Ausfuehrung: **Claude Fable 5**.
+- Standard-Alltag: **Claude Sonnet 4.6**, **GPT-5.6 Terra** oder **Kimi K3**.
+- Schwere Denksportaufgaben: **GPT-5.6 Sol**, **Claude Opus 5** oder **o3**.
+- Marathon-Auftraege mit autonomer Ausfuehrung: **Claude Fable 5** oder
+  **GPT-5.6 Sol** im `ultra`-Modus.
 - Aktuelles Wissen mit Quellen: **Perplexity Sonar**.
 - Bild-/Video-Verarbeitung mit langem Kontext: **Gemini 2.5 Pro** oder
   **Kimi K3**.
-- Zum Vergleichen und Sparen: **DeepSeek V3**, **Qwen3**, **Llama 4**.
+- Sparsam und schnell: **GPT-5.6 Luna** oder **DeepSeek V3**.
+- Zum Vergleichen: **Qwen3**, **Llama 4**, **Grok 4**.
 
 Sarah nutzt TypingMind mit OpenRouter als Sammelanschluss, dort sind
 alle diese Modelle ueber einen einzigen API-Schluessel erreichbar.
