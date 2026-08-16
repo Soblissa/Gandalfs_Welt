@@ -29,3 +29,4 @@ Zentrale Ablage fuer dokumentierte Stoerungen an Sarahs und dtos Infrastruktur.
 | Datum | System | Titel | Datei |
 |---|---|---|---|
 | 2026-07-30 | Chefkoch (Server 1, `user1`) | Konfig-Schema, Prozess-Doppelung, alter Anthropic-Key an mehreren Stellen, Session-Model-Override auf `o3-mini` | [2026-07-30-chefkoch-config-und-key.md](2026-07-30-chefkoch-config-und-key.md) |
+| 2026-08-16 | Gandalf (Server 3), Wochenbericht-Timer und OpenClaw-Gateway | Wochenbericht-Skript schickte nur den Prompt statt des Berichts; zusaetzlich leakte ein Tool-Fehler an Sarahs Chat | [2026-08-16-wochenbericht-timer-und-tool-error-leak.md](2026-08-16-wochenbericht-timer-und-tool-error-leak.md) |
