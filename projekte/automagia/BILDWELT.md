@@ -18,4 +18,4 @@ So wird die Axt zum Bild für Werkzeuge und Prozesse: Automagia fällt den Baum 
 
 ## Hero-Entscheidung in Arbeit
 
-Als Ausgangsbild dient die erste, dunkle Variante mit Männerhänden: Sie hat die stärkste Ruhe und den klarsten Kontrast. Die aktuelle Fassung `assets/hero-axt-v6-echte-funken.png` ergänzt nur zwei gestalterische Signale: wenige echte orangefarbene Schleiffunken an der Axtschneide und sehr unscharfe lila Glockenblumen im Hintergrund. Eine Logoform wird getrennt entwickelt; das Bild soll die Arbeit zeigen, nicht das Logo erklären.
+Als Ausgangsbild dient die erste, dunkle Variante mit Männerhänden: Sie hat die stärkste Ruhe und den klarsten Kontrast. Die aktuelle Fassung `assets/hero-axt-v7-echte-funken-ohne-blumen.png` zeigt wenige echte orangefarbene Schleiffunken an der Axtschneide. Lila Glockenblumen sind verworfen. Eine Logoform wird getrennt entwickelt; das Bild soll die Arbeit zeigen, nicht das Logo erklären.
