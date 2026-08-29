@@ -34,3 +34,4 @@ Zentrale Ablage fuer dokumentierte Stoerungen an Sarahs und dtos Infrastruktur.
 | 2026-08-29 | Gandalf, lokaler botrepo-Workspace | Ansible-Syntaxpruefung nicht verfuegbar; YAML-Ersatzpruefung erfolgreich | [2026-08-29-gandalf-ansible-pruefprogramm-fehlt.md](2026-08-29-gandalf-ansible-pruefprogramm-fehlt.md) |
 | 2026-08-29 | botrepo, Branch GandalfsWebadministration | Rebase-Konflikt zwischen neuer nextctl-info- und website-Schnittstelle | [2026-08-29-botrepo-automagia-rebase-konflikt.md](2026-08-29-botrepo-automagia-rebase-konflikt.md) |
 | 2026-08-29 | automagia.org auf SS2 | Startseitenbild wurde wegen unvollstaendiger Caddy-Route mit HTTP 404 beantwortet | [2026-08-29-automagia-startseitenbild-404.md](2026-08-29-automagia-startseitenbild-404.md) |
+| 2026-08-29 | Gandalf-Controlhost / botrepo | Deploy-Aufruf vermischte nextctl- und magiactl-Befehlsebene | [2026-08-29-automagia-falsche-cli-ebene.md](2026-08-29-automagia-falsche-cli-ebene.md) |
