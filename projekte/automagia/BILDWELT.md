@@ -15,3 +15,7 @@ Weitere Motive folgen derselben Grammatik:
 - das Ergebnis wirkt erwachsen, warm und befähigend – nicht märchenhaft-verspielt.
 
 So wird die Axt zum Bild für Werkzeuge und Prozesse: Automagia fällt den Baum nicht anstelle des Menschen, sondern macht dessen eigenes Werkzeug wieder wirksam.
+
+## Hero-Entscheidung in Arbeit
+
+Als Ausgangsbild dient die erste, dunkle Variante mit Männerhänden: Sie hat die stärkste Ruhe und den klarsten Kontrast. Die aktuelle Fassung `assets/hero-axt-v5-funke-glockenblumen.png` ergänzt nur zwei gestalterische Signale: einen bewusst animiert wirkenden Funken in Akzentorange `#EF5B00` an der Axtschneide und wenige sehr unscharfe lila Glockenblumen im Hintergrund. Der Funke ist noch kein festgelegtes Logo, kann aber dessen formale Grundlage werden.
