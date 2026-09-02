@@ -1,6 +1,6 @@
 # Modell-Uebersicht
 
-**Stand: 2026-09-02 (08:10 UTC).** Preise in **US-Dollar je 1 Million
+**Stand: 2026-09-02 (08:20 UTC).** Preise in **US-Dollar je 1 Million
 Token** (Input / Output), sofern nicht anders angegeben. Genannt ist der
 regulaere Echtzeit-API-Listenpreis ohne Cache-, Batch-, Fast- oder
 Regionalaufschlaege. Bei gestaffelten Preisen gilt die erste Preisstufe.
@@ -19,6 +19,7 @@ Regionalaufschlaege. Bei gestaffelten Preisen gilt die erste Preisstufe.
 | Modell | Status | Input | Output | Kontext | Lokal | Einordnung |
 |---|---|---:|---:|---:|---|---|
 | Claude Fable 5.1 | Aktuell | 10 | 50 | 1M | Nein | Staerkstes Langzeit-Reasoning, langsam und teuer |
+| Claude Mythos 5.1 | Aktuell/limitiert | 10 | 50 | nicht oeffentlich | Nein | Fable-5.1-Preisstufe; Zugang nur ueber Anthrophics Glasswing-Programm |
 | Claude Opus 5 | Aktuell | 5 | 25 | 1M | Nein | Standard fuer komplexe Agenten- und Coding-Arbeit |
 | Claude Sonnet 5 | Aktuell | 2 | 10 | 1M | Nein | Beste Balance aus Tempo, Qualitaet und Preis |
 | Claude Haiku 4.5 | Aktuell | 1 | 5 | 200k | Nein | Schnellstes aktuelles Claude-Modell |
@@ -37,6 +38,7 @@ mit 15/75 an. Anthropic nennt aktuell 10/50 beziehungsweise 5/25.
 | GPT-5.6 Sol | Aktuell | 4 | 20 | kurz; 8/30 lang | Nein | Flaggschiff fuer schwieriges Reasoning und Coding; Aktionspreis bis mindestens 21.11.2026 |
 | GPT-5.6 Terra | Aktuell | 2 | 12 | kurz; 4/18 lang | Nein | Ausgewogene Standardwahl |
 | GPT-5.6 Luna | Aktuell | 0.20 | 1.20 | kurz; 0.40/1.80 lang | Nein | Hoher Durchsatz und niedrige Kosten |
+| GPT-5.6 Cyber | Aktuell/spezialisiert | 12.50 | 75 | nicht oeffentlich | Nein | Sicherheitsmodell; kein allgemeiner Ersatz fuer Sol oder Terra |
 | GPT-5.5 | Legacy | 5 | 30 | unter 272k; 10/45 lang | Nein | Durch GPT-5.6 ersetzt |
 | GPT-5.5 Pro | Legacy | 30 | 180 | unter 272k; 60/270 lang | Nein | Sehr teuer; fuer neue Systeme nicht erste Wahl |
 | GPT-5.4 | Legacy | 2.50 | 15 | unter 272k; 5/22.50 lang | Nein | Alte Hauptgeneration |
@@ -55,6 +57,8 @@ veraltet.
 | Gemini 3.7 Flash | Aktuell | 0.75 | 3.75 | 1M | Nein | Aktuelles Flash-Spitzenmodell; Aktionspreis bis 31.12.2026, danach 1.50/7.50 |
 | Gemini 3.1 Pro Preview | Aktuell/Preview | 2 | 12 | bis 200k; darueber 4/18 | Nein | Pro-Modell fuer komplexes multimodales Reasoning |
 | Gemini 3.5 Flash-Lite | Aktuell | 0.30 | 2.50 | 1M | Nein | Preisoptimiert fuer hohe Last |
+| Gemini 3.6 Flash | Legacy | 0.75 | 3.75 | 1M | Nein | Durch Gemini 3.7 Flash abgeloest; gleicher Aktionspreis bis 31.12.2026 |
+| Gemini 3.5 Flash | Legacy | 1.50 | 9 | 1M | Nein | Durch Gemini 3.7 Flash abgeloest und deutlich teurer |
 | Gemini 2.5 Pro | Legacy | 1.25 | 10 | bis 200k; darueber 2.50/15 | Nein | Weiter verfuegbar, aber alte Generation |
 | Gemini 2.5 Flash | Legacy | 0.30 | 2.50 | 1M | Nein | Durch die 3.x-Flash-Linie abgeloest |
 | Gemini 2.5 Flash-Lite | Legacy | 0.10 | 0.40 | 1M | Nein | Sehr billig, jedoch alte Generation |
