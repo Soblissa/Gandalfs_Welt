@@ -1,13 +1,13 @@
 # Wochenbericht VPS und KI-Lage – 5. September 2026
 
-Prüfzeit: 05.09.2026, 06:03–06:06 UTC. S1 wurde ausschließlich per SSH als `gandalf-ro` geprüft; S3 lokal. Für S2 und S4 besteht kein Read-Only-Zugang.
+Prüfzeit: 05.09.2026, 06:03–06:12 UTC. S1 wurde ausschließlich per SSH als `gandalf-ro` geprüft; S3 lokal. Für S2 und S4 besteht kein Read-Only-Zugang.
 
 ## Fakten
 
 ### S1 – 147.93.120.51
 
 - Erreichbar: ICMP ohne Verlust, SSH-Port 22 offen; Ubuntu 24.04.4 LTS, Laufzeit 33 Tage.
-- Last 0,08 / 0,04 / 0,01; RAM 2,6 von 15 GiB belegt; Platte 29 von 193 GiB (15 %).
+- Last 0,01 / 0,02 / 0,00 bei der Kontrollmessung; RAM 2,6 von 15 GiB belegt; Platte 29 von 193 GiB (15 %).
 - OpenClaw-Gateways `chantall`, `user1`, `user2`, Port-Proxy, Docker, SSH und automatische Updates laufen.
 - 22 Pakete aktualisierbar, weitere 6 zurückgehalten; darunter Kernel 6.8.0-139, Docker und Python 3.12.
 - `lightdm.service` ist seit 02.08. fehlgeschlagen. Die eingeschränkte Journal-Sicht zeigte keine kritischen Einträge der letzten sieben Tage; das ist keine Vollprüfung.
@@ -15,12 +15,12 @@ Prüfzeit: 05.09.2026, 06:03–06:06 UTC. S1 wurde ausschließlich per SSH als `
 
 ### S2 – 89.116.39.197
 
-- ICMP antwortet ohne Verlust; TCP/22 ist offen.
+- ICMP antwortet ohne Verlust; TCP/22, 80 und 443 sind von S3 aus erreichbar.
 - Last, Platte, Dienste, Updates, Logs und Sicherheitskonfiguration sind mangels Read-Only-Zugang **nicht geprüft**.
 
 ### S3 – lokal, 187.124.191.206
 
-- Debian 13.6, Laufzeit 6 Tage; Last 2,30 / 1,30 / 0,51 während dieses Berichtslaufs.
+- Debian 13.6, Laufzeit 6 Tage; Last 0,65 / 1,10 / 0,69 bei der Kontrollmessung.
 - RAM 4,6 von 15 GiB belegt, 11 GiB verfügbar; kein Swap. Platte 42 von 197 GiB (22 %).
 - Fünf OpenClaw-Gateways, Docker, SSH und automatische Updates laufen; Gateways sind an Loopback gebunden.
 - 3 Pakete aktualisierbar, darunter das Sicherheitsupdate Firefox ESR 140.15.
