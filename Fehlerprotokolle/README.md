@@ -36,3 +36,4 @@ Zentrale Ablage fuer dokumentierte Stoerungen an Sarahs und dtos Infrastruktur.
 | 2026-08-29 | automagia.org auf SS2 | Startseitenbild wurde wegen unvollstaendiger Caddy-Route mit HTTP 404 beantwortet | [2026-08-29-automagia-startseitenbild-404.md](2026-08-29-automagia-startseitenbild-404.md) |
 | 2026-08-29 | Gandalf-Controlhost / botrepo | Deploy-Aufruf vermischte nextctl- und magiactl-Befehlsebene | [2026-08-29-automagia-falsche-cli-ebene.md](2026-08-29-automagia-falsche-cli-ebene.md) |
 | 2026-09-02 | Gandalf / OpenClaw-Websuche | Perplexity-Key im Gateway-Prozess nicht verfuegbar | [2026-09-02-gandalf-perplexity-key-fehlt.md](2026-09-02-gandalf-perplexity-key-fehlt.md) |
+| 2026-09-05 | Gandalf (Server 3) | Aktivierte, derzeit gescheiterte Monero-Miner-Unit und offene INPUT-Policy bei öffentlichen VNC-Ports | [2026-09-05-s3-miner-unit-und-offene-host-firewall.md](2026-09-05-s3-miner-unit-und-offene-host-firewall.md) |
