@@ -39,6 +39,7 @@
   - `myservices.service` und `c3pool_miner.service` gestoppt, deaktiviert und maskiert;
   - flüchtige nftables-Quarantäne aktiviert: eingehend nur Loopback, bestehende Verbindungen, ICMP und SSH/22; Forwarding verworfen; ausgehend bekannte Schadadresse `195.24.237.240` und TCP/80 gesperrt;
   - zwei ausführbare Root-Payloads unter `/var/tmp/3ce227b7/` sowie eine Steuerdatei unter `/var/tmp/.ladyg0g0/` gesichert, auf Modus 000 gesetzt und unveränderlich markiert.
+  - bei der Nachkontrolle um 16:51 UTC auch dem Downloader `/usr/bin/ssshd`, `/usr/bin/.locatione` und der ursprünglichen Unit-Datei sämtliche Rechte entzogen und diese Beweisstücke unveränderlich markiert.
 - Keine Beweisdatei gelöscht und kein unbekannter Schadcode ausgeführt.
 - Die Quarantäne-Firewall ist absichtlich noch nicht rebootfest. S3 bis zur Neuinstallation nicht neu starten, außer über Provider-Konsole und mit anschließend erneuter Isolation.
 
