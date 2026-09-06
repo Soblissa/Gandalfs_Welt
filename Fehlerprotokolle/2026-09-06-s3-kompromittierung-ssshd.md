@@ -33,13 +33,19 @@
 
 ## Fix
 
-- Noch nicht vorgenommen. Die Untersuchung war auf ausdrücklichen Wunsch zunächst lesend.
-- Erforderlich sind unverzügliche Netzisolation, forensische Sicherung, Abschalten der Persistenz, Rotation aller Zugangsdaten von einem sauberen System und vorzugsweise Neuinstallation aus vertrauenswürdiger Quelle.
+- Nach Freigabe durch dto/Slarti ab 16:15 UTC umgesetzt:
+  - den übermittelten ED25519-Schlüssel ergänzend und idempotent in `/root/.ssh/authorized_keys` eingetragen; Fingerprint `SHA256:w85sfHviZTzEi6wElEVthS8+inzcJjb42WPNwFBXbjM` geprüft;
+  - vom Angreifer gesetzte Attribute `immutable` und `append-only` kontrolliert entfernt; anschließend Datei auf Root/0600 und wieder `immutable` gesetzt;
+  - `myservices.service` und `c3pool_miner.service` gestoppt, deaktiviert und maskiert;
+  - flüchtige nftables-Quarantäne aktiviert: eingehend nur Loopback, bestehende Verbindungen, ICMP und SSH/22; Forwarding verworfen; ausgehend bekannte Schadadresse `195.24.237.240` und TCP/80 gesperrt;
+  - zwei ausführbare Root-Payloads unter `/var/tmp/3ce227b7/` sowie eine Steuerdatei unter `/var/tmp/.ladyg0g0/` gesichert, auf Modus 000 gesetzt und unveränderlich markiert.
+- Keine Beweisdatei gelöscht und kein unbekannter Schadcode ausgeführt.
+- Die Quarantäne-Firewall ist absichtlich noch nicht rebootfest. S3 bis zur Neuinstallation nicht neu starten, außer über Provider-Konsole und mit anschließend erneuter Isolation.
 
 ## Backups
 
-- Keine Änderungen an Systemdateien vorgenommen; daher kein Backup erzeugt.
-- Vor Bereinigung sollte ein Provider-Snapshot ausschließlich zu forensischen Zwecken angelegt werden. Er darf nicht als vertrauenswürdige Wiederherstellungsquelle gelten.
+- Lokale Beweissicherung samt Prüfsummen unter `/root/incident-s3-20260906T161650Z` angelegt. Dieser Pfad enthält sensible Zugangsinformationen und wird nicht nach GitHub kopiert.
+- Vor weiterer Bereinigung sollte zusätzlich ein Provider-Snapshot ausschließlich zu forensischen Zwecken angelegt werden. Er darf nicht als vertrauenswürdige Wiederherstellungsquelle gelten.
 
 ## Lernpunkte
 
@@ -49,8 +55,8 @@
 
 ## Offene Punkte
 
-1. S3 sofort isolieren und `myservices.service` stoppen/deaktivieren, ohne den Downloader erneut auszuführen.
-2. Initialen Angriffsweg und Umfang der Manipulation forensisch bestimmen.
+1. Root-Zugang mit dem neuen Schlüssel von einem sauberen System testen.
+2. Provider-Snapshot anlegen und initialen Angriffsweg sowie Umfang der Manipulation forensisch bestimmen.
 3. Sämtliche auf S3 vorhandenen Secrets, Passwörter, SSH-Schlüssel und Bot-/API-Tokens außerhalb von S3 rotieren.
 4. S3 sauber neu installieren und nur geprüfte Daten/Konfigurationen zurückspielen.
-5. SSH auf Schlüsselzugang beschränken und Firewall/VNC-Exposition korrigieren.
+5. Dauerhaft SSH auf Schlüsselzugang beschränken und Firewall/VNC-Exposition korrigieren.
