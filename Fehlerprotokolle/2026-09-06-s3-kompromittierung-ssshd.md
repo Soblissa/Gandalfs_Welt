@@ -24,6 +24,30 @@
 - Die unmittelbare Überlastung wurde damit sehr wahrscheinlich durch den nachgeladenen Schadcode ausgelöst. Der ursprüngliche Eindringweg ist noch ungeklärt.
 - Alle lokalen Konten zeigen Passwortänderungsdatum 2026-09-05; mehrere `authorized_keys` wurden um 16:06:49–50 UTC überschrieben. Frühere Zugangsdaten bzw. Schlüssel sind daher möglicherweise ungültig oder kompromittiert.
 
+## Rekonstruktion des initialen Zugriffs
+
+Die SSH- und sudo-Protokolle ergeben eine eindeutige Kette:
+
+1. `109.160.32.22` probierte automatisiert zahlreiche Benutzernamen und Passwörter. Root-Anmeldungen derselben Quelle scheiterten, zuletzt am 2026-09-05 um 16:06:38 UTC.
+2. Um 16:06:42 und 16:06:45 UTC akzeptierte SSH je eine **Passwortanmeldung als `rocky`** von dieser Adresse.
+3. Um 16:06:48 UTC führte `rocky` aus `/var/tmp` die Datei `/var/tmp/cMCDMHZp` über `sudo` als Root aus.
+4. `rocky` besaß doppelt konfigurierte, uneingeschränkte Regeln `NOPASSWD: ALL`. Daher war für die Rechteausweitung weder Rockys noch Roots Passwort erforderlich.
+5. Um 16:06:49–56 UTC folgten Veränderungen an Passwörtern und SSH-Schlüsseln, Root-Persistenz sowie weitere Payloads. Ab 16:08 UTC setzte die Überlastung ein.
+
+Damit ist ein erfolgreicher direkter Root-Login nicht belegt und nach den vorhandenen Protokollen nicht der Einstieg. Gesichert ist der Einstieg über Rockys Passwort. Nicht mehr bestimmbar ist, ob dieses Passwort schwach, wiederverwendet oder zuvor anderweitig abgeflossen war. Das zeitliche Muster spricht für automatisiertes Passwort-Spraying.
+
+## Härtung nach Neuinstallation
+
+1. Neuinstallation aus einem sauberen Provider-Abbild; aus dem alten System keine Programme, Systemdateien, Home-Verzeichnisse oder SSH-Konfigurationen ungeprüft übernehmen.
+2. Vor Inbetriebnahme alle auf S3 vorhandenen SSH-Schlüssel, Passwörter, API-/Bot-Tokens und sonstigen Secrets von einem sauberen Gerät rotieren; Provider-Konto mit MFA schützen.
+3. SSH ausschließlich mit neuen ED25519-Schlüsseln: `PasswordAuthentication no`, `KbdInteractiveAuthentication no`, `PermitRootLogin no`; nur einen benannten Administrationsnutzer mittels `AllowUsers` zulassen.
+4. Keine pauschalen `NOPASSWD: ALL`-Regeln. Agenten als nicht interaktive Servicekonten ohne SSH-Login und nur mit eng begrenzten sudo-Kommandos betreiben.
+5. Provider- und Host-Firewall mit Default-Deny: SSH bevorzugt nur über WireGuard/Tailscale oder von festen Quelladressen; VNC niemals öffentlich, sondern ausschließlich über VPN oder SSH-Tunnel; OpenClaw-Gateways auf Loopback binden.
+6. Nur erforderliche Dienste installieren; ungenutzte Konten und Ports deaktivieren. Automatische Sicherheitsupdates aktivieren.
+7. Persistente Protokolle, `auditd`, Datei-Integritätskontrolle und Alarmierung für erfolgreiche SSH-Logins, sudo, neue systemd-Units sowie Änderungen an `authorized_keys` einrichten.
+8. Verschlüsselte, extern gelagerte Backups samt regelmäßig geprüftem Wiederherstellungstest vorhalten.
+9. Fail2ban nur als zusätzliche Bremse einsetzen; Schlüsselpflicht, Netzwerkbegrenzung und minimale Privilegien sind die tragenden Kontrollen.
+
 ## Aktueller Zustand
 
 - S3 läuft seit 15:34 UTC wieder; SSH, Docker, die OpenClaw-Gateways, LightDM und VNC-Dienste sind aktiv.
