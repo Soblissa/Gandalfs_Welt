@@ -1,157 +1,132 @@
 # Modell-Uebersicht
 
-**Stand: 2026-09-02 (08:20 UTC).** Preise in **US-Dollar je 1 Million
-Token** (Input / Output), sofern nicht anders angegeben. Genannt ist der
-regulaere Echtzeit-API-Listenpreis ohne Cache-, Batch-, Fast- oder
-Regionalaufschlaege. Bei gestaffelten Preisen gilt die erste Preisstufe.
+**Stand:** 2026-09-09 (08:10 UTC). Preise in **US-Dollar je 1 Million
+Token** fuer Standard-Echtzeitverarbeitung, angegeben als **Input / Output**.
+Cache-, Batch-, Flex-, regionale und Langkontext-Aufschlaege sind nicht
+eingerechnet. `—` bedeutet: kein direkter Tokenpreis des Herstellers.
 
-## Leseschluessel
-
-- **Aktuell** = Teil der gegenwaertigen Modellfamilie des Anbieters.
-- **Legacy** = noch verfuegbar, aber nicht mehr erste Wahl fuer neue Systeme.
-- **Retired** = beim Erstanbieter eingestellt oder nur noch auf einzelnen
-  Partnerplattformen vorhanden.
-- **Lokal: Ja** = Gewichte sind herunterladbar; API-Preise fremder Hoster sind
-  deshalb nicht mit einem Herstellerpreis gleichzusetzen.
+**Status:** **Aktuell** = heutige Hauptgeneration, **Vorgaenger** = noch
+verfuegbar, aber nicht mehr erste Wahl, **veraltet/abgekuendigt** = nicht fuer
+neue Integrationen einplanen.
 
 ## Anthropic (USA)
 
-| Modell | Status | Input | Output | Kontext | Lokal | Einordnung |
-|---|---|---:|---:|---:|---|---|
-| Claude Fable 5.1 | Aktuell | 10 | 50 | 1M | Nein | Staerkstes Langzeit-Reasoning, langsam und teuer |
-| Claude Mythos 5.1 | Aktuell/limitiert | 10 | 50 | nicht oeffentlich | Nein | Fable-5.1-Preisstufe; Zugang nur ueber Anthrophics Glasswing-Programm |
-| Claude Opus 5 | Aktuell | 5 | 25 | 1M | Nein | Standard fuer komplexe Agenten- und Coding-Arbeit |
-| Claude Sonnet 5 | Aktuell | 2 | 10 | 1M | Nein | Beste Balance aus Tempo, Qualitaet und Preis |
-| Claude Haiku 4.5 | Aktuell | 1 | 5 | 200k | Nein | Schnellstes aktuelles Claude-Modell |
-| Claude Fable 5 | Legacy | 10 | 50 | 1M | Nein | Durch Fable 5.1 abgeloest |
-| Claude Opus 4.8 / 4.7 / 4.6 / 4.5 | Legacy | 5 | 25 | 1M | Nein | Alte Opus-Generation |
-| Claude Sonnet 4.6 / 4.5 | Legacy | 3 | 15 | 200k | Nein | Sonnet 5 ist neuer und zugleich billiger |
-| Claude Opus 4.1 / 4 | Retired* | 15 | 75 | 200k | Nein | *Nur noch auf einzelnen Cloud-Plattformen |
-
-Wichtige Korrektur: Der fruehere Eintrag gab Fable 5 mit 2/10 und Opus 4.7
-mit 15/75 an. Anthropic nennt aktuell 10/50 beziehungsweise 5/25.
+| Modell | Preis | Status | Lokal | Einordnung |
+|---|---:|---|---|---|
+| Claude Fable 5.1 | 10 / 50 | Aktuell | Nein | Teure Spezialklasse; Cache-Treffer 0,25 |
+| Claude Mythos 5.1 | 10 / 50 | Aktuell, begrenzt verfuegbar | Nein | Spezialmodell mit eingeschraenktem Zugang |
+| Claude Opus 5 | 5 / 25 | Aktuell | Nein | Spitzenmodell fuer schwierige Agenten- und Reasoning-Aufgaben |
+| Claude Sonnet 5 | 2 / 10 | Aktuell | Nein | Preis-Leistungs-Standard; Einfuehrungspreis wurde dauerhaft gemacht |
+| Claude Haiku 4.5 | 1 / 5 | Aktuell | Nein | Schnelle, guenstige Klasse |
+| Claude Opus 4.6–4.8 / Sonnet 4.6 | 5 / 25 bzw. 3 / 15 | Vorgaenger | Nein | Weiter nutzbar; nicht mehr Hauptgeneration |
+| Claude Opus 4/4.1, Sonnet 4, Haiku 3.5 | 15 / 75, 3 / 15, 0,80 / 4 | **veraltet/abgekuendigt** | Nein | Bei Anthropic retirert; teils noch ueber Cloudpartner |
 
 ## OpenAI (USA)
 
-| Modell | Status | Input | Output | Kontextpreis | Lokal | Einordnung |
-|---|---|---:|---:|---|---|---|
-| GPT-5.6 Sol | Aktuell | 4 | 20 | kurz; 8/30 lang | Nein | Flaggschiff fuer schwieriges Reasoning und Coding; Aktionspreis bis mindestens 21.11.2026 |
-| GPT-5.6 Terra | Aktuell | 2 | 12 | kurz; 4/18 lang | Nein | Ausgewogene Standardwahl |
-| GPT-5.6 Luna | Aktuell | 0.20 | 1.20 | kurz; 0.40/1.80 lang | Nein | Hoher Durchsatz und niedrige Kosten |
-| GPT-5.6 Cyber | Aktuell/spezialisiert | 12.50 | 75 | nicht oeffentlich | Nein | Sicherheitsmodell; kein allgemeiner Ersatz fuer Sol oder Terra |
-| GPT-5.5 | Legacy | 5 | 30 | unter 272k; 10/45 lang | Nein | Durch GPT-5.6 ersetzt |
-| GPT-5.5 Pro | Legacy | 30 | 180 | unter 272k; 60/270 lang | Nein | Sehr teuer; fuer neue Systeme nicht erste Wahl |
-| GPT-5.4 | Legacy | 2.50 | 15 | unter 272k; 5/22.50 lang | Nein | Alte Hauptgeneration |
-| GPT-5 mini / nano | Legacy | 0.25 / 0.05 | 2 / 0.40 | Standard | Nein | Weiterhin guenstige API-Basismodelle |
-| o3 / o4-mini | Legacy | 2 / 1.10 | 8 / 4.40 | Standard | Nein | Aeltere separate Reasoning-Linie |
-| gpt-oss-120b / 20b | Aktuell offen | Selbstbetrieb | - | 128k | Ja | Open-Weight fuer eigene Infrastruktur |
-
-OpenAI berechnet bei den 5.6-Modellen lange Kontexte separat. Die fruehere
-Zeile „GPT-5.6 (Sol) ~5/~15, im Rollout“ war daher zugleich ungenau und
-veraltet.
+| Modell | Preis | Status | Lokal | Einordnung |
+|---|---:|---|---|---|
+| GPT-6 Astra | 10 / 50 | Aktuell | Nein | Neues Spitzenmodell; Langkontext 20 / 75 |
+| GPT-5.6 Sol | 4 / 20 | Aktuell, Aktionspreis | Nein | Starkes Hauptmodell; Langkontext 8 / 30 |
+| GPT-5.6 Terra | 2 / 12 | Aktuell | Nein | Mittlere Preis-/Leistungsklasse |
+| GPT-5.6 Luna | 0,20 / 1,20 | Aktuell | Nein | Schnelle Massenverarbeitung |
+| GPT-5.5 / GPT-5.5 Pro | 5 / 30 bzw. 30 / 180 | Vorgaenger | Nein | Weiter teuer; durch 5.6/6 ueberholt |
+| GPT-5 mini / nano | 0,25 / 2 bzw. 0,05 / 0,40 | Vorgaenger, weiter sinnvoll | Nein | Bewaehrte Niedrigpreisklasse |
+| o3 / o4-mini | 2 / 8 bzw. 1,10 / 4,40 | Vorgaenger | Nein | Aeltere explizite Reasoning-Reihe |
+| gpt-oss 120B / 20B | Selbstbetrieb | Aktuell offen | Ja | Open-Weight; Infrastruktur statt Tokenpreis |
 
 ## Google (USA)
 
-| Modell | Status | Input | Output | Kontext | Lokal | Einordnung |
-|---|---|---:|---:|---:|---|---|
-| Gemini 3.7 Flash | Aktuell | 0.75 | 3.75 | 1M | Nein | Aktuelles Flash-Spitzenmodell; Aktionspreis bis 31.12.2026, danach 1.50/7.50 |
-| Gemini 3.1 Pro Preview | Aktuell/Preview | 2 | 12 | bis 200k; darueber 4/18 | Nein | Pro-Modell fuer komplexes multimodales Reasoning |
-| Gemini 3.5 Flash-Lite | Aktuell | 0.30 | 2.50 | 1M | Nein | Preisoptimiert fuer hohe Last |
-| Gemini 3.6 Flash | Legacy | 0.75 | 3.75 | 1M | Nein | Durch Gemini 3.7 Flash abgeloest; gleicher Aktionspreis bis 31.12.2026 |
-| Gemini 3.5 Flash | Legacy | 1.50 | 9 | 1M | Nein | Durch Gemini 3.7 Flash abgeloest und deutlich teurer |
-| Gemini 2.5 Pro | Legacy | 1.25 | 10 | bis 200k; darueber 2.50/15 | Nein | Weiter verfuegbar, aber alte Generation |
-| Gemini 2.5 Flash | Legacy | 0.30 | 2.50 | 1M | Nein | Durch die 3.x-Flash-Linie abgeloest |
-| Gemini 2.5 Flash-Lite | Legacy | 0.10 | 0.40 | 1M | Nein | Sehr billig, jedoch alte Generation |
-| Gemma 3 (1B-27B) | Aktuell offen | Selbstbetrieb | - | 128k | Ja | Lokale Google-Familie; kein Google-API-Tokenpreis |
+| Modell | Preis | Status | Lokal | Einordnung |
+|---|---:|---|---|---|
+| Gemini 3.8 Flash | 0,75 / 3,75 | Aktuell, Aktionspreis bis 31.12.2026 | Nein | Neuester Flash; ab 2027 laut Preisseite 1,50 / 7,50 |
+| Gemini 3.7 Flash | 0,75 / 3,75 | Vorgaenger | Nein | Durch 3.8 Flash abgeloest |
+| Gemini 3.1 Pro Preview | 2 / 12 | Aktuelle Pro-Klasse, Preview | Nein | Ueber 200k Inputtoken: 4 / 18 |
+| Gemini 2.5 Pro | 1,25 / 10 | Vorgaenger | Nein | Ueber 200k Inputtoken: 2,50 / 15 |
+| Gemini 2.5 Flash | 0,30 / 2,50 | Vorgaenger, guenstig | Nein | Weiter stark fuer grosse Mengen |
+| Gemini 2.5 Flash-Lite | 0,10 / 0,40 | Vorgaenger, guenstig | Nein | Niedrigster belegter Google-Standardpreis |
+| Gemma 3 | Selbstbetrieb | Offene Familie | Ja | Lokal betreibbar; Infrastruktur statt Tokenpreis |
 
 ## Moonshot AI / Kimi (China)
 
-| Modell | Status | Input | Output | Cache-Hit | Kontext | Lokal | Einordnung |
-|---|---|---:|---:|---:|---:|---|---|
-| Kimi K3 | Aktuell | 3 | 15 | 0.30 | 1M | Nein** | Flaggschiff fuer langlaufende Agenten- und Wissensarbeit |
-| Kimi K2.7 Code | Aktuell | 0.95 | 4 | 0.19 | 256k | Nein** | Coding, Text-, Bild- und Videoeingabe |
-| Kimi K2.7 Code HighSpeed | Aktuell | 1.90 | 8 | 0.38 | 256k | Nein** | Gleiches Modell mit hoeherem Durchsatz |
-| Kimi K2.6 | Aktuell | 0.95 | 4 | 0.16 | 256k | Nein** | Allgemeines multimodales Agentenmodell |
-| Kimi K2.5 / K2 | Legacy | - | - | - | 128k | Ja | Alte Generation; nicht mehr in der aktuellen internationalen Preisliste |
+| Modell | Preis | Status | Lokal | Einordnung |
+|---|---:|---|---|---|
+| Kimi K3 | 3 / 15 | Aktuell | Nein* | Flaggschiff, 1.048.576 Token Kontext; Cache-Treffer 0,30 |
+| Kimi K2.7 Code | 0,95 / 4 | Aktuell | Nein* | Coding, multimodal, 262k Kontext; Highspeed kostet 1,90 / 8 |
+| Kimi K2.6 | 0,95 / 4 | Aktuell | Nein* | Allgemein, multimodal, 262k Kontext |
+| Kimi K2.5 / K2 | — | **Vorgaenger** | Je nach veroeffentlichtem Checkpoint | Nicht mehr auf der aktuellen internationalen Preisseite |
 
-**„Nein“ bezieht sich auf die hier bepreiste internationale API-Variante;
-eine etwaige separate Open-Weight-Veroeffentlichung ist nicht mit dieser
-API-Leistung gleichzusetzen.
+\* `Lokal` bezieht sich hier auf die konkret bepreiste API-Version. Ein
+separater offener Checkpoint ist nicht automatisch dieselbe API-Version.
 
 ## Alibaba Cloud / Qwen (China)
 
-Internationale Model-Studio-Preise (Region Singapur), erste Preisstufe:
+Alibaba staffelt Preise nach Region und Eingabelaenge. Die Tabelle verwendet
+die internationale Region Singapur und die jeweils erste Eingabestufe.
 
-| Modell | Status | Input | Output | Kontext | Lokal | Einordnung |
-|---|---|---:|---:|---:|---|---|
-| Qwen3.8-Max | Aktuell | 2 | 6 | 1M | Nein | Neues geschlossenes API-Flaggschiff |
-| Qwen3.7-Max | Legacy | 2.50 | 7.50 | 1M | Nein | Durch Qwen3.8-Max ersetzt |
-| Qwen3-Max | Legacy | 1.20 | 6 | bis 32k; gestaffelt bis 256k | Nein | Geschlossenes API-Modell, nicht Open-Weight |
-| Qwen3 Open-Weight-Familie | Aktuell offen | Selbstbetrieb | - | modellabhaengig | Ja | Eigene Gewichte fuer lokale Inferenz; getrennt von Qwen-Max |
-
-Qwen3-Max war zuvor faelschlich als Open-Weight und mit 0.78/3.90
-eingetragen. Alibaba weist es als Model-Studio-API mit 1.20/6 in der ersten
-internationalen Stufe aus; Qwen3.8-Max ist nun die aktuelle Max-Generation.
+| Modell | Preis | Status | Lokal | Einordnung |
+|---|---:|---|---|---|
+| Qwen3.8-Max | 2 / 6 | Aktuell | Nein | Neues geschlossenes API-Flaggschiff, bis 1M Kontext |
+| Qwen3.7-Max | 2,50 / 7,50 | Vorgaenger | Nein | Durch 3.8-Max ueberholt |
+| Qwen3-Max | 1,20 / 6 (bis 32k) | Vorgaenger | Nein | **Korrektur:** API-Max ist nicht Open-Weight; Preis steigt mit Kontext |
+| Qwen3-2507 235B-A22B | Selbstbetrieb | Aktuell offen | Ja | Open-Weight-Flaggschiff; 256k, optional bis 1M Kontext |
+| Qwen3-2507 30B-A3B / 4B | Selbstbetrieb | Aktuell offen | Ja | Workstation- bzw. kompakte Klasse |
+| Qwen3-2504 | Selbstbetrieb | **Vorgaenger** | Ja | Durch die 2507-Checkpoints ersetzt |
 
 ## DeepSeek (China)
 
-DeepSeek unterscheidet Werk- und Nebenzeiten. Nachstehend stehen
-**Peak / Off-Peak** fuer nicht gecachten Input und Output:
+DeepSeek hat zeitabhaengige Preise. Angegeben ist **Peak / Off-Peak** fuer
+Cache-Miss-Input und Output; Cache-Treffer sind nochmals deutlich billiger.
 
-| Modell | Status | Input | Output | Kontext | Lokal | Einordnung |
-|---|---|---:|---:|---:|---|---|
-| DeepSeek V4 Pro | Aktuell | 1.32 / 0.66 | 3.96 / 1.98 | 1M | Nein** | Leistungsstaerkere V4-API-Variante |
-| DeepSeek V4 Flash | Aktuell | 0.44 / 0.22 | 1.32 / 0.66 | 1M | Nein** | Sehr guenstiges allgemeines Modell |
-| DeepSeek V4 Flash Vision Exp | Aktuell/experimentell | 0.44 / 0.22 | 1.32 / 0.66 | 1M | Nein** | Experimentelle visuelle Variante |
-| DeepSeek V3.2 / V3 | Legacy | - | - | 128k | Ja | Durch V4 in der offiziellen API abgeloest |
-| DeepSeek R2 | Nicht belegt | - | - | - | - | Kein aktueller offizieller API-Eintrag; aus der Empfehlung entfernt |
+| Modell | Peak (Input/Output) · Off-Peak (Input/Output) | Status | Lokal | Einordnung |
+|---|---:|---|---|---|
+| DeepSeek V4 Flash | 0,44 / 1,32 · 0,22 / 0,66 | Aktuell | Nein* | 1M Kontext, allgemeines schnelles Modell |
+| DeepSeek V4 Pro | 1,32 / 3,96 · 0,66 / 1,98 | Aktuell | Nein* | Hoehere Qualitaetsklasse, 1M Kontext |
+| DeepSeek V4 Flash Vision Exp | 0,44 / 1,32 · 0,22 / 0,66 | Experimentell | Nein* | Multimodale Vorschau |
+| DeepSeek V3.2 / R2 / V3 | — | **Vorgaenger** | Modellabhaengig | Nicht mehr auf der aktuellen API-Preisseite; alte Schaetzpreise entfernt |
 
-Peak-Zeiten sind laut DeepSeek Montag bis Freitag 01:00-04:00 und
-06:00-10:00 UTC; alle anderen Zeiten sind Off-Peak. Cache-Hits sind nochmals
-deutlich billiger. **Der API-Status belegt keine frei herunterladbaren
-Gewichte der jeweiligen V4-Variante.
+\* Die Tabelle bewertet die angebotene API-Version; fuer Selbstbetrieb
+muessen Lizenz und konkret veroeffentlichter Checkpoint getrennt geprueft
+werden.
 
 ## Meta / Llama (USA)
 
-Meta verkauft fuer Llama keinen einheitlichen direkten Token-API-Tarif.
-Preise von Groq, Together, Fireworks oder anderen Hostern sind deren Preise
-und werden hier nicht als „Meta-Preis“ ausgegeben.
+Meta weist fuer Llama auf der offiziellen Modellseite **keinen direkten
+Tokenpreis** aus. Preise fremder Hosts sind Anbieterpreise und werden deshalb
+nicht als Meta-Preis dargestellt.
 
-| Modell | Status | Herstellerpreis | Kontext | Lokal | Einordnung |
-|---|---|---|---:|---|---|
-| Llama 4 Maverick 17B-128E | Aktuell offen | Selbstbetrieb / Hosterpreis | 1M | Ja | Groessere offene Llama-4-Variante |
-| Llama 4 Scout 17B-16E | Aktuell offen | Selbstbetrieb / Hosterpreis | 10M | Ja | Sehr langes Kontextfenster; volle BF16-Inferenz verlangt mehrere GPUs |
-| Llama 4 Behemoth | Nicht veroeffentlicht | - | - | Nein | Nicht in Metas aktuellem offiziellen Modell-Repository; aus Empfehlungen entfernt |
-| Llama 3.3 70B und aelter | Legacy offen | Selbstbetrieb / Hosterpreis | 128k | Ja | Breit unterstuetzt, aber alte Generation |
+| Modell | Preis | Status | Lokal | Einordnung |
+|---|---:|---|---|---|
+| Llama 4 Maverick 17B-128E | Selbstbetrieb / Drittanbieter | Aktuell | Ja | Offenes MoE-Modell, bis 1M Kontext |
+| Llama 4 Scout 17B-16E | Selbstbetrieb / Drittanbieter | Aktuell | Ja | Offenes MoE-Modell, bis 10M Kontext |
+| Llama 4 Behemoth | — | **nicht als Download gelistet** | Nein | Nicht als verfuegbares Modell einpreisen |
+| Llama 3.3 70B | Selbstbetrieb / Drittanbieter | Vorgaenger | Ja | 128k Kontext, breit unterstuetzt |
+| Llama 3.2 1B/3B und Vision 11B/90B | Selbstbetrieb / Drittanbieter | Vorgaenger | Ja | Kleine bzw. multimodale Varianten |
 
-Die alten Groq-Zahlen wurden entfernt: Sie waren weder frische
-Herstellerpreise noch auf einen einzigen Anbieter uebertragbar.
+## Kurze Einordnung
 
-## Kurzempfehlungen
-
-| Bedarf | Erste Wahl |
+| Bedarf | Erste Wahl aus dieser Preispruefung |
 |---|---|
-| Schwieriges Reasoning und Coding | GPT-5.6 Sol oder Claude Opus 5 |
-| Ausgewogener Standardagent | Claude Sonnet 5 oder GPT-5.6 Terra |
-| Sehr grosser Kontext | Claude Sonnet 5, Kimi K3 oder Gemini 3.7 Flash |
-| Niedrige API-Kosten | GPT-5.6 Luna, DeepSeek V4 Flash oder Gemini 3.5 Flash-Lite |
-| Coding mit chinesischem Anbieter | Kimi K2.7 Code |
-| Lokal und kontrollierbar | Qwen3 Open-Weight, gpt-oss oder Llama 4 |
+| ausgewogener geschlossener Standardagent | Claude Sonnet 5 |
+| schwierigste Aufgaben, Preis zweitrangig | GPT-6 Astra, Claude Opus 5 |
+| guenstige Massenverarbeitung | Gemini 2.5 Flash-Lite, GPT-5.6 Luna, DeepSeek V4 Flash |
+| Coding | Kimi K2.7 Code, Claude Sonnet 5, GPT-5.6 Sol |
+| sehr langer Kontext | Kimi K3, Gemini, DeepSeek V4; lokal Llama 4 Scout |
+| lokal und kontrollierbar | Qwen3-2507, Llama 4, Gemma 3, gpt-oss |
 
-## Quellen (am Stand-Datum frisch abgerufen)
+Chinesische Anbieter werden gleichrangig nach Eignung, Preis, Offenheit und
+Betriebsrisiko beurteilt. Herkunft ersetzt weder technische Pruefung noch
+Datenschutzpruefung.
 
-- [Anthropic: Modelle](https://platform.claude.com/docs/en/models/overview)
-  und [Preise](https://platform.claude.com/docs/en/about-claude/pricing)
-- [OpenAI: Modelle](https://developers.openai.com/api/docs/models) und
-  [API-Preise](https://developers.openai.com/api/docs/pricing)
-- [Google Gemini API: Preise](https://ai.google.dev/gemini-api/docs/pricing)
-- [Moonshot/Kimi: Preisindex](https://platform.kimi.ai/docs/pricing/chat),
-  [K3](https://platform.kimi.ai/docs/pricing/chat-k3),
-  [K2.7 Code](https://platform.kimi.ai/docs/pricing/chat-k27-code) und
-  [K2.6](https://platform.kimi.ai/docs/pricing/chat-k26)
-- [Alibaba Cloud Model Studio: Qwen-Preise](https://www.alibabacloud.com/help/en/model-studio/model-pricing)
-- [DeepSeek: Modelle und Preise](https://api-docs.deepseek.com/quick_start/pricing)
-- [Meta: offizielles Llama-Modell-Repository](https://github.com/meta-llama/llama-models)
+## Primaerquellen (am 2026-09-09 abgerufen)
+
+- [Anthropic: Claude API pricing](https://platform.claude.com/docs/en/about-claude/pricing)
+- [OpenAI: API pricing](https://developers.openai.com/api/docs/pricing)
+- [Google: Gemini API pricing](https://ai.google.dev/gemini-api/docs/pricing)
+- [Moonshot/Kimi: Modellpreise](https://platform.kimi.ai/docs/pricing/chat)
+- [Alibaba Cloud: Model Studio pricing](https://www.alibabacloud.com/help/en/model-studio/model-pricing)
+- [Qwen: offizielle Qwen3-Modellliste](https://github.com/QwenLM/Qwen3)
+- [DeepSeek: Models & Pricing](https://api-docs.deepseek.com/quick_start/pricing/)
+- [Meta: offizielle Llama-Modelle](https://github.com/meta-llama/llama-models)
 
 Aktualisierungsrhythmus: **jeden Mittwoch 08:05 UTC**, gekoppelt an das
 KI-News-Briefing.
