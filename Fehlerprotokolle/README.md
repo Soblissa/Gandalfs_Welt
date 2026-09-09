@@ -38,3 +38,4 @@ Zentrale Ablage fuer dokumentierte Stoerungen an Sarahs und dtos Infrastruktur.
 | 2026-09-02 | Gandalf / OpenClaw-Websuche | Perplexity-Key im Gateway-Prozess nicht verfuegbar | [2026-09-02-gandalf-perplexity-key-fehlt.md](2026-09-02-gandalf-perplexity-key-fehlt.md) |
 | 2026-09-05 | Gandalf (Server 3) | Aktivierte, derzeit gescheiterte Monero-Miner-Unit und offene INPUT-Policy bei öffentlichen VNC-Ports | [2026-09-05-s3-miner-unit-und-offene-host-firewall.md](2026-09-05-s3-miner-unit-und-offene-host-firewall.md) |
 | 2026-09-06 | Gandalf (Server 3) | Kompromittierung: Root-Downloader `ssshd` überlastete SSH und zentrale Systemdienste; Persistenz weiterhin aktiv | [2026-09-06-s3-kompromittierung-ssshd.md](2026-09-06-s3-kompromittierung-ssshd.md) |
+| 2026-09-09 | Gandalf / OpenClaw-Gateway | Websuche ohne API-Key; Browser-Control mit WebSocket 1006 nicht erreichbar | [2026-09-09-gandalf-webrecherche-werkzeuge.md](2026-09-09-gandalf-webrecherche-werkzeuge.md) |
