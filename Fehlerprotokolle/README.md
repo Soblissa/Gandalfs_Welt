@@ -28,6 +28,7 @@ Zentrale Ablage fuer dokumentierte Stoerungen an Sarahs und dtos Infrastruktur.
 
 | Datum | System | Titel | Datei |
 |---|---|---|---|
+| 2026-09-09 | Chefkoch (Server 1, `cheko`) | Isolierter Heartbeat scheitert stuendlich trotz gesundem und neu gestartetem Gateway; Detailursache mangels Journal-Recht noch offen | [2026-09-09-chefkoch-heartbeat-fehlgeschlagen.md](2026-09-09-chefkoch-heartbeat-fehlgeschlagen.md) |
 | 2026-07-30 | Chefkoch (Server 1, `user1`) | Konfig-Schema, Prozess-Doppelung, alter Anthropic-Key an mehreren Stellen, Session-Model-Override auf `o3-mini` | [2026-07-30-chefkoch-config-und-key.md](2026-07-30-chefkoch-config-und-key.md) |
 | 2026-08-16 | Gandalf (Server 3), Wochenbericht-Timer und OpenClaw-Gateway | Wochenbericht-Skript schickte nur den Prompt statt des Berichts; zusaetzlich leakte ein Tool-Fehler an Sarahs Chat | [2026-08-16-wochenbericht-timer-und-tool-error-leak.md](2026-08-16-wochenbericht-timer-und-tool-error-leak.md) |
 | 2026-08-29 | Gandalf (Server 3), Wochentrigger | KI- und Modellvergleichstimer versandten nur Arbeitsauftraege; Samstag-Wrapper verlor seine Message | [2026-08-29-gandalf-wochentrigger-nur-arbeitsauftrag.md](2026-08-29-gandalf-wochentrigger-nur-arbeitsauftrag.md) |
