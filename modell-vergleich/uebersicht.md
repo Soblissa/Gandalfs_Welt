@@ -1,6 +1,6 @@
 # Modell-Uebersicht
 
-**Stand:** 2026-09-09 (08:10 UTC). Preise in **US-Dollar je 1 Million
+**Stand:** 2026-09-09 (08:18 UTC). Preise in **US-Dollar je 1 Million
 Token** fuer Standard-Echtzeitverarbeitung, angegeben als **Input / Output**.
 Cache-, Batch-, Flex-, regionale und Langkontext-Aufschlaege sind nicht
 eingerechnet. `—` bedeutet: kein direkter Tokenpreis des Herstellers.
@@ -15,6 +15,7 @@ neue Integrationen einplanen.
 |---|---:|---|---|---|
 | Claude Fable 5.1 | 10 / 50 | Aktuell | Nein | Teure Spezialklasse; Cache-Treffer 0,25 |
 | Claude Mythos 5.1 | 10 / 50 | Aktuell, begrenzt verfuegbar | Nein | Spezialmodell mit eingeschraenktem Zugang |
+| Claude Fable 5 / Mythos 5 | 10 / 50 | Vorgaenger | Nein | Gleicher Grundpreis, aber Cache-Treffer 1 statt 0,25; Mythos nur begrenzt verfuegbar |
 | Claude Opus 5 | 5 / 25 | Aktuell | Nein | Spitzenmodell fuer schwierige Agenten- und Reasoning-Aufgaben |
 | Claude Sonnet 5 | 2 / 10 | Aktuell | Nein | Preis-Leistungs-Standard; Einfuehrungspreis wurde dauerhaft gemacht |
 | Claude Haiku 4.5 | 1 / 5 | Aktuell | Nein | Schnelle, guenstige Klasse |
@@ -30,6 +31,7 @@ neue Integrationen einplanen.
 | GPT-5.6 Terra | 2 / 12 | Aktuell | Nein | Mittlere Preis-/Leistungsklasse |
 | GPT-5.6 Luna | 0,20 / 1,20 | Aktuell | Nein | Schnelle Massenverarbeitung |
 | GPT-5.5 / GPT-5.5 Pro | 5 / 30 bzw. 30 / 180 | Vorgaenger | Nein | Weiter teuer; durch 5.6/6 ueberholt |
+| GPT-5.4 / mini / nano | 2,50 / 15; 0,75 / 4,50; 0,20 / 1,25 | Vorgaenger | Nein | Weiter gelistet, aber durch 5.6 ueberholt |
 | GPT-5 mini / nano | 0,25 / 2 bzw. 0,05 / 0,40 | Vorgaenger, weiter sinnvoll | Nein | Bewaehrte Niedrigpreisklasse |
 | o3 / o4-mini | 2 / 8 bzw. 1,10 / 4,40 | Vorgaenger | Nein | Aeltere explizite Reasoning-Reihe |
 | gpt-oss 120B / 20B | Selbstbetrieb | Aktuell offen | Ja | Open-Weight; Infrastruktur statt Tokenpreis |
@@ -76,6 +78,7 @@ die internationale Region Singapur und die jeweils erste Eingabestufe.
 
 DeepSeek hat zeitabhaengige Preise. Angegeben ist **Peak / Off-Peak** fuer
 Cache-Miss-Input und Output; Cache-Treffer sind nochmals deutlich billiger.
+Peak gilt laut Hersteller Montag bis Freitag 01:00–04:00 und 06:00–10:00 UTC.
 
 | Modell | Peak (Input/Output) · Off-Peak (Input/Output) | Status | Lokal | Einordnung |
 |---|---:|---|---|---|
