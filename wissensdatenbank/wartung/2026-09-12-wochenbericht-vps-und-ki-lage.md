@@ -1,13 +1,13 @@
-# Wochenbericht VPS und KI-Lage – 12.09.2026, 06:00 UTC
+# Wochenbericht VPS und KI-Lage – 12.09.2026, 06:00–06:10 UTC
 
 ## Fakten
 
 ### S1 – 147.93.120.51
 
 - Erreichbar per SSH als `gandalf-ro`; Laufzeit 1 Tag 19 Stunden.
-- Last `0,16 / 0,05 / 0,01`; RAM 2,1 von 15 GiB; Root-Platte 32 von 193 GiB (17 %).
+- Last `0,06 / 0,14 / 0,07`; RAM 2,1 von 15 GiB; Root-Platte 32 von 193 GiB (17 %).
 - SSH, Docker sowie die OpenClaw-Gateways `chantall`, `cheko` und `user2` laufen. `lightdm.service` ist fehlgeschlagen; die Wochenlogs zeigen ansonsten nur wiederkehrende, geringe PipeWire/JACK-Warnungen.
-- 16 Updates installierbar, darunter Sicherheitsupdates für glibc und Python; zwei Pakete zurückgehalten. Kein Neustart angefordert.
+- 18 Updates installierbar, darunter Sicherheitsupdates für glibc und Python; `cloud-init` ist zurückgehalten. Kein Neustart angefordert.
 - SSH-Passwort- und Root-Anmeldung sind deaktiviert. Firewallstatus ist mit dem Read-only-Konto nicht lesbar. Öffentlich lauschen unter anderem TCP 22, 80, 443, 139, 445, 19870 und 19953.
 
 ### S2 – 89.116.39.197
@@ -17,7 +17,7 @@
 
 ### S3 – lokal, 187.124.191.206
 
-- Erreichbar; Laufzeit 5 Tage; Last `1,74 / 0,72 / 0,35`; RAM 3,1 von 15 GiB; Root-Platte 39 von 197 GiB (21 %).
+- Erreichbar; Laufzeit 5 Tage; Last `0,95 / 1,04 / 0,60`; RAM 2,9 von 15 GiB; Root-Platte 39 von 197 GiB (21 %).
 - Keine fehlgeschlagenen Units. SSH, Docker und die Gateways `gandalf`, `konfuzius`, `turyia` laufen. Keine Updates offen, kein Neustart angefordert. Wochenlogs nur mit wenigen Desktop-/D-Bus-Meldungen.
 - SSH-Passwort- und Root-Anmeldung sind deaktiviert; Gateways binden an Loopback. Öffentlich lauschen SSH/22 und TCP 11435.
 - Nach dem Neustart ist `c3pool_miner.service` wieder **aktiviert**, derzeit aber wegen fehlender Binärdatei inaktiv. Die bekannten `ssshd`-/`myservices`-Dateien fehlen. Eine wirksame Host-Firewall konnte ohne Root-Rechte nicht belegt werden.
@@ -45,6 +45,7 @@
 - NASA und IBM stellten am 10.09. ein **offenes Foundation Model für Mondforschung** vor, unter anderem zur Kartierung von Eis und Kratern.
 - Anthropic veröffentlichte am 10.09. einen neuen Bericht zur **Erkennung und Abwehr missbräuchlicher KI-Nutzung**.
 - NSA und Partner warnten am 08.09. vor systematischer **Destillation US-amerikanischer Frontier-Modelle** durch chinesische KI-Unternehmen.
+- Kalifornien verkündete am 09.09. neue **KI-Schutz- und Prüfregeln**; dies ist eine wichtige regionale Regulierung, aber keine globale regulatorische Zäsur.
 - Keine belastbar bestätigte neue Frontier-Modellgeneration oder regulatorische Zäsur in diesem Wochenfenster gefunden.
 
-Quellen (frisch abgerufen am 12.09.2026): [Google DeepMind / AlphaGenome](https://news.google.com/search?q=AlphaGenome%20Atlas%20September%202026), [NASA/IBM](https://news.google.com/search?q=NASA%20IBM%20lunar%20foundation%20model%20September%202026), [Anthropic Missbrauchsbericht](https://news.google.com/search?q=Anthropic%20Detecting%20and%20countering%20misuse%20September%202026), [NSA-Warnung](https://news.google.com/search?q=NSA%20AI%20distillation%20September%202026). `web_search` war wegen des bekannten fehlenden Perplexity-Schlüssels nicht verfügbar; deshalb wurden aktuelle Google-News-RSS-Ergebnisse mit Primärquellenbezug verwendet.
+Quellen (frisch abgerufen am 12.09.2026): [Google DeepMind / AlphaGenome](https://news.google.com/search?q=AlphaGenome%20Atlas%20September%202026), [NASA/IBM](https://news.google.com/search?q=NASA%20IBM%20lunar%20foundation%20model%20September%202026), [Anthropic Missbrauchsbericht](https://news.google.com/search?q=Anthropic%20Detecting%20and%20countering%20misuse%20September%202026), [NSA-Warnung](https://news.google.com/search?q=NSA%20AI%20distillation%20September%202026), [Kalifornien](https://www.gov.ca.gov/2026/09/09/governor-newsom-signs-first-in-the-nation-ai-safeguards-to-protect-californians-calls-on-the-federal-government-to-do-its-part/). `web_search` war wegen des bekannten fehlenden Perplexity-Schlüssels nicht verfügbar; deshalb wurden aktuelle Google- und Bing-News-RSS-Ergebnisse mit Primärquellenbezug verwendet.
