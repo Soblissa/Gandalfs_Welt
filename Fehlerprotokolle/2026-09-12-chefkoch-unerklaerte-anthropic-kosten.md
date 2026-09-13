@@ -16,6 +16,7 @@ Am 2026-09-12 praezisierte sie: Allein am 2026-09-11 wurden 68 US-Dollar verbrau
 - Aus dem bloßen Guthabenverlust folgt noch nicht, dass Chefkoch die gesamten 100 US-Dollar verbraucht hat. Entscheidend sind Key-Zuordnung und Zeitraum im Anthropic-Dashboard.
 - Der nun bekannte Tageswert von 68 US-Dollar grenzt die Abrechnung auf den 2026-09-11 ein, belegt aber ohne API-Key-/Workspace-Aufschluesselung weiterhin nicht, welcher Prozess die Kosten erzeugte.
 - Erneute Live-Pruefung am 2026-09-12 um 19:51 UTC: Dienst weiter `active`, PID 43205, Start 06:10:25 UTC, `NRestarts=0`; kein zusaetzlicher Chefkoch-Prozess sichtbar. Das Lesekonto besitzt nur Inspektionsrechte fuer Chantal, nicht fuer Chefkochs Journal oder Sessions.
+- Live-Pruefung am 2026-09-13 um 07:27 UTC: weiterhin genau ein Prozess (`openclaw-gateway`, PID 43205), Dienst `active`, `NRestarts=0`. `gandalf-ro` hat weiterhin weder Journal- noch Session-Leserecht; `sudo -l` erlaubt nur Chantal-Inspektion.
 
 ## Ursache
 
@@ -32,3 +33,4 @@ Noch offen. Zu prüfen sind automatische Heartbeat-/Cron-Läufe, weitere Sitzung
 2. Chefkochs Journal und Session-Usage fuer den 2026-09-11 mit privilegiertem Lesezugang auswerten.
 3. Key-Fingerprint der aktiven Quellen prüfen, ohne den Schlüssel offenzulegen.
 4. Bis zur Klärung automatische kostenpflichtige Läufe und ein hartes Ausgabenlimit erwägen; Änderungen nur mit Sarahs Kenntnisnahme.
+5. Für eine verursachergenaue Analyse zeitlich begrenzten, ausschließlich lesenden Zugriff auf das Journal der Unit und `/home/cheko/.openclaw/agents/main/sessions/` gewähren. Dann Aufrufe des 2026-09-11 nach Uhrzeit, Session, Auslöser, Modell sowie Input-/Output-Tokens gruppieren und mit dem Anthropic-Usage-Export nach API-Key abgleichen.
