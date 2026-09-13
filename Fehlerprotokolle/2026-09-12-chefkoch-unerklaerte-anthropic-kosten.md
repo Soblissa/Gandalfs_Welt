@@ -7,6 +7,7 @@
 
 Sarah meldet einen Verbrauch von 100 US-Dollar, obwohl sie Chefkoch nicht benutzt hat.
 Am 2026-09-12 praezisierte sie: Allein am 2026-09-11 wurden 68 US-Dollar verbraucht.
+Ein Dashboard-Screenshot vom 2026-09-13 weist fuer September bis heute insgesamt 129,07 US-Dollar aus.
 
 ## Gesicherte Befunde
 
@@ -17,10 +18,13 @@ Am 2026-09-12 praezisierte sie: Allein am 2026-09-11 wurden 68 US-Dollar verbrau
 - Der nun bekannte Tageswert von 68 US-Dollar grenzt die Abrechnung auf den 2026-09-11 ein, belegt aber ohne API-Key-/Workspace-Aufschluesselung weiterhin nicht, welcher Prozess die Kosten erzeugte.
 - Erneute Live-Pruefung am 2026-09-12 um 19:51 UTC: Dienst weiter `active`, PID 43205, Start 06:10:25 UTC, `NRestarts=0`; kein zusaetzlicher Chefkoch-Prozess sichtbar. Das Lesekonto besitzt nur Inspektionsrechte fuer Chantal, nicht fuer Chefkochs Journal oder Sessions.
 - Live-Pruefung am 2026-09-13 um 07:27 UTC: weiterhin genau ein Prozess (`openclaw-gateway`, PID 43205), Dienst `active`, `NRestarts=0`. `gandalf-ro` hat weiterhin weder Journal- noch Session-Leserecht; `sudo -l` erlaubt nur Chantal-Inspektion.
+- Der Anthropic-Screenshot gruppiert nach Modell: Die gesamten 129,07 US-Dollar sind `Claude Opus 5` zugeordnet. Sichtbare Kosten fallen am 7., 8., 10., 11. und 12. September an; der groesste Ausschlag liegt am 11. September.
+- Das ist eine klare Abweichung von Chefkochs zuletzt dokumentiertem Sollmodell `Claude Sonnet 4.6`. Der Screenshot beweist Opus-Nutzung, ordnet sie aber noch keinem API-Key oder Prozess zu.
+- Live-Pruefung am 2026-09-13 um 07:32 UTC: weiterhin nur ein stabiler Chefkoch-Gateway-Prozess (PID 43205, `NRestarts=0`); Konfiguration und Sitzungen bleiben fuer `gandalf-ro` unlesbar.
 
 ## Ursache
 
-Noch offen. Zu prüfen sind automatische Heartbeat-/Cron-Läufe, weitere Sitzungen unter Chefkochs eigenem API-Key und eine mögliche Nutzung desselben Keys außerhalb Chefkochs.
+Noch offen. Gesichert ist nun, dass `Claude Opus 5` die Kosten erzeugte. Zu prüfen sind ein Opus-Modell-Override in Chefkochs Konfiguration/Sitzungen, automatische Heartbeat-/Cron-Läufe sowie eine mögliche Nutzung desselben Keys außerhalb Chefkochs.
 
 ## Fix / Backups
 
@@ -29,7 +33,7 @@ Noch offen. Zu prüfen sind automatische Heartbeat-/Cron-Läufe, weitere Sitzung
 
 ## Lernpunkte / offene Punkte
 
-1. Anthropic-Usage fuer den 2026-09-11 nach API-Key und Modell aufschluesseln und sichern.
+1. Anthropic-Usage fuer den 7. bis 12. September nach API-Key beziehungsweise Dienstkonto aufschluesseln und sichern; die Modellzuordnung `Claude Opus 5` ist bereits belegt.
 2. Chefkochs Journal und Session-Usage fuer den 2026-09-11 mit privilegiertem Lesezugang auswerten.
 3. Key-Fingerprint der aktiven Quellen prüfen, ohne den Schlüssel offenzulegen.
 4. Bis zur Klärung automatische kostenpflichtige Läufe und ein hartes Ausgabenlimit erwägen; Änderungen nur mit Sarahs Kenntnisnahme.
