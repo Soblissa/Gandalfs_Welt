@@ -31,6 +31,8 @@ Ein Dashboard-Screenshot vom 2026-09-13 weist fuer September bis heute insgesamt
 - Das Journal belegt automatische, verschachtelte Cron-Laeufe (`lane=cron-nested`) mit `anthropic/claude-opus-5`. Sie liefen stundenweise auch ohne sichtbare Nutzerinteraktion weiter.
 - Die aktive Konfiguration setzt `agents.entries.main.model.primary` ausdruecklich auf `anthropic/claude-opus-5`. Der aktive Job `heartbeat-main` laeuft alle 1.800.000 ms, also alle 30 Minuten, im Ziel `main` und erbt damit Opus 5.
 - Aus den Transport-Logs gezaehlte Anthropic-Aufrufe: 07.09. 60 (60 erfolgreich), 08.09. 102 (101 erfolgreich), 09.09. 28 (alle fehlgeschlagen), 10.09. 40 (19 erfolgreich), 11.09. 112 (alle erfolgreich), 12.09. 46 (38 erfolgreich), 13.09. bis 08:00 UTC 9 (alle fehlgeschlagen). Saemtliche 397 erfassten Starts verlangten Opus 5.
+- Slartis Hypothese einer Verstaerkung durch die Workspace-/Memory-Neuindizierung ist teilweise belegt: Am 11.09. um etwa 07:08-07:35 UTC trat ein dichter Zusatzblock von Opus-Aufrufen gemeinsam mit wiederholten `Memory reindex lock`-Meldungen auf. Die Vektorsuche selbst ist jedoch auf `nomic-embed-text` konfiguriert und war nicht der Anthropic-Verbraucher. Der Grundverbrauch kam bereits rund um die Uhr im 30-Minuten-Takt vom Heartbeat; die Neuindizierung beziehungsweise dadurch ausgeloeste Sitzungsarbeit verstaerkte ihn nur.
+- Im aktuellen Profil `cheko` ist weder in der Dienst-Environment noch in der aktiven Konfiguration eine OpenAI-Authentifizierung nachweisbar; die Modell-Allowlist und Fallback-Kette bestehen derzeit ausschliesslich aus Anthropic-Modellen.
 
 ## Ursache
 
@@ -47,3 +49,4 @@ Bestaetigt: Chefkochs Hauptagent war entgegen dem dokumentierten Sollmodell ausd
 2. Chefkochs Hauptmodell wieder auf das fachlich gewollte Sollmodell setzen und die lange Fallback-Kette bereinigen; nur nach Sarahs Kenntnisnahme.
 3. Anthropic-Ausgabenlimit und Alarmierung einrichten.
 4. Den dauerhaften Umfang des neuen Volladministrator-Kontos mit Sarah und Slarti festlegen; das Break-glass-Passwort bleibt ausschliesslich bei Slarti.
+5. Fuer eine harte Kostentrennung Claude nicht nur per Skill auswaehlen: Anthropic in ein getrenntes Profil ohne Heartbeat/Cron und mit isolierten Sitzungen legen; OpenAI fuer Hauptagent und Hausmeisterlaeufe verwenden. Providerseitiges Budget und Alarmierung bleiben die letzte Schranke.
