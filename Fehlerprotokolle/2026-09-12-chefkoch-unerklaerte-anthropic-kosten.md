@@ -24,10 +24,12 @@ Ein Dashboard-Screenshot vom 2026-09-13 weist fuer September bis heute insgesamt
 - Ein weiterer Screenshot vom 2026-09-13 um 07:36 UTC zeigt bei `Monat bis heute` und Gruppierung nach `Service-Account` keinerlei Daten (`0,00 USD`). Damit sind die zuvor sichtbaren Opus-Kosten keinem Service-Account zugeordnet. Das spricht dafuer, dass sie ueber einen normalen API-Key oder eine andere Organisations-/Workspace-Zuordnung liefen; es beweist noch nicht, dass Chefkoch der Verursacher ist.
 - Sarah bestaetigte um 07:40 UTC, dass die Nutzungsansicht im Gruppierungsmenue keine Option `API-Schluessel` anbietet. Die Zuordnung muss daher ueber den Download-Export oder die Anthropic-Admin-API erfolgen.
 - Der Download aus der nach Service-Account gruppierten Nullansicht war leer. Vor einem erneuten Export muss wieder nach `Modell` gruppiert und der kostenbehaftete Zeitraum eingestellt werden; bleibt die Schlüsselzuordnung aus, sind Anthropic-Admin-API oder Chefkochs lokale Logs erforderlich.
+- Der Screenshot vom 2026-09-13 um 07:43 UTC liefert die eindeutige Key-Zuordnung: Bei aktivem Filter `API-Schlüssel Chefkoch` erscheinen die gesamten Monatskosten von 129,07 USD. Damit ist Chefkochs API-Key als Abrechnungsquelle belegt; eine Nutzung dieses Keys durch Chefkochs Prozess oder durch eine andere Stelle mit demselben Key ist noch zu unterscheiden.
+- Die Gruppierung nach Token-Typ zeigt, dass fast alle Kosten aus `Prompt caching write (5m)` stammen; Input, Cache-Lesezugriffe und Output sind dagegen klein. Das spricht fuer wiederholte sehr grosse Prompt-/Kontext-Schreibvorgaenge, nicht fuer lange sichtbare Antworten.
 
 ## Ursache
 
-Noch offen. Gesichert ist nun, dass `Claude Opus 5` die Kosten erzeugte. Zu prüfen sind ein Opus-Modell-Override in Chefkochs Konfiguration/Sitzungen, automatische Heartbeat-/Cron-Läufe sowie eine mögliche Nutzung desselben Keys außerhalb Chefkochs.
+Noch offen. Gesichert ist nun, dass `Claude Opus 5` die Kosten ueber den API-Key `Chefkoch` erzeugte und der groesste Kostenanteil aus Prompt-Cache-Schreibvorgaengen stammt. Zu prüfen sind ein Opus-Modell-Override in Chefkochs Konfiguration/Sitzungen, automatische Heartbeat-/Cron-Läufe sowie eine mögliche Nutzung desselben Keys außerhalb Chefkochs.
 
 ## Fix / Backups
 
