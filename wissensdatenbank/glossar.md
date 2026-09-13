@@ -16,6 +16,7 @@ deines Browsers (Strg-F / Cmd-F) oder ueber die GitHub-Suchleiste.
 - [Botrepo](#botrepo)
 - [Gateway](#gateway)
 - [Gateway-Port](#gateway-port)
+- [Heartbeat](#heartbeat)
 - [Härten](#härten)
 - [Offene Modelle vs. lokale Modelle](#offene-modelle-vs-lokale-modelle)
 - [Open Weight](#open-weight)
@@ -219,6 +220,28 @@ Ohne stabile, kollisionsfreie Portvergabe koennten mehrere Agenten auf
 demselben Server nicht nebeneinander leben. Der Port ist die einzige
 technische Adresse, unter der Telegram (und Torsten) einen bestimmten
 Agenten von aussen erreichen.
+
+---
+
+## Heartbeat
+
+### In einem Satz
+
+Ein Heartbeat ist Chefkochs automatischer Kontrollgang - wie ein Hausmeister,
+der regelmaessig durchs Gebaeude geht und schaut, ob etwas zu erledigen ist,
+auch wenn Sarah ihn nicht gerufen hat.
+
+### Der technische Kern
+
+OpenClaw startet dabei in einem festen Zeitabstand selbststaendig einen
+Modellaufruf. Chefkochs Heartbeat lief alle 30 Minuten und benutzte seinen
+grossen Hauptchat als Kontext. Weil dafuer Claude Opus 5 eingestellt war,
+kostete jeder Kontrollgang Geld; am 11. September entstanden so und durch
+zusaetzliche automatische Arbeit 112 erfolgreiche Opus-Aufrufe.
+
+Ein Heartbeat ist nicht grundsaetzlich schlecht. Er sollte jedoch ein
+preiswertes Modell, einen kleinen isolierten Kontext und nur eine kurze,
+konkrete Checkliste verwenden. Ist nichts zu tun, endet er still.
 
 ---
 
