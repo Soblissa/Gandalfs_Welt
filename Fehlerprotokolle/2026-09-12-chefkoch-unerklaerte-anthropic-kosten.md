@@ -26,6 +26,7 @@ Ein Dashboard-Screenshot vom 2026-09-13 weist fuer September bis heute insgesamt
 - Der Download aus der nach Service-Account gruppierten Nullansicht war leer. Vor einem erneuten Export muss wieder nach `Modell` gruppiert und der kostenbehaftete Zeitraum eingestellt werden; bleibt die Schlüsselzuordnung aus, sind Anthropic-Admin-API oder Chefkochs lokale Logs erforderlich.
 - Der Screenshot vom 2026-09-13 um 07:43 UTC liefert die eindeutige Key-Zuordnung: Bei aktivem Filter `API-Schlüssel Chefkoch` erscheinen die gesamten Monatskosten von 129,07 USD. Damit ist Chefkochs API-Key als Abrechnungsquelle belegt; eine Nutzung dieses Keys durch Chefkochs Prozess oder durch eine andere Stelle mit demselben Key ist noch zu unterscheiden.
 - Die Gruppierung nach Token-Typ zeigt, dass fast alle Kosten aus `Prompt caching write (5m)` stammen; Input, Cache-Lesezugriffe und Output sind dagegen klein. Das spricht fuer wiederholte sehr grosse Prompt-/Kontext-Schreibvorgaenge, nicht fuer lange sichtbare Antworten.
+- Live-Pruefung am 2026-09-13 um 07:46 UTC: SSH als `gandalf-ro` funktioniert, doch `journalctl -u openclaw-gateway@cheko` liefert wegen fehlender Mitgliedschaft in `adm`/`systemd-journal` keine Eintraege; `/home/cheko/.openclaw/agents/main/sessions/` bleibt mit `Permission denied` gesperrt. Direkter Root-SSH ist mit dem vorhandenen Schluessel nicht zugelassen.
 
 ## Ursache
 
@@ -43,3 +44,4 @@ Noch offen. Gesichert ist nun, dass `Claude Opus 5` die Kosten ueber den API-Key
 3. Key-Fingerprint der aktiven Quellen prüfen, ohne den Schlüssel offenzulegen.
 4. Bis zur Klärung automatische kostenpflichtige Läufe und ein hartes Ausgabenlimit erwägen; Änderungen nur mit Sarahs Kenntnisnahme.
 5. Für eine verursachergenaue Analyse zeitlich begrenzten, ausschließlich lesenden Zugriff auf das Journal der Unit und `/home/cheko/.openclaw/agents/main/sessions/` gewähren. Dann Aufrufe des 2026-09-11 nach Uhrzeit, Session, Auslöser, Modell sowie Input-/Output-Tokens gruppieren und mit dem Anthropic-Usage-Export nach API-Key abgleichen.
+6. Der bevorzugte Weg ist ein root-eigenes, eng begrenztes Inspektionsskript mit `sudoers`-Freigabe fuer `gandalf-ro`; keine pauschale Root- oder dauerhafte Gruppenberechtigung vergeben.
