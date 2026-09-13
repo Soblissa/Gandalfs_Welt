@@ -27,10 +27,14 @@ Ein Dashboard-Screenshot vom 2026-09-13 weist fuer September bis heute insgesamt
 - Der Screenshot vom 2026-09-13 um 07:43 UTC liefert die eindeutige Key-Zuordnung: Bei aktivem Filter `API-Schlüssel Chefkoch` erscheinen die gesamten Monatskosten von 129,07 USD. Damit ist Chefkochs API-Key als Abrechnungsquelle belegt; eine Nutzung dieses Keys durch Chefkochs Prozess oder durch eine andere Stelle mit demselben Key ist noch zu unterscheiden.
 - Die Gruppierung nach Token-Typ zeigt, dass fast alle Kosten aus `Prompt caching write (5m)` stammen; Input, Cache-Lesezugriffe und Output sind dagegen klein. Das spricht fuer wiederholte sehr grosse Prompt-/Kontext-Schreibvorgaenge, nicht fuer lange sichtbare Antworten.
 - Live-Pruefung am 2026-09-13 um 07:46 UTC: SSH als `gandalf-ro` funktioniert, doch `journalctl -u openclaw-gateway@cheko` liefert wegen fehlender Mitgliedschaft in `adm`/`systemd-journal` keine Eintraege; `/home/cheko/.openclaw/agents/main/sessions/` bleibt mit `Permission denied` gesperrt. Direkter Root-SSH ist mit dem vorhandenen Schluessel nicht zugelassen.
+- Nach Einrichtung des schluesselbasierten Kontos `gandalfadmin` am 2026-09-13 funktionierten um 10:00 UTC sowohl SSH als auch `sudo -n`; ein Passwort wurde nicht gespeichert oder uebermittelt.
+- Das Journal belegt automatische, verschachtelte Cron-Laeufe (`lane=cron-nested`) mit `anthropic/claude-opus-5`. Sie liefen stundenweise auch ohne sichtbare Nutzerinteraktion weiter.
+- Die aktive Konfiguration setzt `agents.entries.main.model.primary` ausdruecklich auf `anthropic/claude-opus-5`. Der aktive Job `heartbeat-main` laeuft alle 1.800.000 ms, also alle 30 Minuten, im Ziel `main` und erbt damit Opus 5.
+- Aus den Transport-Logs gezaehlte Anthropic-Aufrufe: 07.09. 60 (60 erfolgreich), 08.09. 102 (101 erfolgreich), 09.09. 28 (alle fehlgeschlagen), 10.09. 40 (19 erfolgreich), 11.09. 112 (alle erfolgreich), 12.09. 46 (38 erfolgreich), 13.09. bis 08:00 UTC 9 (alle fehlgeschlagen). Saemtliche 397 erfassten Starts verlangten Opus 5.
 
 ## Ursache
 
-Noch offen. Gesichert ist nun, dass `Claude Opus 5` die Kosten ueber den API-Key `Chefkoch` erzeugte und der groesste Kostenanteil aus Prompt-Cache-Schreibvorgaengen stammt. Zu prüfen sind ein Opus-Modell-Override in Chefkochs Konfiguration/Sitzungen, automatische Heartbeat-/Cron-Läufe sowie eine mögliche Nutzung desselben Keys außerhalb Chefkochs.
+Bestaetigt: Chefkochs Hauptagent war entgegen dem dokumentierten Sollmodell ausdruecklich auf `Claude Opus 5` konfiguriert. Der aktive 30-Minuten-Heartbeat loeste im Hauptkontext automatische verschachtelte Cron-Laeufe aus. Diese wiederholten Opus-Aufrufe schrieben den grossen Hauptkontext jeweils in den 5-Minuten-Prompt-Cache und verursachten den Verbrauch ohne sichtbare Chat-Nutzung. Die zeitliche Dichte und die 112 erfolgreichen Aufrufe am teuersten Tag 11.09. stimmen mit dem Anthropic-Dashboard ueberein.
 
 ## Fix / Backups
 
@@ -39,9 +43,7 @@ Noch offen. Gesichert ist nun, dass `Claude Opus 5` die Kosten ueber den API-Key
 
 ## Lernpunkte / offene Punkte
 
-1. Anthropic-Usage fuer den 7. bis 12. September nach API-Key beziehungsweise Dienstkonto aufschluesseln und sichern; die Modellzuordnung `Claude Opus 5` ist bereits belegt.
-2. Chefkochs Journal und Session-Usage fuer den 2026-09-11 mit privilegiertem Lesezugang auswerten.
-3. Key-Fingerprint der aktiven Quellen prüfen, ohne den Schlüssel offenzulegen.
-4. Bis zur Klärung automatische kostenpflichtige Läufe und ein hartes Ausgabenlimit erwägen; Änderungen nur mit Sarahs Kenntnisnahme.
-5. Für eine verursachergenaue Analyse zeitlich begrenzten, ausschließlich lesenden Zugriff auf das Journal der Unit und `/home/cheko/.openclaw/agents/main/sessions/` gewähren. Dann Aufrufe des 2026-09-11 nach Uhrzeit, Session, Auslöser, Modell sowie Input-/Output-Tokens gruppieren und mit dem Anthropic-Usage-Export nach API-Key abgleichen.
-6. Der bevorzugte Weg ist ein root-eigenes, eng begrenztes Inspektionsskript mit `sudoers`-Freigabe fuer `gandalf-ro`; keine pauschale Root- oder dauerhafte Gruppenberechtigung vergeben.
+1. Vor erneutem Aufladen des Anthropic-Guthabens den Heartbeat deaktivieren oder auf ein deutlich guenstigeres Modell mit kleinem, isoliertem Kontext umstellen; nur nach Sarahs Kenntnisnahme.
+2. Chefkochs Hauptmodell wieder auf das fachlich gewollte Sollmodell setzen und die lange Fallback-Kette bereinigen; nur nach Sarahs Kenntnisnahme.
+3. Anthropic-Ausgabenlimit und Alarmierung einrichten.
+4. Den dauerhaften Umfang des neuen Volladministrator-Kontos mit Sarah und Slarti festlegen; das Break-glass-Passwort bleibt ausschliesslich bei Slarti.
