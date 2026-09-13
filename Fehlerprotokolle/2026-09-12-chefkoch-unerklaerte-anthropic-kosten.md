@@ -22,6 +22,7 @@ Ein Dashboard-Screenshot vom 2026-09-13 weist fuer September bis heute insgesamt
 - Das ist eine klare Abweichung von Chefkochs zuletzt dokumentiertem Sollmodell `Claude Sonnet 4.6`. Der Screenshot beweist Opus-Nutzung, ordnet sie aber noch keinem API-Key oder Prozess zu.
 - Live-Pruefung am 2026-09-13 um 07:32 UTC: weiterhin nur ein stabiler Chefkoch-Gateway-Prozess (PID 43205, `NRestarts=0`); Konfiguration und Sitzungen bleiben fuer `gandalf-ro` unlesbar.
 - Ein weiterer Screenshot vom 2026-09-13 um 07:36 UTC zeigt bei `Monat bis heute` und Gruppierung nach `Service-Account` keinerlei Daten (`0,00 USD`). Damit sind die zuvor sichtbaren Opus-Kosten keinem Service-Account zugeordnet. Das spricht dafuer, dass sie ueber einen normalen API-Key oder eine andere Organisations-/Workspace-Zuordnung liefen; es beweist noch nicht, dass Chefkoch der Verursacher ist.
+- Sarah bestaetigte um 07:40 UTC, dass die Nutzungsansicht im Gruppierungsmenue keine Option `API-Schluessel` anbietet. Die Zuordnung muss daher ueber den Download-Export oder die Anthropic-Admin-API erfolgen.
 
 ## Ursache
 
