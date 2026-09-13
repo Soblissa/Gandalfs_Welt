@@ -28,6 +28,7 @@ Zentrale Ablage fuer dokumentierte Stoerungen an Sarahs und dtos Infrastruktur.
 
 | Datum | System | Titel | Datei |
 |---|---|---|---|
+| 2026-09-13 | Cheko (Server 1) | `doctor --fix` scheitert an extern verwalteter Gateway-System-Unit | [2026-09-13-cheko-doctor-service-ownership.md](2026-09-13-cheko-doctor-service-ownership.md) |
 | 2026-09-13 | Cheko (Server 1) | Telegram-Befehl `/dashboard` nach Update doppelt registriert; Gateway bleibt aktiv | [2026-09-13-cheko-telegram-dashboard-befehlskonflikt.md](2026-09-13-cheko-telegram-dashboard-befehlskonflikt.md) |
 | 2026-09-12 | Chefkoch (Server 1, `cheko`) | 129,07 USD ohne bewusste Nutzung; vollständig Claude Opus 5 zugeordnet, verursachender Key/Prozess noch offen | [2026-09-12-chefkoch-unerklaerte-anthropic-kosten.md](2026-09-12-chefkoch-unerklaerte-anthropic-kosten.md) |
 | 2026-09-09 | Server 1 (`srv1492182`), OpenClaw-Agent | Anthropic-Guthaben leer; alle Fallbacks teilen dasselbe gesperrte Auth-Profil | [2026-09-09-s1-anthropic-guthaben-und-fallback.md](2026-09-09-s1-anthropic-guthaben-und-fallback.md) |
