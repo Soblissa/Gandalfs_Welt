@@ -21,6 +21,7 @@ Ein Dashboard-Screenshot vom 2026-09-13 weist fuer September bis heute insgesamt
 - Der Anthropic-Screenshot gruppiert nach Modell: Die gesamten 129,07 US-Dollar sind `Claude Opus 5` zugeordnet. Sichtbare Kosten fallen am 7., 8., 10., 11. und 12. September an; der groesste Ausschlag liegt am 11. September.
 - Das ist eine klare Abweichung von Chefkochs zuletzt dokumentiertem Sollmodell `Claude Sonnet 4.6`. Der Screenshot beweist Opus-Nutzung, ordnet sie aber noch keinem API-Key oder Prozess zu.
 - Live-Pruefung am 2026-09-13 um 07:32 UTC: weiterhin nur ein stabiler Chefkoch-Gateway-Prozess (PID 43205, `NRestarts=0`); Konfiguration und Sitzungen bleiben fuer `gandalf-ro` unlesbar.
+- Ein weiterer Screenshot vom 2026-09-13 um 07:36 UTC zeigt bei `Monat bis heute` und Gruppierung nach `Service-Account` keinerlei Daten (`0,00 USD`). Damit sind die zuvor sichtbaren Opus-Kosten keinem Service-Account zugeordnet. Das spricht dafuer, dass sie ueber einen normalen API-Key oder eine andere Organisations-/Workspace-Zuordnung liefen; es beweist noch nicht, dass Chefkoch der Verursacher ist.
 
 ## Ursache
 
