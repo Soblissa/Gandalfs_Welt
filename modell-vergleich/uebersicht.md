@@ -1,6 +1,6 @@
 # Modell-Uebersicht
 
-**Stand:** 2026-09-09 (08:18 UTC). Preise in **US-Dollar je 1 Million
+**Stand:** 2026-09-16 (08:09 UTC). Preise in **US-Dollar je 1 Million
 Token** fuer Standard-Echtzeitverarbeitung, angegeben als **Input / Output**.
 Cache-, Batch-, Flex-, regionale und Langkontext-Aufschlaege sind nicht
 eingerechnet. `—` bedeutet: kein direkter Tokenpreis des Herstellers.
@@ -82,9 +82,9 @@ Peak gilt laut Hersteller Montag bis Freitag 01:00–04:00 und 06:00–10:00 UTC
 
 | Modell | Peak (Input/Output) · Off-Peak (Input/Output) | Status | Lokal | Einordnung |
 |---|---:|---|---|---|
-| DeepSeek V4 Flash | 0,44 / 1,32 · 0,22 / 0,66 | Aktuell | Nein* | 1M Kontext, allgemeines schnelles Modell |
-| DeepSeek V4 Pro | 1,32 / 3,96 · 0,66 / 1,98 | Aktuell | Nein* | Hoehere Qualitaetsklasse, 1M Kontext |
-| DeepSeek V4 Flash Vision Exp | 0,44 / 1,32 · 0,22 / 0,66 | Experimentell | Nein* | Multimodale Vorschau |
+| DeepSeek V4.1 Flash (`deepseek-flash`) | 0,30 / 1,20 · 0,15 / 0,60 | Aktuell | Nein* | 1M Kontext, Vision; Cache-Treffer 0,006 · 0,003 |
+| DeepSeek V4 Pro (`deepseek-v4-pro`) | 1,32 / 3,96 · 0,66 / 1,98 | Aktuell | Nein* | 1M Kontext; API-Betrieb nach dem 14.09.2026 fortgesetzt |
+| DeepSeek V4 Flash / V4 Flash Vision Exp | — | **veraltet/abgekuendigt** | Nein* | Modellversionen retirert; alte API-Namen liefern nun V4.1 Flash zum neuen Preis |
 | DeepSeek V3.2 / R2 / V3 | — | **Vorgaenger** | Modellabhaengig | Nicht mehr auf der aktuellen API-Preisseite; alte Schaetzpreise entfernt |
 
 \* Die Tabelle bewertet die angebotene API-Version; fuer Selbstbetrieb
@@ -120,7 +120,7 @@ Chinesische Anbieter werden gleichrangig nach Eignung, Preis, Offenheit und
 Betriebsrisiko beurteilt. Herkunft ersetzt weder technische Pruefung noch
 Datenschutzpruefung.
 
-## Primaerquellen (am 2026-09-09 abgerufen)
+## Primaerquellen (am 2026-09-16 abgerufen)
 
 - [Anthropic: Claude API pricing](https://platform.claude.com/docs/en/about-claude/pricing)
 - [OpenAI: API pricing](https://developers.openai.com/api/docs/pricing)
