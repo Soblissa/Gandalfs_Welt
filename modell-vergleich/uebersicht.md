@@ -1,6 +1,6 @@
 # Modell-Uebersicht
 
-**Stand:** 2026-09-16 (08:09 UTC). Preise in **US-Dollar je 1 Million
+**Stand:** 2026-09-16 (08:16 UTC). Preise in **US-Dollar je 1 Million
 Token** fuer Standard-Echtzeitverarbeitung, angegeben als **Input / Output**.
 Cache-, Batch-, Flex-, regionale und Langkontext-Aufschlaege sind nicht
 eingerechnet. `—` bedeutet: kein direkter Tokenpreis des Herstellers.
@@ -62,14 +62,15 @@ separater offener Checkpoint ist nicht automatisch dieselbe API-Version.
 
 ## Alibaba Cloud / Qwen (China)
 
-Alibaba staffelt Preise nach Region und Eingabelaenge. Die Tabelle verwendet
-die internationale Region Singapur und die jeweils erste Eingabestufe.
+Alibaba staffelt Preise nach Bereitstellungsraum und Eingabelaenge. Die
+Tabelle verwendet den internationalen **Global**-Endpunkt und die jeweils
+erste Eingabestufe; Aktionspreise der Konsole sind nicht eingerechnet.
 
 | Modell | Preis | Status | Lokal | Einordnung |
 |---|---:|---|---|---|
-| Qwen3.8-Max | 2 / 6 | Aktuell | Nein | Neues geschlossenes API-Flaggschiff, bis 1M Kontext |
-| Qwen3.7-Max | 2,50 / 7,50 | Vorgaenger | Nein | Durch 3.8-Max ueberholt |
-| Qwen3-Max | 1,20 / 6 (bis 32k) | Vorgaenger | Nein | **Korrektur:** API-Max ist nicht Open-Weight; Preis steigt mit Kontext |
+| Qwen3.8-Max | 1,65 / 4,951 | Aktuell | Nein | Neues geschlossenes API-Flaggschiff, bis 1M Kontext |
+| Qwen3.7-Max | 1,65 / 4,951 | Vorgaenger | Nein | Global-Preis; durch 3.8-Max ueberholt |
+| Qwen3-Max | 0,359 / 1,434 (bis 32k) | Vorgaenger | Nein | API-Max ist nicht Open-Weight; Preis steigt ab 32k und 128k Kontext |
 | Qwen3-2507 235B-A22B | Selbstbetrieb | Aktuell offen | Ja | Open-Weight-Flaggschiff; 256k, optional bis 1M Kontext |
 | Qwen3-2507 30B-A3B / 4B | Selbstbetrieb | Aktuell offen | Ja | Workstation- bzw. kompakte Klasse |
 | Qwen3-2504 | Selbstbetrieb | **Vorgaenger** | Ja | Durch die 2507-Checkpoints ersetzt |
