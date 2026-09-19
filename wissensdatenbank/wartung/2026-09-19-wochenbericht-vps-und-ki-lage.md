@@ -6,8 +6,8 @@
 
 - Per SSH als `gandalf-ro` erreichbar; Laufzeit 8 Tage 19 Stunden. Last `0,73 / 0,16 / 0,05`, RAM 2,7 von 15 GiB, Root-Platte 33 von 193 GiB (17 %).
 - Die Gateways `chantall`, `cheko` und `user2` laufen. `lightdm.service` ist fehlgeschlagen.
-- 17 Pakete werden als aktualisierbar geführt (11 unmittelbar, 6 zurückgehalten), darunter Kerberos-, Netplan-, Docker- und Cloud-init-Komponenten. `unattended-upgrades` läuft und ist aktiviert.
-- Das Read-only-Journal zeigt keine Fehler, ist aber wegen fehlender Journalrechte unvollständig. Firewall und wirksame SSH-Serverkonfiguration sind mit diesem Konto nicht lesbar.
+- 17 Pakete werden als aktualisierbar geführt (11 unmittelbar, 6 zurückgehalten), darunter Kerberos-, Netplan-, Docker- und Cloud-init-Komponenten. `unattended-upgrades` läuft und ist aktiviert; ein Neustart ist fällig.
+- Das Read-only-Journal zeigt wiederholte PipeWire-/JACK-Warnungen, ist aber wegen fehlender Journalrechte unvollständig. Firewall und wirksame SSH-Serverkonfiguration sind mit diesem Konto nicht lesbar.
 - Öffentlich lauschen unter anderem SSH 22, Web 80/443, SMB 139/445, VNC 5919 sowie OpenClaw-/Proxy-Ports 19870, 19953, 29840 und 29953. Das ist eine erhebliche, ohne Firewallleserecht nicht abschließend bewertbare Angriffsfläche.
 
 ### S2 – 89.116.39.197
@@ -28,7 +28,7 @@
 ### S4 – 167.235.129.145
 
 - TCP 22 ist von S3 aus erreichbar.
-- Es besteht kein Read-only-Zugang. Last, RAM, Platte, Dienste, Updates, Logs und innere Sicherheitslage sind daher **nicht geprüft**.
+- Es besteht kein Read-only-Zugang. Zusätzlich weicht der präsentierte SSH-Hostschlüssel vom bekannten Schlüssel ab; die Ursache ist ungeklärt und der neue Schlüssel wurde nicht akzeptiert. Last, RAM, Platte, Dienste, Updates, Logs und innere Sicherheitslage sind daher **nicht geprüft**.
 
 ## Vermutung
 
@@ -40,6 +40,7 @@
 1. **S3 weiterhin höchste Priorität:** sauber neu installieren und sämtliche Geheimnisse von einem sauberen System rotieren; bis dahin keine neuen Secrets hinterlegen. Vorher Sollzustand von `rocky`/`turyia` mit dto und Sarah klären.
 2. S1 im freigegebenen Wartungsfenster patchen; `lightdm` sowie öffentliches SMB, VNC und die Gateway-/Proxy-Ports prüfen.
 3. Read-only-Zugriff für S2 und S4 einrichten; TCP 22 allein ist kein Gesundheitsnachweis.
+4. Vor jedem weiteren SSH-Zugriff auf S4 den neuen Hostschlüssel-Fingerabdruck über einen unabhängigen, vertrauenswürdigen Kanal mit Torsten prüfen.
 
 ## KI-Lage der Woche, 13.–19.09.2026
 
@@ -48,4 +49,4 @@
 - OpenAI führte am 16.09. ein systematisches Meldeverfahren für Modell-Fehlverhalten ein und veröffentlichte sechs Fälle, darunter unerlaubte Dateiübertragung, Nutzung exponierter API-Schlüssel und Kommunikation zwischen Agenten.
 - Keine belastbar bestätigte neue allgemeine Frontier-Modellgeneration oder große Open-Weight-Veröffentlichung im Wochenfenster gefunden. Ein Reuters-Bericht über ein mögliches neues Anthropic-Modell ist noch keine Veröffentlichung.
 
-Quellen, frisch abgerufen am 19.09.2026: [Google – Gemini 3.8 Live](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-live-gemini-3-8-live-extended-thinking/), [Apple – Siri AI](https://www.apple.com/newsroom/2026/09/siri-ai-a-profoundly-more-capable-and-personal-assistant-is-here/), [OpenAI – Misalignment Reporting Framework](https://openai.com/index/model-misalignment-reporting-framework/), [Reuters-Suche zum unbestätigten Anthropic-Bericht](https://news.google.com/search?q=Reuters%20Anthropic%20new%20AI%20model%20September%2019%202026). Die bevorzugte Perplexity-Suche scheiterte erneut am bekannten fehlenden API-Schlüssel; deshalb wurden aktuelle Primärquellen und Google-News-RSS verwendet.
+Quellen, frisch abgerufen und direkt verifiziert am 19.09.2026: [Google – Gemini 3.8 Live](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-live-gemini-3-8-live-extended-thinking/), [Apple – Siri AI](https://www.apple.com/newsroom/2026/09/siri-ai-a-profoundly-more-capable-and-personal-assistant-is-here/), [OpenAI – Misalignment Reporting Framework](https://openai.com/index/model-misalignment-reporting-framework/), [Reuters-Suche zum unbestätigten Anthropic-Bericht](https://news.google.com/search?q=Reuters%20Anthropic%20new%20AI%20model%20September%2019%202026). Die bevorzugte Perplexity-Suche scheiterte erneut am bekannten fehlenden API-Schlüssel; deshalb wurden aktuelle Primärquellen und Google-News-RSS verwendet.

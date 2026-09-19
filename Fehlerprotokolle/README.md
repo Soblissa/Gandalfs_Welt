@@ -28,6 +28,7 @@ Zentrale Ablage fuer dokumentierte Stoerungen an Sarahs und dtos Infrastruktur.
 
 | Datum | System | Titel | Datei |
 |---|---|---|---|
+| 2026-09-19 | S4 (167.235.129.145) | SSH-Hostschlüssel weicht vom bekannten Schlüssel ab; Ursache ungeklärt | [2026-09-19-s4-ssh-hostschluessel-geaendert.md](2026-09-19-s4-ssh-hostschluessel-geaendert.md) |
 | 2026-09-15 | Gandalf / lokaler Workspace | Collabora-Vorlagen zunächst aus falschem Arbeitsverzeichnis geprüft | [2026-09-15-gandalf-vorlagen-verifikation-relativpfad.md](2026-09-15-gandalf-vorlagen-verifikation-relativpfad.md) |
 | 2026-09-13 | Cheko (Server 1) | `doctor --fix` scheitert an extern verwalteter Gateway-System-Unit | [2026-09-13-cheko-doctor-service-ownership.md](2026-09-13-cheko-doctor-service-ownership.md) |
 | 2026-09-13 | Cheko (Server 1) | Telegram-Befehl `/dashboard` nach Update doppelt registriert; Gateway bleibt aktiv | [2026-09-13-cheko-telegram-dashboard-befehlskonflikt.md](2026-09-13-cheko-telegram-dashboard-befehlskonflikt.md) |
