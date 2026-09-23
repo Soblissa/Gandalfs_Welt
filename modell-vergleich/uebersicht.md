@@ -1,6 +1,6 @@
 # Modell-Uebersicht
 
-**Stand:** 2026-09-16 (08:16 UTC). Preise in **US-Dollar je 1 Million
+**Stand:** 2026-09-23 (08:07 UTC). Preise in **US-Dollar je 1 Million
 Token** fuer Standard-Echtzeitverarbeitung, angegeben als **Input / Output**.
 Cache-, Batch-, Flex-, regionale und Langkontext-Aufschlaege sind nicht
 eingerechnet. `—` bedeutet: kein direkter Tokenpreis des Herstellers.
@@ -16,10 +16,11 @@ neue Integrationen einplanen.
 | Claude Fable 5.1 | 10 / 50 | Aktuell | Nein | Teure Spezialklasse; Cache-Treffer 0,25 |
 | Claude Mythos 5.1 | 10 / 50 | Aktuell, begrenzt verfuegbar | Nein | Spezialmodell mit eingeschraenktem Zugang |
 | Claude Fable 5 / Mythos 5 | 10 / 50 | Vorgaenger | Nein | Gleicher Grundpreis, aber Cache-Treffer 1 statt 0,25; Mythos nur begrenzt verfuegbar |
-| Claude Opus 5 | 5 / 25 | Aktuell | Nein | Spitzenmodell fuer schwierige Agenten- und Reasoning-Aufgaben |
+| Claude Opus 5.5 | 4 / 20 | Aktuell | Nein | Neues Spitzenmodell; Cache-Treffer 0,20 |
+| Claude Opus 5 | 5 / 25 | **Vorgaenger** | Nein | Durch Opus 5.5 guenstiger und leistungsseitig abgeloest |
 | Claude Sonnet 5 | 2 / 10 | Aktuell | Nein | Preis-Leistungs-Standard; Einfuehrungspreis wurde dauerhaft gemacht |
 | Claude Haiku 4.5 | 1 / 5 | Aktuell | Nein | Schnelle, guenstige Klasse |
-| Claude Opus 4.6–4.8 / Sonnet 4.6 | 5 / 25 bzw. 3 / 15 | Vorgaenger | Nein | Weiter nutzbar; nicht mehr Hauptgeneration |
+| Claude Opus 4.5–4.8 / Sonnet 4.5–4.6 | 5 / 25 bzw. 3 / 15 | Vorgaenger | Nein | Weiter nutzbar; nicht mehr Hauptgeneration |
 | Claude Opus 4/4.1, Sonnet 4, Haiku 3.5 | 15 / 75, 3 / 15, 0,80 / 4 | **veraltet/abgekuendigt** | Nein | Bei Anthropic retirert; teils noch ueber Cloudpartner |
 
 ## OpenAI (USA)
@@ -27,9 +28,9 @@ neue Integrationen einplanen.
 | Modell | Preis | Status | Lokal | Einordnung |
 |---|---:|---|---|---|
 | GPT-6 Astra | 10 / 50 | Aktuell | Nein | Neues Spitzenmodell; Langkontext 20 / 75 |
-| GPT-5.6 Sol | 4 / 20 | Aktuell, Aktionspreis | Nein | Starkes Hauptmodell; Langkontext 8 / 30 |
-| GPT-5.6 Terra | 2 / 12 | Aktuell | Nein | Mittlere Preis-/Leistungsklasse |
-| GPT-5.6 Luna | 0,20 / 1,20 | Aktuell | Nein | Schnelle Massenverarbeitung |
+| GPT-6 Sol | 2 / 10 | Aktuell | Nein | Neues Standardmodell; Langkontext 4 / 15 |
+| GPT-6 Luna | 0,10 / 0,50 | Aktuell | Nein | Neue Niedrigpreisklasse; Langkontext 0,20 / 0,75 |
+| GPT-5.6 Sol / Terra / Luna | 4 / 20; 2 / 12; 0,20 / 1,20 | **Vorgaenger** | Nein | Sol-Aktionspreis mindestens bis 21.11.2026; durch GPT-6-Familie ueberholt |
 | GPT-5.5 / GPT-5.5 Pro | 5 / 30 bzw. 30 / 180 | Vorgaenger | Nein | Weiter teuer; durch 5.6/6 ueberholt |
 | GPT-5.4 / mini / nano | 2,50 / 15; 0,75 / 4,50; 0,20 / 1,25 | Vorgaenger | Nein | Weiter gelistet, aber durch 5.6 ueberholt |
 | GPT-5 mini / nano | 0,25 / 2 bzw. 0,05 / 0,40 | Vorgaenger, weiter sinnvoll | Nein | Bewaehrte Niedrigpreisklasse |
@@ -110,10 +111,10 @@ nicht als Meta-Preis dargestellt.
 
 | Bedarf | Erste Wahl aus dieser Preispruefung |
 |---|---|
-| ausgewogener geschlossener Standardagent | Claude Sonnet 5 |
-| schwierigste Aufgaben, Preis zweitrangig | GPT-6 Astra, Claude Opus 5 |
-| guenstige Massenverarbeitung | Gemini 2.5 Flash-Lite, GPT-5.6 Luna, DeepSeek V4 Flash |
-| Coding | Kimi K2.7 Code, Claude Sonnet 5, GPT-5.6 Sol |
+| ausgewogener geschlossener Standardagent | Claude Sonnet 5, GPT-6 Sol |
+| schwierigste Aufgaben, Preis zweitrangig | GPT-6 Astra, Claude Opus 5.5 |
+| guenstige Massenverarbeitung | GPT-6 Luna, Gemini 2.5 Flash-Lite, DeepSeek V4.1 Flash |
+| Coding | Kimi K2.7 Code, Claude Sonnet 5, GPT-6 Sol |
 | sehr langer Kontext | Kimi K3, Gemini, DeepSeek V4; lokal Llama 4 Scout |
 | lokal und kontrollierbar | Qwen3-2507, Llama 4, Gemma 3, gpt-oss |
 
@@ -121,7 +122,7 @@ Chinesische Anbieter werden gleichrangig nach Eignung, Preis, Offenheit und
 Betriebsrisiko beurteilt. Herkunft ersetzt weder technische Pruefung noch
 Datenschutzpruefung.
 
-## Primaerquellen (am 2026-09-16 abgerufen)
+## Primaerquellen (am 2026-09-23 abgerufen)
 
 - [Anthropic: Claude API pricing](https://platform.claude.com/docs/en/about-claude/pricing)
 - [OpenAI: API pricing](https://developers.openai.com/api/docs/pricing)
