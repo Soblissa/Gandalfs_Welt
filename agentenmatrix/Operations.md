@@ -23,9 +23,9 @@ ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOZHQ15CXOe497oP4U95ux/UtSCZNsMkAIPOGAxHLTvp
 - `sebastian` → **Bernd**
   - Telegram-Bot-Token: `8728408363...s-dtJI`
   - Allowlist: `6171498156` (dto/Soblissa), `8728863315`, `6794537024` (Slarti)
-- `user1` → **Chefkoch (ILA-Hauptagent)**, Bot `@ila_chefkoch_bot`
+- `cheko` → **Chefkoch (ILA-Hauptagent)**, Bot `@ila_chefkoch_bot`
   - Token: `8697655942...H76Qkk`
-  - Allowlist: `6171498156`, `6794537024`, `8233442182`
+  - Allowlist: `6171498156` (Sarah), `6794537024` (Torsten), `8728863315` (Sebastian)
 - `user2` → **Franks Klaus**, Bot `@Franks_klaus_bot`
   - Token: `8259020854...B2fFqw`
   - Allowlist: `6171498156`, `6794537024`

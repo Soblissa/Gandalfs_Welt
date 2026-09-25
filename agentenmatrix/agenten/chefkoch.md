@@ -15,7 +15,7 @@ Kultusministerium.
 | Gateway-Port | 19840 |
 | VNC | nicht eingerichtet |
 | Telegram-Bot | `8697655942:...` |
-| dmPolicy | `allowlist` (Sarah, Silke) |
+| dmPolicy | `allowlist` (Sarah, Torsten, Sebastian) |
 | Workspace | `/home/user1/.openclaw/workspace_hauptagent` |
 
 ## Skills / Faehigkeiten
