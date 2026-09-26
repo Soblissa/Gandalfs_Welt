@@ -1,13 +1,13 @@
-# Wochenbericht VPS und KI-Lage – 26.09.2026, 06:01–06:04 UTC
+# Wochenbericht VPS und KI-Lage – 26.09.2026, 06:05–06:07 UTC
 
 ## Fakten
 
 ### S1 – 147.93.120.51
 
-- Per SSH als `gandalf-ro` erreichbar; Ubuntu 24.04.5 LTS, Laufzeit 15 Tage 19 Stunden. Last `0,12 / 0,06 / 0,01`, RAM 2,5 von 15 GiB, Root-Platte 33 von 193 GiB (17 %).
+- Per SSH als `gandalf-ro` erreichbar; Ubuntu 24.04.5 LTS, Laufzeit 15 Tage 19 Stunden. Last `0,00 / 0,04 / 0,00`, RAM 2,5 von 15 GiB, Root-Platte 33 von 193 GiB (17 %).
 - SSH sowie die OpenClaw-Gateways `chantall`, `cheko` und `user2` laufen. `lightdm.service` ist fehlgeschlagen.
-- 23 Pakete sind aktualisierbar, darunter sechs aus Security-Repositories; ein Neustart ist erforderlich. `unattended-upgrades` ist aktiv und aktiviert.
-- Im einsehbaren Wochenjournal erscheinen fünf JACK/DBus-Warnungen. Die Journal- und Firewall-Sicht des Read-only-Kontos ist eingeschränkt.
+- 35 Pakete sind aktualisierbar, darunter sechs aus Security-Repositories; ein Neustart ist erforderlich. `unattended-upgrades` ist aktiv und aktiviert.
+- Im einsehbaren Wochenjournal erscheinen sechs JACK/DBus-Warnungen. Die Journal- und Firewall-Sicht des Read-only-Kontos ist eingeschränkt.
 - Öffentlich lauschen unter anderem SSH 22, Web 80/443, SMB 139/445, VNC 5919 sowie OpenClaw-/Proxy-Ports 19870, 19953, 29840 und 29953. Ohne lesbare Firewallregeln ist die tatsächliche Erreichbarkeit nicht abschließend bewertbar.
 
 ### S2 – 89.116.39.197
@@ -17,7 +17,7 @@
 
 ### S3 – lokal, 187.124.191.206
 
-- Erreichbar; Debian 13, Laufzeit 19 Tage. Last `2,30 / 0,85 / 0,30`, RAM 3,2 von 15 GiB, Root-Platte 40 von 197 GiB (21 %). Keine fehlgeschlagenen Units.
+- Erreichbar; Debian 13, Laufzeit 19 Tage. Last `0,76 / 0,97 / 0,50`, RAM 3,2 von 15 GiB, Root-Platte 40 von 197 GiB (21 %). Keine fehlgeschlagenen Units.
 - SSH, Docker sowie die Gateways `gandalf`, `konfuzius` und `turyia` laufen. `unattended-upgrades` ist aktiv und aktiviert.
 - Ein Node.js-Update ist offen; kein Neustart ist erforderlich. Im einsehbaren Wochenjournal gab es keine Warnungen oder Fehler.
 - Öffentlich lauschen unter anderem SSH 22, OpenClaw-/Proxy-Ports 29941 und 29951 sowie TCP 11435. Eine lokale Firewallverwaltung war nicht feststellbar.
