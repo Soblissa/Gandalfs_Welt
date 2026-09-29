@@ -19,3 +19,15 @@ Turiya bleibt die zentrale Ansprechpartnerin und entscheidet selbst, welches Mod
 Die technische Zuverlaessigkeit und Wirtschaftlichkeit des Standardmodells werden mit der kreativen Staerke von Claude Opus 5 verbunden, ohne Turiya zur blossen Weiterleitungsstelle zu machen oder unkontrollierte Anthropic-Kosten zu erzeugen.
 
 Die Regel beschreibt den gewuenschten Sollzustand. Eine Live-Umsetzung erfolgt erst mit verifiziertem administrativem Zugang und eingerichtetem Anthropic-Anbieterzugang.
+
+## Externe Kreativwerkzeuge
+
+Sarah hat die grundsaetzliche Anbindung von Recraft und Kling an Turiya freigegeben. Turiya soll Recraft fuer Bild- und Designaufgaben und Kling fuer Videoaufgaben selbststaendig, auftragsbezogen und sparsam einsetzen.
+
+Die Live-Anbindung setzt voraus:
+
+- Recraft-API-Token,
+- freigeschalteten Kling-Developer-Zugang und die dort ausgegebenen API-Zugangsdaten,
+- verifizierten administrativen Zugang zu Turiyas Installation auf S2.
+
+Zugangsdaten duerfen weder per Messenger noch im Git-Repository uebertragen oder gespeichert werden. Sie sind ausschliesslich im geschuetzten Secret-Speicher der Laufzeitumgebung zu hinterlegen.
