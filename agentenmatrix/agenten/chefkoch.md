@@ -1,6 +1,6 @@
 # Chefkoch (Cheko / ILA-Hauptagent)
 
-**Stand:** 2026-07-25. Sarahs Steuerungsagent fuer das Hessische
+**Stand:** 2026-09-30. Sarahs Steuerungsagent fuer das Hessische
 Kultusministerium.
 
 ## Kopfdaten
@@ -15,7 +15,7 @@ Kultusministerium.
 | Gateway-Port | 19840 |
 | VNC | nicht eingerichtet |
 | Telegram-Bot | `8697655942:...` |
-| dmPolicy | `allowlist` (Sarah, Torsten, Sebastian) |
+| dmPolicy | `allowlist` (Sarah, Torsten, Sebastian, Michael) |
 | Workspace | `/home/user1/.openclaw/workspace_hauptagent` |
 
 ## Skills / Faehigkeiten
@@ -105,6 +105,8 @@ Memory fortschreiben, Repo-Botskills nachziehen).
 
 ## Aenderungshistorie
 
+- **2026-09-30**: Michael (`8879391719`) auf Sarahs Bitte zur
+  Telegram-Allowlist hinzugefuegt; Gateway erfolgreich neu gestartet.
 - **2026-07-25**: Sarah bemerkte den stillen Fallback auf GPT.
   Entscheidung ueber Fallback-Strategie steht aus.
 - **2026-06-26**: Karin zur Allowlist hinzugefuegt.
