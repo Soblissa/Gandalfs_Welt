@@ -1,6 +1,6 @@
 # Modell-Uebersicht
 
-**Stand:** 2026-09-23 (08:07 UTC). Preise in **US-Dollar je 1 Million
+**Stand:** 2026-09-30 (08:12 UTC). Preise in **US-Dollar je 1 Million
 Token** fuer Standard-Echtzeitverarbeitung, angegeben als **Input / Output**.
 Cache-, Batch-, Flex-, regionale und Langkontext-Aufschlaege sind nicht
 eingerechnet. `—` bedeutet: kein direkter Tokenpreis des Herstellers.
@@ -18,7 +18,8 @@ neue Integrationen einplanen.
 | Claude Fable 5 / Mythos 5 | 10 / 50 | Vorgaenger | Nein | Gleicher Grundpreis, aber Cache-Treffer 1 statt 0,25; Mythos nur begrenzt verfuegbar |
 | Claude Opus 5.5 | 4 / 20 | Aktuell | Nein | Neues Spitzenmodell; Cache-Treffer 0,20 |
 | Claude Opus 5 | 5 / 25 | **Vorgaenger** | Nein | Durch Opus 5.5 guenstiger und leistungsseitig abgeloest |
-| Claude Sonnet 5 | 2 / 10 | Aktuell | Nein | Preis-Leistungs-Standard; Einfuehrungspreis wurde dauerhaft gemacht |
+| Claude Sonnet 5.5 | 2 / 10 | Aktuell | Nein | Neuer Preis-Leistungs-Standard; Cache-Treffer 0,20 |
+| Claude Sonnet 5 | 2 / 10 | **Vorgaenger** | Nein | Einfuehrungspreis wurde dauerhaft gemacht, aber durch Sonnet 5.5 abgeloest |
 | Claude Haiku 4.5 | 1 / 5 | Aktuell | Nein | Schnelle, guenstige Klasse |
 | Claude Opus 4.5–4.8 / Sonnet 4.5–4.6 | 5 / 25 bzw. 3 / 15 | Vorgaenger | Nein | Weiter nutzbar; nicht mehr Hauptgeneration |
 | Claude Opus 4/4.1, Sonnet 4, Haiku 3.5 | 15 / 75, 3 / 15, 0,80 / 4 | **veraltet/abgekuendigt** | Nein | Bei Anthropic retirert; teils noch ueber Cloudpartner |
@@ -28,7 +29,8 @@ neue Integrationen einplanen.
 | Modell | Preis | Status | Lokal | Einordnung |
 |---|---:|---|---|---|
 | GPT-6 Astra | 10 / 50 | Aktuell | Nein | Neues Spitzenmodell; Langkontext 20 / 75 |
-| GPT-6 Sol | 2 / 10 | Aktuell | Nein | Neues Standardmodell; Langkontext 4 / 15 |
+| GPT-6.1 Sol | 2 / 10 | Aktuell | Nein | Neuer Standard; Langkontext 4 / 15, Cache-Input 0,10 / 0,20 |
+| GPT-6 Sol | 2 / 10 | **Vorgaenger** | Nein | Gleicher Grundpreis, aber durch GPT-6.1 Sol abgeloest |
 | GPT-6 Luna | 0,10 / 0,50 | Aktuell | Nein | Neue Niedrigpreisklasse; Langkontext 0,20 / 0,75 |
 | GPT-5.6 Sol / Terra / Luna | 4 / 20; 2 / 12; 0,20 / 1,20 | **Vorgaenger** | Nein | Sol-Aktionspreis mindestens bis 21.11.2026; durch GPT-6-Familie ueberholt |
 | GPT-5.5 / GPT-5.5 Pro | 5 / 30 bzw. 30 / 180 | Vorgaenger | Nein | Weiter teuer; durch 5.6/6 ueberholt |
@@ -44,9 +46,10 @@ neue Integrationen einplanen.
 | Gemini 3.8 Flash | 0,75 / 3,75 | Aktuell, Aktionspreis bis 31.12.2026 | Nein | Neuester Flash; ab 2027 laut Preisseite 1,50 / 7,50 |
 | Gemini 3.7 Flash | 0,75 / 3,75 | Vorgaenger | Nein | Durch 3.8 Flash abgeloest |
 | Gemini 3.1 Pro Preview | 2 / 12 | Aktuelle Pro-Klasse, Preview | Nein | Ueber 200k Inputtoken: 4 / 18 |
+| Gemini 3.5 Flash-Lite | 0,30 / 2,50 | Aktuell | Nein | Neue guenstige Flash-Lite-Klasse; Batch 0,15 / 1,25 |
 | Gemini 2.5 Pro | 1,25 / 10 | Vorgaenger | Nein | Ueber 200k Inputtoken: 2,50 / 15 |
 | Gemini 2.5 Flash | 0,30 / 2,50 | Vorgaenger, guenstig | Nein | Weiter stark fuer grosse Mengen |
-| Gemini 2.5 Flash-Lite | 0,10 / 0,40 | Vorgaenger, guenstig | Nein | Niedrigster belegter Google-Standardpreis |
+| Gemini 2.5 Flash-Lite | 0,10 / 0,40 | **Vorgaenger**, guenstig | Nein | Niedriger als die neue 3.5-Klasse, aber nicht mehr aktuelle Generation |
 | Gemma 3 | Selbstbetrieb | Offene Familie | Ja | Lokal betreibbar; Infrastruktur statt Tokenpreis |
 
 ## Moonshot AI / Kimi (China)
@@ -111,10 +114,10 @@ nicht als Meta-Preis dargestellt.
 
 | Bedarf | Erste Wahl aus dieser Preispruefung |
 |---|---|
-| ausgewogener geschlossener Standardagent | Claude Sonnet 5, GPT-6 Sol |
+| ausgewogener geschlossener Standardagent | Claude Sonnet 5.5, GPT-6.1 Sol |
 | schwierigste Aufgaben, Preis zweitrangig | GPT-6 Astra, Claude Opus 5.5 |
 | guenstige Massenverarbeitung | GPT-6 Luna, Gemini 2.5 Flash-Lite, DeepSeek V4.1 Flash |
-| Coding | Kimi K2.7 Code, Claude Sonnet 5, GPT-6 Sol |
+| Coding | Kimi K2.7 Code, Claude Sonnet 5.5, GPT-6.1 Sol |
 | sehr langer Kontext | Kimi K3, Gemini, DeepSeek V4; lokal Llama 4 Scout |
 | lokal und kontrollierbar | Qwen3-2507, Llama 4, Gemma 3, gpt-oss |
 
@@ -122,7 +125,7 @@ Chinesische Anbieter werden gleichrangig nach Eignung, Preis, Offenheit und
 Betriebsrisiko beurteilt. Herkunft ersetzt weder technische Pruefung noch
 Datenschutzpruefung.
 
-## Primaerquellen (am 2026-09-23 abgerufen)
+## Primaerquellen (am 2026-09-30 abgerufen)
 
 - [Anthropic: Claude API pricing](https://platform.claude.com/docs/en/about-claude/pricing)
 - [OpenAI: API pricing](https://developers.openai.com/api/docs/pricing)
