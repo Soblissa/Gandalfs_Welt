@@ -1,6 +1,6 @@
 # Modell-Uebersicht
 
-**Stand:** 2026-09-30 (08:12 UTC). Preise in **US-Dollar je 1 Million
+**Stand:** 2026-09-30. Preise in **US-Dollar je 1 Million
 Token** fuer Standard-Echtzeitverarbeitung, angegeben als **Input / Output**.
 Cache-, Batch-, Flex-, regionale und Langkontext-Aufschlaege sind nicht
 eingerechnet. `—` bedeutet: kein direkter Tokenpreis des Herstellers.
