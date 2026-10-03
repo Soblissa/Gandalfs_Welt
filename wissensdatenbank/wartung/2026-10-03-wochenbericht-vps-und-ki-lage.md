@@ -1,10 +1,10 @@
-# Wochenbericht VPS und KI-Lage – 03.10.2026, 06:01–06:03 UTC
+# Wochenbericht VPS und KI-Lage – 03.10.2026, 06:04–06:06 UTC
 
 ## Fakten
 
 ### S1 – 147.93.120.51
 
-- Per SSH als `gandalf-ro` erreichbar; Laufzeit 6 Tage 23 Stunden. Last `0,22 / 0,07 / 0,02`, RAM 2,7 von 15 GiB, Root-Platte 35 von 193 GiB (19 %).
+- Per SSH als `gandalf-ro` erreichbar; Laufzeit 6 Tage 23 Stunden. Last `0,01 / 0,05 / 0,01`, RAM 2,7 von 15 GiB, Root-Platte 35 von 193 GiB (19 %).
 - SSH, Docker sowie die OpenClaw-Gateways `chantall`, `cheko` und `user2` laufen. `lightdm.service` ist fehlgeschlagen.
 - 16 Updates sind unmittelbar installierbar, 15 weitere werden zurückgehalten bzw. gestaffelt angeboten; kein Neustart ist derzeit angefordert.
 - Im einsehbaren Wochenjournal erscheinen nur wiederholte PipeWire/JACK-DBus-Warnungen. Die Journal- und Firewall-Sicht des Read-only-Kontos bleibt eingeschränkt.
@@ -12,12 +12,12 @@
 
 ### S2 – 89.116.39.197
 
-- TCP 22 ist von S3 aus erreichbar.
+- ICMP sowie TCP 22/80/443 sind von S3 aus erreichbar.
 - Es besteht derzeit kein Read-only-Zugang. Last, RAM, Platte, Dienste, Updates, Logs und innere Sicherheitslage sind daher **nicht geprüft**.
 
 ### S3 – lokal, 187.124.191.206
 
-- Erreichbar; Laufzeit 26 Tage. Last `0,49 / 0,15 / 0,05`, RAM 3,3 von 15 GiB, Root-Platte 40 von 197 GiB (21 %). Keine fehlgeschlagenen Units.
+- Erreichbar; Laufzeit 26 Tage. Last `1,24 / 0,71 / 0,30`, RAM 3,4 von 15 GiB, Root-Platte 40 von 197 GiB (21 %). Keine fehlgeschlagenen Units.
 - SSH, Docker sowie die Gateways `gandalf`, `konfuzius` und `turyia` laufen.
 - Ein Update ist offen; ein Neustart ist erforderlich. Das für `gandalf` einsehbare Wochenjournal enthält keine Warnungen, ist jedoch wegen fehlender Journalgruppen unvollständig.
 - Öffentlich lauschen unter anderem SSH 22, OpenClaw-/Proxy-Ports 29941, 29942 und 29951 sowie TCP 11435. `nft` ist nicht installiert; eine wirksame lokale Host-Firewall war daher nicht belegbar.
@@ -26,7 +26,7 @@
 
 ### S4 – 167.235.129.145
 
-- TCP 22 ist von S3 aus erreichbar.
+- ICMP und TCP 22 sind von S3 aus erreichbar; TCP 80/443 sind geschlossen oder gefiltert.
 - Es besteht derzeit kein Read-only-Zugang. Last, RAM, Platte, Dienste, Updates, Logs und innere Sicherheitslage sind daher **nicht geprüft**. Der am 19.09. festgestellte geänderte SSH-Hostschlüssel ist weiterhin nicht unabhängig verifiziert.
 
 ## Vermutung
