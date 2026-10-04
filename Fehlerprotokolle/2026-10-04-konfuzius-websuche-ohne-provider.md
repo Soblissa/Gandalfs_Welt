@@ -20,7 +20,9 @@ OpenRouter versorgen. Ein neuer Brave-Zugang ist daher technisch nicht noetig.
 
 Noch offen, weil der Systembenutzer `gandalf` weder Leserechte auf
 `/home/konfuzius/.openclaw/openclaw.json` noch administrative Rechte fuer den
-Gateway-Neustart besitzt. Vorgesehener minimaler Fix durch root:
+Gateway-Neustart besitzt. Gandalf hatte bei der Anlage am 14.08. Root-SSH auf
+S3; dieser Zugang wird heute abgewiesen, und der lokale Benutzer `gandalf` ist
+weder Mitglied von `sudo` noch `adm`. Vorgesehener minimaler Fix durch root:
 
 ```sh
 runuser -u konfuzius -- /home/konfuzius/.npm-global/bin/openclaw config set tools.web.search.enabled true
@@ -47,4 +49,5 @@ Vor Umsetzung `openclaw.json` mit UTC-Zeitstempel sichern.
 ## Offene Punkte
 
 - Fix mit root-Rechten anwenden, Gateway neu starten und Live-Suche bestaetigen.
-
+- Klaeren bzw. wiederherstellen, weshalb Gandalfs dokumentierter Root-SSH-Zugang
+  zu S3 seit der Anlage von Konfuzius nicht mehr funktioniert.
