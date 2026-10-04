@@ -18,11 +18,9 @@ OpenRouter versorgen. Ein neuer Brave-Zugang ist daher technisch nicht noetig.
 
 ## Fix
 
-Noch offen, weil der Systembenutzer `gandalf` weder Leserechte auf
-`/home/konfuzius/.openclaw/openclaw.json` noch administrative Rechte fuer den
-Gateway-Neustart besitzt. Gandalf hatte bei der Anlage am 14.08. Root-SSH auf
-S3; dieser Zugang wird heute abgewiesen, und der lokale Benutzer `gandalf` ist
-weder Mitglied von `sudo` noch `adm`. Vorgesehener minimaler Fix durch root:
+Am 04.10. um 16:15 UTC stellte Slarti Gandalf den lokalen Sudo-Zugang wieder
+bereit. Anschliessend wurde der vorhandene OpenRouter-Zugang als
+Perplexity-Suchprovider verwendet:
 
 ```sh
 runuser -u konfuzius -- /home/konfuzius/.npm-global/bin/openclaw config set tools.web.search.enabled true
@@ -34,10 +32,14 @@ Danach eine echte `web_search`-Anfrage pruefen. Der vorhandene
 `OPENROUTER_API_KEY` bleibt in `/etc/openclaw/users/konfuzius.env`; kein Secret
 wird kopiert oder ausgegeben.
 
+Die Konfiguration wurde validiert und `openclaw-gateway@konfuzius` neu
+gestartet. Der Live-Test als Konfuzius rief `web_search` genau einmal und ohne
+Fehler auf; Ergebnis war die offizielle OpenClaw-Seite
+`https://docs.openclaw.ai/tools/web`.
+
 ## Backups
 
-Noch keines, da mangels Berechtigung keine Konfigurationsaenderung erfolgte.
-Vor Umsetzung `openclaw.json` mit UTC-Zeitstempel sichern.
+- `/home/konfuzius/.openclaw/openclaw.json.bak.20261004T161558Z`
 
 ## Lernpunkte
 
@@ -48,6 +50,5 @@ Vor Umsetzung `openclaw.json` mit UTC-Zeitstempel sichern.
 
 ## Offene Punkte
 
-- Fix mit root-Rechten anwenden, Gateway neu starten und Live-Suche bestaetigen.
-- Klaeren bzw. wiederherstellen, weshalb Gandalfs dokumentierter Root-SSH-Zugang
-  zu S3 seit der Anlage von Konfuzius nicht mehr funktioniert.
+- Keine offenen Punkte zur Websuche. Der separate Root-SSH-Zugang bleibt
+  abgewiesen; lokale Administration ist wieder per Sudo moeglich.
