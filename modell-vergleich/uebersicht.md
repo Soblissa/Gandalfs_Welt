@@ -69,13 +69,16 @@ separater offener Checkpoint ist nicht automatisch dieselbe API-Version.
 ## Alibaba Cloud / Qwen (China)
 
 Alibaba staffelt Preise nach Bereitstellungsraum und Eingabelaenge. Die
-Tabelle verwendet den internationalen **Global**-Endpunkt und die jeweils
-erste Eingabestufe; Aktionspreise der Konsole sind nicht eingerechnet.
+Tabelle verwendet fuer die Max-Reihe den offiziellen Endpunkt **China
+(Beijing)** und die jeweils erste Eingabestufe; Aktionspreise der Konsole
+sind nicht eingerechnet. Der internationale Preis von Qwen3.8-Max liegt
+abweichend bei 2 / 6.
 
 | Modell | Preis | Status | Lokal | Einordnung |
 |---|---:|---|---|---|
+| Qwen3.8-Max-Prime | 3,301 / 9,902 | Aktuell | Nein | Schneller Prime-Modus fuer Qwen3.8-Max, bis 1M Kontext; China (Beijing) |
 | Qwen3.8-Max | 1,65 / 4,951 | Aktuell | Nein | Neues geschlossenes API-Flaggschiff, bis 1M Kontext |
-| Qwen3.7-Max | 1,65 / 4,951 | Vorgaenger | Nein | Global-Preis; durch 3.8-Max ueberholt |
+| Qwen3.7-Max | 1,65 / 4,951 | Vorgaenger | Nein | China-(Beijing)-Preis; durch 3.8-Max ueberholt |
 | Qwen3-Max | 0,359 / 1,434 (bis 32k) | Vorgaenger | Nein | API-Max ist nicht Open-Weight; Preis steigt ab 32k und 128k Kontext |
 | Qwen3-2507 235B-A22B | Selbstbetrieb | Aktuell offen | Ja | Open-Weight-Flaggschiff; 256k, optional bis 1M Kontext |
 | Qwen3-2507 30B-A3B / 4B | Selbstbetrieb | Aktuell offen | Ja | Workstation- bzw. kompakte Klasse |
