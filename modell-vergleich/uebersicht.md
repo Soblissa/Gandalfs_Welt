@@ -1,6 +1,6 @@
 # Modell-Uebersicht
 
-**Stand:** 2026-09-30. Preise in **US-Dollar je 1 Million
+**Stand:** 2026-10-07. Preise in **US-Dollar je 1 Million
 Token** fuer Standard-Echtzeitverarbeitung, angegeben als **Input / Output**.
 Cache-, Batch-, Flex-, regionale und Langkontext-Aufschlaege sind nicht
 eingerechnet. `—` bedeutet: kein direkter Tokenpreis des Herstellers.
@@ -45,8 +45,10 @@ neue Integrationen einplanen.
 |---|---:|---|---|---|
 | Gemini 3.8 Flash | 0,75 / 3,75 | Aktuell, Aktionspreis bis 31.12.2026 | Nein | Neuester Flash; ab 2027 laut Preisseite 1,50 / 7,50 |
 | Gemini 3.7 Flash | 0,75 / 3,75 | Vorgaenger | Nein | Durch 3.8 Flash abgeloest |
+| Gemini 3.5 Flash | 1,50 / 9 | Aktuell | Nein | Leistungsorientierte 3.5-Klasse; teurer als 3.8 Flash waehrend dessen Aktionspreis |
 | Gemini 3.1 Pro Preview | 2 / 12 | Aktuelle Pro-Klasse, Preview | Nein | Ueber 200k Inputtoken: 4 / 18 |
 | Gemini 3.5 Flash-Lite | 0,30 / 2,50 | Aktuell | Nein | Neue guenstige Flash-Lite-Klasse; Batch 0,15 / 1,25 |
+| Gemini 3.1 Flash-Lite | 0,25 / 1,50 | Vorgaenger | Nein | Text/Bild/Video; Audio-Input kostet 0,50; durch 3.5 Flash-Lite abgeloest |
 | Gemini 2.5 Pro | 1,25 / 10 | Vorgaenger | Nein | Ueber 200k Inputtoken: 2,50 / 15 |
 | Gemini 2.5 Flash | 0,30 / 2,50 | Vorgaenger, guenstig | Nein | Weiter stark fuer grosse Mengen |
 | Gemini 2.5 Flash-Lite | 0,10 / 0,40 | **Vorgaenger**, guenstig | Nein | Niedriger als die neue 3.5-Klasse, aber nicht mehr aktuelle Generation |
@@ -125,7 +127,7 @@ Chinesische Anbieter werden gleichrangig nach Eignung, Preis, Offenheit und
 Betriebsrisiko beurteilt. Herkunft ersetzt weder technische Pruefung noch
 Datenschutzpruefung.
 
-## Primaerquellen (am 2026-09-30 abgerufen)
+## Primaerquellen (am 2026-10-07 abgerufen)
 
 - [Anthropic: Claude API pricing](https://platform.claude.com/docs/en/about-claude/pricing)
 - [OpenAI: API pricing](https://developers.openai.com/api/docs/pricing)
