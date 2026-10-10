@@ -1,4 +1,4 @@
-# Wochenbericht VPS und KI-Lage – 10.10.2026, 06:01–06:04 UTC
+# Wochenbericht VPS und KI-Lage – 10.10.2026, 06:01–06:07 UTC
 
 ## Fakten
 
@@ -12,17 +12,17 @@
 
 ### S2 – 89.116.39.197
 
-- ICMP antwortet und TCP 22 ist offen.
+- ICMP antwortet; TCP 22, 80 und 443 sind offen.
 - Kein Read-only-Zugang: Last, RAM, Platte, Dienste, Updates, Logs und innere Sicherheitslage sind **nicht geprüft**.
 
 ### S3 – lokal, 187.124.191.206
 
-- Erreichbar; Laufzeit 6 Tage. Last `0,76 / 0,29 / 0,09`, RAM 2,8 von 15 GiB, Root-Platte 40 von 197 GiB (21 %).
+- Erreichbar; Laufzeit 6 Tage. Last `2,54 / 1,27 / 0,55`, RAM 3,5 von 15 GiB, Root-Platte 40 von 197 GiB (21 %).
 - SSH, Docker sowie die Gateways `gandalf`, `konfuzius` und `turyia` laufen. Die generische Unit `openclaw-gateway.service` ist nicht maßgeblich und inaktiv.
 - Zwei Updates sind offen; kein Neustart angefordert. Im einsehbaren Wochenjournal stehen keine Warnungen.
 - `c3pool_miner.service` ist weiterhin aktiviert und fehlgeschlagen; die Binärdatei `ssshd` und `myservices.service` sind nicht mehr vorhanden. Wegen der Root-Kompromittierung vom 05.09. bleibt S3 dennoch **nicht vertrauenswürdig**.
 - Öffentlich gebunden sind unter anderem SSH 22, OpenClaw-/Proxy-Ports 29941 und 29951 sowie TCP 11435. Firewallregeln waren ohne erhöhte Rechte nicht lesbar.
-- OpenClaw-Audit: 0 kritisch, 5 Warnungen. Wesentlich: gemeinsame Telegram-/Nextcloud-DM-Sitzungen, Mehrbenutzerbetrieb ohne vollständige Isolation und ein falsches Gateway-Prüfziel (`127.0.0.1:18789`).
+- OpenClaw-Audit: 0 kritisch, 4 Warnungen. Wesentlich: gemeinsame Telegram-/Nextcloud-DM-Sitzungen, möglicher Mehrbenutzerbetrieb ohne vollständige Isolation und fehlende Vertrauenskonfiguration für Reverse-Proxy-Header.
 
 ### S4 – 167.235.129.145
 
@@ -43,7 +43,7 @@
 ## KI-Lage der Woche, 03.–10.10.2026
 
 - **OpenAI, 07.10.:** GPT-6 und eine neue „Intelligent UI“ wurden angekündigt; zusätzlich veröffentlichte OpenAI am 06.10. Ergebnisse zu KI-gestützter mathematischer Forschung.
-- **Anthropic, 07.10.:** Anthropic stellte laut eigener News-Seite sein bislang schnellstes, günstigstes und leistungsfähigstes kleines Modell vor; Berichte benennen es als Claude Haiku 5.5 mit 1 Mio. Kontext.
+- **Anthropic, 07.10.:** Anthropic stellte laut eigener News-Seite sein bislang schnellstes, günstigstes und leistungsfähigstes kleines Modell für volumenstarke, kostensensible Arbeit vor.
 - **Open Weight, 05.–06.10.:** Reflection veröffentlichte Beam mit 501 Mrd. Parametern; Mistral stellte Mistral Large 4 vor. Beides sind bedeutende offene Modellveröffentlichungen dieser Woche.
 - **Sicherheitslage, 09.10.:** Reuters berichtet, dass chinesische Entwickler nur für 3,6 % untersuchter Modellveröffentlichungen Sicherheitstests publizierten; das ist ein Transparenzbefund, kein Beweis fehlender interner Tests.
 
