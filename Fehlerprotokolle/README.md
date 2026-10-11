@@ -28,6 +28,7 @@ Zentrale Ablage fuer dokumentierte Stoerungen an Sarahs und dtos Infrastruktur.
 
 | Datum | System | Titel | Datei |
 |---|---|---|---|
+| 2026-10-11 | SS1 (`srv1492182`) | `gandalfadmin` besitzt unerwuenschtes passwortloses sudo | [2026-10-11-ss1-gandalfadmin-passwortloses-sudo.md](2026-10-11-ss1-gandalfadmin-passwortloses-sudo.md) |
 | 2026-10-06 | Konfuzius (S3) | Memory-Index ohne Metadaten; fehlender Embedding-Provider auf lokales Ollama umgestellt | [2026-10-06-konfuzius-memory-index-metadaten-fehlen.md](2026-10-06-konfuzius-memory-index-metadaten-fehlen.md) |
 | 2026-10-04 | Konfuzius (S3) | `web_search` ohne Provider; vorhandener OpenRouter-Zugang kann Perplexity Search versorgen | [2026-10-04-konfuzius-websuche-ohne-provider.md](2026-10-04-konfuzius-websuche-ohne-provider.md) |
 | 2026-09-19 | S4 (167.235.129.145) | SSH-Hostschlüssel weicht vom bekannten Schlüssel ab; Ursache ungeklärt | [2026-09-19-s4-ssh-hostschluessel-geaendert.md](2026-09-19-s4-ssh-hostschluessel-geaendert.md) |
