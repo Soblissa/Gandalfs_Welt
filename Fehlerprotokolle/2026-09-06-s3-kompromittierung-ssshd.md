@@ -127,7 +127,8 @@ Secret-Rotation bleibt eine Restunsicherheit über die Vertrauenskette.
 ### Nun offene Härtungspunkte
 
 1. Herkunft des laut Slarti vor dem Angriff erstellten Backups sowie die
-   erfolgte Rotation der damaligen Secrets abschließend dokumentieren.
+   Rotation der damaligen Secrets abschließend dokumentieren. Slarti
+   bestätigte am 11.10.2026 um 07:08 UTC, dass diese Rotation noch aussteht.
 2. SSH-Passwortanmeldung im wirksamen Cloud-init-Drop-in deaktivieren, Syntax
    prüfen und SSH reloaden; bestehenden Schlüsselzugang parallel offen halten.
 3. Rebootfeste Default-Deny-Firewall einrichten und nur ausdrücklich benötigte
