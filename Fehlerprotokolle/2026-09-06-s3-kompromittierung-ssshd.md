@@ -88,9 +88,9 @@ Damit ist ein erfolgreicher direkter Root-Login nicht belegt und nach den vorhan
 
 ## Neubewertung nach Backup-Wiederherstellung (2026-10-11, 06:59–07:01 UTC)
 
-Slarti wies darauf hin, dass SS3 inzwischen aus einem Backup wiederhergestellt
-und VNC auf Tailscale umgestellt worden sei. Die Root-gestützte Live-Prüfung
-ergab:
+Slarti wies darauf hin, dass SS3 inzwischen aus einem Backup von vor dem
+Angriff wiederhergestellt und VNC auf Tailscale umgestellt worden sei. Die
+Root-gestützte Live-Prüfung ergab:
 
 - Die bekannten IoCs `/usr/bin/ssshd`, `/usr/bin/.locatione` und
   `myservices.service` sind nicht vorhanden; entsprechende Prozesse laufen
@@ -126,8 +126,8 @@ Secret-Rotation bleibt eine Restunsicherheit über die Vertrauenskette.
 
 ### Nun offene Härtungspunkte
 
-1. Backup-Zeitpunkt und Herkunft sowie erfolgte Rotation der damaligen Secrets
-   belegen.
+1. Herkunft des laut Slarti vor dem Angriff erstellten Backups sowie die
+   erfolgte Rotation der damaligen Secrets abschließend dokumentieren.
 2. SSH-Passwortanmeldung im wirksamen Cloud-init-Drop-in deaktivieren, Syntax
    prüfen und SSH reloaden; bestehenden Schlüsselzugang parallel offen halten.
 3. Rebootfeste Default-Deny-Firewall einrichten und nur ausdrücklich benötigte
