@@ -85,3 +85,55 @@ Damit ist ein erfolgreicher direkter Root-Login nicht belegt und nach den vorhan
 3. Sämtliche auf S3 vorhandenen Secrets, Passwörter, SSH-Schlüssel und Bot-/API-Tokens außerhalb von S3 rotieren.
 4. S3 sauber neu installieren und nur geprüfte Daten/Konfigurationen zurückspielen.
 5. Dauerhaft SSH auf Schlüsselzugang beschränken und Firewall/VNC-Exposition korrigieren.
+
+## Neubewertung nach Backup-Wiederherstellung (2026-10-11, 06:59–07:01 UTC)
+
+Slarti wies darauf hin, dass SS3 inzwischen aus einem Backup wiederhergestellt
+und VNC auf Tailscale umgestellt worden sei. Die Root-gestützte Live-Prüfung
+ergab:
+
+- Die bekannten IoCs `/usr/bin/ssshd`, `/usr/bin/.locatione` und
+  `myservices.service` sind nicht vorhanden; entsprechende Prozesse laufen
+  nicht.
+- VNC läuft nicht. Die vorhandenen VNC-Units sind deaktiviert; die geprüften
+  VNC-Ports 5910–5913 und 5919 sind öffentlich und über Tailscale geschlossen.
+- Es gibt keine `NOPASSWD`-Regel in `/etc/sudoers*`; `visudo` bestätigt eine
+  gültige Konfiguration.
+- Root-SSH ist deaktiviert und Public-Key-Anmeldung aktiv. Durch
+  `/etc/ssh/sshd_config.d/50-cloud-init.conf` ist effektive
+  `PasswordAuthentication` jedoch weiterhin `yes`. Öffentliche
+  Passwortversuche sind im Journal aktuell sichtbar.
+- Die Host-Firewall hat für IPv4 und IPv6 weiterhin `INPUT`-Policy `ACCEPT`.
+- Öffentlich erreichbar waren bei der Prüfung TCP 22, 11435, 29941 und 29951.
+  Die beiden letzten Ports gehören direkt zu OpenClaw-Gateways.
+- `c3pool_miner.service` aus August ist weiterhin aktiviert und fehlgeschlagen;
+  seine Binärdatei fehlt. Der Dienst ist kein Beleg für eine laufende
+  Kompromittierung, bleibt aber ein ungeklärter Altbestand.
+- Automatische Sicherheitsupdates sind aktiv; Paketprüfung und OpenClaw-Audit
+  zeigten keine kritische Meldung. Der OpenClaw-Audit meldete vier Warnungen,
+  darunter gemeinsam genutzte DM-Sitzungen und weitreichende Werkzeuge ohne
+  Sandbox.
+
+### Korrektur der früheren Bewertung
+
+Die pauschale Aussage, SS3 sei trotz Wiederherstellung zwingend neu zu
+installieren, war nach der Wiederherstellung nicht ausreichend neu belegt.
+Wenn das Backup nachweislich vor dem Angriff vom 05.09. erstellt wurde und
+damalige Passwörter, Schlüssel und Tokens rotiert wurden, ist eine erneute
+Neuinstallation nicht zwingend. Dann ist gezielte Härtung mit anschließender
+Verifikation vertretbar. Ohne belegtes Backup-Datum beziehungsweise ohne
+Secret-Rotation bleibt eine Restunsicherheit über die Vertrauenskette.
+
+### Nun offene Härtungspunkte
+
+1. Backup-Zeitpunkt und Herkunft sowie erfolgte Rotation der damaligen Secrets
+   belegen.
+2. SSH-Passwortanmeldung im wirksamen Cloud-init-Drop-in deaktivieren, Syntax
+   prüfen und SSH reloaden; bestehenden Schlüsselzugang parallel offen halten.
+3. Rebootfeste Default-Deny-Firewall einrichten und nur ausdrücklich benötigte
+   öffentliche Dienste freigeben; OpenClaw-Gateways bevorzugt auf Loopback oder
+   Tailscale begrenzen.
+4. Den ungeklärten Miner-Dienst sichern, deaktivieren und entfernen oder seine
+   legitime Herkunft dokumentieren.
+5. OpenClaw-DM-Sitzungen pro Absender isolieren und Secrets in SecretRefs
+   überführen.
