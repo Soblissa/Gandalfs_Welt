@@ -20,14 +20,19 @@ dass fuer dieses Administrationskonto eine Passwortabfrage verlangt sein soll.
 
 ## Fix
 
-Noch nicht ausgefuehrt. Nach Sarahs Kenntnisnahme wird die Drop-in-Datei mit
-Zeitstempel gesichert und entfernt. Danach werden `visudo -cf /etc/sudoers`,
-ein negativ erwarteter `sudo -n`-Test sowie ein erfolgreicher sudo-Test mit
-Passwort ausgefuehrt.
+Slarti entfernte als Root `/etc/sudoers.d/90-gandalfadmin`. Gandalf verifizierte
+um 06:43 UTC anschliessend live:
+
+- Die Drop-in-Datei ist nicht mehr vorhanden.
+- `sudo -k; sudo -n true` wird erwartungsgemaess abgewiesen.
+- Das lokal hinterlegte Passwort ermoeglicht weiterhin sudo bis UID `0`.
+- `visudo -cf /etc/sudoers` bestaetigt eine gueltige sudoers-Konfiguration.
 
 ## Backups
 
-Noch keines; auf SS1 wurde bislang nur gelesen.
+Gandalf legte kein Backup an, da Slarti die Datei selbst als Root entfernte.
+Ob Slarti zuvor ein separates Backup erstellte, ist nicht bekannt. Die
+weiterhin vorhandene Passwortregel steht in `/etc/sudoers`.
 
 ## Lernpunkte
 
@@ -38,6 +43,4 @@ Noch keines; auf SS1 wurde bislang nur gelesen.
 
 ## Offene Punkte
 
-- Sarahs Kenntnisnahme fuer die Zustandsaenderung auf SS1 einholen.
-- `/etc/sudoers.d/90-gandalfadmin` sichern und entfernen; anschliessend beide
-  Authentifizierungsfaelle live verifizieren.
+- Keine technischen Punkte offen.
