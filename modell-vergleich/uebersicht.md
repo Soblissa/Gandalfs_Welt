@@ -44,10 +44,11 @@ neue Integrationen einplanen.
 
 | Modell | Preis | Status | Lokal | Einordnung |
 |---|---:|---|---|---|
+| Gemini 4 Argon | 2 / 10 bis 30.11.2026 | Aktuell | Nein | Neues Reasoning-Flaggschiff mit bis zu 1M Outputtoken; ab 01.12.2026 laut Preisseite 4 / 20 |
 | Gemini 3.8 Flash | 0,75 / 3,75 | Aktuell, Aktionspreis bis 31.12.2026 | Nein | Neuester Flash; ab 2027 laut Preisseite 1,50 / 7,50 |
 | Gemini 3.7 Flash | 0,75 / 3,75 | Vorgaenger | Nein | Durch 3.8 Flash abgeloest |
 | Gemini 3.5 Flash | 1,50 / 9 | Aktuell | Nein | Leistungsorientierte 3.5-Klasse; teurer als 3.8 Flash waehrend dessen Aktionspreis |
-| Gemini 3.1 Pro Preview | 2 / 12 | Aktuelle Pro-Klasse, Preview | Nein | Ueber 200k Inputtoken: 4 / 18 |
+| Gemini 3.1 Pro Preview | 2 / 12 | **Vorgaenger**, Preview | Nein | Als Spitzenmodell durch Gemini 4 Argon abgeloest; ueber 200k Inputtoken: 4 / 18 |
 | Gemini 3.5 Flash-Lite | 0,30 / 2,50 | Aktuell | Nein | Neue guenstige Flash-Lite-Klasse; Batch 0,15 / 1,25 |
 | Gemini 3.1 Flash-Lite | 0,25 / 1,50 | Vorgaenger | Nein | Text/Bild/Video; Audio-Input kostet 0,50; durch 3.5 Flash-Lite abgeloest |
 | Gemini 2.5 Pro | 1,25 / 10 | Vorgaenger | Nein | Ueber 200k Inputtoken: 2,50 / 15 |
@@ -121,10 +122,10 @@ nicht als Meta-Preis dargestellt.
 | Bedarf | Erste Wahl aus dieser Preispruefung |
 |---|---|
 | ausgewogener geschlossener Standardagent | Claude Sonnet 5.5, GPT-6.1 Sol |
-| schwierigste Aufgaben, Preis zweitrangig | GPT-6 Astra, Claude Opus 5.5 |
+| schwierigste Aufgaben, Preis zweitrangig | Gemini 4 Argon, GPT-6 Astra, Claude Opus 5.5 |
 | guenstige Massenverarbeitung | Claude Haiku 5.5, GPT-6 Luna, Gemini 2.5 Flash-Lite, DeepSeek V4.1 Flash |
 | Coding | Kimi K2.7 Code, Claude Sonnet 5.5, GPT-6.1 Sol |
-| sehr langer Kontext | Kimi K3, Gemini, DeepSeek V4; lokal Llama 4 Scout |
+| sehr langer Kontext | Gemini 4 Argon, Kimi K3, DeepSeek V4; lokal Llama 4 Scout |
 | lokal und kontrollierbar | Qwen3-2507, Llama 4, Gemma 3, gpt-oss |
 
 Chinesische Anbieter werden gleichrangig nach Eignung, Preis, Offenheit und
