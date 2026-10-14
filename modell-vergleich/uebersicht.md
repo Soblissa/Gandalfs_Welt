@@ -1,6 +1,6 @@
 # Modell-Uebersicht
 
-**Stand:** 2026-10-07. Preise in **US-Dollar je 1 Million
+**Stand:** 2026-10-14. Preise in **US-Dollar je 1 Million
 Token** fuer Standard-Echtzeitverarbeitung, angegeben als **Input / Output**.
 Cache-, Batch-, Flex-, regionale und Langkontext-Aufschlaege sind nicht
 eingerechnet. `—` bedeutet: kein direkter Tokenpreis des Herstellers.
@@ -18,9 +18,10 @@ neue Integrationen einplanen.
 | Claude Fable 5 / Mythos 5 | 10 / 50 | Vorgaenger | Nein | Gleicher Grundpreis, aber Cache-Treffer 1 statt 0,25; Mythos nur begrenzt verfuegbar |
 | Claude Opus 5.5 | 4 / 20 | Aktuell | Nein | Neues Spitzenmodell; Cache-Treffer 0,20 |
 | Claude Opus 5 | 5 / 25 | **Vorgaenger** | Nein | Durch Opus 5.5 guenstiger und leistungsseitig abgeloest |
-| Claude Sonnet 5.5 | 2 / 10 | Aktuell | Nein | Neuer Preis-Leistungs-Standard; Cache-Treffer 0,20 |
+| Claude Sonnet 5.5 | 2 / 10 | Aktuell | Nein | Neuer Preis-Leistungs-Standard; Cache-Treffer 0,10 |
 | Claude Sonnet 5 | 2 / 10 | **Vorgaenger** | Nein | Einfuehrungspreis wurde dauerhaft gemacht, aber durch Sonnet 5.5 abgeloest |
-| Claude Haiku 4.5 | 1 / 5 | Aktuell | Nein | Schnelle, guenstige Klasse |
+| Claude Haiku 5.5 | 0,10 / 0,50 bis 100k Input | Aktuell | Nein | Neue Niedrigpreisklasse; ueber 100k Input 0,50 / 2,50, Cache-Treffer 0,01 bzw. 0,05 |
+| Claude Haiku 4.5 | 1 / 5 | **Vorgaenger** | Nein | Durch Haiku 5.5 abgeloest |
 | Claude Opus 4.5–4.8 / Sonnet 4.5–4.6 | 5 / 25 bzw. 3 / 15 | Vorgaenger | Nein | Weiter nutzbar; nicht mehr Hauptgeneration |
 | Claude Opus 4/4.1, Sonnet 4, Haiku 3.5 | 15 / 75, 3 / 15, 0,80 / 4 | **veraltet/abgekuendigt** | Nein | Bei Anthropic retirert; teils noch ueber Cloudpartner |
 
@@ -121,7 +122,7 @@ nicht als Meta-Preis dargestellt.
 |---|---|
 | ausgewogener geschlossener Standardagent | Claude Sonnet 5.5, GPT-6.1 Sol |
 | schwierigste Aufgaben, Preis zweitrangig | GPT-6 Astra, Claude Opus 5.5 |
-| guenstige Massenverarbeitung | GPT-6 Luna, Gemini 2.5 Flash-Lite, DeepSeek V4.1 Flash |
+| guenstige Massenverarbeitung | Claude Haiku 5.5, GPT-6 Luna, Gemini 2.5 Flash-Lite, DeepSeek V4.1 Flash |
 | Coding | Kimi K2.7 Code, Claude Sonnet 5.5, GPT-6.1 Sol |
 | sehr langer Kontext | Kimi K3, Gemini, DeepSeek V4; lokal Llama 4 Scout |
 | lokal und kontrollierbar | Qwen3-2507, Llama 4, Gemma 3, gpt-oss |
@@ -130,7 +131,7 @@ Chinesische Anbieter werden gleichrangig nach Eignung, Preis, Offenheit und
 Betriebsrisiko beurteilt. Herkunft ersetzt weder technische Pruefung noch
 Datenschutzpruefung.
 
-## Primaerquellen (am 2026-10-07 abgerufen)
+## Primaerquellen (am 2026-10-14 abgerufen)
 
 - [Anthropic: Claude API pricing](https://platform.claude.com/docs/en/about-claude/pricing)
 - [OpenAI: API pricing](https://developers.openai.com/api/docs/pricing)
