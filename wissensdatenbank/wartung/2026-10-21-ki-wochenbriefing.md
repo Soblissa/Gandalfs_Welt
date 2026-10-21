@@ -1,0 +1,8 @@
+# KI-Lage der Woche, 14.–21.10.2026
+
+- **15.10. – NVIDIA:** Drei neue offene Nemotron-Modelle: `Nemotron 3.5 Super VL` für multimodale Agenten sowie die kleineren `Bolt`-Varianten für lokale Rechner. [NVIDIA](https://news.google.com/rss/articles/CBMiYkFVX3lxTFBVVU0zYjltcWc5TzJiNlRiOC13eUlPV2NLb0lBYlRCTDVIZHZDeTBlWW1nTU1idlQ2aGNHX0xGWjBDSXJ6VTFrWGVaa1M1UHRNTXFHUUp1bWZNOXJsVDNCSkZn?oc=5)
+- **15.10. – Mistral:** `Timestral` ist eine neue Familie kleiner Foundation-Modelle für Zeitreihenprognosen; damit erweitert Mistral sein Open-Weight-Angebot über Sprachmodelle hinaus. [Mistral AI](https://mistral.ai/news/timestral/)
+- **17.10. – DeepSeek:** `V4.1-Flash-1017` wurde als schnelleres, kostengünstiges Modell für agentische Aufgaben veröffentlicht; besonders relevant für Coding- und Werkzeugketten. [The Decoder](https://news.google.com/rss/articles/CBMi0gFBVV95cUxQMjBtNG5jOGtJNDMtWHYtVXo1RU44LWJlNTZrNkhxajRYd0JOMkdXLXV3ZlZwQTVidkoyWjJKbUNvS0U2UXdRdjZmNE9KWHhlTUR0Y2xmWWhTRm9MbFpuQm5NUEtyejJqWXZhYmRjWmdVTFZ0RFlVR2JwMTNqOUgtb3NxeHU2dUJVcHpTaUN5WFFCQkIzWXZhZGJVVXpUV0RfQUNxNjNLSngteWVuaVVEckhkWmNVbjF1QVQ4b2FoTHYxVmh0eko4T0ZKSG91c3ZWTlE?oc=5)
+- **16.10. – US-Regulatorik:** Anthropic legte US-Abgeordneten einen eigenen Entwurf für ein Frontier-KI-Sicherheitsgesetz vor. Wichtig: Das ist ein Firmenvorschlag, noch kein beschlossenes Gesetz. [Reuters](https://news.google.com/rss/articles/CBMixwFBVV95cUxPOGgzckNkaE5BdjZxdVMta2hsdVczMHFrZ2U4aFgzY2VsLVF5VEFpd1FMQVc1V084YTZQU0IyMkdWbXZTbEtpdlhFWHR2SUI1SDdsczFmeERfNHhfOXRpR2NLTVhjRWF4YWNYaDBPWXJDSXpqLUgtSERBY1lHejU3MTl0T2pPMzlKRDlsdmFNM3kwQk1YSFlyMnpDN1FSVG0xM2xqNTZrbnNxQTVkT3drcVJSVm0zNFlYOUstZzlDYldrc1p5OWJR?oc=5)
+
+Quellen frisch abgerufen am 21.10.2026.
