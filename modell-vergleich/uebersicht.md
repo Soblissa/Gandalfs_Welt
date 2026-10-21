@@ -1,7 +1,8 @@
 # Modell-Uebersicht
 
-**Stand:** 2026-10-14. Preise in **US-Dollar je 1 Million
-Token** fuer Standard-Echtzeitverarbeitung, angegeben als **Input / Output**.
+**Stand:** 2026-10-21. Preise in **US-Dollar je 1 Million
+Token** fuer Standard-Echtzeitverarbeitung, angegeben als **Input / Output**;
+abweichende Originalwaehrungen sind ausdruecklich mit ihrem Symbol markiert.
 Cache-, Batch-, Flex-, regionale und Langkontext-Aufschlaege sind nicht
 eingerechnet. `—` bedeutet: kein direkter Tokenpreis des Herstellers.
 
@@ -60,13 +61,15 @@ neue Integrationen einplanen.
 
 | Modell | Preis | Status | Lokal | Einordnung |
 |---|---:|---|---|---|
-| Kimi K3 | 3 / 15 | Aktuell | Nein* | Flaggschiff, 1.048.576 Token Kontext; Cache-Treffer 0,30 |
-| Kimi K2.7 Code | 0,95 / 4 | Aktuell | Nein* | Coding, multimodal, 262k Kontext; Highspeed kostet 1,90 / 8 |
-| Kimi K2.6 | 0,95 / 4 | Aktuell | Nein* | Allgemein, multimodal, 262k Kontext |
+| Kimi K3 | ¥20 / ¥100 | Aktuell | Nein* | Flaggschiff, 1.048.576 Token Kontext; Cache-Treffer ¥2, Cache-Schreiben ¥20 (5 min) bzw. ¥40 (1 h) |
+| Kimi K2.7 Code | ¥6,50 / ¥27 | Aktuell | Nein* | Coding, multimodal, 262k Kontext; Cache-Treffer ¥1,30; Highspeed kostet ¥13 / ¥54 |
+| Kimi K2.6 | ¥6,50 / ¥27 | Aktuell | Nein* | Allgemein, multimodal, 262k Kontext; Cache-Treffer ¥1,10 |
 | Kimi K2.5 / K2 | — | **Vorgaenger** | Je nach veroeffentlichtem Checkpoint | Nicht mehr auf der aktuellen internationalen Preisseite |
 
 \* `Lokal` bezieht sich hier auf die konkret bepreiste API-Version. Ein
 separater offener Checkpoint ist nicht automatisch dieselbe API-Version.
+Moonshot weist diese Preise derzeit offiziell in chinesischen Yuan aus;
+bewusst keine wechselkursabhaengige USD-Scheinpraezision.
 
 ## Alibaba Cloud / Qwen (China)
 
@@ -81,6 +84,8 @@ abweichend bei 2 / 6.
 | Qwen3.8-Max-Prime | 3,301 / 9,902 | Aktuell | Nein | Schneller Prime-Modus fuer Qwen3.8-Max, bis 1M Kontext; China (Beijing) |
 | Qwen3.8-Max | 1,65 / 4,951 | Aktuell | Nein | Neues geschlossenes API-Flaggschiff, bis 1M Kontext |
 | Qwen3.7-Max | 1,65 / 4,951 | Vorgaenger | Nein | China-(Beijing)-Preis; durch 3.8-Max ueberholt |
+| Qwen3.7-Plus | 0,40 / 1,60 bis 256k Input | Aktuell | Nein | Internationaler Listenpreis; Thinking und Non-Thinking, ueber 256k: 1,20 / 4,80 |
+| Qwen3.6-Plus | 0,50 / 3 bis 256k Input | **Vorgaenger** | Nein | Durch Qwen3.7-Plus abgeloest; ueber 256k: 2 / 6 |
 | Qwen3-Max | 0,359 / 1,434 (bis 32k) | Vorgaenger | Nein | API-Max ist nicht Open-Weight; Preis steigt ab 32k und 128k Kontext |
 | Qwen3-2507 235B-A22B | Selbstbetrieb | Aktuell offen | Ja | Open-Weight-Flaggschiff; 256k, optional bis 1M Kontext |
 | Qwen3-2507 30B-A3B / 4B | Selbstbetrieb | Aktuell offen | Ja | Workstation- bzw. kompakte Klasse |
@@ -132,7 +137,7 @@ Chinesische Anbieter werden gleichrangig nach Eignung, Preis, Offenheit und
 Betriebsrisiko beurteilt. Herkunft ersetzt weder technische Pruefung noch
 Datenschutzpruefung.
 
-## Primaerquellen (am 2026-10-14 abgerufen)
+## Primaerquellen (am 2026-10-21 abgerufen)
 
 - [Anthropic: Claude API pricing](https://platform.claude.com/docs/en/about-claude/pricing)
 - [OpenAI: API pricing](https://developers.openai.com/api/docs/pricing)
