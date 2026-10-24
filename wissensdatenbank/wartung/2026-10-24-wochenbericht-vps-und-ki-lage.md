@@ -4,8 +4,8 @@
 
 ### S1 – 147.93.120.51
 
-- Per SSH als `gandalf-ro` erreichbar; Laufzeit 6 Tage 6 Stunden. Last `0,00 / 0,00 / 0,00`, RAM 2,7 von 15 GiB, Root-Platte 32,3 von 192,7 GiB (17 %), Inodes 4 %.
-- SSH, Docker, Tailscale sowie `openclaw-gateway@chantall`, `@cheko` und `@user2` laufen; ihre lokalen Hauptendpunkte antworten mit HTTP 200. `lightdm.service` ist weiterhin fehlgeschlagen.
+- Per SSH als `gandalf-ro` erreichbar; Laufzeit 6 Tage 6 Stunden. Last `0,17 / 0,05 / 0,01`, RAM 2,7 von 15 GiB, Root-Platte 33 von 193 GiB (17 %), Inodes 4 %.
+- SSH, Docker, Tailscale sowie `openclaw-gateway@chantall`, `@cheko` und `@user2` laufen. Der Webtest auf Port 19840 antwortet mit HTTP 200; 19872 liefert HTTP 500 und 19940 keine HTTP-Antwort. `lightdm.service` ist weiterhin fehlgeschlagen.
 - 44 Pakete sind aktualisierbar; die Simulation würde 36 installieren und 8 zurückhalten. Automatische Updates laufen, kein Neustart ist angefordert.
 - Das für `gandalf-ro` sichtbare Wochenjournal enthält nur PipeWire/JACK-Warnungen. Vollständige System-/SSH-Logs und Firewallregeln sind mangels Leserechten nicht geprüft.
 - An allen Interfaces lauschen unter anderem SSH 22, SMB 139/445, VNC 5919 sowie OpenClaw-/Proxy-Ports 19870, 19953, 29840 und 29953. HTTP 80/443 lauschen lokal, waren im externen Test aber nicht erreichbar.
@@ -17,12 +17,12 @@
 
 ### S3 – lokal, 187.124.191.206
 
-- Erreichbar; Laufzeit 6 Tage 10 Stunden. Last `0,81 / 0,32 / 0,11`, RAM 2,4 von 15 GiB, Root-Platte 39,7 von 196,7 GiB (20 %), Inodes 4 %.
+- Erreichbar; Laufzeit 6 Tage 10 Stunden. Last `0,56 / 0,45 / 0,20`, RAM 2,3 von 15 GiB, Root-Platte 40 von 197 GiB (22 %), Inodes 4 %.
 - SSH, Docker, Tailscale sowie die Gateways `gandalf`, `konfuzius` und `turyia` laufen; die lokalen Hauptendpunkte antworten mit HTTP 200.
-- 6 Updates sind offen, darunter der Security-Fix `libbrotli1`; automatische Updates laufen, kein Neustart ist angefordert.
+- 6 Updates sind offen, darunter der Security-Fix `libbrotli1`; automatische Updates laufen, ein Neustart ist angefordert.
 - `c3pool_miner.service` ist weiterhin aktiviert und fehlgeschlagen (`203/EXEC`). Die bekannten Malware-IoCs `ssshd`, `.locatione` und `myservices.service` fehlen.
 - Öffentlich gebunden sind SSH 22, TCP 11435 sowie OpenClaw-/Proxy-Ports 29941 und 29951. Wirksame Firewall- und SSH-Gesamtkonfiguration sowie vollständige System-/SSH-Logs waren ohne Rootrechte nicht prüfbar.
-- OpenClaw-Audit: 0 kritisch, 4 Warnungen. Wesentlich sind gemeinsame Telegram-/Nextcloud-DM-Sitzungen und weitreichende Werkzeuge ohne vollständige Sandbox.
+- OpenClaw-Audit: 0 kritisch, 5 Warnungen. Wesentlich sind gemeinsame Telegram-/Nextcloud-DM-Sitzungen, weitreichende Werkzeuge ohne vollständige Sandbox und ein fehlgeschlagener Probe auf `127.0.0.1:18789`.
 - Das wiederhergestellte Backup stammt laut dokumentierter Bestätigung von vor dem Angriff am 05.09.; die damals exponierten Secrets waren zuletzt noch nicht rotiert.
 
 ### S4 – 167.235.129.145
