@@ -1,6 +1,6 @@
 # Modell-Uebersicht
 
-**Stand:** 2026-10-21. Preise in **US-Dollar je 1 Million
+**Stand:** 2026-10-28. Preise in **US-Dollar je 1 Million
 Token** fuer Standard-Echtzeitverarbeitung, angegeben als **Input / Output**;
 abweichende Originalwaehrungen sind ausdruecklich mit ihrem Symbol markiert.
 Cache-, Batch-, Flex-, regionale und Langkontext-Aufschlaege sind nicht
@@ -32,6 +32,7 @@ neue Integrationen einplanen.
 |---|---:|---|---|---|
 | GPT-6 Astra | 10 / 50 | Aktuell | Nein | Neues Spitzenmodell; Langkontext 20 / 75 |
 | GPT-6.1 Sol | 2 / 10 | Aktuell | Nein | Neuer Standard; Langkontext 4 / 15, Cache-Input 0,10 / 0,20 |
+| GPT-6.1 Terra | 1 / 5 | Aktuell | Nein | Neue Mittelklasse zwischen Sol und Luna; Langkontext 2 / 7,50, Cache-Input 0,05 / 0,10 |
 | GPT-6 Sol | 2 / 10 | **Vorgaenger** | Nein | Gleicher Grundpreis, aber durch GPT-6.1 Sol abgeloest |
 | GPT-6 Luna | 0,10 / 0,50 | Aktuell | Nein | Neue Niedrigpreisklasse; Langkontext 0,20 / 0,75 |
 | GPT-5.6 Sol / Terra / Luna | 4 / 20; 2 / 12; 0,20 / 1,20 | **Vorgaenger** | Nein | Sol-Aktionspreis mindestens bis 21.11.2026; durch GPT-6-Familie ueberholt |
@@ -61,10 +62,11 @@ neue Integrationen einplanen.
 
 | Modell | Preis | Status | Lokal | Einordnung |
 |---|---:|---|---|---|
-| Kimi K3 | ¥20 / ¥100 | Aktuell | Nein* | Flaggschiff, 1.048.576 Token Kontext; Cache-Treffer ¥2, Cache-Schreiben ¥20 (5 min) bzw. ¥40 (1 h) |
-| Kimi K2.7 Code | ¥6,50 / ¥27 | Aktuell | Nein* | Coding, multimodal, 262k Kontext; Cache-Treffer ¥1,30; Highspeed kostet ¥13 / ¥54 |
-| Kimi K2.6 | ¥6,50 / ¥27 | Aktuell | Nein* | Allgemein, multimodal, 262k Kontext; Cache-Treffer ¥1,10 |
-| Kimi K2.5 / K2 | — | **Vorgaenger** | Je nach veroeffentlichtem Checkpoint | Nicht mehr auf der aktuellen internationalen Preisseite |
+| Kimi K3.1 Pro | ¥13 / ¥68 | Aktuell | Nein* | Neues Flaggschiff fuer lange Coding- und Wissensaufgaben, 1.048.576 Token Kontext; Cache-Treffer ¥1,30; Highspeed ¥26 / ¥136 |
+| Kimi K3 | ¥20 / ¥100 | **Vorgaenger** | Nein* | Durch K3.1 Pro abgeloest; 1.048.576 Token Kontext, Cache-Treffer ¥2 |
+| Kimi K2.7 Code | ¥6,50 / ¥27 | **veraltet/abgekuendigt** | Nein* | Ab 31.10.2026 nicht mehr fuer neue Nutzer; Abschaltung aller K2-Modelle Ende Dezember 2026 angekuendigt |
+| Kimi K2.6 | ¥6,50 / ¥27 | **veraltet/abgekuendigt** | Nein* | Ab 31.10.2026 nicht mehr fuer neue Nutzer; Abschaltung aller K2-Modelle Ende Dezember 2026 angekuendigt |
+| Kimi K2.5 / K2 | — | **veraltet/abgekuendigt** | Je nach veroeffentlichtem Checkpoint | Nicht mehr bepreist; Moonshot kuendigt die Abschaltung aller K2-API-Modelle Ende Dezember 2026 an |
 
 \* `Lokal` bezieht sich hier auf die konkret bepreiste API-Version. Ein
 separater offener Checkpoint ist nicht automatisch dieselbe API-Version.
@@ -126,18 +128,18 @@ nicht als Meta-Preis dargestellt.
 
 | Bedarf | Erste Wahl aus dieser Preispruefung |
 |---|---|
-| ausgewogener geschlossener Standardagent | Claude Sonnet 5.5, GPT-6.1 Sol |
+| ausgewogener geschlossener Standardagent | Claude Sonnet 5.5, GPT-6.1 Sol; preisbewusst GPT-6.1 Terra |
 | schwierigste Aufgaben, Preis zweitrangig | Gemini 4 Argon, GPT-6 Astra, Claude Opus 5.5 |
 | guenstige Massenverarbeitung | Claude Haiku 5.5, GPT-6 Luna, Gemini 2.5 Flash-Lite, DeepSeek V4.1 Flash |
-| Coding | Kimi K2.7 Code, Claude Sonnet 5.5, GPT-6.1 Sol |
-| sehr langer Kontext | Gemini 4 Argon, Kimi K3, DeepSeek V4; lokal Llama 4 Scout |
+| Coding | Kimi K3.1 Pro, Claude Sonnet 5.5, GPT-6.1 Sol |
+| sehr langer Kontext | Gemini 4 Argon, Kimi K3.1 Pro, DeepSeek V4; lokal Llama 4 Scout |
 | lokal und kontrollierbar | Qwen3-2507, Llama 4, Gemma 3, gpt-oss |
 
 Chinesische Anbieter werden gleichrangig nach Eignung, Preis, Offenheit und
 Betriebsrisiko beurteilt. Herkunft ersetzt weder technische Pruefung noch
 Datenschutzpruefung.
 
-## Primaerquellen (am 2026-10-21 abgerufen)
+## Primaerquellen (am 2026-10-28 abgerufen)
 
 - [Anthropic: Claude API pricing](https://platform.claude.com/docs/en/about-claude/pricing)
 - [OpenAI: API pricing](https://developers.openai.com/api/docs/pricing)
