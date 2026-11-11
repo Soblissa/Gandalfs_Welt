@@ -24,7 +24,8 @@ neue Integrationen einplanen.
 | Claude Sonnet 5 | 2 / 10 | **Vorgaenger** | Nein | Einfuehrungspreis wurde dauerhaft gemacht, aber durch Sonnet 5.5 abgeloest |
 | Claude Haiku 5.5 | 0,10 / 0,50 bis 100k Input | Aktuell | Nein | Neue Niedrigpreisklasse; ueber 100k Input 0,50 / 2,50, Cache-Treffer 0,01 bzw. 0,05 |
 | Claude Haiku 4.5 | 1 / 5 | **Vorgaenger** | Nein | Durch Haiku 5.5 abgeloest |
-| Claude Opus 4.5–4.8 / Sonnet 4.5–4.6 | 5 / 25 bzw. 3 / 15 | Vorgaenger | Nein | Weiter nutzbar; nicht mehr Hauptgeneration |
+| Claude Opus 4.5–4.8 / Sonnet 4.6 | 5 / 25 bzw. 3 / 15 | Vorgaenger | Nein | Weiter nutzbar; nicht mehr Hauptgeneration |
+| Claude Sonnet 4.5 | 3 / 15 | **veraltet/abgekuendigt** | Nein | Seit 30.09.2026 deprecated; Abschaltung der Claude-API-Version am 30.11.2026, Ersatz: Sonnet 5.5 |
 | Claude Opus 4/4.1, Sonnet 4, Haiku 3.5 | 15 / 75, 3 / 15, 0,80 / 4 | **veraltet/abgekuendigt** | Nein | Bei Anthropic retirert; teils noch ueber Cloudpartner |
 
 ## OpenAI (USA)
@@ -143,6 +144,7 @@ Datenschutzpruefung.
 ## Primaerquellen (am 2026-11-11 abgerufen)
 
 - [Anthropic: Claude API pricing](https://platform.claude.com/docs/en/about-claude/pricing)
+- [Anthropic: Model deprecations](https://platform.claude.com/docs/en/about-claude/model-deprecations)
 - [OpenAI: API pricing](https://developers.openai.com/api/docs/pricing)
 - [Google: Gemini API pricing](https://ai.google.dev/gemini-api/docs/pricing)
 - [Moonshot/Kimi: Modellpreise](https://platform.kimi.ai/docs/pricing/chat)
