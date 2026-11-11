@@ -1,6 +1,6 @@
 # Modell-Uebersicht
 
-**Stand:** 2026-10-28. Preise in **US-Dollar je 1 Million
+**Stand:** 2026-11-11. Preise in **US-Dollar je 1 Million
 Token** fuer Standard-Echtzeitverarbeitung, angegeben als **Input / Output**;
 abweichende Originalwaehrungen sind ausdruecklich mit ihrem Symbol markiert.
 Cache-, Batch-, Flex-, regionale und Langkontext-Aufschlaege sind nicht
@@ -14,9 +14,10 @@ neue Integrationen einplanen.
 
 | Modell | Preis | Status | Lokal | Einordnung |
 |---|---:|---|---|---|
-| Claude Fable 5.1 | 10 / 50 | Aktuell | Nein | Teure Spezialklasse; Cache-Treffer 0,25 |
-| Claude Mythos 5.1 | 10 / 50 | Aktuell, begrenzt verfuegbar | Nein | Spezialmodell mit eingeschraenktem Zugang |
-| Claude Fable 5 / Mythos 5 | 10 / 50 | Vorgaenger | Nein | Gleicher Grundpreis, aber Cache-Treffer 1 statt 0,25; Mythos nur begrenzt verfuegbar |
+| Claude Fable 5.2 | 8 / 40 | Aktuell | Nein | Neue Spezialklasse; guenstiger als 5.1, Cache-Treffer 0,20 |
+| Claude Mythos 5.2 | 8 / 40 | Aktuell, begrenzt verfuegbar | Nein | Neues Spezialmodell mit eingeschraenktem Zugang; Cache-Treffer 0,20 |
+| Claude Fable 5.1 / Mythos 5.1 | 10 / 50 | **Vorgaenger** | Nein | Durch 5.2 abgeloest; Mythos nur begrenzt verfuegbar |
+| Claude Fable 5 / Mythos 5 | 10 / 50 | **Vorgaenger** | Nein | Aeltere Spezialklasse; Cache-Treffer 1; Mythos nur begrenzt verfuegbar |
 | Claude Opus 5.5 | 4 / 20 | Aktuell | Nein | Neues Spitzenmodell; Cache-Treffer 0,20 |
 | Claude Opus 5 | 5 / 25 | **Vorgaenger** | Nein | Durch Opus 5.5 guenstiger und leistungsseitig abgeloest |
 | Claude Sonnet 5.5 | 2 / 10 | Aktuell | Nein | Neuer Preis-Leistungs-Standard; Cache-Treffer 0,10 |
@@ -35,7 +36,7 @@ neue Integrationen einplanen.
 | GPT-6.1 Terra | 1 / 5 | Aktuell | Nein | Neue Mittelklasse zwischen Sol und Luna; Langkontext 2 / 7,50, Cache-Input 0,05 / 0,10 |
 | GPT-6 Sol | 2 / 10 | **Vorgaenger** | Nein | Gleicher Grundpreis, aber durch GPT-6.1 Sol abgeloest |
 | GPT-6 Luna | 0,10 / 0,50 | Aktuell | Nein | Neue Niedrigpreisklasse; Langkontext 0,20 / 0,75 |
-| GPT-5.6 Sol / Terra / Luna | 4 / 20; 2 / 12; 0,20 / 1,20 | **Vorgaenger** | Nein | Sol-Aktionspreis mindestens bis 21.11.2026; durch GPT-6-Familie ueberholt |
+| GPT-5.6 Sol / Terra / Luna | 4 / 20; 2 / 12; 0,20 / 1,20 | **Vorgaenger** | Nein | Sol-Aktionspreis bis 30.11.2026; durch GPT-6-Familie ueberholt |
 | GPT-5.5 / GPT-5.5 Pro | 5 / 30 bzw. 30 / 180 | Vorgaenger | Nein | Weiter teuer; durch 5.6/6 ueberholt |
 | GPT-5.4 / mini / nano | 2,50 / 15; 0,75 / 4,50; 0,20 / 1,25 | Vorgaenger | Nein | Weiter gelistet, aber durch 5.6 ueberholt |
 | GPT-5 mini / nano | 0,25 / 2 bzw. 0,05 / 0,40 | Vorgaenger, weiter sinnvoll | Nein | Bewaehrte Niedrigpreisklasse |
@@ -46,7 +47,8 @@ neue Integrationen einplanen.
 
 | Modell | Preis | Status | Lokal | Einordnung |
 |---|---:|---|---|---|
-| Gemini 4 Argon | 2 / 10 bis 30.11.2026 | Aktuell | Nein | Neues Reasoning-Flaggschiff mit bis zu 1M Outputtoken; ab 01.12.2026 laut Preisseite 4 / 20 |
+| Gemini 4 Carbon | 2 / 10 bis 30.11.2026 | Aktuell | Nein | Neues leistungsstaerkstes Reasoning-Modell mit bis zu 1M Outputtoken; ab 01.12.2026 laut Preisseite 4 / 20 |
+| Gemini 4 Argon | 2 / 10 bis 30.11.2026 | Aktuell | Nein | Schnellere, tokenaermere Gemini-4-Variante unterhalb Carbon; ab 01.12.2026 laut Preisseite 4 / 20 |
 | Gemini 3.8 Flash | 0,75 / 3,75 | Aktuell, Aktionspreis bis 31.12.2026 | Nein | Neuester Flash; ab 2027 laut Preisseite 1,50 / 7,50 |
 | Gemini 3.7 Flash | 0,75 / 3,75 | Vorgaenger | Nein | Durch 3.8 Flash abgeloest |
 | Gemini 3.5 Flash | 1,50 / 9 | Aktuell | Nein | Leistungsorientierte 3.5-Klasse; teurer als 3.8 Flash waehrend dessen Aktionspreis |
@@ -83,7 +85,6 @@ abweichend bei 2 / 6.
 
 | Modell | Preis | Status | Lokal | Einordnung |
 |---|---:|---|---|---|
-| Qwen3.8-Max-Prime | 3,301 / 9,902 | Aktuell | Nein | Schneller Prime-Modus fuer Qwen3.8-Max, bis 1M Kontext; China (Beijing) |
 | Qwen3.8-Max | 1,65 / 4,951 | Aktuell | Nein | Neues geschlossenes API-Flaggschiff, bis 1M Kontext |
 | Qwen3.7-Max | 1,65 / 4,951 | Vorgaenger | Nein | China-(Beijing)-Preis; durch 3.8-Max ueberholt |
 | Qwen3.7-Plus | 0,40 / 1,60 bis 256k Input | Aktuell | Nein | Internationaler Listenpreis; Thinking und Non-Thinking, ueber 256k: 1,20 / 4,80 |
@@ -129,17 +130,17 @@ nicht als Meta-Preis dargestellt.
 | Bedarf | Erste Wahl aus dieser Preispruefung |
 |---|---|
 | ausgewogener geschlossener Standardagent | Claude Sonnet 5.5, GPT-6.1 Sol; preisbewusst GPT-6.1 Terra |
-| schwierigste Aufgaben, Preis zweitrangig | Gemini 4 Argon, GPT-6 Astra, Claude Opus 5.5 |
+| schwierigste Aufgaben, Preis zweitrangig | Gemini 4 Carbon, GPT-6 Astra, Claude Opus 5.5 |
 | guenstige Massenverarbeitung | Claude Haiku 5.5, GPT-6 Luna, Gemini 2.5 Flash-Lite, DeepSeek V4.1 Flash |
 | Coding | Kimi K3.1 Pro, Claude Sonnet 5.5, GPT-6.1 Sol |
-| sehr langer Kontext | Gemini 4 Argon, Kimi K3.1 Pro, DeepSeek V4; lokal Llama 4 Scout |
+| sehr langer Kontext | Gemini 4 Carbon, Kimi K3.1 Pro, DeepSeek V4; lokal Llama 4 Scout |
 | lokal und kontrollierbar | Qwen3-2507, Llama 4, Gemma 3, gpt-oss |
 
 Chinesische Anbieter werden gleichrangig nach Eignung, Preis, Offenheit und
 Betriebsrisiko beurteilt. Herkunft ersetzt weder technische Pruefung noch
 Datenschutzpruefung.
 
-## Primaerquellen (am 2026-10-28 abgerufen)
+## Primaerquellen (am 2026-11-11 abgerufen)
 
 - [Anthropic: Claude API pricing](https://platform.claude.com/docs/en/about-claude/pricing)
 - [OpenAI: API pricing](https://developers.openai.com/api/docs/pricing)
