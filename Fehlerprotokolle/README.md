@@ -28,6 +28,7 @@ Zentrale Ablage fuer dokumentierte Stoerungen an Sarahs und dtos Infrastruktur.
 
 | Datum | System | Titel | Datei |
 |---|---|---|---|
+| 2026-11-18 | S1 / Chantall und user2 | OpenAI-Embeddings wegen fehlendem Guthaben bzw. ungültigem Schlüssel ausgefallen; auf lokales Ollama/`nomic-embed-text` umgestellt | [2026-11-18-s1-embedding-openai-ausgefallen.md](2026-11-18-s1-embedding-openai-ausgefallen.md) |
 | 2026-11-09 | S1–S4 / Gandalf | SSH-Zugang auf S1/S2 abgewiesen, S4-Hostschlüssel geändert; S3 sudo und Update-Automatik geprüft | [2026-11-09-gandalf-ssh-auth-und-update-status.md](2026-11-09-gandalf-ssh-auth-und-update-status.md) |
 | 2026-10-28 | Chefkoch (Server 1, `cheko`) | Telegram-Secret, Gateway-Authentifizierung und DM-Sitzungstrennung offen; Live-Reparatur durch fehlenden Wartungszugang blockiert | [2026-10-28-chefkoch-sicherheitskonfiguration.md](2026-10-28-chefkoch-sicherheitskonfiguration.md) |
 | 2026-10-11 | SS1 (`srv1492182`) | `gandalfadmin` besitzt unerwuenschtes passwortloses sudo | [2026-10-11-ss1-gandalfadmin-passwortloses-sudo.md](2026-10-11-ss1-gandalfadmin-passwortloses-sudo.md) |
