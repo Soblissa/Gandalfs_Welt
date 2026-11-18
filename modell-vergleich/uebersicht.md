@@ -1,6 +1,6 @@
 # Modell-Uebersicht
 
-**Stand:** 2026-11-11. Preise in **US-Dollar je 1 Million
+**Stand:** 2026-11-18. Preise in **US-Dollar je 1 Million
 Token** fuer Standard-Echtzeitverarbeitung, angegeben als **Input / Output**;
 abweichende Originalwaehrungen sind ausdruecklich mit ihrem Symbol markiert.
 Cache-, Batch-, Flex-, regionale und Langkontext-Aufschlaege sind nicht
@@ -32,8 +32,10 @@ neue Integrationen einplanen.
 
 | Modell | Preis | Status | Lokal | Einordnung |
 |---|---:|---|---|---|
-| GPT-6 Astra | 10 / 50 | Aktuell | Nein | Neues Spitzenmodell; Langkontext 20 / 75 |
-| GPT-6.1 Sol | 2 / 10 | Aktuell | Nein | Neuer Standard; Langkontext 4 / 15, Cache-Input 0,10 / 0,20 |
+| GPT-6.2 Astra | 8 / 40 | Aktuell | Nein | Neues Spitzenmodell; Langkontext 16 / 60, Cache-Input 0,40 / 0,80 |
+| GPT-6.2 Sol | 2 / 10 | Aktuell | Nein | Neuer Standard; Langkontext 4 / 15, Cache-Input 0,10 / 0,20 |
+| GPT-6 Astra | 10 / 50 | **Vorgaenger** | Nein | Durch GPT-6.2 Astra guenstiger abgeloest; Langkontext 20 / 75 |
+| GPT-6.1 Sol | 2 / 10 | **Vorgaenger** | Nein | Durch GPT-6.2 Sol zum gleichen Grundpreis abgeloest |
 | GPT-6.1 Terra | 1 / 5 | Aktuell | Nein | Neue Mittelklasse zwischen Sol und Luna; Langkontext 2 / 7,50, Cache-Input 0,05 / 0,10 |
 | GPT-6 Sol | 2 / 10 | **Vorgaenger** | Nein | Gleicher Grundpreis, aber durch GPT-6.1 Sol abgeloest |
 | GPT-6 Luna | 0,10 / 0,50 | Aktuell | Nein | Neue Niedrigpreisklasse; Langkontext 0,20 / 0,75 |
@@ -50,6 +52,7 @@ neue Integrationen einplanen.
 |---|---:|---|---|---|
 | Gemini 4 Carbon | 2 / 10 bis 30.11.2026 | Aktuell | Nein | Neues leistungsstaerkstes Reasoning-Modell mit bis zu 1M Outputtoken; ab 01.12.2026 laut Preisseite 4 / 20 |
 | Gemini 4 Argon | 2 / 10 bis 30.11.2026 | Aktuell | Nein | Schnellere, tokenaermere Gemini-4-Variante unterhalb Carbon; ab 01.12.2026 laut Preisseite 4 / 20 |
+| Gemini 4 Hydrogen | 1,50 / 7,50 | Aktuell | Nein | Neue schnelle Gemini-4-Klasse fuer Coding und Agenten; 1M Kontext und bis zu 1M Outputtoken |
 | Gemini 3.8 Flash | 0,75 / 3,75 | Aktuell, Aktionspreis bis 31.12.2026 | Nein | Neuester Flash; ab 2027 laut Preisseite 1,50 / 7,50 |
 | Gemini 3.7 Flash | 0,75 / 3,75 | Vorgaenger | Nein | Durch 3.8 Flash abgeloest |
 | Gemini 3.5 Flash | 1,50 / 9 | Aktuell | Nein | Leistungsorientierte 3.5-Klasse; teurer als 3.8 Flash waehrend dessen Aktionspreis |
@@ -65,28 +68,28 @@ neue Integrationen einplanen.
 
 | Modell | Preis | Status | Lokal | Einordnung |
 |---|---:|---|---|---|
-| Kimi K3.1 Pro | ¥13 / ¥68 | Aktuell | Nein* | Neues Flaggschiff fuer lange Coding- und Wissensaufgaben, 1.048.576 Token Kontext; Cache-Treffer ¥1,30; Highspeed ¥26 / ¥136 |
-| Kimi K3 | ¥20 / ¥100 | **Vorgaenger** | Nein* | Durch K3.1 Pro abgeloest; 1.048.576 Token Kontext, Cache-Treffer ¥2 |
-| Kimi K2.7 Code | ¥6,50 / ¥27 | **veraltet/abgekuendigt** | Nein* | Ab 31.10.2026 nicht mehr fuer neue Nutzer; Abschaltung aller K2-Modelle Ende Dezember 2026 angekuendigt |
-| Kimi K2.6 | ¥6,50 / ¥27 | **veraltet/abgekuendigt** | Nein* | Ab 31.10.2026 nicht mehr fuer neue Nutzer; Abschaltung aller K2-Modelle Ende Dezember 2026 angekuendigt |
+| Kimi K3.1 Pro | 2 / 10 | Aktuell | Nein* | Flaggschiff fuer lange Coding- und Wissensaufgaben, 1.048.576 Token Kontext; Cache-Treffer 0,20; Highspeed 4 / 20 |
+| Kimi K3 | 3 / 15 | **Vorgaenger** | Nein* | Durch K3.1 Pro abgeloest; 1.048.576 Token Kontext, Cache-Treffer 0,30 |
+| Kimi K2.7 Code | 0,95 / 4 | **veraltet/abgekuendigt** | Nein* | Ab 31.10.2026 nicht mehr fuer neue Nutzer; Abschaltung aller K2-Modelle Ende Dezember 2026 angekuendigt |
+| Kimi K2.6 | 0,95 / 4 | **veraltet/abgekuendigt** | Nein* | Ab 31.10.2026 nicht mehr fuer neue Nutzer; Abschaltung aller K2-Modelle Ende Dezember 2026 angekuendigt |
 | Kimi K2.5 / K2 | — | **veraltet/abgekuendigt** | Je nach veroeffentlichtem Checkpoint | Nicht mehr bepreist; Moonshot kuendigt die Abschaltung aller K2-API-Modelle Ende Dezember 2026 an |
 
 \* `Lokal` bezieht sich hier auf die konkret bepreiste API-Version. Ein
 separater offener Checkpoint ist nicht automatisch dieselbe API-Version.
-Moonshot weist diese Preise derzeit offiziell in chinesischen Yuan aus;
-bewusst keine wechselkursabhaengige USD-Scheinpraezision.
+Moonshot weist diese Preise inzwischen offiziell in US-Dollar aus.
 
 ## Alibaba Cloud / Qwen (China)
 
 Alibaba staffelt Preise nach Bereitstellungsraum und Eingabelaenge. Die
 Tabelle verwendet fuer die Max-Reihe den offiziellen Endpunkt **China
 (Beijing)** und die jeweils erste Eingabestufe; Aktionspreise der Konsole
-sind nicht eingerechnet. Der internationale Preis von Qwen3.8-Max liegt
-abweichend bei 2 / 6.
+sind nicht eingerechnet. Der internationale Preis von Qwen4-Max liegt
+abweichend bei 1,50 / 4,50.
 
 | Modell | Preis | Status | Lokal | Einordnung |
 |---|---:|---|---|---|
-| Qwen3.8-Max | 1,65 / 4,951 | Aktuell | Nein | Neues geschlossenes API-Flaggschiff, bis 1M Kontext |
+| Qwen4-Max | 1,413 / 4,24 | Aktuell | Nein | Neues geschlossenes API-Flaggschiff, bis 1M Kontext; Thinking und Non-Thinking |
+| Qwen3.8-Max | 1,65 / 4,951 | **Vorgaenger** | Nein | Durch Qwen4-Max abgeloest; bis 1M Kontext |
 | Qwen3.7-Max | 1,65 / 4,951 | Vorgaenger | Nein | China-(Beijing)-Preis; durch 3.8-Max ueberholt |
 | Qwen3.7-Plus | 0,40 / 1,60 bis 256k Input | Aktuell | Nein | Internationaler Listenpreis; Thinking und Non-Thinking, ueber 256k: 1,20 / 4,80 |
 | Qwen3.6-Plus | 0,50 / 3 bis 256k Input | **Vorgaenger** | Nein | Durch Qwen3.7-Plus abgeloest; ueber 256k: 2 / 6 |
@@ -130,10 +133,10 @@ nicht als Meta-Preis dargestellt.
 
 | Bedarf | Erste Wahl aus dieser Preispruefung |
 |---|---|
-| ausgewogener geschlossener Standardagent | Claude Sonnet 5.5, GPT-6.1 Sol; preisbewusst GPT-6.1 Terra |
-| schwierigste Aufgaben, Preis zweitrangig | Gemini 4 Carbon, GPT-6 Astra, Claude Opus 5.5 |
+| ausgewogener geschlossener Standardagent | Claude Sonnet 5.5, GPT-6.2 Sol; preisbewusst GPT-6.1 Terra |
+| schwierigste Aufgaben, Preis zweitrangig | Gemini 4 Carbon, GPT-6.2 Astra, Claude Opus 5.5 |
 | guenstige Massenverarbeitung | Claude Haiku 5.5, GPT-6 Luna, Gemini 2.5 Flash-Lite, DeepSeek V4.1 Flash |
-| Coding | Kimi K3.1 Pro, Claude Sonnet 5.5, GPT-6.1 Sol |
+| Coding | Kimi K3.1 Pro, Claude Sonnet 5.5, GPT-6.2 Sol, Gemini 4 Hydrogen |
 | sehr langer Kontext | Gemini 4 Carbon, Kimi K3.1 Pro, DeepSeek V4; lokal Llama 4 Scout |
 | lokal und kontrollierbar | Qwen3-2507, Llama 4, Gemma 3, gpt-oss |
 
@@ -141,7 +144,7 @@ Chinesische Anbieter werden gleichrangig nach Eignung, Preis, Offenheit und
 Betriebsrisiko beurteilt. Herkunft ersetzt weder technische Pruefung noch
 Datenschutzpruefung.
 
-## Primaerquellen (am 2026-11-11 abgerufen)
+## Primaerquellen (am 2026-11-18 abgerufen)
 
 - [Anthropic: Claude API pricing](https://platform.claude.com/docs/en/about-claude/pricing)
 - [Anthropic: Model deprecations](https://platform.claude.com/docs/en/about-claude/model-deprecations)
