@@ -42,9 +42,11 @@ neue Integrationen einplanen.
 | GPT-6 Luna | 0,10 / 0,50 | Aktuell | Nein | Neue Niedrigpreisklasse; Langkontext 0,20 / 0,75 |
 | GPT-5.6 Sol / Terra / Luna | 4 / 20; 2 / 12; 0,20 / 1,20 | **Vorgaenger** | Nein | Sol-Aktionspreis bis 30.11.2026; durch GPT-6-Familie ueberholt |
 | GPT-5.5 / GPT-5.5 Pro | 5 / 30 bzw. 30 / 180 | Vorgaenger | Nein | Weiter teuer; durch 5.6/6 ueberholt |
-| GPT-5.4 / mini / nano | 2,50 / 15; 0,75 / 4,50; 0,20 / 1,25 | Vorgaenger | Nein | Weiter gelistet, aber durch 5.6 ueberholt |
-| GPT-5 mini / nano | 0,25 / 2 bzw. 0,05 / 0,40 | Vorgaenger, weiter sinnvoll | Nein | Bewaehrte Niedrigpreisklasse |
-| o3 / o4-mini | 2 / 8 bzw. 1,10 / 4,40 | Vorgaenger | Nein | Aeltere explizite Reasoning-Reihe |
+| GPT-5.4 / mini | 2,50 / 15; 0,75 / 4,50 | Vorgaenger | Nein | Weiter gelistet, aber durch 5.6 ueberholt |
+| GPT-5.4 nano | 0,20 / 1,25 | **veraltet/abgekuendigt** | Nein | Auf der offiziellen Preisseite als deprecated markiert |
+| GPT-5 mini / nano | 0,25 / 2 bzw. 0,05 / 0,40 | **veraltet/abgekuendigt** | Nein | Auf der offiziellen Preisseite als deprecated markiert |
+| o3 | 2 / 8 | **veraltet/abgekuendigt** | Nein | Auf der offiziellen Preisseite als deprecated markiert |
+| o4-mini | 1,10 / 4,40 | Vorgaenger | Nein | Aeltere explizite Reasoning-Reihe |
 | gpt-oss 120B / 20B | Selbstbetrieb | Aktuell offen | Ja | Open-Weight; Infrastruktur statt Tokenpreis |
 
 ## Google (USA)
@@ -56,15 +58,15 @@ neue Integrationen einplanen.
 | Gemini 4 Neon | 3 / 15 | Aktuell | Nein | Neue Frontier-Klasse fuer komplexe Softwareentwicklung, Wissensarbeit und Wissenschaft; 1M Kontext und bis zu 1M Outputtoken |
 | Gemini 4 Hydrogen | 1,50 / 7,50 | Aktuell | Nein | Neue schnelle Gemini-4-Klasse fuer Coding und Agenten; 1M Kontext und bis zu 1M Outputtoken |
 | Gemini 3.8 Flash | 0,75 / 3,75 | Aktuell, Aktionspreis bis 31.12.2026 | Nein | Neuester Flash; ab 2027 laut Preisseite 1,50 / 7,50 |
-| Gemini 3.7 Flash | 0,75 / 3,75 | Vorgaenger | Nein | Durch 3.8 Flash abgeloest |
-| Gemini 3.5 Flash | 1,50 / 9 | Aktuell | Nein | Leistungsorientierte 3.5-Klasse; teurer als 3.8 Flash waehrend dessen Aktionspreis |
+| Gemini 3.6 Flash | 0,75 / 3,75 | Vorgaenger | Nein | Offiziell als vorherige Flash-Generation bezeichnet; ab 01.01.2027 1,50 / 7,50 |
 | Gemini 3.1 Pro Preview | 2 / 12 | **Vorgaenger**, Preview | Nein | Als Spitzenmodell durch Gemini 4 Argon abgeloest; ueber 200k Inputtoken: 4 / 18 |
 | Gemini 3.5 Flash-Lite | 0,30 / 2,50 | Aktuell | Nein | Neue guenstige Flash-Lite-Klasse; Batch 0,15 / 1,25 |
 | Gemini 3.1 Flash-Lite | 0,25 / 1,50 | Vorgaenger | Nein | Text/Bild/Video; Audio-Input kostet 0,50; durch 3.5 Flash-Lite abgeloest |
-| Gemini 2.5 Pro | 1,25 / 10 | Vorgaenger | Nein | Ueber 200k Inputtoken: 2,50 / 15 |
-| Gemini 2.5 Flash | 0,30 / 2,50 | Vorgaenger, guenstig | Nein | Weiter stark fuer grosse Mengen |
+| Gemini 2.5 Pro | 1,25 / 10 | **veraltet/abgekuendigt** | Nein | Deprecated; ab 01.12.2026 werden API-Aufrufe zu Gemini 3.8 Flash umgeleitet und zu dessen Preis berechnet |
+| Gemini 2.5 Flash | 0,30 / 2,50 | **veraltet/abgekuendigt** | Nein | Deprecated; ab 01.12.2026 Umleitung zu Gemini 3.5 Flash-Lite und Abrechnung zu dessen Preis |
 | Gemini 2.5 Flash-Lite | 0,10 / 0,40 | **Vorgaenger**, guenstig | Nein | Niedriger als die neue 3.5-Klasse, aber nicht mehr aktuelle Generation |
-| Gemma 3 | Selbstbetrieb | Offene Familie | Ja | Lokal betreibbar; Infrastruktur statt Tokenpreis |
+| Gemma 4 | Selbstbetrieb | Aktuelle offene Familie | Ja | Neue offene Generation; lokal betreibbar, Infrastruktur statt Tokenpreis |
+| Gemma 3 | Selbstbetrieb | **Vorgaenger** | Ja | Durch Gemma 4 als Hauptgeneration abgeloest |
 
 ## Moonshot AI / Kimi (China)
 
@@ -142,7 +144,7 @@ nicht als Meta-Preis dargestellt.
 | guenstige Massenverarbeitung | Claude Haiku 5.5, GPT-6 Luna, Gemini 2.5 Flash-Lite, DeepSeek V4.1 Flash |
 | Coding | Kimi K3.1 Pro, Claude Sonnet 5.5, GPT-6.2 Sol, Gemini 4 Hydrogen |
 | sehr langer Kontext | Gemini 4 Carbon, Kimi K3.1 Pro, DeepSeek V4; lokal Llama 4 Scout |
-| lokal und kontrollierbar | Qwen3-2507, Llama 4, Gemma 3, gpt-oss |
+| lokal und kontrollierbar | Qwen3-2507, Llama 4, Gemma 4, gpt-oss |
 
 Chinesische Anbieter werden gleichrangig nach Eignung, Preis, Offenheit und
 Betriebsrisiko beurteilt. Herkunft ersetzt weder technische Pruefung noch
