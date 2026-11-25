@@ -1,6 +1,6 @@
 # Modell-Uebersicht
 
-**Stand:** 2026-11-18. Preise in **US-Dollar je 1 Million
+**Stand:** 2026-11-25. Preise in **US-Dollar je 1 Million
 Token** fuer Standard-Echtzeitverarbeitung, angegeben als **Input / Output**;
 abweichende Originalwaehrungen sind ausdruecklich mit ihrem Symbol markiert.
 Cache-, Batch-, Flex-, regionale und Langkontext-Aufschlaege sind nicht
@@ -24,7 +24,8 @@ neue Integrationen einplanen.
 | Claude Sonnet 5 | 2 / 10 | **Vorgaenger** | Nein | Einfuehrungspreis wurde dauerhaft gemacht, aber durch Sonnet 5.5 abgeloest |
 | Claude Haiku 5.5 | 0,10 / 0,50 bis 100k Input | Aktuell | Nein | Neue Niedrigpreisklasse; ueber 100k Input 0,50 / 2,50, Cache-Treffer 0,01 bzw. 0,05 |
 | Claude Haiku 4.5 | 1 / 5 | **Vorgaenger** | Nein | Durch Haiku 5.5 abgeloest |
-| Claude Opus 4.5–4.8 / Sonnet 4.6 | 5 / 25 bzw. 3 / 15 | Vorgaenger | Nein | Weiter nutzbar; nicht mehr Hauptgeneration |
+| Claude Opus 4.6–4.8 / Sonnet 4.6 | 5 / 25 bzw. 3 / 15 | Vorgaenger | Nein | Weiter nutzbar; nicht mehr Hauptgeneration |
+| Claude Opus 4.5 | 5 / 25 | **veraltet/abgekuendigt** | Nein | Seit 23.11.2026 deprecated; Abschaltung der Claude-API-Version am 22.01.2027, Ersatz: Opus 5.5 |
 | Claude Sonnet 4.5 | 3 / 15 | **veraltet/abgekuendigt** | Nein | Seit 30.09.2026 deprecated; Abschaltung der Claude-API-Version am 30.11.2026, Ersatz: Sonnet 5.5 |
 | Claude Opus 4/4.1, Sonnet 4, Haiku 3.5 | 15 / 75, 3 / 15, 0,80 / 4 | **veraltet/abgekuendigt** | Nein | Bei Anthropic retirert; teils noch ueber Cloudpartner |
 
@@ -52,6 +53,7 @@ neue Integrationen einplanen.
 |---|---:|---|---|---|
 | Gemini 4 Carbon | 2 / 10 bis 30.11.2026 | Aktuell | Nein | Neues leistungsstaerkstes Reasoning-Modell mit bis zu 1M Outputtoken; ab 01.12.2026 laut Preisseite 4 / 20 |
 | Gemini 4 Argon | 2 / 10 bis 30.11.2026 | Aktuell | Nein | Schnellere, tokenaermere Gemini-4-Variante unterhalb Carbon; ab 01.12.2026 laut Preisseite 4 / 20 |
+| Gemini 4 Neon | 3 / 15 | Aktuell | Nein | Neue Frontier-Klasse fuer komplexe Softwareentwicklung, Wissensarbeit und Wissenschaft; 1M Kontext und bis zu 1M Outputtoken |
 | Gemini 4 Hydrogen | 1,50 / 7,50 | Aktuell | Nein | Neue schnelle Gemini-4-Klasse fuer Coding und Agenten; 1M Kontext und bis zu 1M Outputtoken |
 | Gemini 3.8 Flash | 0,75 / 3,75 | Aktuell, Aktionspreis bis 31.12.2026 | Nein | Neuester Flash; ab 2027 laut Preisseite 1,50 / 7,50 |
 | Gemini 3.7 Flash | 0,75 / 3,75 | Vorgaenger | Nein | Durch 3.8 Flash abgeloest |
@@ -68,15 +70,17 @@ neue Integrationen einplanen.
 
 | Modell | Preis | Status | Lokal | Einordnung |
 |---|---:|---|---|---|
-| Kimi K3.1 Pro | 2 / 10 | Aktuell | Nein* | Flaggschiff fuer lange Coding- und Wissensaufgaben, 1.048.576 Token Kontext; Cache-Treffer 0,20; Highspeed 4 / 20 |
-| Kimi K3 | 3 / 15 | **Vorgaenger** | Nein* | Durch K3.1 Pro abgeloest; 1.048.576 Token Kontext, Cache-Treffer 0,30 |
-| Kimi K2.7 Code | 0,95 / 4 | **veraltet/abgekuendigt** | Nein* | Ab 31.10.2026 nicht mehr fuer neue Nutzer; Abschaltung aller K2-Modelle Ende Dezember 2026 angekuendigt |
-| Kimi K2.6 | 0,95 / 4 | **veraltet/abgekuendigt** | Nein* | Ab 31.10.2026 nicht mehr fuer neue Nutzer; Abschaltung aller K2-Modelle Ende Dezember 2026 angekuendigt |
+| Kimi K3.1 Pro | ¥13 / ¥68 | Aktuell | Nein* | Flaggschiff fuer lange Coding- und Wissensaufgaben, 1.048.576 Token Kontext; Cache-Treffer ¥1,30; Highspeed ¥26 / ¥136 |
+| Kimi K3 | ¥20 / ¥100 | **Vorgaenger** | Nein* | Durch K3.1 Pro abgeloest; 1.048.576 Token Kontext, Cache-Treffer ¥2 |
+| Kimi K2.7 Code | ¥6,50 / ¥27 | **veraltet/abgekuendigt** | Nein* | Ab 31.10.2026 nicht mehr fuer neue Nutzer; Abschaltung aller K2-Modelle Ende Dezember 2026 angekuendigt |
+| Kimi K2.6 | ¥6,50 / ¥27 | **veraltet/abgekuendigt** | Nein* | Ab 31.10.2026 nicht mehr fuer neue Nutzer; Abschaltung aller K2-Modelle Ende Dezember 2026 angekuendigt |
 | Kimi K2.5 / K2 | — | **veraltet/abgekuendigt** | Je nach veroeffentlichtem Checkpoint | Nicht mehr bepreist; Moonshot kuendigt die Abschaltung aller K2-API-Modelle Ende Dezember 2026 an |
 
 \* `Lokal` bezieht sich hier auf die konkret bepreiste API-Version. Ein
 separater offener Checkpoint ist nicht automatisch dieselbe API-Version.
-Moonshot weist diese Preise inzwischen offiziell in US-Dollar aus.
+Moonshot weist diese Preise auf der chinesischen Kimi-Plattform offiziell in
+Renminbi aus; eine Dollarumrechnung wird wegen Wechselkursschwankungen bewusst
+nicht als Listenpreis ausgegeben.
 
 ## Alibaba Cloud / Qwen (China)
 
@@ -134,7 +138,7 @@ nicht als Meta-Preis dargestellt.
 | Bedarf | Erste Wahl aus dieser Preispruefung |
 |---|---|
 | ausgewogener geschlossener Standardagent | Claude Sonnet 5.5, GPT-6.2 Sol; preisbewusst GPT-6.1 Terra |
-| schwierigste Aufgaben, Preis zweitrangig | Gemini 4 Carbon, GPT-6.2 Astra, Claude Opus 5.5 |
+| schwierigste Aufgaben, Preis zweitrangig | Gemini 4 Carbon/Neon, GPT-6.2 Astra, Claude Opus 5.5 |
 | guenstige Massenverarbeitung | Claude Haiku 5.5, GPT-6 Luna, Gemini 2.5 Flash-Lite, DeepSeek V4.1 Flash |
 | Coding | Kimi K3.1 Pro, Claude Sonnet 5.5, GPT-6.2 Sol, Gemini 4 Hydrogen |
 | sehr langer Kontext | Gemini 4 Carbon, Kimi K3.1 Pro, DeepSeek V4; lokal Llama 4 Scout |
@@ -144,7 +148,7 @@ Chinesische Anbieter werden gleichrangig nach Eignung, Preis, Offenheit und
 Betriebsrisiko beurteilt. Herkunft ersetzt weder technische Pruefung noch
 Datenschutzpruefung.
 
-## Primaerquellen (am 2026-11-18 abgerufen)
+## Primaerquellen (am 2026-11-25 abgerufen)
 
 - [Anthropic: Claude API pricing](https://platform.claude.com/docs/en/about-claude/pricing)
 - [Anthropic: Model deprecations](https://platform.claude.com/docs/en/about-claude/model-deprecations)
